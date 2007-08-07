@@ -1056,7 +1056,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	</rdfs:comment>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
-<rdfs:Class>
+</rdfs:Class>
 
 <rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Person" vs:term_status="stable">
 	<rdfs:comment>
@@ -1583,9 +1583,9 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/arranged_in" rdfs:label="arranged in" vs:term_status="unstable">
-	<rdf:comment>
+	<rdfs:comment>
 		Associates a work to an arrangement event where it was arranged
-	</rdf:comment>
+	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isFactorOf"/>
@@ -1595,9 +1595,9 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/arrangement_of" rdfs:label="arrangement of" vs:term_status="unstable">
-        <rdf:comment>
+        <rdfs:comment>
                 Associates an arrangement event to a work
-        </rdf:comment>
+        </rdfs:comment>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
