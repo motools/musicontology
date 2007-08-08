@@ -1454,6 +1454,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usedInPerformance" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/performed_in"/>
 </rdf:Property>
 
@@ -1472,6 +1473,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/productOfComposition" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/composed_in"/>
 </rdf:Property>
 
@@ -1496,6 +1498,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usesWork" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/performance_of"/>
 </rdf:Property>
 
@@ -1510,6 +1513,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/producesSound" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/produced_sound"/>
 </rdf:Property>
 
@@ -1528,6 +1532,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usedInRecording" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/recorded_in"/>
 </rdf:Property>
 
@@ -1546,6 +1551,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usesSound" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/recording_of"/>
 </rdf:Property>
 
@@ -1560,6 +1566,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/producesSignal" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/produced_signal"/>
 </rdf:Property>
 
@@ -1667,6 +1674,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/signalTime" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/time"/>
 </rdf:Property>
 
@@ -1682,6 +1690,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/sampledVersionOf" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/sampled_version_of"/>
 </rdf:Property>
 
@@ -1942,6 +1951,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/trackNum" vs:term_status="deprecated">
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/track_number"/>
 </rdf:Property>
 
@@ -1955,6 +1965,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/has_track" vs:term_status="deprecated">
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/track"/>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <!-- Properties related to foaf:Agent -->
@@ -2171,6 +2182,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/paiddownload" vs:term_status="deprecated">
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/paid_download"/>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/free_download" rdfs:label="free download" vs:term_status="stable">
@@ -2202,6 +2214,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/freedownload" vs:term_status="deprecated">
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/free_download"/>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/olga" rdfs:label="olga" vs:term_status="stable">
