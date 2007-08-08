@@ -548,24 +548,20 @@ particular time').
 
 <!-- Classes related with frbr:Manifestation -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation" rdfs:label="MusicalManifestation" vs:term_status="stable">
-	<rdfs:comment>Physical embodiment of an expression of a musical work.
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation" rdfs:label="musical manifestation" vs:term_status="stable">
+	<rdfs:comment>
 
 This entity is related to the edition/production/publication of a musical expression (musical manifestation are closely related with the music industry (their terms, concepts, definitions, methods (production, publication, etc.), etc.)
     
 From the FRBR final report: The entity defined as manifestation encompasses a wide range of materials, including manuscripts, books, periodicals, maps, posters, sound recordings, films, video recordings, CD-ROMs, multimedia kits, etc. As an entity, manifestation represents all the physical objects that bear the same characteristics, in respect to both intellectual content and physical form.
 
-When a work is realized, the resulting expression of the work may be physically embodied on or in a medium such as paper, audio tape, video tape, canvas, plaster, etc. That physical embodiment constitutes a manifestation of the work. In some cases there may be only a single physical exemplar produced of that manifestation of the work (e.g., an author's manuscript, a tape recorded for an oral history archive, an original oil painting, etc.). In other cases there are multiple copies produced in order to facilitate public dissemination or distribution. In those cases there is normally a more formal production process involved, and a publisher, producer, or distributor takes responsibility for the process. In other cases there may be only a limited number of copies made of an original exemplar for purposes such as private study (e.g., a dubbing of an original recording of a piece of music), or preservation (e.g., a photocopy produced on permanent paper of an author's original typescript). Whether the scope of production is broad (e.g., in the case of publication, etc.) or limited (e.g., in the case of copies made for private study, etc.), the set of copies produced in each case constitutes a manifestation. All copies produced that form part of the same set are considered to be copies of the same manifestation.
-
-The boundaries between one manifestation and another are drawn on the basis of both intellectual content and physical form. When the production process involves changes in physical form the resulting product is considered a new manifestation. Changes in physical form include changes affecting display characteristics (e.g., a change in typeface, size of font, page layout, etc.), changes in physical medium (e.g., a change from paper to microfilm as the medium of conveyance), and changes in the container (e.g., a change from cassette to cartridge as the container for a tape). Where the production process involves a publisher, producer, distributor, etc., and there are changes signaled in the product that are related to publication, marketing, etc. (e.g., a change in publisher, repackaging, etc.), the resulting product may be considered a new manifestation. Whenever the production process involves modifications, additions, deletions, etc. that affect the intellectual or artistic content, the result is a new manifestation embodying a new expression of the work. 
-
 
 Work #1 J. S. Bach's Six suites for unaccompanied cello
 
-    * Expression #1 performances by Janos Starker recorded in 1963 and 1965
+    * Expression #1 sound issued during the performance by Janos Starker recorded in 1963 and 1965
           o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1965 by Mercury
           o Manifestation #2 recordings re-released on compact disc in 1991 by Mercury 
-    * Expression #2 performances by Yo-Yo Ma recorded in 1983
+    * Expression #2 sound issued during the performances by Yo-Yo Ma recorded in 1983
           o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1983 by CBS Records
           o Manifestation #2 recordings re-released on compact disc in 1992 by CBS Records 
 
@@ -574,12 +570,10 @@ Changes that occur deliberately or even inadvertently in the production process 
 
 Changes that occur to an individual copy after the production process is complete (e.g., the loss of a page, rebinding, etc.) are not considered to result in a new manifestation. That copy is simply considered to be an exemplar (or item) of the manifestation that deviates from the copy as produced.
 
-Defining manifestation as an entity enables us to name and describe the complete set of items that result from a single act of physical embodiment or production. The entity manifestation serves to describe the shared characteristics of copies of a particular publication, edition, release, etc., as well as to describe unique productions such as manuscripts, original oil paintings, etc.
-
 With the entity defined as manifestation we can describe the physical characteristics of a set of items and the characteristics associated with the production and distribution of that set of items that may be important factors in enabling users to choose a manifestation appropriate to their physical needs and constraints, and to identify and acquire a copy of that manifestation.
 
-Defining manifestation as an entity also enables us to draw relationships between specific manifestations of a work. We can use the relationships between manifestations to identify, for example, the specific publication that was used to create a microreproduction.           
-    
+Defining manifestation as an entity also enables us to draw relationships between specific manifestations of a work. We can use the relationships between manifestations to identify, for example, the specific publication that was used to create a microreproduction.          
+
 </rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -1770,7 +1764,10 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/publishedAs" rdfs:label="published as" vs:term_status="stable">
-        <rdfs:comment>Links a signal or a score to its manifestations</rdfs:comment>
+        <rdfs:comment>
+		Links a signal or a score to its manifestations - this is a subproperty of frbr:embodiment (linking
+		an Expression to a Manifestation)
+	</rdfs:comment>
         <rdfs:domain>
 		<owl:Class>
 			<owl:unionOf rdf:parseType="Collection">
@@ -1792,6 +1789,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 		</owl:Class>
 	</rdfs:range>	
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+	<rdfs:subPropertyOf rdf:resource="http://vocab.org/frbr/core#embodiment"/>
 	<owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/publicationOf"/>
         </owl:inverseOf>
@@ -2834,10 +2832,13 @@ This means that two musical works or the expressions of a musical work by differ
 		this property, there is no assumption on wether the full content is available on the linked item.
 		To be explicit about this, you can use a sub-property, such as mo:item (the full manifestation
 		is available on that item) or mo:preview (only a part of the manifestation is available on
-		that item)
+		that item).
+
+		This is a subproperty of frbr:examplar.
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 

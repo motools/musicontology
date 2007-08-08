@@ -2,6 +2,7 @@
 Version 1.2 (july 2007)
 =========================
 
+ * ADDED: mo:availableAs subPropertyOf frbr:examplar
  * ADDED: mo:Torrent as medium (bittorrent items)
  * ADDED: mo:ED2K as medium (edonkey items)
  * ADDED: mo:usesScore (Performance --> Score (particular arrangement of a
