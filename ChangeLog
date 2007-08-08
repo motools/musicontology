@@ -31,6 +31,8 @@ Version 1.2 (july 2007)
  * MODIFIED: mo:freedownload to mo:free_download (same)
  * MODIFIED: mo:signalTime to mo:time (same)
  * MODIFIED: mo:sampledVersionOf to mo:sampled_version_of (same)
+ * MODIFIED: mo:has_track to mo:track (same)
+ * MODIFIED: mo:trackNum to  mo:track_number (same)
  * MODIFIED: mo:image subproperty of foaf:depiction
  * MODIFIED: changed comments and domain of freedownload and paiddownload
  * MODIFIED: changed comments on mo:MusicalWork
