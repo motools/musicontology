@@ -32,13 +32,28 @@
 <!-- Status of terms -->
 <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
 
+<!-- Music Ontology term level -->
+<owl:AnnotationProperty rdf:about="http://purl.org/ontology/mo/level" rdfs:label="level" vs:term_status="stable">
+	<rdfs:comment>
+		This annotation property associates to a particular Music Ontology term the corresponding
+		expressiveness level. These levels can be:
+
+			- 1: Only editorial/Musicbrainz type information
+			- 2: Workflow information
+			- 3: Even decomposition
+		
+		This property is mainly used for specification generation.
+	</rdfs:comment>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+</owl:AnnotationProperty>
+
 <!-- CLASSES -->
 
 
 <!-- Classes related to foaf:Agent -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicArtist" rdfs:label="MusicArtist" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicArtist" rdfs:label="MusicArtist" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		A person or a group of people (or a computer :-) ), whose musical 
 		creative work shows sensitivity and imagination 
@@ -49,7 +64,7 @@
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/SoloMusicArtist" rdfs:label="SoloMusicArtist" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/SoloMusicArtist" rdfs:label="SoloMusicArtist" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Single person whose musical creative work shows sensitivity and imagination.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
 	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -58,7 +73,7 @@
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicGroup" rdfs:label="MusicGroup" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicGroup" rdfs:label="MusicGroup" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. </rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
 	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
@@ -66,7 +81,7 @@
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/CorporateBody" rdfs:label="CorporateBody" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/CorporateBody" rdfs:label="CorporateBody" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Organization or group of individuals and/or other organizations involved in the music market.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -74,7 +89,7 @@
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Label" rdfs:label="Label" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Label" rdfs:label="Label" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Trade name of a company that produces musical works or expression of musical works.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/CorporateBody"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -85,7 +100,7 @@
 <!-- Classes related to frbr:Work -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalWork" rdfs:label="MusicalWork" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalWork" rdfs:label="MusicalWork" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 	Distinct intellectual or artistic musical creation.
     
@@ -104,7 +119,7 @@ work #1 J. S. Bach's The art of the fugue
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Movement" rdfs:label="Movement" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Movement" rdfs:label="Movement" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>A movement is a self-contained part of a musical work. While individual or selected movements from a composition are sometimes performed separately, a performance of the complete work requires all the movements to be performed in succession.
 
 Often a composer attempts to interrelate the movements thematically, or sometimes in more subtle ways, in order that the individual
@@ -120,7 +135,7 @@ pause between them.
 <!-- Classes related to frbr:Expression -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalExpression" rdfs:label="MusicalExpression" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalExpression" rdfs:label="MusicalExpression" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>
 The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, etc., or any combination of such forms.    
 
@@ -150,7 +165,7 @@ particular time').
 <!-- Let's define some MusicalExpressions -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Sound" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Sound" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A subclass of MusicalExpression, representing a sound. Realisation of a MusicalWork during a musical Performance.
 	</rdfs:comment>
@@ -163,7 +178,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Signal" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Signal" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		A subclass of MusicalExpression, representing a Signal. Realisation of a MusicalWork through both a Performance and a Recording.
 	</rdfs:comment>
@@ -174,7 +189,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/AnalogSignal" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/AnalogSignal" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		An analog signal.
 	</rdfs:comment>
@@ -186,7 +201,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/DigitalSignal" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/DigitalSignal" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A digital signal
 	</rdfs:comment>
@@ -198,7 +213,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Score" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Score" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Here, we are dealing with the informational object (the MusicalExpression), not the actually "published" score.
 		This may be, for example, the product of an arrangement process.
@@ -210,7 +225,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Lyrics" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Lyrics" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Lyrics
 	</rdfs:comment>
@@ -221,7 +236,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Libretto" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Libretto" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Libretto
         </rdfs:comment>
@@ -236,7 +251,7 @@ particular time').
 <!-- Let's define some events, leading to MusicalExpressions-->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Performance" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Performance" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A performance event. 
 		It might include as agents performers, engineers, conductors, or even listeners.
@@ -252,7 +267,7 @@ particular time').
 <!-- Here, we define a set of "defined classes": Performer are agents involved in a performance -->
 <!-- Composer are agents involved in a Composition event, and so on... -->
 
-<owl:Class rdf:about="http://purl.org/ontology/mo/Performer" vs:term_status="unstable">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Performer" vs:term_status="unstable" mo:level="2">
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -265,7 +280,7 @@ particular time').
  </owl:Class>
 
 
-<owl:Class rdf:about="http://purl.org/ontology/mo/SoundEngineer" vs:term_status="unstable">
+<owl:Class rdf:about="http://purl.org/ontology/mo/SoundEngineer" vs:term_status="unstable" mo:level="2">
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -277,7 +292,7 @@ particular time').
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
  </owl:Class>
 
-<owl:Class rdf:about="http://purl.org/ontology/mo/Listener" vs:term_status="unstable">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Listener" vs:term_status="unstable" mo:level="2">
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -289,7 +304,7 @@ particular time').
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
  </owl:Class>
 
-<owl:Class rdf:about="http://purl.org/ontology/mo/Conductor" vs:term_status="unstable">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Conductor" vs:term_status="unstable" mo:level="2">
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -301,7 +316,7 @@ particular time').
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
  </owl:Class>
 
-<owl:Class rdf:about="http://purl.org/ontology/mo/Composer" vs:term_status="unstable">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Composer" vs:term_status="unstable" mo:level="2">
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -313,7 +328,7 @@ particular time').
     <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
  </owl:Class>
 
-<owl:Class rdf:about="http://purl.org/ontology/mo/Arranger" vs:term_status="unstable">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Arranger" vs:term_status="unstable" mo:level="2">
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
@@ -329,7 +344,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Recording" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Recording" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A recording event.
 		Takes a sound as a factor to produce a signal (analog or digital).
@@ -343,7 +358,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Composition" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Composition" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A composition event.
 		Takes as agent the composer himself.
@@ -356,7 +371,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Arrangement" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Arrangement" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		An arrangement event.
 		Takes as agent the arranger, and produces a score (informational object, not the actually published score).
@@ -368,7 +383,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Instrumentation" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Instrumentation" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Instrumentation deals with the techniques of writing music for a specific instrument, 
 		including the limitations of the instrument, playing techniques and idiomatic handling of the instrument.
@@ -380,7 +395,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Orchestration" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Orchestration" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
         	Orchestration includes, in addition to instrumentation, the handling of groups of instruments and their balance and interaction.
 	</rdfs:comment>
@@ -393,7 +408,7 @@ particular time').
 <!-- Classes related to track (WARNING, a track is a track on a particular album (not as in the MB schema) -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Track" rdfs:label="Track" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Track" rdfs:label="Track" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A track on a particular record</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Record"/>
@@ -402,28 +417,28 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedScore" rdfs:label="published score" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedScore" rdfs:label="published score" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>A published score (subclass of MusicalManifestation)</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Record" rdfs:label="record" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Record" rdfs:label="record" vs:term_status="stable" mo:level="1">
         <rdfs:comment>A published record (manifestation which first aim is to render the product of a recording)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedLibretto" rdfs:label="published libretto" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedLibretto" rdfs:label="published libretto" vs:term_status="stable" mo:level="2">
         <rdfs:comment>A published libretto</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedLyrics" rdfs:label="published lyrics" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedLyrics" rdfs:label="published lyrics" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Published lyrics, as a book or as a text file, for example</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
@@ -431,7 +446,7 @@ particular time').
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Festival" rdfs:label="Festival" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Festival" rdfs:label="Festival" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A festival - musical/artistic event lasting several days, like Glastonbury, Rock Am Ring...
 		We migth decompose this event (which is in fact just a classification of the space/time region related to 
@@ -442,7 +457,7 @@ particular time').
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Show" rdfs:label="Show" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Show" rdfs:label="Show" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A show - a musical event lasting several days, in a particular venue. Examples can be
 		"The Magic Flute" at the Opera Bastille, August 2005, or a musical in the west end...
@@ -455,7 +470,7 @@ particular time').
 
 <!-- classes defining some possible type (used by the musical industry) to describe musical manifestation -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/ReleaseType" rdfs:label="Release type" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/ReleaseType" rdfs:label="Release type" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Release type of a particular manifestation, such as "album" or "interview"...
 	</rdfs:comment>
@@ -464,7 +479,7 @@ particular time').
 </rdfs:Class>
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/album" dc:title="album">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/album" dc:title="album" mo:level="1">
 	<dc:description>
 		One or more track issued together.
     		This is a type of MusicalManifestation defined by the musical industry.
@@ -473,7 +488,7 @@ particular time').
 </mo:ReleaseType>
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/interview" dc:title="interview">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/interview" dc:title="interview" mo:level="1">
 	<dc:description>
 		Recording of the questioning of a person.
 		This is a type of MusicalManifestation defined by the musical industry.
@@ -482,7 +497,7 @@ particular time').
 </mo:ReleaseType>
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/spokenword" dc:title="spoken word">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/spokenword" dc:title="spoken word" mo:level="1">
 	<dc:description>
 		Spoken word is a form of music or artistic performance in which lyrics, poetry, or stories are spoken rather than sung. 
 		Spoken-word is often done with a musical background, but emphasis is kept on the speaker.
@@ -493,7 +508,7 @@ particular time').
 
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/audiobook" dc:title="audio book">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/audiobook" dc:title="audio book" mo:level="1">
 	<dc:description>
 		Book read by a narrator without music.
 		This is a type of MusicalManifestation defined by the musical industry.
@@ -502,7 +517,7 @@ particular time').
 </mo:ReleaseType>
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/compilation" dc:title="compilation">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/compilation" dc:title="compilation" mo:level="1">
 	<dc:description>
 		Collection of previously released manifestations of a musical expression by one or more artists.
 		This is a type of MusicalManifestation defined by the musical industry.
@@ -512,7 +527,7 @@ particular time').
 
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/live" dc:title="live">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/live" dc:title="live" mo:level="1">
 	<dc:description>
 		A musical manifestation that was recorded live.
 		This is a type of MusicalManifestation defined by the musical industry.
@@ -521,7 +536,7 @@ particular time').
 </mo:ReleaseType>
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/remix" dc:title="remix">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/remix" dc:title="remix" mo:level="1">
 	<dc:description>
 		Musical manifestation that primarily contains remixed material. 
 		This is a type of MusicalManifestation defined by the musical industry.
@@ -530,7 +545,7 @@ particular time').
 </mo:ReleaseType>
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/soundtrack" dc:title="soundtrack">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/soundtrack" dc:title="soundtrack" mo:level="1">
 	<dc:description>
 		Sound recording on a narrow strip of a motion picture film.
 		This is a type of MusicalManifestation defined by the musical industry.
@@ -539,7 +554,7 @@ particular time').
 </mo:ReleaseType>
 
 
-<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/ep" dc:title="ep">
+<mo:ReleaseType rdf:about="http://purl.org/ontology/mo/ep" dc:title="ep" mo:level="1">
         <dc:description>
         	An EP
 	</dc:description>
@@ -548,7 +563,7 @@ particular time').
 
 <!-- Classes related with frbr:Manifestation -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation" rdfs:label="musical manifestation" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation" rdfs:label="musical manifestation" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 
 This entity is related to the edition/production/publication of a musical expression (musical manifestation are closely related with the music industry (their terms, concepts, definitions, methods (production, publication, etc.), etc.)
@@ -582,7 +597,7 @@ Defining manifestation as an entity also enables us to draw relationships betwee
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalItem" rdfs:label="MusicalItem" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalItem" rdfs:label="MusicalItem" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>A single exemplar of a musical expression.
     
 For example, it could be a single exemplar of a CD. This is normally an single object (a CD) possessed by somebody.
@@ -598,7 +613,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 <!-- classes related to the recording/diffusion medium -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Medium" rdfs:label="Medium" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Medium" rdfs:label="Medium" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>A means or instrumentality for storing or communicating musical manifestation.</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -606,7 +621,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dat" rdfs:label="Dat" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dat" rdfs:label="Dat" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Data Audio Tape used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -614,7 +629,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dcc" rdfs:label="Dcc" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dcc" rdfs:label="Dcc" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Digital Compact Cassette used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -622,7 +637,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Cd" rdfs:label="Cd" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Cd" rdfs:label="Cd" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -630,7 +645,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Md" rdfs:label="Md" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Md" rdfs:label="Md" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Mini Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -638,7 +653,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dvda" rdfs:label="Dvda" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dvda" rdfs:label="Dvda" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>DVD-Audio used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -646,7 +661,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Sacd" rdfs:label="Sacd" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Sacd" rdfs:label="Sacd" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Super Audio Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -654,7 +669,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Vinyl" rdfs:label="Vinyl" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Vinyl" rdfs:label="Vinyl" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Vinyl used as medium to record a musical manifestation</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -662,7 +677,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Magnetictape" rdfs:label="Magnetictape" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Magnetictape" rdfs:label="Magnetictape" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Magnetic analogue tape used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -670,7 +685,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Stream" rdfs:label="Stream" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Stream" rdfs:label="Stream" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Transmission over a network  used as medium to broadcast a musical manifestation</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -678,7 +693,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Torrent" rdfs:label="Torrent" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Torrent" rdfs:label="Torrent" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Something available on the Bittorrent peer-2-peer filesharing network</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -686,14 +701,14 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/ED2K" rdfs:label="ED2K" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/ED2K" rdfs:label="ED2K" vs:term_status="unstable" mo:level="1">
         <rdfs:comment>Something available on the E-Donkey peer-2-peer filesharing network</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/AudioFile" rdfs:label="audio file" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/AudioFile" rdfs:label="audio file" vs:term_status="unstable" mo:level="1">
         <rdfs:comment>An audio file, which may be available on a local file system or through http, ftp, etc.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -703,238 +718,76 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 <!-- Classes related with the Release Status of a frbr:Manifestation -->
 <!-- WARNING: what is released is the manifestation, neither work or expression -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/ReleaseStatus" rdfs:label="ReleaseStatus" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/ReleaseStatus" rdfs:label="ReleaseStatus" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Musical manifestation release status.</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
 
-<mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/promotion" dc:title="promotion">
+<mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/promotion" dc:title="promotion" mo:level="1">
 	<dc:description>A giveaway musical work or the expression of a musical work intended to promote an upcoming official musical work or the expression of a musical work.</dc:description>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </mo:ReleaseStatus>
 
 
-<mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/bootleg" dc:title="bootleg">
+<mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/bootleg" dc:title="bootleg" mo:level="1">
 	<dc:description>An unofficial/underground musical work or the expression of a musical work that was not sanctioned by the artist and/or the corporate body. </dc:description>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </mo:ReleaseStatus>
 
 
-<mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/official" dc:title="official">
+<mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/official" dc:title="official" mo:level="1">
 	<dc:description>Any musical work or the expression of a musical work officially sanctioned by the artist and/or their corporate body.</dc:description>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </mo:ReleaseStatus>
 
 
 <!-- Classes related with instrumentalisation -->
-<!-- WARNING: we should be more flexible here? -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Instrument" rdfs:label="Instrument" vs:term_status="stable">
-	<rdfs:comment>Any of various devices or contrivances that can be used to produce musical tones or sound.</rdfs:comment>
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Instrument" rdfs:label="Instrument" vs:term_status="stable" mo:level="2">
+	<rdfs:comment>
+		Any of various devices or contrivances that can be used to produce musical tones or sound.
+		
+		Any taxonomy can be used to subsume this concept. The default one is one extracted by Ivan Herman
+		from the Musicbrainz instrument taxonomy, conforming to SKOS. This concept holds a seeAlso link 
+		towards this taxonomy.
+	</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/String" rdfs:label="String" vs:term_status="stable">
-	<rdfs:comment>Stringed musical instrument, in which sound is produced by plucking, striking, or bowing taut strings.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Instrument"/>    
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Woodwind" rdfs:label="Woodwind" vs:term_status="stable">
-	<rdfs:comment>Wind musical instrument, in which sound is produced by the vibration of reeds in the mouthpiece, or by the passing of air across the mouthpiece.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Instrument"/>    
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Brass" rdfs:label="Brass" vs:term_status="stable">
-	<rdfs:comment>Wind musical instrument, that consists of a brass tube  blown by means of a cup-shaped or funnel-shaped mouthpiece.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Instrument"/>    
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Percussion" rdfs:label="Percussion" vs:term_status="stable">
-	<rdfs:comment>Musical instrument that produces sound by striking the body.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Instrument"/>    
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Keyboard" rdfs:label="Keyboard" vs:term_status="stable">
-	<rdfs:comment>Musical instrument that has a set of keys that consist of scale.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Instrument"/>    
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Digital" rdfs:label="Digital" vs:term_status="unstable">
-	<rdfs:comment>Musical instrument that use digital principles to express musical sequences.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Instrument"/>    
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<rdfs:seeAlso rdf:resource="http://purl.org/ontology/mo/mit#"/>
 </rdfs:Class>
 
 
 <!-- Classes related to genres -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Genre" rdfs:label="Genre" vs:term_status="stable">
-	<rdfs:comment>An expressive style of music.</rdfs:comment>
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/Genre" rdfs:label="Genre" vs:term_status="stable" mo:level="2">
+	<rdfs:comment>
+		An expressive style of music.
+		
+		Any taxonomy can be plug-in here. You can either define a genre by yourself, like this:
+
+		:mygenre a mo:Genre; dc:title "electro rock".
+
+		Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web
+		clients to access easily really detailed structured information about the genre you are refering to.
+	</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Classical" rdfs:label="Classical" vs:term_status="unstable">
-	<rdfs:comment>Classical music genre.
-    
-Traditional genre of music conforming to an established form and appealing to critical interest and developed musical taste</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Rock" rdfs:label="Rock" vs:term_status="unstable">
-	<rdfs:comment>Rock musical genre.
-    
-Genre of popular music originating in the 1950s; a blend of Black rhythm-and-blues with White country-and-western) "rock is a generic term for the range of styles that evolved out of rock'n'roll."</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Jazz" rdfs:label="Jazz" vs:term_status="unstable">
-	<rdfs:comment>Jazz musical genre.
-    
-Genre of popular music that originated in New Orleans around 1900 and developed through increasingly complex styles.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/World" rdfs:label="World" vs:term_status="unstable">
-	<rdfs:comment>World musical genre.
-    
-World music is a term that covers all music that is not part of mainstream popular music or classical music and has some kind of "ethnic" component. The connotation of the term is popular and folk music from the third world, European popular and folk music that uses influences from the third world, and traditional music especially but not only from the third world.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Hiphop" rdfs:label="Hiphop" vs:term_status="unstable">
-	<rdfs:comment>Hiphop musical genre.
-    
-Genre of African-American music of the 1980s and 1990s in which rhyming lyrics are chanted to a musical accompaniment.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Country" rdfs:label="Country" vs:term_status="unstable">
-	<rdfs:comment>Country musical genre.
-    
-Simple style of folk music heard mostly in the southern United States; usually played on stringed instruments</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Blues" rdfs:label="Blues" vs:term_status="unstable">
-	<rdfs:comment>Blues musical type.
-    
-Type of folksong that originated among Black Americans at the beginning of the 20th century; has a melancholy sound from repeated use of blue notes</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Electronica" rdfs:label="Electronica" vs:term_status="unstable">
-	<rdfs:comment>Electronica musical genre.
-    
-Covers a wide range of electronic or electronic-influenced music.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Gospel" rdfs:label="Gospel" vs:term_status="unstable">
-	<rdfs:comment>Gospel musical genre.
-    
-Folk music consisting of a genre of a cappella music originating with Black slaves in the United States and featuring call and response; influential on the development of other genres of popular music (especially soul)</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Funk" rdfs:label="Funk" vs:term_status="unstable">
-	<rdfs:comment>Funk musical genre.
-    
-Earthy type of jazz combining it with blues and soul; has a heavy bass line that accentuates the first beat in the bar</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Pop" rdfs:label="Pop" vs:term_status="unstable">
-	<rdfs:comment>Pop musical genre.
-    
-Music of general appeal to teenagers; a bland watered-down version of rock'n'roll with more rhythm and harmony and an emphasis on romantic love</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Melodic" rdfs:label="Melodic" vs:term_status="unstable">
-	<rdfs:comment>Melodic musical genre.
-    
-Term that covers various genres of non-classical music which are primarily characterised by the dominance of a single strong melody line. Rhythm, tempo and beat are subordinate to the melody line or tune, which is generally easily memorable, and followed without great difficulty. Melodic music is found in all parts of the world, overlapping many genres, and may be performed by a singer or orchestra, or a combination of the two.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
-
-
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Reggae" rdfs:label="Reggae" vs:term_status="unstable">
-	<rdfs:comment>Reggae musical genre.
-    
-Popular music originating in the West Indies; repetitive bass riffs and regular chords played on the off beat by a guitar.</rdfs:comment>
-	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Genre"/>      
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
 
 <!-- Small RDFS wrappers of the time/timeline/event ontology -->
 
 <!-- OWL TIME -->
-<rdfs:Class rdf:about="http://www.w3.org/2006/time#Interval" vs:term_status="stable">
+<rdfs:Class rdf:about="http://www.w3.org/2006/time#Interval" vs:term_status="stable" mo:level="2">
 	<rdfs:comment> A time interval (eg. "the year 1994")</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://www.w3.org/2006/time#Instant" vs:term_status="stable">
+<rdfs:Class rdf:about="http://www.w3.org/2006/time#Instant" vs:term_status="stable" mo:level="2">
 	<rdfs:comment> A time point (eg. "now":-) )</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -942,7 +795,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- C4DM TIMELINE, RDFS wrapper -->
 
-<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#TimeLine" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#TimeLine" vs:term_status="stable" mo:level="3">
 	<rdfs:comment> 
 		A time line -- a coherent "backbone" for addressing points and intervals.
 		We can consider the timeline backing an audio/video signal, the one
@@ -956,7 +809,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#PhysicalTimeLine" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#PhysicalTimeLine" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Well, the actual physical time as we know it. I may want to address "yesterday" on instances
 		of this class, or "the year 1789"...
@@ -966,7 +819,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<timeline:PhysicalTimeLine rdf:about="http://purl.org/NET/c4dm/timeline.owl#universaltimeline" dc:title="universal time line">
+<timeline:PhysicalTimeLine rdf:about="http://purl.org/NET/c4dm/timeline.owl#universaltimeline" dc:title="universal time line" mo:level="3">
 	<dc:description>
 		The "canonical" physical time-line, on which points/intervals are addressed through UTC.
 		(Remember: we do here the amalgam between timelines and coordinate systems, as we 
@@ -975,7 +828,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </timeline:PhysicalTimeLine>
 
-<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#RelativeTimeLine" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#RelativeTimeLine" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		A semi-infinite continuous timeline. Instances of RelativeTimeLine can
 		back audio/video signals, sounds. Such timelines can
@@ -986,7 +839,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#AbstractTimeLine" vs:term_status="unstable">
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#AbstractTimeLine" vs:term_status="unstable" mo:level="3">
 	<rdfs:comment>
 		Abstract time lines may be used as a backbone for Score, Works, ... 
 		This allows for TimeLine maps to relate works to a given performance (this note was played at this time).
@@ -999,7 +852,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Two time lines can be related, such as the one backing a continuous signal and
 		the one backing the digitized signal. This sort of relation is expressed through an instance
@@ -1012,7 +865,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#OriginMap" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#OriginMap" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		This time line map represents the relation between the physical timeline and a
 		continuous time line where the origin is at a given point on the physical timeline
@@ -1028,7 +881,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- C4DM EVENT -->
 
-<rdfs:Class rdf:about="http://purl.org/NET/c4dm/event.owl#Event" vs:term_status="stable">
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/event.owl#Event" vs:term_status="stable" mo:level="2">
 	<rdfs:comment> 
 		An event: a way of arbitrary classifying a space/time region.
 		An event has agents (active entities contributing to the event -- a performer, a composer, an engineer, ...),
@@ -1044,7 +897,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- FOAF -->
 
-<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Agent" vs:term_status="stable">
+<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Agent" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		An agent (person, group, software, etc.).
 	</rdfs:comment>
@@ -1060,7 +913,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Group" vs:term_status="stable">
+<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Group" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		A group of agents.
 	</rdfs:comment>
@@ -1068,7 +921,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
 </rdfs:Class>
 
-<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Organization" vs:term_status="stable">
+<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Organization" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		An organization.
 	</rdfs:comment>
@@ -1080,7 +933,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- Wrapping some FOAF properties -->
 
-<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/maker" vs:term_status="stable">
+<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/maker" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Relates a manifestation to an agent who contributed to create it.
 		This property might be used for weak assertion of such a relationship. In case we want
@@ -1103,7 +956,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/made" vs:term_status="stable">
+<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/made" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Relates an agent to a manifestation he contributed to create.
 	</rdfs:comment>
@@ -1122,7 +975,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/member" vs:term_status="stable">
+<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/member" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Indicates a member of a Group
 	</rdfs:comment>
@@ -1134,7 +987,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- Time -->
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#onTimeLine" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#onTimeLine" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Links an instant or an interval to the timeline it is defined on (eg. "1970 is defined on the
 		time line universaltimeline", or "the interval between 0 and 2 minutes is defined on the time
@@ -1154,7 +1007,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#domainTimeLine" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#domainTimeLine" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		This property allows to associate a TimeLineMap with the first TimeLine it maps
 	</rdfs:comment>
@@ -1165,7 +1018,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#rangeTimeLine" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#rangeTimeLine" vs:term_status="stable" mo:level="3">
         <rdfs:comment>
                 This property allows to associate a TimeLineMap with the second TimeLine it maps
         </rdfs:comment>
@@ -1177,7 +1030,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#originAt" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#originAt" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		This property specifies, for an OriginMap, the time point on the physical time line
 		0 on a RelativeTimeLine is equivalent to.
@@ -1189,7 +1042,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#beginsAtDateTime" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#beginsAtDateTime" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Links an interval on a physical timeline to its actual start point,
 		expressed using xsd:dateTime
@@ -1200,7 +1053,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#beginsAtDuration" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#beginsAtDuration" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Links an interval on a semi-infinite continuous time line to its
 		start point, addressed using xsd:duration (duration between 0 and the
@@ -1212,7 +1065,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#durationXSD" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#durationXSD" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Links an interval to its duration using xsd:duration
 	</rdfs:comment>
@@ -1224,7 +1077,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 <!-- Some of Allen's relationships -->
-<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalDuring" vs:term_status="stable">
+<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalDuring" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		One of Allen's relations. Specifies that an interval occurs during an other.
 		It is really handy to express things like "it happened the 15th of august, but I do not remember exactly when".
@@ -1235,7 +1088,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalMeets" vs:term_status="stable">
+<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalMeets" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 One of Allen's relations. Specifies that an interval meets an other one.
         </rdfs:comment>
@@ -1245,7 +1098,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalBefore" vs:term_status="stable">
+<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalBefore" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 One of Allen's relations. Specifies that an interval is before an other.
         </rdfs:comment>
@@ -1258,7 +1111,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#atDateTime" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#atDateTime" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Place a time point on the universal time line by using xsd:dateTime.
 	</rdfs:comment>
@@ -1269,7 +1122,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#atDuration" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#atDuration" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Place a time point on an abstract time line by expressing its distance to
 		the point 0, through xsd:duration (example: this instant is at 2s after 0 --> T2S)
@@ -1280,9 +1133,14 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#time" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#time" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
-		Associate an event with a time interval or a time instant
+		Associate an event with a time interval or a time instant.
+
+		The associated time object contains the actual temporal extent of the event.
+
+		For example, linking an event to the 9th of August, 2007, will specify that this event 
+		happened during this day.
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
@@ -1290,9 +1148,14 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#place" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#place" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associate an event with a place.
+
+		The associated geographic object contains the actual geographic extent of the event.
+
+		For example, linking an event to Paris, France, will specify that this event happened somewhere
+		within this geographical object.
         </rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
@@ -1300,7 +1163,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
         <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasSubEvent" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasSubEvent" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Allows to link an event to a sub-event. A sub-event might be an event split by time,
 		space, agents, factors... This property can be used to express things such as "during
@@ -1316,7 +1179,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasAgent" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasAgent" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates an event to an active agent.
 		Example: an engineer, a performer, a composer...
@@ -1331,7 +1194,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#isAgentIn" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#isAgentIn" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates an agent to an event.
         </rdfs:comment>
@@ -1344,7 +1207,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
         <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasFactor" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasFactor" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Associates an event to a passive factor of it.
 		Example: a flute, a musical score, a musical work...
@@ -1358,7 +1221,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#isFactorOf" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#isFactorOf" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates a factor to an event
         </rdfs:comment>
@@ -1372,7 +1235,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasProduct" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasProduct" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates an event to something it produces.
 		Example: a sound, a score, a musical work...
@@ -1386,7 +1249,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
         <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#producedIn" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#producedIn" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates the product of an event to the event itself
         </rdfs:comment>
@@ -1401,7 +1264,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- Some sub-properties of these core event-related properties, directly linked to MO concepts -->
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/composer" rdfs:label="composer" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/composer" rdfs:label="composer" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Associates a composition event to the actual composer. For example,
 		this property could link the event corresponding to the composition of the
@@ -1414,7 +1277,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_work" rdfs:label="produced work" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_work" rdfs:label="produced work" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates a composition event to the produced MusicalWork. For example,
                 this property could link the event corresponding to the composition of the
@@ -1432,7 +1295,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/produced_work"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/performed_in" rdfs:label="performed in" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/performed_in" rdfs:label="performed in" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>
 		Associates a Musical Work or an Score to Performances in which they were
 		a factor. For example, I might use this property in order to 
@@ -1458,7 +1321,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/performed_in"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/composed_in" rdfs:label="composed in" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/composed_in" rdfs:label="composed in" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>
 		Associates a MusicalWork to the Composition event pertaining
 		to its creation. For example, I might use this property to associate
@@ -1477,7 +1340,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/composed_in"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/performance_of" rdfs:label="performance of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/performance_of" rdfs:label="performance of" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>
 		Associates a Performance to a musical work or an arrangement that is being used as a factor in it.
 		For example, I might use this property to attach the Magic Flute musical work to 
@@ -1502,7 +1365,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/performance_of"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_sound" rdfs:label="produced sound" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_sound" rdfs:label="produced sound" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates a Performance to a physical Sound that is being produced by it.
         </rdfs:comment>
@@ -1517,7 +1380,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/produced_sound"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/recorded_in" rdfs:label="recorded in" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/recorded_in" rdfs:label="recorded in" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>
         	Associates a physical Sound to a Recording event where it is being used 
 		in order to produce a signal. For example, I might use this property to 
@@ -1536,7 +1399,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/recorded_in"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/recording_of" rdfs:label="recorded sound" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/recording_of" rdfs:label="recorded sound" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
         	Associates a Recording event to a physical Sound being recorded.
                 For example, I might use this property to
@@ -1555,7 +1418,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/recording_of"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_signal" rdfs:label="produced signal" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_signal" rdfs:label="produced signal" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates a Recording to the outputted signal.
         </rdfs:comment>
@@ -1571,7 +1434,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_score" rdfs:label="produced score" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/produced_score" rdfs:label="produced score" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>
 		Associates an arrangement event to a score product (score here does not refer to a published score, but more
 		an abstract arrangement of a particular work).
@@ -1583,7 +1446,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/arranged_in" rdfs:label="arranged in" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/arranged_in" rdfs:label="arranged in" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>
 		Associates a work to an arrangement event where it was arranged
 	</rdfs:comment>
@@ -1595,7 +1458,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/arrangement_of" rdfs:label="arrangement of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/arrangement_of" rdfs:label="arrangement of" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>
                 Associates an arrangement event to a work
         </rdfs:comment>
@@ -1608,7 +1471,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/genre" rdfs:label="genre" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/genre" rdfs:label="genre" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Associates an event (like a performance or a recording) to a particular musical genre.
 		Further version of this property may also include works and scores in the domain.
@@ -1630,7 +1493,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- Shortcut property, allowing to bypass the whole recording workflow and to directly link a Performance to a Signal -->
  
-<rdf:Property rdf:about="http://purl.org/ontology/mo/recordedAs" rdfs:label="recorded as" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/recordedAs" rdfs:label="recorded as" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		This is a shortcut property, allowing to bypass all the Sound/Recording steps. This property
 		allows to directly link a Performance to the recorded Signal. This is recommended for "normal"
@@ -1648,7 +1511,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/records" rdfs:label="records" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/records" rdfs:label="records" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>
 		This is the inverse of the shortcut property recordedAs, allowing to relate directly a performance
 		to a signal.
@@ -1663,7 +1526,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- Some signals-related properties, this comes from the old MU ontology, btw -->
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/time" rdfs:label="time" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/time" rdfs:label="time" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Associates a Signal to a time object - its actual domain
 	</rdfs:comment>
@@ -1678,7 +1541,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/time"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/sampled_version_of" rdfs:label="sampled version of" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/sampled_version_of" rdfs:label="sampled version of" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Associates a digital signal with the analog version of it
 	</rdfs:comment>
@@ -1694,7 +1557,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/sampled_version_of"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/sampled_version" vs:term_status="stable" rdfs:label="sampled version">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/sampled_version" vs:term_status="stable" rdfs:label="sampled version" mo:level="2">
 	<rdfs:comment>
 		Associates an analog signal with a sampled version of it
 	</rdfs:comment>
@@ -1705,7 +1568,8 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/channels" vs:term_status="stable">
+
+<rdf:Property rdf:about="http://purl.org/ontology/mo/channels" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Associates a signal to the number of channels it holds (mono --> 1, stereo --> 2). Range is xsd:int.
 	</rdfs:comment>
@@ -1715,7 +1579,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/sampleRate" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/sampleRate" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Associates a digital signal to its sample rate. It might be easier to express it this way instead of
 		defining a timeline map:-) Range is xsd:float.
@@ -1726,7 +1590,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/bitsPerSample" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/bitsPerSample" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Associates a digital signal to the number a bits used to encode one sample. Range is xsd:int.
 	</rdfs:comment>
@@ -1736,7 +1600,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/image" rdfs:label="image" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/image" rdfs:label="image" vs:term_status="stable" mo:level="1">
    	<rdfs:comment>Indicates a pictorial image (JPEG, GIF, PNG, Etc.) of a musical work, the expression of a musical work, the manifestation of a work or the examplar of a manifestation.</rdfs:comment>
     <rdfs:domain> 
       <owl:Class>
@@ -1755,24 +1619,36 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 
 <!-- WARNING: should be used with dc:format -->
-<rdf:Property rdf:about="http://purl.org/ontology/mo/encoding" rdfs:label="encoding" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/encoding" rdfs:label="encoding" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Method used to convert analog electronic signals into digital format such as "MP3 CBR @ 128kbps", "OGG @ 160kbps", "FLAC", etc.  </rdfs:comment>
-	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
+	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/AudioFile"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 
+<rdf:Property rdf:about="http://purl.org/ontology/mo/encodes" rdfs:label="encodes" vs:term_status="unstable" mo:level="1">
+	<rdfs:comment>
+		Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
+
+		This is usually a lower-resolution version of the master signal (issued from a Recording event).
+	</rdfs:comment>
+	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
+	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+</rdf:Property>
+
 <!-- More general property, replacing the old "records" one -->
-<rdf:Property rdf:about="http://purl.org/ontology/mo/hasManifestation" rdfs:label="has manifestation" vs:term_status="unstable">
-	<rdfs:comment>Links a MusicalExpression to its manifestations</rdfs:comment>
+<rdf:Property rdf:about="http://purl.org/ontology/mo/hasManifestation" rdfs:label="has manifestation" vs:term_status="unstable" mo:level="1">
+	<rdfs:comment>Links a MusicalExpression to its manifestations, subproperty of frbr:embodiment</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalExpression"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/publishedAs" rdfs:label="published as" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/publishedAs" rdfs:label="published as" vs:term_status="stable" mo:level="1">
         <rdfs:comment>
 		Links a signal or a score to its manifestations - this is a subproperty of frbr:embodiment (linking
 		an Expression to a Manifestation)
@@ -1804,7 +1680,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
         </owl:inverseOf>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/publicationOf" rdfs:label="publication of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/publicationOf" rdfs:label="publication of" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Link a particular manifestation to the related signal, score, libretto, or lyrics</rdfs:comment>
 	<rdfs:range>
 		 <owl:Class>
@@ -1833,7 +1709,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/eventHomePage" rdfs:label="event homepage" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/eventHomePage" rdfs:label="event homepage" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>Links a particular event to a web page</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
@@ -1849,7 +1725,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	In musicbrainz, this is associated to a track.
 	But here, a track is a particular track on a particular album
 	-->
-<rdf:Property rdf:about="http://purl.org/ontology/mo/trmid" rdfs:label="trmid" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/trmid" rdfs:label="trmid" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Indicates the TRMID of a track.
 		TRM IDs are MusicBrainz' old AudioFingerprinting system. 
@@ -1861,11 +1737,17 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 <!-- WARNING: same thing -->
-<rdf:Property rdf:about="http://purl.org/ontology/mo/puid" rdfs:label="puid" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/puid" rdfs:label="puid" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
-		Indicates the PUID of a track.
+		Link a signal to the PUIDs associated with it, that is, PUID computed from MusicalItems (mo:AudioFile) 
+		derived from this signal.
+
 		PUIDs (Portable Unique IDentifier) are the IDs used in the 
 		proprietary MusicDNS AudioFingerprinting system which is operated by MusicIP.
+
+		Using PUIDs, one (with some luck) can identify the Signal object associated with a particular audio file, therefore allowing
+		to access further information (on which release this track is featured? etc.). Using some more metadata one can identify
+		the particular Track corresponding to the audio file (a track on a particular release).
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -1875,7 +1757,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!--FEATURES-->
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/bpm" rdfs:label="bpm" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/bpm" rdfs:label="bpm" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Indicates the BPM of a MusicalWork or a particular Performance 
 		Beats per minute: the pace of music measured by the number of beats occurring in 60 seconds.
@@ -1893,7 +1775,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/tempo" rdfs:label="tempo" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/tempo" rdfs:label="tempo" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Rate of speed or pace of music. Tempo markings are traditionally given in Italian; 
 		common markings include: grave (solemn; very, very slow); largo (broad; very slow); 
@@ -1913,7 +1795,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/key" rdfs:label="key" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/key" rdfs:label="key" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Indicated the key used by the musicians during a performance, or the key of a MusicalWork.
 		Any of 24 major or minor diatonic scales that provide the tonal framework for a piece of music.
@@ -1931,7 +1813,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/opus" rdfs:label="opus" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/opus" rdfs:label="opus" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Used to define a creative work, especially a musical composition numbered to designate the order of a composer's works.
 	</rdfs:comment>
@@ -1943,7 +1825,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- Properties related with Tracks -->
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/track_number" rdfs:label="track number" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/track_number" rdfs:label="track number" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Indicates the position of a track on a record medium (a CD, etc.).</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Track"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -1955,7 +1837,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/track_number"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/track" rdfs:label="track" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/track" rdfs:label="track" vs:term_status="stable" mo:level="1">
         <rdfs:comment>Indicates a part of a musical manifestation - in this particular case, a track.</rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Record"/>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Track"/>
@@ -1970,7 +1852,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 
 <!-- Properties related to foaf:Agent -->
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/similar_to" rdfs:label="similar_to" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/similar_to" rdfs:label="similar_to" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>
     		A similarity relationships between two objects (so far, either an agent, a signal or a genre, but
@@ -2007,7 +1889,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 <!-- Properties related to external web pages -->
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/wikipedia" rdfs:label="wikipedia" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/wikipedia" rdfs:label="wikipedia" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>
 		Used to link an work, an expression of a work, a manifestation of a work, 
@@ -2033,7 +1915,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/myspace" rdfs:label="myspace" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/myspace" rdfs:label="myspace" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a person to its corresponding MySpace page.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
@@ -2043,7 +1925,7 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/musicmoz" rdfs:label="musicmoz" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/musicmoz" rdfs:label="musicmoz" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link an artist, a musical work or the expression of a musical work to its corresponding MusicMoz page.</rdfs:comment>
     <rdfs:domain> 
@@ -2062,10 +1944,10 @@ Popular music originating in the West Indies; repetitive bass riffs and regular 
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/musicbrainz"
-rdfs:label="musicbrainz" vs:term_status="stable">
+rdfs:label="musicbrainz" vs:term_status="stable" mo:level="1">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:comment>
-
+		Linking an agent, a track or a record to its corresponding Musicbrainz page.
         </rdfs:comment>
     <rdfs:domain>
       <owl:Class>
@@ -2082,7 +1964,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property> 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/discogs" rdfs:label="discogs" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/discogs" rdfs:label="discogs" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a musical work or the expression of a musical work, an artist or a corporate body to to its corresponding Discogs page.</rdfs:comment>
     <rdfs:domain> 
@@ -2101,7 +1983,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/download" rdfs:label="download" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/download" rdfs:label="download" vs:term_status="stable" mo:level="1">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:comment>
                 This property can be used to link from a person to the website where they make their works available, or from
@@ -2133,7 +2015,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/preview_download" rdfs:label="preview download" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/preview_download" rdfs:label="preview download" vs:term_status="stable" mo:level="1">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:comment>
                 This property can be used to link from a person to the website where they make previews of their works available, or from
@@ -2159,7 +2041,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/paid_download" rdfs:label="paid download" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/paid_download" rdfs:label="paid download" vs:term_status="stable" mo:level="1">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:comment>
                 Provide a link from an artist to a web page where all of that artist's musical work is available for some money,
@@ -2185,7 +2067,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/free_download" rdfs:label="free download" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/free_download" rdfs:label="free download" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>
 		This property can be used to link from a person to the website where they make their works available, or from
@@ -2217,7 +2099,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/olga" rdfs:label="olga" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/olga" rdfs:label="olga" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a track to a tabulature file for track in the On-Line Guitar Archive.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Track"/>	
@@ -2227,7 +2109,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/fanpage" rdfs:label="fanpage" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/fanpage" rdfs:label="fanpage" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link an artist to a fan-created webpage devoted to that artist.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
@@ -2236,7 +2118,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/onlinecommunity" rdfs:label="onlinecommunity" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/onlinecommunity" rdfs:label="onlinecommunity" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a person with an online community web page like a blog, a wiki, a forum, a livejournal page, Etc.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
@@ -2246,7 +2128,7 @@ rdfs:label="musicbrainz" vs:term_status="stable">
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/licence" rdfs:label="licence" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/licence" rdfs:label="licence" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a work or the expression of a work to the license under which they can be manipulated (downloaded, modified, etc). 
     
@@ -2266,7 +2148,7 @@ This is usually used to link to a Creative Commons licence.</rdfs:comment>
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/review" rdfs:label="review" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/review" rdfs:label="review" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a work or the expression of a work to a review. 
     
@@ -2286,7 +2168,7 @@ The review does not have to be open content, as long as it is accessible to the 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/amazon_asin" rdfs:label="amazon_asin" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/amazon_asin" rdfs:label="amazon_asin" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a work or the expression of a work to its corresponding Amazon ASINs page.</rdfs:comment>
     <rdfs:domain> 
@@ -2304,7 +2186,7 @@ The review does not have to be open content, as long as it is accessible to the 
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/isrc" rdfs:label="isrc" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/isrc" rdfs:label="isrc" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 	The ISRC (International Standard Recording Code) is the international identification system for sound recordings and music videorecordings. 
 	Each ISRC is a unique and permanent identifier for a specific recording which can be permanently encoded into a product as its digital fingerprint. 
@@ -2317,7 +2199,7 @@ The review does not have to be open content, as long as it is accessible to the 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/biography" rdfs:label="biography" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/biography" rdfs:label="biography" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link an artist to their online biography.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
@@ -2327,7 +2209,7 @@ The review does not have to be open content, as long as it is accessible to the 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/discography" rdfs:label="discography" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/discography" rdfs:label="discography" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to links an artist to an online discography of their musical works. The discography should provide a summary of each released musical work of the artist.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
@@ -2337,7 +2219,7 @@ The review does not have to be open content, as long as it is accessible to the 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/mailorder" rdfs:label="mailorder" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/mailorder" rdfs:label="mailorder" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link a musical work or the expression of a musical work to a website where people can buy a copy of the musical manifestation.</rdfs:comment>
     <rdfs:domain> 
@@ -2355,7 +2237,7 @@ The review does not have to be open content, as long as it is accessible to the 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/imdb" rdfs:label="imdb" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/imdb" rdfs:label="imdb" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to link an artist, a musical work or the expression of a musical work to their equivalent page on IMDb, the InternetMovieDatabase.</rdfs:comment>
     <rdfs:domain> 
@@ -2375,7 +2257,7 @@ The review does not have to be open content, as long as it is accessible to the 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/remixed" rdfs:label="remixed" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/remixed" rdfs:label="remixed" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate an artist who remixed a musical work or the expression of a musical work. 
     
@@ -2389,7 +2271,7 @@ This involves taking just one other musical work and using audio editing to make
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/remixer" rdfs:label="remixer" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/remixer" rdfs:label="remixer" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate a musical work or the expression of a musical work to an artist who remixed it. 
     
@@ -2403,7 +2285,7 @@ This involves taking just one other musical work and using audio editing to make
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/produced" rdfs:label="produced" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/produced" rdfs:label="produced" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate an person or a group of person who produced the manifestation of a work.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
@@ -2415,7 +2297,7 @@ This involves taking just one other musical work and using audio editing to make
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/producer" rdfs:label="producer" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/producer" rdfs:label="producer" vs:term_status="stable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate the manifestation of a work to a person or a group of person who produced it.</rdfs:comment>
 	<owl:inverseOf>
@@ -2426,7 +2308,7 @@ This involves taking just one other musical work and using audio editing to make
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/member_of" rdfs:label="member_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/member_of" rdfs:label="member_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Inverse of the foaf:member property</rdfs:comment>
 	<owl:inverseOf>
@@ -2437,9 +2319,9 @@ This involves taking just one other musical work and using audio editing to make
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/sampled" rdfs:label="sampled" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/sampled" rdfs:label="sampled" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:comment>Used to relate an artist who sampled the manifestation of a musical work.</rdfs:comment>
+	<rdfs:comment>Used to relate an artist who sampled a Signal.</rdfs:comment>
 	<owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/sampler"/>
         </owl:inverseOf>
@@ -2449,7 +2331,7 @@ This involves taking just one other musical work and using audio editing to make
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/sampler" rdfs:label="sampler" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/sampler" rdfs:label="sampler" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate the manifestation of a musical work to an artist who sampled it.</rdfs:comment>
 	<owl:inverseOf>
@@ -2460,7 +2342,7 @@ This involves taking just one other musical work and using audio editing to make
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/contains_sample_from" rdfs:label="contains_sample_from" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/contains_sample_from" rdfs:label="contains_sample_from" vs:term_status="unstable" mo:level="1">
         <rdfs:comment>
 		Relates a signal to another signal, which has been sampled.
         </rdfs:comment>
@@ -2469,7 +2351,7 @@ This involves taking just one other musical work and using audio editing to make
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property> 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/compiled" rdfs:label="compiled" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/compiled" rdfs:label="compiled" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate an person or a group of person who compiled the manifestation of a musical work.</rdfs:comment>
 	<owl:inverseOf>
@@ -2481,7 +2363,7 @@ This involves taking just one other musical work and using audio editing to make
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/compiler" rdfs:label="compiler" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/compiler" rdfs:label="compiler" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate the manifestation of a musical work to a person or a group of person who compiled it.</rdfs:comment>
 	<owl:inverseOf>
@@ -2493,7 +2375,7 @@ This involves taking just one other musical work and using audio editing to make
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/djmixed" rdfs:label="djmixed" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/djmixed" rdfs:label="djmixed" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate an artist who djmixed a musical work or the expression of a musical work. 
     
@@ -2507,7 +2389,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/djmixed_by" rdfs:label="djmixed_by" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/djmixed_by" rdfs:label="djmixed_by" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate a work or the expression of a work to an artist who djmixed it. 
     
@@ -2521,7 +2403,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/published" rdfs:label="published" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/published" rdfs:label="published" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate an person or a group of person who published the manifestation of a work.</rdfs:comment>
 	<owl:inverseOf>
@@ -2533,7 +2415,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/publisher" rdfs:label="publisher" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/publisher" rdfs:label="publisher" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate a musical manifestation to a person or a group of person who published it.</rdfs:comment>
 	<owl:inverseOf>
@@ -2545,7 +2427,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/publishingLocation"
-rdfs:label="publishingLocation" vs:term_status="stable">
+rdfs:label="publishingLocation" vs:term_status="stable" mo:level="1">
         <rdfs:comment>
 		Relates a musical manifestation to its publication location.
         </rdfs:comment>
@@ -2554,7 +2436,7 @@ rdfs:label="publishingLocation" vs:term_status="stable">
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property> 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/supporting_musician" rdfs:label="supporting_musician" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/supporting_musician" rdfs:label="supporting_musician" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate an artist doing long-time instrumental or vocal support for another artist.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
@@ -2562,7 +2444,7 @@ rdfs:label="publishingLocation" vs:term_status="stable">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/collaborated_with" rdfs:label="collaborated_with" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/collaborated_with" rdfs:label="collaborated_with" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate two collaborating people on a work.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
@@ -2572,7 +2454,7 @@ rdfs:label="publishingLocation" vs:term_status="stable">
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/remix_of" rdfs:label="remix_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/remix_of" rdfs:label="remix_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Used to relate the remix of a musical work in a substantially altered version produced by mixing together individual tracks or segments of an original musical source work.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/> 
@@ -2582,7 +2464,7 @@ rdfs:label="publishingLocation" vs:term_status="stable">
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/medley_of" rdfs:label="medley_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/medley_of" rdfs:label="medley_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Indicates that a musical expression is a medley of several other musical expressions. 
     
@@ -2593,16 +2475,16 @@ This means that the orignial musical expression were rearranged to create a new 
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/compilation_of" rdfs:label="compilation_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/compilation_of" rdfs:label="compilation_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-	<rdfs:comment>Indicates that a musical manifestation is a compilation of several other musical manifestations.</rdfs:comment>
+	<rdfs:comment>Indicates that a musical manifestation is a compilation of several Signals.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/><!--or signal?-->
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>     
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/djmix_of" rdfs:label="djmix_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/djmix_of" rdfs:label="djmix_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Indicates that all (or most of) the tracks of a musical work or the expression of a musical work were mixed together from all (or most of) the tracks from another musical work or the expression of a musical work to form a so called DJ-Mix. 
     
@@ -2613,7 +2495,7 @@ The tracks might have been altered by pitching (so that the tempo of one track m
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/remaster_of" rdfs:label="remaster_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/remaster_of" rdfs:label="remaster_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>This relates two musical work or the expression of a musical work, where one is a remaster of the other. 
     
@@ -2624,7 +2506,7 @@ A remaster is a new version made for release from source recordings that were ea
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/other_release_of" rdfs:label="other_release_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/other_release_of" rdfs:label="other_release_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Indicates that two musical manifestations are essentially the same.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
@@ -2634,7 +2516,7 @@ A remaster is a new version made for release from source recordings that were ea
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/mashup_of" rdfs:label="mashup_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/mashup_of" rdfs:label="mashup_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Indicates that musical works or the expressions of a musical work were mashed up on this album or track. 
     
@@ -2645,7 +2527,7 @@ This means that two musical works or the expressions of a musical work by differ
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/translation_of" rdfs:label="translation_of" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/translation_of" rdfs:label="translation_of" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Indicates that a work or the expression of a work has translated or transliterated into another expression of a work.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/> 
@@ -2654,7 +2536,7 @@ This means that two musical works or the expressions of a musical work by differ
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/tribute_to" rdfs:label="tribute_to" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/tribute_to" rdfs:label="tribute_to" vs:term_status="unstable" mo:level="1">
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:comment>Indicates a musical work or the expression of a musical work that is a tribute to an artist - normally consisting of music being composed by the artist but performed by other artists. </rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/> 
@@ -2664,28 +2546,28 @@ This means that two musical works or the expressions of a musical work by differ
 
 <!-- Properties related to frbr:Item -->
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/possess_item" rdfs:label="possess_item" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/possess_item" rdfs:label="possess_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization possessing an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/want_item" rdfs:label="want_item" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/want_item" rdfs:label="want_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization wanting an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/sell_item" rdfs:label="sell_item" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/sell_item" rdfs:label="sell_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization selling an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/exchange_item" rdfs:label="exchange_item" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/exchange_item" rdfs:label="exchange_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization exchanging an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
@@ -2696,14 +2578,14 @@ This means that two musical works or the expressions of a musical work by differ
 <!-- Properties related with mo:Movement -->
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/has_movement" rdfs:label="has_movement" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/has_movement" rdfs:label="has_movement" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>Indicates that a musical work has movements</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Movement"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/movementNum" rdfs:label="movementNum" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/movementNum" rdfs:label="movementNum" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>Indicates the position of a movement in a musical work.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Movement"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -2712,7 +2594,7 @@ This means that two musical works or the expressions of a musical work by differ
 
 <!-- Sub-properties of hasAgent, we need to define some for sub-events that may have more than 1 non-equivalent agents-->
 <!-- Performance-related -->
-<rdf:Property rdf:about="http://purl.org/ontology/mo/performer" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/performer" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>Relates a performance to the performers involved</rdfs:comment>
 	<owl:inverseOf>
 		<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/performed"/>
@@ -2723,7 +2605,7 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/performed" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/performed" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>Relates agents to the performances they were performing in</rdfs:comment>
 	<owl:inverseOf>
 		<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/performer"/>
@@ -2735,7 +2617,7 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/conductor" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/conductor" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Relates a performance to the conductor involved</rdfs:comment>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/conducted"/>
@@ -2746,7 +2628,7 @@ This means that two musical works or the expressions of a musical work by differ
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/conducted" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/conducted" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>Relates agents to the performances they were conducting</rdfs:comment>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/conductor"/>
@@ -2758,7 +2640,7 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/listener" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/listener" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Relates a performance to the listener involved</rdfs:comment>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/listened"/>
@@ -2769,7 +2651,7 @@ This means that two musical works or the expressions of a musical work by differ
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/listened" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/listened" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>Relates agents to the performances they were listening in</rdfs:comment>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/listener"/>
@@ -2781,7 +2663,7 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/instrument" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/instrument" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>Relates a performance to a musical instrument involved</rdfs:comment>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
@@ -2790,7 +2672,7 @@ This means that two musical works or the expressions of a musical work by differ
 </rdf:Property>
 
 <!-- Relates to both Performance and Recording -->
-<rdf:Property rdf:about="http://purl.org/ontology/mo/engineer" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/engineer" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Relates a performance or a recording to the engineer involved</rdfs:comment>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/engineered"/>
@@ -2808,7 +2690,7 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/engineered" vs:term_status="unstable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/engineered" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>Relates agents to the performances/recordings they were engineering in</rdfs:comment>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/engineer"/>
@@ -2829,7 +2711,7 @@ This means that two musical works or the expressions of a musical work by differ
 
 <!-- Related to release type and status for musical manifestations, and musical items -->
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/releaseType" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/releaseType" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Relates a musical manifestation to its release type (interview, spoken word, album, ...)
 	</rdfs:comment>
@@ -2838,7 +2720,7 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/releaseStatus" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/releaseStatus" vs:term_status="stable" mo:level="1">
         <rdfs:comment>
                 Relates a musical manifestation to its release status (bootleg, ...)
         </rdfs:comment>
@@ -2847,7 +2729,7 @@ This means that two musical works or the expressions of a musical work by differ
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/availableAs" vs:term_status="stable">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/availableAs" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Relates a musical manifestation to a musical item (this album, and my particular cd). By using
 		this property, there is no assumption on wether the full content is available on the linked item.
@@ -2864,7 +2746,7 @@ This means that two musical works or the expressions of a musical work by differ
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/item" vs:term_status="testing">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/item" vs:term_status="testing"  mo:level="1">
         <rdfs:comment>
                 Relates a musical manifestation to a musical item (this album, and my particular cd) holding the
 		entire manifestation, and not just a part of it.
@@ -2875,7 +2757,7 @@ This means that two musical works or the expressions of a musical work by differ
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/preview" vs:term_status="testing">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/preview" vs:term_status="testing" mo:level="1">
         <rdfs:comment>
                 Relates a musical manifestation to a musical item (this album, and my particular cd), which holds
 		a preview of the manifestation (eg. one track for an album, or a snippet for a track)

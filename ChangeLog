@@ -16,7 +16,12 @@ Version 1.2 (july 2007)
  * ADDED: wrapper for foaf:maker, foaf:made, foaf:Agent, foaf:Person,
  foaf:Group, foaf:member
  * ADDED: mo:isrc (international standard recording code)
+ * ADDED: mo:encodes (musical item --> signal), allowing to associate, for
+ example, an item to a lower-resolution version of the master signal (issued
+ from a Recording event)
  * ADDED: mo:genre, subproperty of event:hasFactor
+ * ADDED: mo:level, an annotation property to specify wether a term belongs to
+ level 1, 2 or 3
  * ADDED: mo:sampled_version, inverse of sampled_version_of
  * ADDED: produced_score (Arrangement --> Score)
  * MODIFIED: mo:usesSound to mo:recording_of (still a owl:sameAs statement between these two for backward compatibility sake)
@@ -37,11 +42,16 @@ Version 1.2 (july 2007)
  * MODIFIED: changed comments and domain of freedownload and paiddownload
  * MODIFIED: changed comments on mo:MusicalWork
  * MODIFIED: changed comments on availableAs
+ * MODIFIED: mo:encoding has MusicalItem as a domain
  * DELETED: mo:creatorOf - use foaf:made instead
  * DELETED: mo:pitch and mo:timbre - this should go to the audio features
  ontology
  * DELETED: mo:stream_url (it should be the identifier of the resource (eg.
  rtsp://...)
+ * DELETED: sub concepts of mo:Instrument - instead, a link to Ivan Herman
+ musical instrument SKOS taxonomy
+ * DELETED: sub concepts of mo:Genre - instead a more proper documentation of
+ this concept
 
 =========================
 Version 1.11 (March 2007)
