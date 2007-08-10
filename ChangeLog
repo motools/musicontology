@@ -38,6 +38,17 @@ Version 1.2 (july 2007)
  * MODIFIED: mo:sampledVersionOf to mo:sampled_version_of (same)
  * MODIFIED: mo:has_track to mo:track (same)
  * MODIFIED: mo:trackNum to  mo:track_number (same)
+ * MODIFIED: mo:releaseType to mo:release_type (same)
+ * MODIFIED: mo:releaseStatus to mo:release_status (same)
+ * MODIFIED: mo:eventHomePage to mo:event_homepage (same)
+ * MODIFIED: mo:hasManifestation to mo:manifestation (same)
+ * MODIFIED: mo:publishedAs to mo:published_as (same)
+ * MODIFIED: mo:movementNum to mo:movement_number (same)
+ * MODIFIED: mo:publicationOf to mo:publication_of (same)
+ * MODIFIED: mo:publishingLocation to mo:publishing_location (same)
+ * MODIFIED: mo:sampleRate to mo:sample_rate (same)
+ * MODIFIED: mo:recordedAs to mo:recorded_as (same)
+ * MODIFIED: mo:availableAs to mo:available_as (same)
  * MODIFIED: mo:image subproperty of foaf:depiction
  * MODIFIED: changed comments and domain of freedownload and paiddownload
  * MODIFIED: changed comments on mo:MusicalWork
