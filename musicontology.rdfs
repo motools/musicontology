@@ -621,7 +621,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dat" rdfs:label="Dat" vs:term_status="unstable" mo:level="1">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/DAT" rdfs:label="DAT" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Data Audio Tape used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -629,7 +629,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dcc" rdfs:label="Dcc" vs:term_status="unstable" mo:level="1">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/DCC" rdfs:label="DCC" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Digital Compact Cassette used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -637,7 +637,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Cd" rdfs:label="Cd" vs:term_status="unstable" mo:level="1">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/CD" rdfs:label="CD" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -645,7 +645,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Md" rdfs:label="Md" vs:term_status="unstable" mo:level="1">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MD" rdfs:label="MD" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Mini Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -653,7 +653,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Dvda" rdfs:label="Dvda" vs:term_status="unstable" mo:level="1">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/DVDA" rdfs:label="DVDA" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>DVD-Audio used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -661,7 +661,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Sacd" rdfs:label="Sacd" vs:term_status="unstable" mo:level="1">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/SACD" rdfs:label="SACD" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Super Audio Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -677,7 +677,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdfs:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Magnetictape" rdfs:label="Magnetictape" vs:term_status="unstable" mo:level="1">
+<rdfs:Class rdf:about="http://purl.org/ontology/mo/MagneticTape" rdfs:label="MagneticTape" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Magnetic analogue tape used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
