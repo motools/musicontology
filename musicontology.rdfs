@@ -2434,7 +2434,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/publisher"/>
         </owl:inverseOf>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-    <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicManifestation"/>
+    <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -2445,7 +2445,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
 	<owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/published"/>
         </owl:inverseOf>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicManifestation"/>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
     <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
