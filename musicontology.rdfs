@@ -320,7 +320,7 @@ particular time').
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/isAgentIn"/>
+          <owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
         </owl:onProperty>
         <owl:someValuesFrom rdf:resource="http://purl.org/ontology/mo/Composition"/>
       </owl:Restriction>
@@ -332,7 +332,7 @@ particular time').
     <owl:equivalentClass>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/isAgentIn"/>
+          <owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
         </owl:onProperty>
         <owl:someValuesFrom rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
       </owl:Restriction>
@@ -910,6 +910,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		A person.
 	</rdfs:comment>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf><owl:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"/></rdfs:subClassOf>
+    <rdfs:subClassOf><owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/></rdfs:subClassOf>
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
 </rdfs:Class>
 
