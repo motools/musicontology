@@ -54,6 +54,9 @@ Version 1.2 (july 2007)
  * MODIFIED: changed comments on mo:MusicalWork
  * MODIFIED: changed comments on availableAs
  * MODIFIED: mo:encoding has MusicalItem as a domain
+ * MODIFIED: Mentions of mo:MusicManifestation to mo:MusicalManifestation (typo) in mo:publisher, mo:published
+ * MODIFIED: Mentions of mo:isAgentIn to event:isAgentIn in mo:Composer, mo:Arranger
+ * MODIFIED: foaf:Person - added two :subClassOf properties from the foaf spec.
  * DELETED: mo:creatorOf - use foaf:made instead
  * DELETED: mo:pitch and mo:timbre - this should go to the audio features
  ontology
