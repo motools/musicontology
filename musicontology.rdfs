@@ -1333,7 +1333,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Composition"/>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#producedIn"/>
-	<owl:inverseOf rdf:resource="http://purl.org/ontology/mo/work_product"/>
+	<owl:inverseOf rdf:resource="http://purl.org/ontology/mo/produced_work"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
