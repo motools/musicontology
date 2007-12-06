@@ -7,9 +7,10 @@
 	xmlns:timeline="http://purl.org/NET/c4dm/timeline.owl#"
 	xmlns:time="http://www.w3.org/2006/time#"
 	xmlns:event="http://purl.org/NET/c4dm/event.owl#"
-	xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:frbr="http://purl.org/vocab/frbr/core#"
 	xmlns:wot="http://xmlns.com/wot/0.1/" 
-	xmlns:bio="http://vocab.org/bio/0.1/"
+	xmlns:bio="http://purl.org/vocab/bio/0.1/"
 	xmlns:dc="http://purl.org/dc/elements/1.1/" 
 	xmlns:mo="http://purl.org/ontology/mo/">
 
@@ -27,13 +28,49 @@
 	<foaf:maker rdf:resource="http://moustaki.org/foaf.rdf#moustaki"/>
 	<foaf:maker rdf:resource="http://www.talkdigger.com/foaf/fgiasson"/>
 	<dc:date>$Date: 2007/08/07 16:34:19 $</dc:date>
+	<!-- 
+	    The following couple of lines will hopefully make ontology editor and reasoners happy
+	    I don't know if I should put the physical location, or the ontology URI here, when it is 
+	    not the same...
+	  -->
+	<!--<owl:imports rdf:resource="http://vocab.org/bio/0.1/bio-vocab-20040305.rdf"/>-->
+	<owl:imports rdf:resource="http://xmlns.com/foaf/spec/index.rdf"/>
+	<!--<owl:imports rdf:resource="http://purl.org/vocab/frbr/frbr-core-20050810.rdf"/>-->
+	<!--<owl:imports rdf:resource="http://motools.sourceforge.net/event/event.rdf"/>-->
+	<owl:imports rdf:resource="http://motools.sourceforge.net/timeline/timeline.rdf"/>
+	<owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
+	<!--<owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>-->
+	<owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+	<!--<owl:imports rdf:resource="http://www.w3.org/2002/07/owl"/>-->
+	<owl:imports rdf:resource="http://motools.sourceforge.net/keys/keys.owl"/>
 </owl:Ontology>
+
+
+<!-- For OWLy stuff -->
+
+
+<!-- mentioned people -->
+<foaf:Person rdf:about="http://moustaki.org/foaf.rdf#moustaki"/>
+<foaf:Person rdf:about="http://www.talkdigger.com/foaf/fgiasson"/>
+
+<!-- missing typing info -->
+<owl:ObjectProperty rdf:about="http://purl.org/vocab/bio/0.1/event"/>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+<owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
+<owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
+<owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
+<owl:ObjectProperty rdf:about="http://purl.org/dc/terms/isReferencedBy"/>
+<owl:DatatypeProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+<owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
 
 <!-- Status of terms -->
 <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
 
 <!-- Music Ontology term level -->
-<owl:AnnotationProperty rdf:about="http://purl.org/ontology/mo/level" rdfs:label="level" vs:term_status="stable">
+<owl:AnnotationProperty rdf:about="http://purl.org/ontology/mo/level" rdfs:label="level">
 	<rdfs:comment>
 		This annotation property associates to a particular Music Ontology term the corresponding
 		expressiveness level. These levels can be:
@@ -1004,7 +1041,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		</owl:Class>
 	</rdfs:domain>
 	<rdfs:range rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
@@ -1014,6 +1051,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		This property allows to associate a TimeLineMap with the first TimeLine it maps
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:range rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
@@ -1024,7 +1062,9 @@ In terms of intellectual content and physical form, an item exemplifying a manif
         <rdfs:comment>
                 This property allows to associate a TimeLineMap with the second TimeLine it maps
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:range rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
@@ -1037,6 +1077,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		This property specifies, for an OriginMap, the time point on the physical time line
 		0 on a RelativeTimeLine is equivalent to.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/NET/c4dm/timeline.owl#OriginMap"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
@@ -1050,7 +1091,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		expressed using xsd:dateTime
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
@@ -1061,8 +1103,9 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		start point, addressed using xsd:duration (duration between 0 and the
 		start point)
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 	<rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
@@ -1072,7 +1115,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		Links an interval to its duration using xsd:duration
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
@@ -1117,9 +1161,9 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:comment>
 		Place a time point on the universal time line by using xsd:dateTime.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 	<rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
 
@@ -1130,8 +1174,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		the point 0, through xsd:duration (example: this instant is at 2s after 0 --> T2S)
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 </rdf:Property>
 
@@ -1144,6 +1188,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		For example, linking an event to the 9th of August, 2007, will specify that this event 
 		happened during this day.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -1160,12 +1205,13 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		within this geographical object.
         </rdfs:comment>
         <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasSubEvent" vs:term_status="stable" mo:level="3">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#sub_event" vs:term_status="stable" mo:level="3">
 	<rdfs:comment>
 		Allows to link an event to a sub-event. A sub-event might be an event split by time,
 		space, agents, factors... This property can be used to express things such as "during
@@ -1181,7 +1227,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasAgent" vs:term_status="stable" mo:level="2">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#agent" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates an event to an active agent.
 		Example: an engineer, a performer, a composer...
@@ -1201,7 +1247,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
                 Associates an agent to an event.
         </rdfs:comment>
         <owl:inverseOf>
-		<owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#hasAgent"/>
+		<owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#agent"/>
 	</owl:inverseOf>
 	<rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -1209,7 +1255,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
         <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
 </rdf:Property>
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasFactor" vs:term_status="stable" mo:level="2">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#factor" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Associates an event to a passive factor of it.
 		Example: a flute, a musical score, a musical work...
@@ -1228,7 +1274,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
                 Associates a factor to an event
         </rdfs:comment>
         <owl:inverseOf>
-                <owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
+                <owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#factor"/>
         </owl:inverseOf>
         <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -1237,7 +1283,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdf:Property>
 
 
-<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#hasProduct" vs:term_status="stable" mo:level="2">
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#product" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates an event to something it produces.
 		Example: a sound, a score, a musical work...
@@ -1255,8 +1301,9 @@ In terms of intellectual content and physical form, an item exemplifying a manif
         <rdfs:comment>
                 Associates the product of an event to the event itself
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<owl:inverseOf>
-                <owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#hasProduct"/>
+                <owl:ObjectProperty rdf:about="http://purl.org/NET/c4dm/event.owl#product"/>
         </owl:inverseOf>
         <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -1272,10 +1319,11 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		this property could link the event corresponding to the composition of the
 		Magic Flute in 1782 to Mozart himself (who obviously has a FOAF profile:-) ).
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Composition"/>
 	<!-- It should perhaps be mo:MusicArtist here -->
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasAgent"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -1286,15 +1334,17 @@ In terms of intellectual content and physical form, an item exemplifying a manif
                 Magic Flute in 1782 to the Magic Flute musical work itself. This musical work
 		can then be used in particular performances.
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Composition"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasProduct"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
 	<owl:inverseOf rdf:resource="http://purl.org/ontology/mo/composed_in"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/producesWork">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/produced_work"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/produced_work"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/performed_in" rdfs:label="performed in" vs:term_status="unstable" mo:level="2">
@@ -1304,6 +1354,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		associate the Magic Flute to a particular performance at the Opera
 		Bastille last year.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/Performance"/>
         <rdfs:domain>
                 <owl:Class>
@@ -1320,7 +1371,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usedInPerformance" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/performed_in"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/performed_in"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/composed_in" rdfs:label="composed in" vs:term_status="unstable" mo:level="2">
@@ -1330,6 +1382,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		the Magic Flute to its composition event, occuring during 1782 and having as
 		a mo:composer Mozart.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Composition"/>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#producedIn"/>
@@ -1339,7 +1392,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/productOfComposition" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/composed_in"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/composed_in"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/performance_of" rdfs:label="performance of" vs:term_status="unstable" mo:level="2">
@@ -1348,6 +1402,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		For example, I might use this property to attach the Magic Flute musical work to 
 		a particular Performance.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
         <rdfs:range>
                 <owl:Class>
@@ -1357,29 +1412,32 @@ In terms of intellectual content and physical form, an item exemplifying a manif
                         </owl:unionOf>
                 </owl:Class>
         </rdfs:range>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
 	<owl:inverseOf rdf:resource="http://purl.org/ontology/mo/performed_in"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usesWork" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/performance_of"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/performance_of"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/produced_sound" rdfs:label="produced sound" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates a Performance to a physical Sound that is being produced by it.
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/Sound"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasProduct"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/producesSound" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/produced_sound"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/produced_sound"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/recorded_in" rdfs:label="recorded in" vs:term_status="unstable" mo:level="2">
@@ -1389,6 +1447,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		associate the sound produced by a particular performance of the magic flute
 		to a given recording, done using my cell-phone.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Sound"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/Recording"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isFactorOf"/>
@@ -1398,7 +1457,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usedInRecording" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/recorded_in"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/recorded_in"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/recording_of" rdfs:label="recorded sound" vs:term_status="stable" mo:level="2">
@@ -1408,31 +1468,35 @@ In terms of intellectual content and physical form, an item exemplifying a manif
                 associate a given recording, done using my cell phone, to the 
 		sound produced by a particular performance of the magic flute.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Recording"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/Sound"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
 	<owl:inverseOf rdf:resource="http://purl.org/ontology/mo/recorded_in"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/usesSound" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/recording_of"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/recording_of"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/produced_signal" rdfs:label="produced signal" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Associates a Recording to the outputted signal.
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Recording"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasProduct"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/producesSignal" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/produced_signal"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/produced_signal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 
@@ -1441,9 +1505,10 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		Associates an arrangement event to a score product (score here does not refer to a published score, but more
 		an abstract arrangement of a particular work).
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Score"/>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasProduct"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -1452,6 +1517,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:comment>
 		Associates a work to an arrangement event where it was arranged
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isFactorOf"/>
@@ -1464,9 +1530,10 @@ In terms of intellectual content and physical form, an item exemplifying a manif
         <rdfs:comment>
                 Associates an arrangement event to a work
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
         <owl:inverseOf rdf:resource="http://purl.org/ontology/mo/arranged_in"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -1478,7 +1545,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		Associates an event (like a performance or a recording) to a particular musical genre.
 		Further version of this property may also include works and scores in the domain.
 	</rdfs:comment>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
 	<rdfs:domain>
                 <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
@@ -1503,6 +1571,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		have to create this shortcut as well as the whole workflow, in order to let the "normal" users access
 		simply the, well, simple information:-) .
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	 <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/records"/>
         </owl:inverseOf>
@@ -1513,7 +1582,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/recordedAs">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/recorded_as"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/recorded_as"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/records" rdfs:label="records" vs:term_status="unstable" mo:level="2">
@@ -1521,6 +1591,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		This is the inverse of the shortcut property recordedAs, allowing to relate directly a performance
 		to a signal.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/recordedAs"/>
         </owl:inverseOf>
@@ -1535,6 +1606,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:comment>
 		Associates a Signal to a time object - its actual domain
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
@@ -1543,13 +1615,15 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/signalTime" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/time"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/time"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/sampled_version_of" rdfs:label="sampled version of" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Associates a digital signal with the analog version of it
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/DigitalSignal"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/AnalogSignal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -1559,13 +1633,15 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/sampledVersionOf" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/sampled_version_of"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/sampled_version_of"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/sampled_version" vs:term_status="stable" rdfs:label="sampled version" mo:level="2">
 	<rdfs:comment>
 		Associates an analog signal with a sampled version of it
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/AnalogSignal"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/DigitalSignal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -1578,8 +1654,9 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:comment>
 		Associates a signal to the number of channels it holds (mono --> 1, stereo --> 2). Range is xsd:int.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
@@ -1589,14 +1666,16 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		Associates a digital signal to its sample rate. It might be easier to express it this way instead of
 		defining a timeline map:-) Range is xsd:float.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/DigitalSignal"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/sampleRate" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/sample_rate"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/sample_rate"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/bitsPerSample" vs:term_status="stable" mo:level="1">
@@ -1604,13 +1683,15 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		Associates a digital signal to the number a bits used to encode one sample. Range is xsd:int.
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/DigitalSignal"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/image" rdfs:label="image" vs:term_status="stable" mo:level="1">
    	<rdfs:comment>Indicates a pictorial image (JPEG, GIF, PNG, Etc.) of a musical work, the expression of a musical work, the manifestation of a work or the examplar of a manifestation.</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain> 
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -1631,6 +1712,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 <rdf:Property rdf:about="http://purl.org/ontology/mo/encoding" rdfs:label="encoding" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Method used to convert analog electronic signals into digital format such as "MP3 CBR @ 128kbps", "OGG @ 160kbps", "FLAC", etc.  </rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/AudioFile"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -1642,6 +1724,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 		This is usually a lower-resolution version of the master signal (issued from a Recording event).
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -1651,6 +1734,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 <rdf:Property rdf:about="http://purl.org/ontology/mo/manifestation" rdfs:label="manifestation" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Links a MusicalExpression to its manifestations, subproperty of frbr:embodiment</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalExpression"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -1658,7 +1742,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/hasManifestation" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/manifestation"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/manifestation"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/published_as" rdfs:label="published as" vs:term_status="stable" mo:level="1">
@@ -1666,7 +1751,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		Links a signal or a score to its manifestations - this is a subproperty of frbr:embodiment (linking
 		an Expression to a Manifestation)
 	</rdfs:comment>
-        <rdfs:domain>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<rdfs:domain>
 		<owl:Class>
 			<owl:unionOf rdf:parseType="Collection">
 				<owl:Class rdf:about="http://purl.org/ontology/mo/Signal"/>
@@ -1687,19 +1773,22 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		</owl:Class>
 	</rdfs:range>	
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdfs:subPropertyOf rdf:resource="http://vocab.org/frbr/core#embodiment"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/manifestation"/>
 	<owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/publicationOf"/>
         </owl:inverseOf>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/publishedAs" vs:term_status="deprecated">
- 	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/published_as"/>
+ 	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/published_as"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/publication_of" rdfs:label="publication of" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Link a particular manifestation to the related signal, score, libretto, or lyrics</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:range>
 		 <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
@@ -1722,25 +1811,28 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	</rdfs:domain>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<owl:inverseOf>
-                <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/publishedAs"/>
+                <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/published_as"/>
         </owl:inverseOf>
 </rdf:Property>
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/publicationOf" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/publication_of"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/publication_of"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/event_homepage" rdfs:label="event homepage" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>Links a particular event to a web page</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
 	<rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/eventHomePage" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/event_homepage"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/event_homepage"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <!-- Properties related with Musical Expression -->
@@ -1759,7 +1851,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		the audio signature of a musical piece (see AudioFingerprint).
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 <!-- WARNING: same thing -->
@@ -1776,7 +1869,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		the particular Track corresponding to the audio file (a track on a particular release).
 	</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -1788,7 +1882,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		Indicates the BPM of a MusicalWork or a particular Performance 
 		Beats per minute: the pace of music measured by the number of beats occurring in 60 seconds.
 	</rdfs:comment>
-    <rdfs:domain> 
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain>
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
             <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalWork"/>
@@ -1796,7 +1891,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain> 
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -1809,23 +1904,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		vivace (lively); presto (very fast); accelerando (getting faster); ritardando (getting slower); 
 		and a tempo (in time; returning to the original pace).
 	</rdfs:comment>
-    <rdfs:domain> 
-      <owl:Class>
-        <owl:unionOf rdf:parseType="Collection">
-            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalWork"/>
-            <owl:Class rdf:about="http://purl.org/ontology/mo/Performance"/>
-        </owl:unionOf>
-      </owl:Class>
-    </rdfs:domain> 
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-</rdf:Property>
-
-<rdf:Property rdf:about="http://purl.org/ontology/mo/key" rdfs:label="key" vs:term_status="stable" mo:level="2">
-	<rdfs:comment>
-		Indicated the key used by the musicians during a performance, or the key of a MusicalWork.
-		Any of 24 major or minor diatonic scales that provide the tonal framework for a piece of music.
-	</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain> 
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
@@ -1834,7 +1913,25 @@ In terms of intellectual content and physical form, an item exemplifying a manif
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/ontology/mo/key" rdfs:label="key" vs:term_status="stable" mo:level="2">
+	<rdfs:comment>
+		Indicated the key used by the musicians during a performance, or the key of a MusicalWork.
+		Any of 24 major or minor diatonic scales that provide the tonal framework for a piece of music.
+	</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain> 
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalWork"/>
+            <owl:Class rdf:about="http://purl.org/ontology/mo/Performance"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
 	<rdfs:range rdf:resource="http://purl.org/NET/c4dm/keys.owl#Key"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -1843,6 +1940,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:comment>
 		Used to define a creative work, especially a musical composition numbered to designate the order of a composer's works.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
 	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -1854,17 +1952,20 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 <rdf:Property rdf:about="http://purl.org/ontology/mo/track_number" rdfs:label="track number" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Indicates the position of a track on a record medium (a CD, etc.).</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Track"/>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/trackNum" vs:term_status="deprecated">
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/track_number"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/track_number"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/track" rdfs:label="track" vs:term_status="stable" mo:level="1">
         <rdfs:comment>Indicates a part of a musical manifestation - in this particular case, a track.</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Record"/>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Track"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -1872,7 +1973,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/has_track" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/track"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/track"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -2021,7 +2123,7 @@ rdfs:label="musicbrainz" vs:term_status="stable" mo:level="1">
 		if it can be accessed for some money (mo:paiddownload) (this includes links to the Amazon store, for example).
 
                 This property MUST be used only if the content is just available through a web page (holding, for example
-                a Flash application) - it is better to link to actual content directly through the use of mo:availableAs and
+                a Flash application) - it is better to link to actual content directly through the use of mo:available_as and
                 mo:Stream, mo:Torrent or mo:ED2K, etc. Therefore, Semantic Web user agents that don't know how to read HTML and even
                 less to rip streams from Flash applications can still access the audio content.
         </rdfs:comment>
@@ -2048,7 +2150,7 @@ rdfs:label="musicbrainz" vs:term_status="stable" mo:level="1">
                 a manifestation (a track or an album, for example) to a web page where a preview download is available.
 
                 This property MUST be used only if the content is just available through a web page (holding, for example
-                a Flash application) - it is better to link to actual content directly through the use of mo:availableAs and
+                a Flash application) - it is better to link to actual content directly through the use of mo:available_as and
                 mo:Stream, mo:Torrent or mo:ED2K, etc. Therefore, Semantic Web user agents that don't know how to read HTML and even
                 less to rip streams from Flash applications can still access the audio content.
         </rdfs:comment>
@@ -2089,7 +2191,8 @@ rdfs:label="musicbrainz" vs:term_status="stable" mo:level="1">
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/paiddownload" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/paid_download"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/paid_download"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -2101,7 +2204,7 @@ rdfs:label="musicbrainz" vs:term_status="stable" mo:level="1">
 		download.
 
 		This property MUST be used only if the content is just available through a web page (holding, for example
-		a Flash application) - it is better to link to actual content directly through the use of mo:availableAs and 
+		a Flash application) - it is better to link to actual content directly through the use of mo:available_as and 
 		mo:Stream, mo:Torrent or mo:ED2K, etc. Therefore, Semantic Web user agents that don't know how to read HTML and even
 		less to rip streams from Flash applications can still access the audio content.
 	</rdfs:comment>
@@ -2121,7 +2224,8 @@ rdfs:label="musicbrainz" vs:term_status="stable" mo:level="1">
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/freedownload" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/free_download"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/free_download"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
@@ -2218,7 +2322,7 @@ The review does not have to be open content, as long as it is accessible to the 
 	Each ISRC is a unique and permanent identifier for a specific recording which can be permanently encoded into a product as its digital fingerprint. 
 	Encoded ISRC provide the means to automatically identify recordings for royalty payments.
 	</rdfs:comment>
-	<rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/> <!-- Not DL, as it is a datatype property -->
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2372,6 +2476,7 @@ This involves taking just one other musical work and using audio editing to make
         <rdfs:comment>
 		Relates a signal to another signal, which has been sampled.
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2457,13 +2562,15 @@ rdfs:label="publishingLocation" vs:term_status="stable" mo:level="1">
         <rdfs:comment>
 		Relates a musical manifestation to its publication location.
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property> 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/publishingLocation" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/publishing_location"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/publishing_location"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/supporting_musician" rdfs:label="supporting_musician" vs:term_status="unstable" mo:level="1">
@@ -2579,6 +2686,7 @@ This means that two musical works or the expressions of a musical work by differ
 <rdf:Property rdf:about="http://purl.org/ontology/mo/possess_item" rdfs:label="possess_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization possessing an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -2586,6 +2694,7 @@ This means that two musical works or the expressions of a musical work by differ
 <rdf:Property rdf:about="http://purl.org/ontology/mo/want_item" rdfs:label="want_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization wanting an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -2593,6 +2702,7 @@ This means that two musical works or the expressions of a musical work by differ
 <rdf:Property rdf:about="http://purl.org/ontology/mo/sell_item" rdfs:label="sell_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization selling an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -2600,6 +2710,7 @@ This means that two musical works or the expressions of a musical work by differ
 <rdf:Property rdf:about="http://purl.org/ontology/mo/exchange_item" rdfs:label="exchange_item" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A person, a group of person or an organization exchanging an exemplar of a single manifestation.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -2608,9 +2719,10 @@ This means that two musical works or the expressions of a musical work by differ
 <!-- Properties related with mo:Movement -->
 
 
-<rdf:Property rdf:about="http://purl.org/ontology/mo/has_movement" rdfs:label="has_movement" vs:term_status="unstable" mo:level="2">
+<rdf:Property rdf:about="http://purl.org/ontology/mo/movement" rdfs:label="has_movement" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>Indicates that a musical work has movements</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Movement"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
@@ -2618,22 +2730,25 @@ This means that two musical works or the expressions of a musical work by differ
 <rdf:Property rdf:about="http://purl.org/ontology/mo/movement_number" rdfs:label="movement number" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>Indicates the position of a movement in a musical work.</rdfs:comment>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Movement"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/movementNum">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/movement_number"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/movement_number"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
 </rdf:Property>
 
 <!-- Sub-properties of hasAgent, we need to define some for sub-events that may have more than 1 non-equivalent agents-->
 <!-- Performance-related -->
 <rdf:Property rdf:about="http://purl.org/ontology/mo/performer" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>Relates a performance to the performers involved</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<owl:inverseOf>
 		<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/performed"/>
 	</owl:inverseOf>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasAgent"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2641,11 +2756,12 @@ This means that two musical works or the expressions of a musical work by differ
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/performed" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>Relates agents to the performances they were performing in</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<owl:inverseOf>
 		<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/performer"/>
 	</owl:inverseOf>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
-	<rdfs:subPropertyOf rdf:resource="http://vocab.org/bio/0.1/#event"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Performance"/>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2653,10 +2769,11 @@ This means that two musical works or the expressions of a musical work by differ
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/conductor" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Relates a performance to the conductor involved</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/conducted"/>
         </owl:inverseOf>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasAgent"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2664,11 +2781,12 @@ This means that two musical works or the expressions of a musical work by differ
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/conducted" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>Relates agents to the performances they were conducting</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/conductor"/>
         </owl:inverseOf>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
-	<rdfs:subPropertyOf rdf:resource="http://vocab.org/bio/0.1/#event"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Performance"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2676,10 +2794,11 @@ This means that two musical works or the expressions of a musical work by differ
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/listener" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Relates a performance to the listener involved</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/listened"/>
         </owl:inverseOf>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasAgent"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2687,11 +2806,12 @@ This means that two musical works or the expressions of a musical work by differ
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/listened" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>Relates agents to the performances they were listening in</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/listener"/>
         </owl:inverseOf>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
-	<rdfs:subPropertyOf rdf:resource="http://vocab.org/bio/0.1/#event"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Performance"/>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2699,7 +2819,8 @@ This means that two musical works or the expressions of a musical work by differ
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/instrument" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>Relates a performance to a musical instrument involved</rdfs:comment>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasFactor"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/Instrument"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2708,10 +2829,11 @@ This means that two musical works or the expressions of a musical work by differ
 <!-- Relates to both Performance and Recording -->
 <rdf:Property rdf:about="http://purl.org/ontology/mo/engineer" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Relates a performance or a recording to the engineer involved</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/engineered"/>
         </owl:inverseOf>
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#hasAgent"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
         <rdfs:domain>
                 <owl:Class>
 		<owl:unionOf rdf:parseType="Collection">
@@ -2726,11 +2848,12 @@ This means that two musical works or the expressions of a musical work by differ
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/engineered" vs:term_status="unstable" mo:level="2">
         <rdfs:comment>Relates agents to the performances/recordings they were engineering in</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <owl:inverseOf>
                 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/engineer"/>
         </owl:inverseOf>
         <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
-	<rdfs:subPropertyOf rdf:resource="http://vocab.org/bio/0.1/#event"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
         <rdfs:range>
 		<owl:Class>
 		<owl:unionOf rdf:parseType="Collection">
@@ -2749,26 +2872,30 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:comment>
 		Relates a musical manifestation to its release type (interview, spoken word, album, ...)
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/ReleaseType"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/releaseType" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/release_type"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/release_type"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/release_status" vs:term_status="stable" mo:level="1">
         <rdfs:comment>
                 Relates a musical manifestation to its release status (bootleg, ...)
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/ReleaseStatus"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/releaseStatus" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/release_status"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/release_status"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/available_as" vs:term_status="stable" mo:level="1">
@@ -2781,6 +2908,7 @@ This means that two musical works or the expressions of a musical work by differ
 
 		This is a subproperty of frbr:examplar.
 	</rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
 	<rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
 	<rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
@@ -2789,7 +2917,8 @@ This means that two musical works or the expressions of a musical work by differ
 
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/availableAs" vs:term_status="deprecated">
-	<owl:sameAs rdf:resource="http://purl.org/ontology/mo/available_as"/>
+	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/available_as"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 </rdf:Property>
 
 <rdf:Property rdf:about="http://purl.org/ontology/mo/item" vs:term_status="testing"  mo:level="1">
@@ -2797,6 +2926,8 @@ This means that two musical works or the expressions of a musical work by differ
                 Relates a musical manifestation to a musical item (this album, and my particular cd) holding the
 		entire manifestation, and not just a part of it.
         </rdfs:comment>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/available_as"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
@@ -2808,9 +2939,10 @@ This means that two musical works or the expressions of a musical work by differ
                 Relates a musical manifestation to a musical item (this album, and my particular cd), which holds
 		a preview of the manifestation (eg. one track for an album, or a snippet for a track)
         </rdfs:comment>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
         <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
-	<rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/availableAs"/>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/available_as"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </rdf:Property>
 
