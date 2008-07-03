@@ -36,11 +36,10 @@
 	<!--<owl:imports rdf:resource="http://vocab.org/bio/0.1/bio-vocab-20040305.rdf"/>-->
 	<owl:imports rdf:resource="http://xmlns.com/foaf/spec/index.rdf"/>
 	<!--<owl:imports rdf:resource="http://purl.org/vocab/frbr/frbr-core-20050810.rdf"/>-->
-	<!--<owl:imports rdf:resource="http://motools.sourceforge.net/event/event.rdf"/>-->
+	<owl:imports rdf:resource="http://motools.sourceforge.net/event/event.rdf"/>
 	<owl:imports rdf:resource="http://motools.sourceforge.net/timeline/timeline.rdf"/>
-	<owl:imports rdf:resource="http://www.w3.org/2003/06/sw-vocab-status/ns"/>
 	<!--<owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>-->
-	<owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>
+	<!--owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>-->
 	<!--<owl:imports rdf:resource="http://www.w3.org/2002/07/owl"/>-->
 	<owl:imports rdf:resource="http://motools.sourceforge.net/keys/keys.owl"/>
 </owl:Ontology>
@@ -53,12 +52,16 @@
 <foaf:Person rdf:about="http://moustaki.org/foaf.rdf#moustaki"/>
 <foaf:Person rdf:about="http://www.talkdigger.com/foaf/fgiasson"/>
 
-<!-- missing typing info -->
+<!-- missing typing info --><!-- Not sure about the DC stuff -->
 <owl:ObjectProperty rdf:about="http://purl.org/vocab/bio/0.1/event"/>
 <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
-<owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
-<owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
+<owl:Class rdf:about="http://web.resource.org/cc/License"/>
 <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+<owl:ObjectProperty rdf:about="http://purl.org/vocab/frbr/core#embodiment"/>
+<owl:ObjectProperty rdf:about="http://purl.org/vocab/frbr/core#exemplar"/>
+<owl:Ontology rdf:about="http://purl.org/dc/elements/1.1/"/>
+<owl:Ontology rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos"/>
+<owl:Ontology rdf:about="http://xmlns.com/foaf/spec/index.rdf"/>
 <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
 <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
 <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
@@ -1226,7 +1229,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
       </owl:Class>
     </rdfs:domain> 
     <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </owl:ObjectProperty>
 
