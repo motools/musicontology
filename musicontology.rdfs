@@ -36,8 +36,8 @@
 	<!--<owl:imports rdf:resource="http://vocab.org/bio/0.1/bio-vocab-20040305.rdf"/>-->
 	<owl:imports rdf:resource="http://xmlns.com/foaf/spec/index.rdf"/>
 	<!--<owl:imports rdf:resource="http://purl.org/vocab/frbr/frbr-core-20050810.rdf"/>-->
-	<owl:imports rdf:resource="http://motools.sourceforge.net/event/event.rdf"/>
-	<owl:imports rdf:resource="http://motools.sourceforge.net/timeline/timeline.rdf"/>
+	<owl:imports rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+	<owl:imports rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
 	<!--<owl:imports rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>-->
 	<!--owl:imports rdf:resource="http://purl.org/dc/elements/1.1/"/>-->
 	<!--<owl:imports rdf:resource="http://www.w3.org/2002/07/owl"/>-->
@@ -856,7 +856,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
             </owl:unionOf>
           </owl:Class> 
         </rdfs:range>
-	<owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/made"/>
+	<owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/maker"/>
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
 </owl:ObjectProperty>
 
@@ -2203,6 +2203,16 @@ This means that two musical works or the expressions of a musical work by differ
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/singer" vs:term_status="stable" mo:level="2">
+	<rdfs:comment>Relates a performance to an involved singer</rdfs:comment>
+	<rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/performer"/>
+	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
+	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+</owl:ObjectProperty>
+
+<!-- FIXME - should include all the terms defined in AR -->
 
 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/performed" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>Relates agents to the performances they were performing in</rdfs:comment>
