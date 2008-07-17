@@ -107,7 +107,7 @@ mo:MusicArtist
 	""";
     rdfs:subClassOf foaf:Agent;
     rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:SoloMusicArtist
     a rdfs:Class;
@@ -168,7 +168,7 @@ work #1 J. S. Bach's The art of the fugue
 	""";
     rdfs:subClassOf frbr:Work;
     rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Movement
     a rdfs:Class;
@@ -212,7 +212,7 @@ particular time').
 	""";
     rdfs:subClassOf frbr:Expression;
     rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Sound
     a rdfs:Class;
@@ -700,7 +700,7 @@ Defining manifestation as an entity also enables us to draw relationships betwee
 """;
     rdfs:subClassOf frbr:Manifestation;
     rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:MusicalItem
     a rdfs:Class;
@@ -716,7 +716,7 @@ From the FRBR final report: The entity defined as item is a concrete entity. It 
 In terms of intellectual content and physical form, an item exemplifying a manifestation is normally the same as the manifestation itself. However, variations may occur from one item to another, even when the items exemplify the same manifestation, where those variations are the result of actions external to the intent of the producer of the manifestation (e.g., damage occurring after the item was produced, binding performed by a library, etc.). 
 	""";
     rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class .
+    a owl:Class, owl:Class, owl:Class .
 
 mo:Medium
     a rdfs:Class;
@@ -969,6 +969,7 @@ foaf:member
 
 mo:member
     a owl:ObjectProperty;
+    rdfs:label "member";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment """
@@ -1383,6 +1384,7 @@ mo:image
         a owl:Class;
         owl:unionOf (
             mo:MusicalWork
+            mo:MusicArtist
             mo:MusicalExpression
             mo:MusicalManifestation
             mo:MusicalItem
@@ -1518,6 +1520,26 @@ mo:eventHomePage
     vs:term_status "deprecated";
     owl:equivalentProperty mo:event_homepage;
     a owl:ObjectProperty .
+
+mo:homepage
+    a owl:ObjectProperty;
+    rdfs:label "homepage";
+    vs:term_status "stable";
+    mo:level "1";
+    rdfs:comment "Links an artist, a record, etc. to a corresponding web page";
+    rdfs:domain [
+        a owl:Class;
+        owl:unionOf (
+            mo:MusicalWork
+            mo:MusicArtist
+            mo:MusicalExpression
+            mo:MusicalManifestation
+            mo:MusicalItem
+        )
+    ];
+    rdfs:range foaf:Document;
+    rdfs:subPropertyOf foaf:isPrimaryTopicOf;
+    rdfs:isDefinedBy <> .
 
 mo:trmid
     a owl:DatatypeProperty;

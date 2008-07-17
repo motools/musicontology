@@ -869,7 +869,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/member" vs:term_status="stable" mo:level="1">
+<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/member" rdfs:label="member" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Indicates a member of a musical group
 	</rdfs:comment>
@@ -1230,7 +1230,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
       <owl:Class>
         <owl:unionOf rdf:parseType="Collection">
             <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalWork"/>
-            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalExpression"/>
+            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicArtist"/>
+	    <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalExpression"/>
             <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation"/>
             <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalItem"/>
         </owl:unionOf>
@@ -1359,6 +1360,24 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/eventHomePage" vs:term_status="deprecated">
 	<owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/event_homepage"/>
 	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/homepage" rdfs:label="homepage" vs:term_status="stable" mo:level="1">
+	<rdfs:comment>Links an artist, a record, etc. to a corresponding web page</rdfs:comment>
+	<rdfs:domain>
+	<owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalWork"/>
+            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicArtist"/>
+	    <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalExpression"/>
+            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation"/>
+            <owl:Class rdf:about="http://purl.org/ontology/mo/MusicalItem"/>
+        </owl:unionOf>
+        </owl:Class>
+	</rdfs:domain>
+	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+	<rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+	 <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 </owl:ObjectProperty>
 
 <!-- Properties related with Musical Expression -->
