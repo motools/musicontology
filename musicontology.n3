@@ -1,18 +1,19 @@
+@base <http://purl.org/ontology/mo/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix timeline: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix timeline: <../../NET/c4dm/timeline.owl#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix event: <../../NET/c4dm/event.owl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix frbr: <../../vocab/frbr/core#> .
 @prefix wot: <http://xmlns.com/wot/0.1/> .
-@prefix bio: <http://purl.org/vocab/bio/0.1/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix bio: <../../vocab/bio/0.1/> .
+@prefix dc: <../../dc/elements/1.1/> .
+@prefix mo: <> .
 
-<file:///home/moustaki/work/workspace/motools/mo/rdf/musicontology.rdfs>
+<>
     a owl:Ontology;
     dc:title "The Music Ontology";
     owl:versionInfo "Revision: 1.2";
@@ -24,7 +25,7 @@
 	""";
     foaf:maker <http://moustaki.org/foaf.rdf#moustaki>, <http://www.talkdigger.com/foaf/fgiasson>;
     dc:date "$Date: 2007/08/07 16:34:19 $";
-    owl:imports <http://xmlns.com/foaf/spec/index.rdf>, <http://purl.org/NET/c4dm/event.owl>, <http://purl.org/NET/c4dm/timeline.owl>, <http://motools.sourceforge.net/keys/keys.owl> .
+    owl:imports <http://xmlns.com/foaf/spec/index.rdf>, <../../NET/c4dm/event.owl>, <../../NET/c4dm/timeline.owl>, <http://motools.sourceforge.net/keys/keys.owl> .
 
 <http://moustaki.org/foaf.rdf#moustaki>
     a foaf:Person .
@@ -50,7 +51,7 @@ frbr:embodiment
 frbr:exemplar
     a owl:ObjectProperty .
 
-<http://purl.org/dc/elements/1.1/>
+<../../dc/elements/1.1/>
     a owl:Ontology .
 
 <http://www.w3.org/2003/01/geo/wgs84_pos>
@@ -68,7 +69,7 @@ frbr:exemplar
 <http://www.w3.org/2003/01/geo/wgs84_pos#alt>
     a owl:DatatypeProperty .
 
-<http://purl.org/dc/terms/isReferencedBy>
+<../../dc/terms/isReferencedBy>
     a owl:ObjectProperty .
 
 <http://www.w3.org/2004/02/skos/core#definition>
@@ -93,7 +94,7 @@ mo:level
 		
 		This property is mainly used for specification generation.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:MusicArtist
     a rdfs:Class;
@@ -105,7 +106,7 @@ mo:MusicArtist
 		creative work shows sensitivity and imagination 
 	""";
     rdfs:subClassOf foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:SoloMusicArtist
@@ -115,7 +116,7 @@ mo:SoloMusicArtist
     mo:level "1";
     rdfs:comment "Single person whose musical creative work shows sensitivity and imagination.";
     rdfs:subClassOf mo:MusicArtist, foaf:Person;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:MusicGroup
@@ -125,7 +126,7 @@ mo:MusicGroup
     mo:level "1";
     rdfs:comment "Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. ";
     rdfs:subClassOf mo:MusicArtist, foaf:Group;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:CorporateBody
@@ -135,7 +136,7 @@ mo:CorporateBody
     mo:level "1";
     rdfs:comment "Organization or group of individuals and/or other organizations involved in the music market.";
     rdfs:subClassOf foaf:Organization;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Label
@@ -145,7 +146,7 @@ mo:Label
     mo:level "1";
     rdfs:comment "Trade name of a company that produces musical works or expression of musical works.";
     rdfs:subClassOf mo:CorporateBody;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:MusicalWork
@@ -166,7 +167,7 @@ work #1 J. S. Bach's The art of the fugue
     
 	""";
     rdfs:subClassOf frbr:Work;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Movement
@@ -181,7 +182,7 @@ movements exert a cumulative effect. In some forms, composers sometimes link the
 pause between them.
 	""";
     rdfs:subClassOf mo:MusicalWork;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:MusicalExpression
@@ -210,7 +211,7 @@ particular time').
 	
 	""";
     rdfs:subClassOf frbr:Expression;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Sound
@@ -221,7 +222,7 @@ mo:Sound
 		A subclass of MusicalExpression, representing a sound. Realisation of a MusicalWork during a musical Performance.
 	""";
     rdfs:subClassOf mo:MusicalExpression, event:Event;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:Signal
@@ -232,7 +233,7 @@ mo:Signal
 		A subclass of MusicalExpression, representing a Signal. Realisation of a MusicalWork through both a Performance and a Recording.
 	""";
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:AnalogSignal
@@ -243,7 +244,7 @@ mo:AnalogSignal
 		An analog signal.
 	""";
     rdfs:subClassOf mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class;
     owl:disjointWith mo:DigitalSignal .
 
@@ -255,7 +256,7 @@ mo:DigitalSignal
 		A digital signal
 	""";
     rdfs:subClassOf mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class;
     owl:disjointWith mo:AnalogSignal .
 
@@ -268,7 +269,7 @@ mo:Score
 		This may be, for example, the product of an arrangement process.
 	""";
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Lyrics
@@ -279,7 +280,7 @@ mo:Lyrics
 		Lyrics
 	""";
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class .
 
 mo:Libretto
@@ -290,7 +291,7 @@ mo:Libretto
                 Libretto
         """;
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class .
 
 mo:Performance
@@ -304,7 +305,7 @@ mo:Performance
 		It might produce a sound:-)
 	""";
     rdfs:subClassOf event:Event;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Performer
@@ -327,7 +328,7 @@ mo:performed
     rdfs:subPropertyOf event:isAgentIn, bio:event;
     rdfs:range mo:Performance;
     rdfs:domain foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:SoundEngineer
     a owl:Class;
@@ -355,7 +356,7 @@ mo:engineered
         )
     ];
     rdfs:domain foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:Listener
     a owl:Class;
@@ -377,7 +378,7 @@ mo:listened
     rdfs:subPropertyOf event:isAgentIn, bio:event;
     rdfs:range mo:Performance;
     rdfs:domain foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:Conductor
     a owl:Class;
@@ -399,7 +400,7 @@ mo:conducted
     rdfs:subPropertyOf event:isAgentIn, bio:event;
     rdfs:domain foaf:Agent;
     rdfs:range mo:Performance;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:Composer
     a owl:Class;
@@ -437,7 +438,7 @@ mo:Recording
 		microphone or the \"recording device\".
 	""";
     rdfs:subClassOf event:Event;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:Composition
@@ -450,7 +451,7 @@ mo:Composition
 		It produces a MusicalWork, or a MusicalExpression (when the initial \"product\" is a score, for example), or both...
 	""";
     rdfs:subClassOf event:Event;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class .
 
 mo:Arrangement
@@ -462,7 +463,7 @@ mo:Arrangement
 		Takes as agent the arranger, and produces a score (informational object, not the actually published score).
 	""";
     rdfs:subClassOf event:Event;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class .
 
 mo:Instrumentation
@@ -474,7 +475,7 @@ mo:Instrumentation
 		including the limitations of the instrument, playing techniques and idiomatic handling of the instrument.
 	""";
     rdfs:subClassOf mo:Arrangement;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:Orchestration
@@ -485,7 +486,7 @@ mo:Orchestration
         	Orchestration includes, in addition to instrumentation, the handling of groups of instruments and their balance and interaction.
 	""";
     rdfs:subClassOf mo:Arrangement;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:Track
@@ -494,7 +495,7 @@ mo:Track
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "A track on a particular record";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf mo:Record;
     a owl:Class, owl:Class, owl:Class .
 
@@ -504,7 +505,7 @@ mo:PublishedScore
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment "A published score (subclass of MusicalManifestation)";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf mo:MusicalManifestation;
     a owl:Class, owl:Class, owl:Class .
 
@@ -514,7 +515,7 @@ mo:Record
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "A published record (manifestation which first aim is to render the product of a recording)";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf mo:MusicalManifestation;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
@@ -524,7 +525,7 @@ mo:PublishedLibretto
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment "A published libretto";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf mo:MusicalManifestation;
     a owl:Class, owl:Class, owl:Class .
 
@@ -534,7 +535,7 @@ mo:PublishedLyrics
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment "Published lyrics, as a book or as a text file, for example";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf mo:MusicalManifestation;
     a owl:Class, owl:Class, owl:Class .
 
@@ -548,7 +549,7 @@ mo:Festival
 		We migth decompose this event (which is in fact just a classification of the space/time region related to 
 		a particular festival) using hasSubEvent in several performances at different space/time.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf event:Event;
     a owl:Class .
 
@@ -561,7 +562,7 @@ mo:Show
 		A show - a musical event lasting several days, in a particular venue. Examples can be
 		\"The Magic Flute\" at the Opera Bastille, August 2005, or a musical in the west end...
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subClassOf event:Event;
     a owl:Class .
 
@@ -573,7 +574,7 @@ mo:ReleaseType
     rdfs:comment """
 		Release type of a particular manifestation, such as \"album\" or \"interview\"...
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:album
@@ -584,7 +585,7 @@ mo:album
 		One or more track issued together.
     		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:interview
     a mo:ReleaseType;
@@ -594,7 +595,7 @@ mo:interview
 		Recording of the questioning of a person.
 		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:spokenword
     a mo:ReleaseType;
@@ -605,7 +606,7 @@ mo:spokenword
 		Spoken-word is often done with a musical background, but emphasis is kept on the speaker.
 		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:audiobook
     a mo:ReleaseType;
@@ -615,7 +616,7 @@ mo:audiobook
 		Book read by a narrator without music.
 		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:compilation
     a mo:ReleaseType;
@@ -625,7 +626,7 @@ mo:compilation
 		Collection of previously released manifestations of a musical expression by one or more artists.
 		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:live
     a mo:ReleaseType;
@@ -635,7 +636,7 @@ mo:live
 		A musical manifestation that was recorded live.
 		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:remix
     a mo:ReleaseType;
@@ -645,7 +646,7 @@ mo:remix
 		Musical manifestation that primarily contains remixed material. 
 		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:soundtrack
     a mo:ReleaseType;
@@ -655,7 +656,7 @@ mo:soundtrack
 		Sound recording on a narrow strip of a motion picture film.
 		This is a type of MusicalManifestation defined by the musical industry.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:ep
     a mo:ReleaseType;
@@ -664,7 +665,7 @@ mo:ep
     dc:description """
         	An EP
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:MusicalManifestation
     a rdfs:Class;
@@ -698,7 +699,7 @@ Defining manifestation as an entity also enables us to draw relationships betwee
 
 """;
     rdfs:subClassOf frbr:Manifestation;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
 
 mo:MusicalItem
@@ -714,7 +715,7 @@ From the FRBR final report: The entity defined as item is a concrete entity. It 
 
 In terms of intellectual content and physical form, an item exemplifying a manifestation is normally the same as the manifestation itself. However, variations may occur from one item to another, even when the items exemplify the same manifestation, where those variations are the result of actions external to the intent of the producer of the manifestation (e.g., damage occurring after the item was produced, binding performed by a library, etc.). 
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class .
 
 mo:Medium
@@ -723,7 +724,7 @@ mo:Medium
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "A means or instrumentality for storing or communicating musical manifestation.";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class;
     rdfs:subClassOf mo:MusicalItem .
 
@@ -734,7 +735,7 @@ mo:DAT
     mo:level "1";
     rdfs:comment "Data Audio Tape used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:DCC
@@ -744,7 +745,7 @@ mo:DCC
     mo:level "1";
     rdfs:comment "Digital Compact Cassette used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:CD
@@ -754,7 +755,7 @@ mo:CD
     mo:level "1";
     rdfs:comment "Compact Disc used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:MD
@@ -764,7 +765,7 @@ mo:MD
     mo:level "1";
     rdfs:comment "Mini Disc used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:DVDA
@@ -774,7 +775,7 @@ mo:DVDA
     mo:level "1";
     rdfs:comment "DVD-Audio used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:SACD
@@ -784,7 +785,7 @@ mo:SACD
     mo:level "1";
     rdfs:comment "Super Audio Compact Disc used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:Vinyl
@@ -794,7 +795,7 @@ mo:Vinyl
     mo:level "1";
     rdfs:comment "Vinyl used as medium to record a musical manifestation";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:MagneticTape
@@ -804,7 +805,7 @@ mo:MagneticTape
     mo:level "1";
     rdfs:comment "Magnetic analogue tape used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:Stream
@@ -814,7 +815,7 @@ mo:Stream
     mo:level "1";
     rdfs:comment "Transmission over a network  used as medium to broadcast a musical manifestation";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:Torrent
@@ -824,7 +825,7 @@ mo:Torrent
     mo:level "1";
     rdfs:comment "Something available on the Bittorrent peer-2-peer filesharing network";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:ED2K
@@ -834,7 +835,7 @@ mo:ED2K
     mo:level "1";
     rdfs:comment "Something available on the E-Donkey peer-2-peer filesharing network";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:AudioFile
@@ -844,7 +845,7 @@ mo:AudioFile
     mo:level "1";
     rdfs:comment "An audio file, which may be available on a local file system or through http, ftp, etc.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:ReleaseStatus
@@ -853,7 +854,7 @@ mo:ReleaseStatus
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "Musical manifestation release status.";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class .
 
 mo:promotion
@@ -861,21 +862,21 @@ mo:promotion
     dc:title "promotion";
     mo:level "1";
     dc:description "A giveaway musical work or the expression of a musical work intended to promote an upcoming official musical work or the expression of a musical work.";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:bootleg
     a mo:ReleaseStatus;
     dc:title "bootleg";
     mo:level "1";
     dc:description "An unofficial/underground musical work or the expression of a musical work that was not sanctioned by the artist and/or the corporate body. ";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:official
     a mo:ReleaseStatus;
     dc:title "official";
     mo:level "1";
     dc:description "Any musical work or the expression of a musical work officially sanctioned by the artist and/or their corporate body.";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:Instrument
     a rdfs:Class;
@@ -889,9 +890,9 @@ mo:Instrument
 		from the Musicbrainz instrument taxonomy, conforming to SKOS. This concept holds a seeAlso link 
 		towards this taxonomy.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class;
-    rdfs:seeAlso <http://purl.org/ontology/mo/mit#>;
+    rdfs:seeAlso <mit#>;
     a owl:Class .
 
 mo:Genre
@@ -909,7 +910,7 @@ mo:Genre
 		Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web
 		clients to access easily really detailed structured information about the genre you are refering to.
 	""";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:Class, owl:Class, owl:Class .
 
 foaf:maker
@@ -961,11 +962,22 @@ foaf:member
     rdfs:comment """
 		Indicates a member of a Group
 	""";
-    a owl:ObjectProperty;
     rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/>;
     rdfs:domain foaf:Group;
     rdfs:range foaf:Agent;
     a owl:ObjectProperty .
+
+mo:member
+    a owl:ObjectProperty;
+    vs:term_status "stable";
+    mo:level "1";
+    rdfs:comment """
+		Indicates a member of a musical group
+	""";
+    rdfs:subPropertyOf foaf:member;
+    rdfs:isDefinedBy <>;
+    rdfs:domain mo:MusicGroup;
+    rdfs:range foaf:Agent .
 
 mo:composer
     a owl:ObjectProperty;
@@ -980,7 +992,7 @@ mo:composer
     rdfs:domain mo:Composition;
     rdfs:range foaf:Agent;
     rdfs:subPropertyOf event:agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:produced_work
     a owl:ObjectProperty;
@@ -997,7 +1009,7 @@ mo:produced_work
     rdfs:range mo:MusicalWork;
     rdfs:subPropertyOf event:product;
     owl:inverseOf mo:composed_in;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:producesWork
     a owl:ObjectProperty;
@@ -1024,12 +1036,12 @@ mo:performed_in
     ];
     rdfs:subPropertyOf event:isFactorOf;
     owl:inverseOf mo:performance_of;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:usedInPerformance
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:performed_in .
 
 mo:composed_in
@@ -1047,12 +1059,12 @@ mo:composed_in
     rdfs:range mo:Composition;
     rdfs:subPropertyOf event:producedIn;
     owl:inverseOf mo:produced_work;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:productOfComposition
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:composed_in .
 
 mo:performance_of
@@ -1075,12 +1087,12 @@ mo:performance_of
     ];
     rdfs:subPropertyOf event:factor;
     owl:inverseOf mo:performed_in;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:usesWork
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:performance_of .
 
 mo:produced_sound
@@ -1094,12 +1106,12 @@ mo:produced_sound
     rdfs:domain mo:Performance;
     rdfs:range mo:Sound;
     rdfs:subPropertyOf event:product;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:producesSound
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:produced_sound .
 
 mo:recorded_in
@@ -1117,12 +1129,12 @@ mo:recorded_in
     rdfs:range mo:Recording;
     rdfs:subPropertyOf event:isFactorOf;
     owl:inverseOf mo:recording_of;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:usedInRecording
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:recorded_in .
 
 mo:recording_of
@@ -1140,12 +1152,12 @@ mo:recording_of
     rdfs:range mo:Sound;
     rdfs:subPropertyOf event:factor;
     owl:inverseOf mo:recorded_in;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:usesSound
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:recording_of .
 
 mo:produced_signal
@@ -1159,12 +1171,12 @@ mo:produced_signal
     rdfs:domain mo:Recording;
     rdfs:range mo:Signal;
     rdfs:subPropertyOf event:product;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:producesSignal
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:produced_signal .
 
 mo:produced_score
@@ -1179,7 +1191,7 @@ mo:produced_score
     rdfs:domain mo:Arrangement;
     rdfs:range mo:Score;
     rdfs:subPropertyOf event:product;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:arranged_in
     a owl:ObjectProperty;
@@ -1193,7 +1205,7 @@ mo:arranged_in
     rdfs:range mo:Arrangement;
     rdfs:subPropertyOf event:isFactorOf;
     owl:inverseOf mo:arrangement_of;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:arrangement_of
     a owl:ObjectProperty;
@@ -1207,7 +1219,7 @@ mo:arrangement_of
     rdfs:domain mo:Arrangement;
     rdfs:subPropertyOf event:factor;
     owl:inverseOf mo:arranged_in;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:genre
     a owl:ObjectProperty;
@@ -1229,7 +1241,7 @@ mo:genre
         )
     ];
     rdfs:range mo:Genre;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:recorded_as
     a owl:ObjectProperty;
@@ -1246,7 +1258,7 @@ mo:recorded_as
     owl:inverseOf mo:records;
     rdfs:domain mo:Performance;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:records
     a owl:ObjectProperty, owl:ObjectProperty;
@@ -1260,7 +1272,7 @@ mo:records
     owl:inverseOf mo:recordedAs;
     rdfs:domain mo:Signal;
     rdfs:range mo:Performance;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:recordedAs
     a owl:ObjectProperty;
@@ -1278,12 +1290,12 @@ mo:time
     rdfs:domain mo:Signal;
     rdfs:range time:TemporalEntity;
     a owl:FunctionalProperty;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:signalTime
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:time .
 
 mo:sampled_version_of
@@ -1296,14 +1308,14 @@ mo:sampled_version_of
 	""";
     rdfs:domain mo:DigitalSignal;
     rdfs:range mo:AnalogSignal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:FunctionalProperty;
     owl:inverseOf mo:sampled_version .
 
 mo:sampledVersionOf
     a owl:ObjectProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:sampled_version_of .
 
 mo:sampled_version
@@ -1316,7 +1328,7 @@ mo:sampled_version
 	""";
     rdfs:domain mo:AnalogSignal;
     rdfs:range mo:DigitalSignal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:inverseOf mo:sampled_version_of .
 
 mo:channels
@@ -1328,7 +1340,7 @@ mo:channels
 	""";
     rdfs:domain mo:Signal;
     rdfs:range <http://www.w3.org/2001/XMLSchema#int>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:FunctionalProperty .
 
 mo:sample_rate
@@ -1341,7 +1353,7 @@ mo:sample_rate
 	""";
     rdfs:domain mo:DigitalSignal;
     rdfs:range <http://www.w3.org/2001/XMLSchema#float>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:FunctionalProperty .
 
 mo:sampleRate
@@ -1358,7 +1370,7 @@ mo:bitsPerSample
 	""";
     rdfs:domain mo:DigitalSignal;
     rdfs:range <http://www.w3.org/2001/XMLSchema#int>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:FunctionalProperty .
 
 mo:image
@@ -1378,7 +1390,7 @@ mo:image
     ];
     rdfs:subPropertyOf foaf:depiction;
     rdfs:range foaf:Document;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:encoding
     a owl:DatatypeProperty;
@@ -1389,7 +1401,7 @@ mo:encoding
     rdfs:domain mo:AudioFile;
     a owl:DatatypeProperty;
     rdfs:range rdfs:Literal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:encodes
     a owl:ObjectProperty;
@@ -1403,7 +1415,7 @@ mo:encodes
 	""";
     rdfs:domain mo:MusicalItem;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:manifestation
     a owl:ObjectProperty;
@@ -1414,7 +1426,7 @@ mo:manifestation
     rdfs:domain mo:MusicalExpression;
     rdfs:range mo:MusicalManifestation;
     rdfs:subPropertyOf frbr:embodiment;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:hasManifestation
     a owl:ObjectProperty;
@@ -1448,7 +1460,7 @@ mo:published_as
             mo:PublishedLyrics
         )
     ];
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     rdfs:subPropertyOf frbr:embodiment, mo:manifestation;
     owl:inverseOf mo:publicationOf;
     a owl:ObjectProperty .
@@ -1487,7 +1499,7 @@ mo:publication_of
             mo:PublishedLyrics
         )
     ];
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:inverseOf mo:published_as .
 
 mo:event_homepage
@@ -1499,7 +1511,7 @@ mo:event_homepage
     rdfs:domain event:Event;
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:eventHomePage
     a owl:ObjectProperty;
@@ -1521,7 +1533,7 @@ mo:trmid
     rdfs:domain mo:Signal;
     a owl:DatatypeProperty;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:puid
     a owl:DatatypeProperty;
@@ -1541,7 +1553,7 @@ mo:puid
 	""";
     rdfs:domain mo:Signal;
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:bpm
     a owl:DatatypeProperty;
@@ -1560,7 +1572,7 @@ mo:bpm
         )
     ];
     rdfs:range <http://www.w3.org/2001/XMLSchema#float>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:tempo
     a owl:DatatypeProperty;
@@ -1582,7 +1594,7 @@ mo:tempo
         )
     ];
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:key
     a owl:ObjectProperty;
@@ -1601,8 +1613,8 @@ mo:key
         )
     ];
     rdfs:subPropertyOf event:factor;
-    rdfs:range <http://purl.org/NET/c4dm/keys.owl#Key>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:range <../../NET/c4dm/keys.owl#Key>;
+    rdfs:isDefinedBy <> .
 
 mo:opus
     a owl:DatatypeProperty;
@@ -1614,7 +1626,7 @@ mo:opus
 	""";
     rdfs:domain mo:MusicalWork;
     rdfs:range rdfs:Literal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:track_number
     a owl:DatatypeProperty;
@@ -1624,12 +1636,12 @@ mo:track_number
     rdfs:comment "Indicates the position of a track on a record medium (a CD, etc.).";
     rdfs:domain mo:Track;
     rdfs:range <http://www.w3.org/2001/XMLSchema#int>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:trackNum
     a owl:DatatypeProperty;
     vs:term_status "deprecated";
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     owl:equivalentProperty mo:track_number .
 
 mo:track
@@ -1640,13 +1652,13 @@ mo:track
     rdfs:comment "Indicates a part of a musical manifestation - in this particular case, a track.";
     rdfs:domain mo:Record;
     rdfs:range mo:Track;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:has_track
     a owl:ObjectProperty;
     vs:term_status "deprecated";
     owl:equivalentProperty mo:track;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:similar_to
     a owl:ObjectProperty;
@@ -1679,7 +1691,7 @@ mo:similar_to
             mo:Genre
         )
     ];
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 foaf:Agent
     a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
@@ -1708,7 +1720,7 @@ mo:wikipedia
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 frbr:Work
     a owl:Class, owl:Class, owl:Class, owl:Class .
@@ -1731,7 +1743,7 @@ mo:myspace
     rdfs:domain foaf:Agent;
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:musicmoz
     a owl:ObjectProperty;
@@ -1750,7 +1762,7 @@ mo:musicmoz
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:musicbrainz
     a owl:ObjectProperty;
@@ -1771,7 +1783,7 @@ mo:musicbrainz
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:discogs
     a owl:ObjectProperty;
@@ -1791,7 +1803,7 @@ mo:discogs
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:download
     a owl:ObjectProperty;
@@ -1822,7 +1834,7 @@ mo:download
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:preview_download
     a owl:ObjectProperty;
@@ -1848,7 +1860,7 @@ mo:preview_download
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf, mo:download;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:paid_download
     a owl:ObjectProperty;
@@ -1869,13 +1881,13 @@ mo:paid_download
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf, mo:download;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:paiddownload
     a owl:ObjectProperty;
     vs:term_status "deprecated";
     owl:equivalentProperty mo:paid_download;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:free_download
     a owl:ObjectProperty;
@@ -1902,13 +1914,13 @@ mo:free_download
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf, mo:download;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:freedownload
     a owl:ObjectProperty;
     vs:term_status "deprecated";
     owl:equivalentProperty mo:free_download;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:olga
     a owl:ObjectProperty;
@@ -1919,7 +1931,7 @@ mo:olga
     rdfs:domain mo:Track;
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:fanpage
     a owl:ObjectProperty;
@@ -1930,7 +1942,7 @@ mo:fanpage
     rdfs:domain mo:MusicArtist;
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:onlinecommunity
     a owl:ObjectProperty;
@@ -1941,7 +1953,7 @@ mo:onlinecommunity
     rdfs:domain foaf:Agent;
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:licence
     a owl:ObjectProperty;
@@ -1960,7 +1972,7 @@ This is usually used to link to a Creative Commons licence.""";
         )
     ];
     rdfs:range <http://web.resource.org/cc/License>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:review
     a owl:ObjectProperty;
@@ -1980,7 +1992,7 @@ The review does not have to be open content, as long as it is accessible to the 
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:amazon_asin
     a owl:ObjectProperty;
@@ -1999,7 +2011,7 @@ mo:amazon_asin
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:isrc
     a owl:DatatypeProperty;
@@ -2014,7 +2026,7 @@ mo:isrc
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
     rdfs:domain mo:Signal;
     a owl:InverseFunctionalProperty;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:biography
     a owl:ObjectProperty;
@@ -2025,7 +2037,7 @@ mo:biography
     rdfs:domain mo:MusicArtist;
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:discography
     a owl:ObjectProperty;
@@ -2036,7 +2048,7 @@ mo:discography
     rdfs:domain mo:MusicArtist;
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:mailorder
     a owl:ObjectProperty;
@@ -2054,7 +2066,7 @@ mo:mailorder
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:imdb
     a owl:ObjectProperty;
@@ -2074,7 +2086,7 @@ mo:imdb
     ];
     rdfs:range foaf:Document;
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:remixed
     a owl:ObjectProperty;
@@ -2087,7 +2099,7 @@ This involves taking just one other musical work and using audio editing to make
     owl:inverseOf mo:remixer;
     rdfs:domain mo:MusicArtist;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:remixer
@@ -2101,7 +2113,7 @@ This involves taking just one other musical work and using audio editing to make
     owl:inverseOf mo:remixed;
     rdfs:domain mo:Signal;
     rdfs:range mo:MusicArtist;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:produced
     a owl:ObjectProperty;
@@ -2112,7 +2124,7 @@ mo:produced
     rdfs:domain foaf:Agent;
     owl:inverseOf mo:producer;
     rdfs:range mo:MusicalManifestation;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:producer
@@ -2124,7 +2136,7 @@ mo:producer
     owl:inverseOf mo:produced;
     rdfs:domain mo:MusicalManifestation;
     rdfs:range foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:member_of
     a owl:ObjectProperty;
@@ -2135,7 +2147,7 @@ mo:member_of
     owl:inverseOf foaf:member;
     rdfs:domain foaf:Person;
     rdfs:range foaf:Group;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:sampled
     a owl:ObjectProperty;
@@ -2146,7 +2158,7 @@ mo:sampled
     owl:inverseOf mo:sampler;
     rdfs:domain mo:MusicArtist;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:sampler
@@ -2158,7 +2170,7 @@ mo:sampler
     owl:inverseOf mo:sampled;
     rdfs:domain mo:Signal;
     rdfs:range mo:MusicArtist;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:contains_sample_from
     a owl:ObjectProperty;
@@ -2170,7 +2182,7 @@ mo:contains_sample_from
         """;
     rdfs:domain mo:Signal;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:compiled
     a owl:ObjectProperty;
@@ -2181,7 +2193,7 @@ mo:compiled
     owl:inverseOf mo:compiler;
     rdfs:domain mo:MusicArtist;
     rdfs:range mo:MusicalManifestation;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:compiler
@@ -2193,7 +2205,7 @@ mo:compiler
     owl:inverseOf mo:compiled;
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:MusicArtist;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:djmixed
     a owl:ObjectProperty;
@@ -2206,7 +2218,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
     owl:inverseOf mo:djmixed_by;
     rdfs:domain mo:MusicArtist;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:djmixed_by
@@ -2220,7 +2232,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
     owl:inverseOf mo:djmixed;
     rdfs:domain mo:Signal;
     rdfs:range mo:MusicArtist;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:published
     a owl:ObjectProperty;
@@ -2231,7 +2243,7 @@ mo:published
     owl:inverseOf mo:publisher;
     rdfs:domain foaf:Agent;
     rdfs:range mo:MusicalManifestation;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:publisher
@@ -2243,7 +2255,7 @@ mo:publisher
     owl:inverseOf mo:published;
     rdfs:domain mo:MusicalManifestation;
     rdfs:range foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:publishing_location
     a owl:ObjectProperty;
@@ -2255,7 +2267,7 @@ mo:publishing_location
         """;
     rdfs:domain mo:MusicalManifestation;
     rdfs:range <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:publishingLocation
     a owl:ObjectProperty;
@@ -2270,7 +2282,7 @@ mo:supporting_musician
     rdfs:comment "Used to relate an artist doing long-time instrumental or vocal support for another artist.";
     rdfs:domain mo:MusicArtist;
     rdfs:range mo:MusicArtist;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:collaborated_with
     a owl:ObjectProperty;
@@ -2281,7 +2293,7 @@ mo:collaborated_with
     rdfs:domain foaf:Agent;
     rdfs:range foaf:Agent;
     a owl:SymmetricProperty;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:remix_of
     a owl:ObjectProperty;
@@ -2291,7 +2303,7 @@ mo:remix_of
     rdfs:comment "Used to relate the remix of a musical work in a substantially altered version produced by mixing together individual tracks or segments of an original musical source work.";
     rdfs:domain mo:Signal;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:medley_of
     a owl:ObjectProperty;
@@ -2303,7 +2315,7 @@ mo:medley_of
 This means that the orignial musical expression were rearranged to create a new musical expression in the form of a medley. """;
     rdfs:domain mo:Signal;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:compilation_of
     a owl:ObjectProperty;
@@ -2313,7 +2325,7 @@ mo:compilation_of
     rdfs:comment "Indicates that a musical manifestation is a compilation of several Signals.";
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:djmix_of
     a owl:ObjectProperty;
@@ -2325,7 +2337,7 @@ mo:djmix_of
 The tracks might have been altered by pitching (so that the tempo of one track matches the tempo of the following track) and fading (so that one track blends in smoothly with the other). If the tracks have been more substantially altered, the \"mo:remix\" relationship type is more appropriate. """;
     rdfs:domain mo:Signal;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:remaster_of
     a owl:ObjectProperty;
@@ -2337,7 +2349,7 @@ mo:remaster_of
 A remaster is a new version made for release from source recordings that were earlier released separately. This is usually done to improve the audio quality or adjust for more modern playback equipment. The process generally doesn't involve changing the music in any artistically important way. It may, however, result in tracks that are a few seconds longer or shorter.""";
     rdfs:domain mo:Signal;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:other_release_of
     a owl:ObjectProperty;
@@ -2348,7 +2360,7 @@ mo:other_release_of
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:MusicalManifestation;
     a owl:SymmetricProperty;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:mashup_of
     a owl:ObjectProperty;
@@ -2360,7 +2372,7 @@ mo:mashup_of
 This means that two musical works or the expressions of a musical work by different artists are mixed together, over each other, or otherwise combined into a single musical work (usually by a third artist, the remixer).""";
     rdfs:domain mo:Signal;
     rdfs:range mo:Signal;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:translation_of
     a owl:ObjectProperty;
@@ -2370,7 +2382,7 @@ mo:translation_of
     rdfs:comment "Indicates that a work or the expression of a work has translated or transliterated into another expression of a work.";
     rdfs:domain frbr:Expression;
     rdfs:range frbr:Expression;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:tribute_to
     a owl:ObjectProperty;
@@ -2380,7 +2392,7 @@ mo:tribute_to
     rdfs:comment "Indicates a musical work or the expression of a musical work that is a tribute to an artist - normally consisting of music being composed by the artist but performed by other artists. ";
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:MusicArtist;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:possess_item
     a owl:ObjectProperty;
@@ -2390,7 +2402,7 @@ mo:possess_item
     rdfs:comment "A person, a group of person or an organization possessing an exemplar of a single manifestation.";
     rdfs:domain foaf:Agent;
     rdfs:range frbr:Item;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:want_item
     a owl:ObjectProperty;
@@ -2400,7 +2412,7 @@ mo:want_item
     rdfs:comment "A person, a group of person or an organization wanting an exemplar of a single manifestation.";
     rdfs:domain foaf:Agent;
     rdfs:range frbr:Item;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:sell_item
     a owl:ObjectProperty;
@@ -2410,7 +2422,7 @@ mo:sell_item
     rdfs:comment "A person, a group of person or an organization selling an exemplar of a single manifestation.";
     rdfs:domain foaf:Agent;
     rdfs:range frbr:Item;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:exchange_item
     a owl:ObjectProperty;
@@ -2420,7 +2432,7 @@ mo:exchange_item
     rdfs:comment "A person, a group of person or an organization exchanging an exemplar of a single manifestation.";
     rdfs:domain foaf:Agent;
     rdfs:range frbr:Item;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:movement
     a owl:ObjectProperty;
@@ -2430,7 +2442,7 @@ mo:movement
     rdfs:comment "Indicates that a musical work has movements";
     rdfs:domain mo:MusicalWork;
     rdfs:range mo:Movement;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:movement_number
     a owl:DatatypeProperty;
@@ -2440,7 +2452,7 @@ mo:movement_number
     rdfs:comment "Indicates the position of a movement in a musical work.";
     rdfs:domain mo:Movement;
     rdfs:range <http://www.w3.org/2001/XMLSchema#int>;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:movementNum
     a owl:DatatypeProperty;
@@ -2455,7 +2467,7 @@ mo:performer
     rdfs:subPropertyOf event:agent;
     rdfs:domain mo:Performance;
     rdfs:range foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:singer
@@ -2466,7 +2478,7 @@ mo:singer
     rdfs:subPropertyOf mo:performer;
     rdfs:domain mo:Performance;
     rdfs:range foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:conductor
     a owl:ObjectProperty;
@@ -2477,7 +2489,7 @@ mo:conductor
     rdfs:subPropertyOf event:agent;
     rdfs:domain mo:Performance;
     rdfs:range foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:listener
@@ -2489,7 +2501,7 @@ mo:listener
     rdfs:subPropertyOf event:agent;
     rdfs:domain mo:Performance;
     rdfs:range foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:instrument
@@ -2500,7 +2512,7 @@ mo:instrument
     rdfs:subPropertyOf event:factor;
     rdfs:domain mo:Performance;
     rdfs:range mo:Instrument;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:engineer
     a owl:ObjectProperty;
@@ -2517,7 +2529,7 @@ mo:engineer
         )
     ];
     rdfs:range foaf:Agent;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/>;
+    rdfs:isDefinedBy <>;
     a owl:ObjectProperty .
 
 mo:release_type
@@ -2529,7 +2541,7 @@ mo:release_type
 	""";
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:ReleaseType;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:releaseType
     a owl:ObjectProperty;
@@ -2545,7 +2557,7 @@ mo:release_status
         """;
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:ReleaseStatus;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:releaseStatus
     a owl:ObjectProperty;
@@ -2568,7 +2580,7 @@ mo:available_as
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:MusicalItem;
     rdfs:subPropertyOf frbr:exemplar;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:availableAs
     a owl:ObjectProperty;
@@ -2586,7 +2598,7 @@ mo:item
     rdfs:subPropertyOf mo:available_as;
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:MusicalItem;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 
 mo:preview
     a owl:ObjectProperty;
@@ -2599,5 +2611,5 @@ mo:preview
     rdfs:domain mo:MusicalManifestation;
     rdfs:range mo:MusicalItem;
     rdfs:subPropertyOf mo:available_as;
-    rdfs:isDefinedBy <http://purl.org/ontology/mo/> .
+    rdfs:isDefinedBy <> .
 

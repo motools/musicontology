@@ -864,12 +864,20 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 	<rdfs:comment>
 		Indicates a member of a Group
 	</rdfs:comment>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
 	<rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
 	<rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
 	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/member" vs:term_status="stable" mo:level="1">
+	<rdfs:comment>
+		Indicates a member of a musical group
+	</rdfs:comment>
+	<rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+	<rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicGroup"/>
+	<rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+</owl:ObjectProperty>
 
 <!-- Some sub-properties of these core event-related properties, directly linked to MO concepts -->
 
