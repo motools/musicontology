@@ -97,7 +97,7 @@ mo:level
     rdfs:isDefinedBy <> .
 
 mo:MusicArtist
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "MusicArtist";
     vs:term_status "stable";
     mo:level "1";
@@ -106,51 +106,46 @@ mo:MusicArtist
 		creative work shows sensitivity and imagination 
 	""";
     rdfs:subClassOf foaf:Agent;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:SoloMusicArtist
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "SoloMusicArtist";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "Single person whose musical creative work shows sensitivity and imagination.";
     rdfs:subClassOf mo:MusicArtist, foaf:Person;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:MusicGroup
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "MusicGroup";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. ";
     rdfs:subClassOf mo:MusicArtist, foaf:Group;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:CorporateBody
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "CorporateBody";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "Organization or group of individuals and/or other organizations involved in the music market.";
     rdfs:subClassOf foaf:Organization;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Label
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Label";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "Trade name of a company that produces musical works or expression of musical works.";
     rdfs:subClassOf mo:CorporateBody;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:MusicalWork
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "MusicalWork";
     vs:term_status "stable";
     mo:level "2";
@@ -167,11 +162,10 @@ work #1 J. S. Bach's The art of the fugue
     
 	""";
     rdfs:subClassOf frbr:Work;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Movement
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Movement";
     vs:term_status "unstable";
     mo:level "2";
@@ -182,11 +176,10 @@ movements exert a cumulative effect. In some forms, composers sometimes link the
 pause between them.
 	""";
     rdfs:subClassOf mo:MusicalWork;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:MusicalExpression
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "MusicalExpression";
     vs:term_status "unstable";
     mo:level "1";
@@ -211,33 +204,30 @@ particular time').
 	
 	""";
     rdfs:subClassOf frbr:Expression;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Sound
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
 		A subclass of MusicalExpression, representing a sound. Realisation of a MusicalWork during a musical Performance.
 	""";
     rdfs:subClassOf mo:MusicalExpression, event:Event;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Signal
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment """
 		A subclass of MusicalExpression, representing a Signal. Realisation of a MusicalWork through both a Performance and a Recording.
 	""";
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:AnalogSignal
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -245,11 +235,10 @@ mo:AnalogSignal
 	""";
     rdfs:subClassOf mo:Signal;
     rdfs:isDefinedBy <>;
-    a owl:Class;
     owl:disjointWith mo:DigitalSignal .
 
 mo:DigitalSignal
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -257,11 +246,10 @@ mo:DigitalSignal
 	""";
     rdfs:subClassOf mo:Signal;
     rdfs:isDefinedBy <>;
-    a owl:Class;
     owl:disjointWith mo:AnalogSignal .
 
 mo:Score
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -269,33 +257,30 @@ mo:Score
 		This may be, for example, the product of an arrangement process.
 	""";
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Lyrics
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
 		Lyrics
 	""";
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Libretto
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
                 Libretto
         """;
     rdfs:subClassOf mo:MusicalExpression;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Performance
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -305,8 +290,7 @@ mo:Performance
 		It might produce a sound:-)
 	""";
     rdfs:subClassOf event:Event;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Performer
     a owl:Class;
@@ -428,7 +412,7 @@ mo:Arranger
     rdfs:subClassOf foaf:Agent .
 
 mo:Recording
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -438,11 +422,10 @@ mo:Recording
 		microphone or the \"recording device\".
 	""";
     rdfs:subClassOf event:Event;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Composition
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -452,10 +435,10 @@ mo:Composition
 	""";
     rdfs:subClassOf event:Event;
     rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class .
+    a owl:Class .
 
 mo:Arrangement
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -464,10 +447,10 @@ mo:Arrangement
 	""";
     rdfs:subClassOf event:Event;
     rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class .
+    a owl:Class .
 
 mo:Instrumentation
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
@@ -475,72 +458,65 @@ mo:Instrumentation
 		including the limitations of the instrument, playing techniques and idiomatic handling of the instrument.
 	""";
     rdfs:subClassOf mo:Arrangement;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Orchestration
-    a rdfs:Class;
+    a owl:Class;
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment """
         	Orchestration includes, in addition to instrumentation, the handling of groups of instruments and their balance and interaction.
 	""";
     rdfs:subClassOf mo:Arrangement;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Track
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Track";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "A track on a particular record";
     rdfs:isDefinedBy <>;
-    rdfs:subClassOf mo:Record;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:subClassOf mo:Record .
 
 mo:PublishedScore
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "published score";
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment "A published score (subclass of MusicalManifestation)";
     rdfs:isDefinedBy <>;
-    rdfs:subClassOf mo:MusicalManifestation;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:subClassOf mo:MusicalManifestation .
 
 mo:Record
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "record";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "A published record (manifestation which first aim is to render the product of a recording)";
     rdfs:isDefinedBy <>;
-    rdfs:subClassOf mo:MusicalManifestation;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:subClassOf mo:MusicalManifestation .
 
 mo:PublishedLibretto
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "published libretto";
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment "A published libretto";
     rdfs:isDefinedBy <>;
-    rdfs:subClassOf mo:MusicalManifestation;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:subClassOf mo:MusicalManifestation .
 
 mo:PublishedLyrics
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "published lyrics";
     vs:term_status "stable";
     mo:level "2";
     rdfs:comment "Published lyrics, as a book or as a text file, for example";
     rdfs:isDefinedBy <>;
-    rdfs:subClassOf mo:MusicalManifestation;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:subClassOf mo:MusicalManifestation .
 
 mo:Festival
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Festival";
     vs:term_status "stable";
     mo:level "2";
@@ -550,11 +526,10 @@ mo:Festival
 		a particular festival) using hasSubEvent in several performances at different space/time.
 	""";
     rdfs:isDefinedBy <>;
-    rdfs:subClassOf event:Event;
-    a owl:Class .
+    rdfs:subClassOf event:Event .
 
 mo:Show
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Show";
     vs:term_status "stable";
     mo:level "2";
@@ -563,19 +538,17 @@ mo:Show
 		\"The Magic Flute\" at the Opera Bastille, August 2005, or a musical in the west end...
 	""";
     rdfs:isDefinedBy <>;
-    rdfs:subClassOf event:Event;
-    a owl:Class .
+    rdfs:subClassOf event:Event .
 
 mo:ReleaseType
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Release type";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment """
 		Release type of a particular manifestation, such as \"album\" or \"interview\"...
 	""";
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:album
     a mo:ReleaseType;
@@ -668,7 +641,7 @@ mo:ep
     rdfs:isDefinedBy <> .
 
 mo:MusicalManifestation
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "musical manifestation";
     vs:term_status "stable";
     mo:level "1";
@@ -699,11 +672,10 @@ Defining manifestation as an entity also enables us to draw relationships betwee
 
 """;
     rdfs:subClassOf frbr:Manifestation;
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:MusicalItem
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "MusicalItem";
     vs:term_status "unstable";
     mo:level "1";
@@ -715,147 +687,132 @@ From the FRBR final report: The entity defined as item is a concrete entity. It 
 
 In terms of intellectual content and physical form, an item exemplifying a manifestation is normally the same as the manifestation itself. However, variations may occur from one item to another, even when the items exemplify the same manifestation, where those variations are the result of actions external to the intent of the producer of the manifestation (e.g., damage occurring after the item was produced, binding performed by a library, etc.). 
 	""";
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Medium
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Medium";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "A means or instrumentality for storing or communicating musical manifestation.";
     rdfs:isDefinedBy <>;
-    a owl:Class;
     rdfs:subClassOf mo:MusicalItem .
 
 mo:DAT
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "DAT";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Data Audio Tape used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:DCC
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "DCC";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Digital Compact Cassette used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:CD
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "CD";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Compact Disc used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:MD
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "MD";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Mini Disc used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:DVDA
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "DVDA";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "DVD-Audio used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:SACD
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "SACD";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Super Audio Compact Disc used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Vinyl
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Vinyl";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Vinyl used as medium to record a musical manifestation";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:MagneticTape
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "MagneticTape";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Magnetic analogue tape used as medium to record a musical manifestation.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Stream
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Stream";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Transmission over a network  used as medium to broadcast a musical manifestation";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:Torrent
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Torrent";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Something available on the Bittorrent peer-2-peer filesharing network";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:ED2K
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "ED2K";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "Something available on the E-Donkey peer-2-peer filesharing network";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:AudioFile
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "audio file";
     vs:term_status "unstable";
     mo:level "1";
     rdfs:comment "An audio file, which may be available on a local file system or through http, ftp, etc.";
     rdfs:subClassOf mo:Medium;
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:ReleaseStatus
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "ReleaseStatus";
     vs:term_status "stable";
     mo:level "1";
     rdfs:comment "Musical manifestation release status.";
-    rdfs:isDefinedBy <>;
-    a owl:Class .
+    rdfs:isDefinedBy <> .
 
 mo:promotion
     a mo:ReleaseStatus;
@@ -879,7 +836,7 @@ mo:official
     rdfs:isDefinedBy <> .
 
 mo:Instrument
-    a rdfs:Class;
+    a owl:Class;
     rdfs:label "Instrument";
     vs:term_status "stable";
     mo:level "2";
@@ -891,7 +848,6 @@ mo:Instrument
 		towards this taxonomy.
 	""";
     rdfs:isDefinedBy <>;
-    a owl:Class;
     rdfs:seeAlso <mit#>;
     a owl:Class .
 
@@ -910,8 +866,7 @@ mo:Genre
 		Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web
 		clients to access easily really detailed structured information about the genre you are refering to.
 	""";
-    rdfs:isDefinedBy <>;
-    a owl:Class, owl:Class, owl:Class .
+    rdfs:isDefinedBy <> .
 
 foaf:maker
     a owl:ObjectProperty;
@@ -1716,7 +1671,7 @@ mo:similar_to
     rdfs:isDefinedBy <> .
 
 foaf:Agent
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class .
 
 mo:wikipedia
     a owl:ObjectProperty;
@@ -1745,16 +1700,16 @@ mo:wikipedia
     rdfs:isDefinedBy <> .
 
 frbr:Work
-    a owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class .
 
 frbr:Expression
-    a owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class .
 
 frbr:Manifestation
-    a owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class, owl:Class .
+    a owl:Class .
 
 frbr:Item
-    a owl:Class, owl:Class .
+    a owl:Class .
 
 mo:myspace
     a owl:ObjectProperty;

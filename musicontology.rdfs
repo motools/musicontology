@@ -93,54 +93,49 @@
 <!-- Classes related to foaf:Agent -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicArtist" rdfs:label="MusicArtist" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MusicArtist" rdfs:label="MusicArtist" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		A person or a group of people (or a computer :-) ), whose musical 
 		creative work shows sensitivity and imagination 
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/SoloMusicArtist" rdfs:label="SoloMusicArtist" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/SoloMusicArtist" rdfs:label="SoloMusicArtist" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Single person whose musical creative work shows sensitivity and imagination.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
 	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicGroup" rdfs:label="MusicGroup" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MusicGroup" rdfs:label="MusicGroup" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. </rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
 	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/CorporateBody" rdfs:label="CorporateBody" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/CorporateBody" rdfs:label="CorporateBody" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Organization or group of individuals and/or other organizations involved in the music market.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Label" rdfs:label="Label" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Label" rdfs:label="Label" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Trade name of a company that produces musical works or expression of musical works.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/CorporateBody"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <!-- Classes related to frbr:Work -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalWork" rdfs:label="MusicalWork" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MusicalWork" rdfs:label="MusicalWork" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 	Distinct intellectual or artistic musical creation.
     
@@ -155,11 +150,10 @@ work #1 J. S. Bach's The art of the fugue
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Movement" rdfs:label="Movement" vs:term_status="unstable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Movement" rdfs:label="Movement" vs:term_status="unstable" mo:level="2">
 	<rdfs:comment>A movement is a self-contained part of a musical work. While individual or selected movements from a composition are sometimes performed separately, a performance of the complete work requires all the movements to be performed in succession.
 
 Often a composer attempts to interrelate the movements thematically, or sometimes in more subtle ways, in order that the individual
@@ -168,14 +162,13 @@ pause between them.
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <!-- Classes related to frbr:Expression -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalExpression" rdfs:label="MusicalExpression" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MusicalExpression" rdfs:label="MusicalExpression" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>
 The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, etc., or any combination of such forms.    
 
@@ -198,14 +191,13 @@ particular time').
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <!-- Let's define some MusicalExpressions -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Sound" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Sound" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A subclass of MusicalExpression, representing a sound. Realisation of a MusicalWork during a musical Performance.
 	</rdfs:comment>
@@ -213,77 +205,70 @@ particular time').
 	<rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<!-- assert disjointWith clauses with other sub-events here -->
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Signal" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Signal" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		A subclass of MusicalExpression, representing a Signal. Realisation of a MusicalWork through both a Performance and a Recording.
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalExpression"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/AnalogSignal" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/AnalogSignal" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		An analog signal.
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Signal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 	<owl:disjointWith rdf:resource="http://purl.org/ontology/mo/DigitalSignal"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/DigitalSignal" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/DigitalSignal" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A digital signal
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Signal"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 	<owl:disjointWith rdf:resource="http://purl.org/ontology/mo/AnalogSignal"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Score" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Score" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Here, we are dealing with the informational object (the MusicalExpression), not the actually "published" score.
 		This may be, for example, the product of an arrangement process.
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalExpression"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Lyrics" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Lyrics" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Lyrics
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalExpression"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Libretto" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Libretto" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
                 Libretto
         </rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalExpression"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
@@ -291,7 +276,7 @@ particular time').
 <!-- Let's define some events, leading to MusicalExpressions-->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Performance" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Performance" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A performance event. 
 		It might include as agents performers, engineers, conductors, or even listeners.
@@ -300,8 +285,7 @@ particular time').
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 <!-- Some extra DL candies -->
 <!-- Here, we define a set of "defined classes": Performer are agents involved in a performance -->
@@ -384,7 +368,7 @@ particular time').
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Recording" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Recording" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A recording event.
 		Takes a sound as a factor to produce a signal (analog or digital).
@@ -393,12 +377,11 @@ particular time').
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Composition" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Composition" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A composition event.
 		Takes as agent the composer himself.
@@ -406,87 +389,78 @@ particular time').
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Arrangement" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Arrangement" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		An arrangement event.
 		Takes as agent the arranger, and produces a score (informational object, not the actually published score).
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Instrumentation" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Instrumentation" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Instrumentation deals with the techniques of writing music for a specific instrument, 
 		including the limitations of the instrument, playing techniques and idiomatic handling of the instrument.
 	</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Orchestration" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Orchestration" vs:term_status="stable" mo:level="2">
         <rdfs:comment>
         	Orchestration includes, in addition to instrumentation, the handling of groups of instruments and their balance and interaction.
 	</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Arrangement"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <!-- Classes related to track (WARNING, a track is a track on a particular album (not as in the MB schema) -->
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Track" rdfs:label="Track" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Track" rdfs:label="Track" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>A track on a particular record</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Record"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedScore" rdfs:label="published score" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/PublishedScore" rdfs:label="published score" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>A published score (subclass of MusicalManifestation)</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Record" rdfs:label="record" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Record" rdfs:label="record" vs:term_status="stable" mo:level="1">
         <rdfs:comment>A published record (manifestation which first aim is to render the product of a recording)</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedLibretto" rdfs:label="published libretto" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/PublishedLibretto" rdfs:label="published libretto" vs:term_status="stable" mo:level="2">
         <rdfs:comment>A published libretto</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/PublishedLyrics" rdfs:label="published lyrics" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/PublishedLyrics" rdfs:label="published lyrics" vs:term_status="stable" mo:level="2">
         <rdfs:comment>Published lyrics, as a book or as a text file, for example</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Festival" rdfs:label="Festival" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Festival" rdfs:label="Festival" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A festival - musical/artistic event lasting several days, like Glastonbury, Rock Am Ring...
 		We migth decompose this event (which is in fact just a classification of the space/time region related to 
@@ -494,29 +468,26 @@ particular time').
 	</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Show" rdfs:label="Show" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Show" rdfs:label="Show" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		A show - a musical event lasting several days, in a particular venue. Examples can be
 		"The Magic Flute" at the Opera Bastille, August 2005, or a musical in the west end...
 	</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
 	<rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <!-- classes defining some possible type (used by the musical industry) to describe musical manifestation -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/ReleaseType" rdfs:label="Release type" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/ReleaseType" rdfs:label="Release type" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 		Release type of a particular manifestation, such as "album" or "interview"...
 	</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <mo:ReleaseType rdf:about="http://purl.org/ontology/mo/album" dc:title="album" mo:level="1">
@@ -603,7 +574,7 @@ particular time').
 
 <!-- Classes related with frbr:Manifestation -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation" rdfs:label="musical manifestation" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MusicalManifestation" rdfs:label="musical manifestation" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>
 
 This entity is related to the edition/production/publication of a musical expression (musical manifestation are closely related with the music industry (their terms, concepts, definitions, methods (production, publication, etc.), etc.)
@@ -632,12 +603,11 @@ Defining manifestation as an entity also enables us to draw relationships betwee
 </rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MusicalItem" rdfs:label="MusicalItem" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MusicalItem" rdfs:label="MusicalItem" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>A single exemplar of a musical expression.
     
 For example, it could be a single exemplar of a CD. This is normally an single object (a CD) possessed by somebody.
@@ -647,122 +617,107 @@ From the FRBR final report: The entity defined as item is a concrete entity. It 
 In terms of intellectual content and physical form, an item exemplifying a manifestation is normally the same as the manifestation itself. However, variations may occur from one item to another, even when the items exemplify the same manifestation, where those variations are the result of actions external to the intent of the producer of the manifestation (e.g., damage occurring after the item was produced, binding performed by a library, etc.). 
 	</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <!-- classes related to the recording/diffusion medium -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Medium" rdfs:label="Medium" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Medium" rdfs:label="Medium" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>A means or instrumentality for storing or communicating musical manifestation.</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/DAT" rdfs:label="DAT" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/DAT" rdfs:label="DAT" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Data Audio Tape used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/DCC" rdfs:label="DCC" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/DCC" rdfs:label="DCC" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Digital Compact Cassette used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/CD" rdfs:label="CD" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/CD" rdfs:label="CD" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MD" rdfs:label="MD" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MD" rdfs:label="MD" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Mini Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/DVDA" rdfs:label="DVDA" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/DVDA" rdfs:label="DVDA" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>DVD-Audio used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/SACD" rdfs:label="SACD" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/SACD" rdfs:label="SACD" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Super Audio Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Vinyl" rdfs:label="Vinyl" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Vinyl" rdfs:label="Vinyl" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Vinyl used as medium to record a musical manifestation</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/MagneticTape" rdfs:label="MagneticTape" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/MagneticTape" rdfs:label="MagneticTape" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Magnetic analogue tape used as medium to record a musical manifestation.</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Stream" rdfs:label="Stream" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Stream" rdfs:label="Stream" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Transmission over a network  used as medium to broadcast a musical manifestation</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>	
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Torrent" rdfs:label="Torrent" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Torrent" rdfs:label="Torrent" vs:term_status="unstable" mo:level="1">
 	<rdfs:comment>Something available on the Bittorrent peer-2-peer filesharing network</rdfs:comment>
 	<rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/ED2K" rdfs:label="ED2K" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/ED2K" rdfs:label="ED2K" vs:term_status="unstable" mo:level="1">
         <rdfs:comment>Something available on the E-Donkey peer-2-peer filesharing network</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/AudioFile" rdfs:label="audio file" vs:term_status="unstable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/AudioFile" rdfs:label="audio file" vs:term_status="unstable" mo:level="1">
         <rdfs:comment>An audio file, which may be available on a local file system or through http, ftp, etc.</rdfs:comment>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
         <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 <!-- Classes related with the Release Status of a frbr:Manifestation -->
 <!-- WARNING: what is released is the manifestation, neither work or expression -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/ReleaseStatus" rdfs:label="ReleaseStatus" vs:term_status="stable" mo:level="1">
+<owl:Class rdf:about="http://purl.org/ontology/mo/ReleaseStatus" rdfs:label="ReleaseStatus" vs:term_status="stable" mo:level="1">
 	<rdfs:comment>Musical manifestation release status.</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/promotion" dc:title="promotion" mo:level="1">
@@ -785,7 +740,7 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 
 <!-- Classes related with instrumentalisation -->
 
-<rdfs:Class rdf:about="http://purl.org/ontology/mo/Instrument" rdfs:label="Instrument" vs:term_status="stable" mo:level="2">
+<owl:Class rdf:about="http://purl.org/ontology/mo/Instrument" rdfs:label="Instrument" vs:term_status="stable" mo:level="2">
 	<rdfs:comment>
 		Any of various devices or contrivances that can be used to produce musical tones or sound.
 		
@@ -794,9 +749,8 @@ In terms of intellectual content and physical form, an item exemplifying a manif
 		towards this taxonomy.
 	</rdfs:comment>
 	<rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
-	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
 	<rdfs:seeAlso rdf:resource="http://purl.org/ontology/mo/mit#"/>
-</rdfs:Class>
+</owl:Class>
 
 
 <!-- Classes related to genres -->
