@@ -13,7 +13,7 @@
 @prefix dc: <../../dc/elements/1.1/> .
 @prefix mo: <> .
 
-<>
+<http://purl.org/ontology/mo/>
     a owl:Ontology;
     dc:title "The Music Ontology";
     owl:versionInfo "Revision: 1.2";

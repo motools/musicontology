@@ -16,7 +16,7 @@
 
 <!-- ONTOLOGY DEFINITION -->
 
-<owl:Ontology rdf:about="">
+<owl:Ontology rdf:about="http://purl.org/ontology/mo/">
 	<dc:title>The Music Ontology</dc:title>
 	<owl:versionInfo>Revision: 1.2</owl:versionInfo>
 	<dc:description>
