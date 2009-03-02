@@ -3,14 +3,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix timeline: <../../NET/c4dm/timeline.owl#> .
+@prefix timeline: <http://purl.org/NET/c4dm/timeline.owl#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix event: <../../NET/c4dm/event.owl#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix frbr: <../../vocab/frbr/core#> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
 @prefix wot: <http://xmlns.com/wot/0.1/> .
-@prefix bio: <../../vocab/bio/0.1/> .
-@prefix dc: <../../dc/elements/1.1/> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix mo: <> .
 
 <http://purl.org/ontology/mo/>
@@ -25,7 +25,11 @@
 	""";
     foaf:maker <http://moustaki.org/foaf.rdf#moustaki>, <http://www.talkdigger.com/foaf/fgiasson>;
     dc:date "$Date: 2007/08/07 16:34:19 $";
-    owl:imports <http://xmlns.com/foaf/spec/index.rdf>, <../../NET/c4dm/event.owl>, <../../NET/c4dm/timeline.owl>, <http://motools.sourceforge.net/keys/keys.owl> .
+    owl:imports 
+            <http://xmlns.com/foaf/spec/index.rdf>, 
+            <http://purl.org/NET/c4dm/event.owl>, 
+            <http://purl.org/NET/c4dm/timeline.owl>, 
+            <http://motools.sourceforge.net/keys/keys.owl> .
 
 <http://moustaki.org/foaf.rdf#moustaki>
     a foaf:Person .
@@ -51,7 +55,7 @@ frbr:embodiment
 frbr:exemplar
     a owl:ObjectProperty .
 
-<../../dc/elements/1.1/>
+<http://purl.org/dc/elements/1.1/>
     a owl:Ontology .
 
 <http://www.w3.org/2003/01/geo/wgs84_pos>
@@ -69,7 +73,7 @@ frbr:exemplar
 <http://www.w3.org/2003/01/geo/wgs84_pos#alt>
     a owl:DatatypeProperty .
 
-<../../dc/terms/isReferencedBy>
+<http://purl.org/dc/terms/isReferencedBy>
     a owl:ObjectProperty .
 
 <http://www.w3.org/2004/02/skos/core#definition>
@@ -1590,7 +1594,7 @@ mo:key
         )
     ];
     rdfs:subPropertyOf event:factor;
-    rdfs:range <../../NET/c4dm/keys.owl#Key>;
+    rdfs:range <http://purl.org/NET/c4dm/keys.owl#Key>;
     rdfs:isDefinedBy <> .
 
 mo:opus
