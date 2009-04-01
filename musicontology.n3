@@ -673,8 +673,8 @@ Changes that occur to an individual copy after the production process is complet
 With the entity defined as manifestation we can describe the physical characteristics of a set of items and the characteristics associated with the production and distribution of that set of items that may be important factors in enabling users to choose a manifestation appropriate to their physical needs and constraints, and to identify and acquire a copy of that manifestation.
 
 Defining manifestation as an entity also enables us to draw relationships between specific manifestations of a work. We can use the relationships between manifestations to identify, for example, the specific publication that was used to create a microreproduction.          
+	""";
 
-""";
     rdfs:subClassOf frbr:Manifestation;
     rdfs:isDefinedBy <> .
 
