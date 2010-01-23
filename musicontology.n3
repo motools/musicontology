@@ -1422,15 +1422,15 @@ mo:record_count
     rdfs:range xsd:int;
     rdfs:isDefinedBy <> .
 
-mo:release
+mo:release_event
     a owl:ObjectProperty;
     rdfs:label "release";
     vs:term_status "testing";
     mo:level "1";
-    rdfs:comment "Associates a release event with the corresponding release, holding information about records, cover art, liner notes etc.";
-    rdfs:domain mo:ReleaseEvent;
-    rdfs:range mo:Release;
-    rdfs:subPropertyOf event:factor;
+    rdfs:comment "Associates a release with the corresponding release event";
+    rdfs:range mo:ReleaseEvent;
+    rdfs:domain mo:Release;
+    rdfs:subPropertyOf event:factor_of;
     rdfs:isDefinedBy <> .
 
 mo:label
