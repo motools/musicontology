@@ -7,6 +7,7 @@ Version 2.0 (Feb 2010)
  * ADDED: mo:Transcription
  * ADDED: mo:ReleaseEvent
  * ADDED: mo:Release
+ * ADDED: mo:ListenEvent
  * ADDED: mo:membership
  * ADDED: mo:group
  * ADDED: mo:primary_instrument
@@ -14,12 +15,22 @@ Version 2.0 (Feb 2010)
  * ADDED: mo:signal
  * ADDED: mo:released_record
  * ADDED: mo:release
+ * ADDED: mo:record_count
  * ADDED: mo:label
  * ADDED: mo:track_count
  * ADDED: mo:uuid
  * ADDED: mo:musicbrainz_guid
  * ADDED: mo:catalogue_number
  * ADDED: mo:iswc
+ * ADDED: mo:ismn
+ * ADDED: mo:ipi
+ * ADDED: mo:lc
+ * ADDED: mo:gtin
+ * ADDED: mo:ean
+ * ADDED: mo:upc
+ * ADDED: mo:grid
+ * ADDED: mo:text
+ * ADDED: mo:meter
  * MODIFIED: domain/range of mo:similar_to
  * MODIFIED: domain/range of mo:published_as
  * MODIFIED: domain/range of mo:publication_of

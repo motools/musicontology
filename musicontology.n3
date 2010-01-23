@@ -455,6 +455,15 @@ mo:Arranger
     ];
     rdfs:subClassOf foaf:Agent .
 
+mo:ListenEvent
+    a owl:Class;
+    vs:term_status "testing";
+    rdfs:label "listen event";
+    mo:level "2";
+    rdfs:comment "An event corresponding to someone listening to something.";
+    rdfs:subClassOf event:Event;
+    rdfs:isDefinedBy <> .
+
 mo:RecordingSession
     a owl:Class;
     vs:term_status "testing";
@@ -569,7 +578,7 @@ mo:ReleaseEvent
     rdfs:label "release event";
     vs:term_status "testing";
     mo:level "1";
-    rdfs:comment "A release event of a record, in a particular place (e.g. a country) at a particular time. Other factors of this event might include cover art, liner notes, box, etc. or a release grouping all these.";
+    rdfs:comment "A release event, in a particular place (e.g. a country) at a particular time. Other factors of this event might include cover art, liner notes, box, etc. or a release grouping all these.";
     rdfs:isDefinedBy <>;
     rdfs:subClassOf event:Event .
 
@@ -1317,6 +1326,7 @@ mo:genre
     rdfs:domain [
         a owl:Class;
         owl:unionOf (
+            foaf:Agent
             mo:Performance
             mo:Arrangement
             mo:Composition
@@ -1396,10 +1406,20 @@ mo:released_record
     rdfs:label "released record";
     vs:term_status "testing";
     mo:level "1";
-    rdfs:comment "Associates a release event with the record being released. A single release event can be associated with multiple records, for example for a multi-disc release.";
-    rdfs:domain mo:ReleaseEvent;
+    rdfs:comment "Associates a release with the records it contains. A single release can be associated with multiple records, for example for a multi-disc release.";
+    rdfs:domain mo:Release;
     rdfs:range mo:Record;
     rdfs:subPropertyOf event:factor;
+    rdfs:isDefinedBy <> .
+
+mo:record_count
+    a owl:ObjectProperty;
+    rdfs:label "record count";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment "Associates a release with the number of records it contains, e.g. the number of discs it contains in the case of a multi-disc release.";
+    rdfs:domain mo:Release;
+    rdfs:range xsd:int;
     rdfs:isDefinedBy <> .
 
 mo:release
@@ -1723,6 +1743,30 @@ mo:opus
 	""";
     rdfs:domain mo:MusicalWork;
     rdfs:range rdfs:Literal;
+    rdfs:isDefinedBy <> .
+
+mo:meter
+    a owl:DatatypeProperty;
+    rdfs:label "meter";
+    vs:term_status "testing";
+    mo:level "2";
+    rdfs:comment "Associates a musical work or a score with its meter";
+    rdfs:domain [
+        a owl:Class;
+        owl:unionOf (
+            mo:MusicalWork
+            mo:Score
+        )
+    ];
+    rdfs:isDefinedBy <> .
+
+mo:text
+    a owl:DatatypeProperty;
+    rdfs:label "text";
+    vs:term_status "testing";
+    mo:level "2";
+    rdfs:comment "Associates lyrics with their text.";
+    rdfs:domain mo:Lyrics;
     rdfs:isDefinedBy <> .
 
 mo:track_count
@@ -2107,6 +2151,59 @@ The review does not have to be open content, as long as it is accessible to the 
     rdfs:subPropertyOf foaf:isPrimaryTopicOf;
     rdfs:isDefinedBy <> .
 
+mo:uuid 
+    a owl:DatatypeProperty;
+    rdfs:subPropertyOf dcterms:identifier;
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:label "universally unique identifier";
+    rdfs:domain owl:Thing;
+    rdfs:comment """
+            Links an object to an universally unique identifier for it.
+    """ .
+
+mo:musicbrainz_guid
+    a owl:DatatypeProperty;
+    rdfs:subPropertyOf mo:uuid;
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:domain [
+        a owl:Class;
+        owl:unionOf (
+            mo:MusicArtist
+            mo:Track
+            mo:Record
+            mo:SignalGroup
+            mo:Signal
+            mo:ReleaseEvent
+        )
+    ];
+    rdfs:label "Musicbrainz GUID";
+    rdfs:comment "Links an object to the corresponding Musicbrainz identifier"; 
+    rdfs:isDefinedBy <> .
+
+mo:catalogue_number
+    a owl:DatatypeProperty;
+    rdfs:subPropertyOf mo:uuid;
+    vs:term_status "testing";
+    rdfs:label "catalogue number";
+    rdfs:comment "Links a release with the corresponding catalogue number";
+    mo:level "1";
+    rdfs:domain mo:Release;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <> .
+
+mo:iswc
+    a owl:DatatypeProperty;
+    rdfs:subPropertyOf mo:uuid;
+    vs:term_status "testing";
+    rdfs:label "iswc";
+    rdfs:comment "Links a musical work to the corresponding ISWC number";
+    mo:level "1";
+    rdfs:domain mo:MusicalWork;
+    rdfs:range xsd:string;
+    rdfs:isDefinedBy <> .
+
 mo:amazon_asin
     a owl:ObjectProperty;
     rdfs:label "amazon_asin";
@@ -2138,6 +2235,89 @@ mo:isrc
 	""";
     rdfs:range <http://www.w3.org/2001/XMLSchema#string>;
     rdfs:domain mo:Signal;
+    rdfs:subPropertyOf mo:uuid;
+    rdfs:isDefinedBy <> .
+
+mo:ismn
+    a owl:DatatypeProperty;
+    rdfs:label "ismn";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment "The International Standard Music Number (ISMN) is an ISO standard similar to ISBNs for identifying printed music publications";
+    rdfs:range xsd:string;
+    rdfs:domain [
+        a owl:Class ; 
+        owl:unionOf (
+            mo:PublishedLyrics 
+            mo:PublishedLibretto 
+            mo:PublishedScore
+        )
+    ];
+    rdfs:subPropertyOf mo:uuid;
+    rdfs:isDefinedBy <> .
+
+mo:ipi
+    a owl:DatatypeProperty;
+    rdfs:label "ipi";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment "The Interested Parties Information Code (IPI) is an ISO standard similar to ISBNs for identifying the people or groups with some involvement with a particular musical work / compositions.";
+    rdfs:range xsd:string;
+    rdfs:domain mo:MusicArtist;
+    rdfs:subPropertyOf mo:uuid;
+    rdfs:isDefinedBy <> .
+
+mo:lc
+    a owl:DatatypeProperty;
+    rdfs:label "lc";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment "The Label Code (LC) was introduced in 1977 by the IFPI (International Federation of Phonogram and Videogram Industries) in order to unmistakably identify the different record labels (see Introduction, Record labels) for rights purposes. The Label Code consists historically of 4 figures, presently being extended to 5 figures, preceded by LC and a dash (e.g. LC-0193 = Electrola; LC-0233 = His Master's Voice). Note that the number of countries using the LC is limited, and that the code given on the item is not always accurate.";
+    rdfs:range xsd:string;
+    rdfs:domain mo:Label;
+    rdfs:subPropertyOf mo:uuid;
+    rdfs:isDefinedBy <> .
+
+mo:gtin
+    a owl:DatatypeProperty;
+    rdfs:label "gtin";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment "GTIN is a grouping term for EANs and UPCs. In common speech those are called barcodes although the barcodes are just a representation of those identifying numbers.";
+    rdfs:range xsd:string;
+    rdfs:domain mo:Release;
+    rdfs:isDefinedBy <> .
+
+mo:ean
+    a owl:DatatypeProperty;
+    rdfs:label "ean";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment "The European Article Number (EAN) is a universal identifier for products, commonly printed in form of barcodes on them. The numbers represented by those codes can either be 8 or 13 digits long, with the 13-digit-version being most common. EANs form a superset of the North American Universal Product Code (UPC) as every UPC can be made an EAN by adding a leading zero to it. Additionally every EAN is also a Japanese Article Number (JAN). The identifiers were formerly assigned by EAN International which merged with Uniform Code Council (UCC, the guys behind the UPCs) and Electronic Commerce Council of Canada (ECCC) to become GS1. ";
+    rdfs:range xsd:string;
+    rdfs:domain mo:Release;
+    rdfs:subPropertyOf mo:gtin;
+    rdfs:isDefinedBy <> .
+
+mo:upc
+    a owl:DatatypeProperty;
+    rdfs:label "upc";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment """UPC stands for "Universal Product Code", which was the original barcode used in the United States and Canada. The UPC (now officially EAN.UCC-12 is a numerical method of identifying products without redundancy worldwide for all types of products in the retail sector. The EAN is a superset of the original UPC increasing the digits to 13 with the prefix 0 reserved for UPC. As of 2005, manufacturers are only allowed to use the new 13-digit codes on their items, rather than having two separate numbers.""";
+    rdfs:range xsd:string;
+    rdfs:domain mo:Release;
+    rdfs:subPropertyOf mo:gtin;
+    rdfs:isDefinedBy <> .
+
+mo:grid
+    a owl:DatatypeProperty;
+    rdfs:label "GRid";
+    vs:term_status "testing";
+    mo:level "1";
+    rdfs:comment "The Global Release Identifier (GRid) is a system for uniquely identifying Releases of music over electronic networks (that is, online stores where you can buy music as digital files). As that it can be seen as the equivalent of the BarCode (or more correctly the GTIN) as found on physical releases of music. Like the ISRC (a code for identifying single recordings as found on releases) it was developed by the IFPI but it does not appear to be a standard of the ISO.";
+    rdfs:range xsd:string;
+    rdfs:domain mo:Release;
     rdfs:subPropertyOf mo:uuid;
     rdfs:isDefinedBy <> .
 
@@ -2727,58 +2907,4 @@ mo:preview
     rdfs:subPropertyOf mo:available_as;
     rdfs:isDefinedBy <> .
 
-# Identification properties (Simon Reinhardt)
-
-mo:uuid 
-    a owl:DatatypeProperty;
-    rdfs:subPropertyOf dcterms:identifier;
-    vs:term_status "testing";
-    mo:level "1";
-    rdfs:label "universally unique identifier";
-    rdfs:domain owl:Thing;
-    rdfs:comment """
-            Links an object to an universally unique identifier for it.
-    """ .
-
-mo:musicbrainz_guid
-    a owl:DatatypeProperty;
-    rdfs:subPropertyOf mo:uuid;
-    vs:term_status "testing";
-    mo:level "1";
-    rdfs:domain [
-        a owl:Class;
-        owl:unionOf (
-            mo:MusicArtist
-            mo:Track
-            mo:Record
-            mo:SignalGroup
-            mo:Signal
-            mo:ReleaseEvent
-        )
-    ];
-    rdfs:label "Musicbrainz GUID";
-    rdfs:comment "Links an object to the corresponding Musicbrainz identifier"; 
-    rdfs:isDefinedBy <> .
-
-mo:catalogue_number
-    a owl:DatatypeProperty;
-    rdfs:subPropertyOf mo:uuid;
-    vs:term_status "testing";
-    rdfs:label "catalogue number";
-    rdfs:comment "Links a release with the corresponding catalogue number";
-    mo:level "1";
-    rdfs:domain mo:Release;
-    rdfs:range xsd:string;
-    rdfs:isDefinedBy <> .
-
-mo:iswc
-    a owl:DatatypeProperty;
-    rdfs:subPropertyOf mo:uuid;
-    vs:term_status "testing";
-    rdfs:label "iswc";
-    rdfs:comment "Links a musical work to the corresponding ISWC number";
-    mo:level "1";
-    rdfs:domain mo:MusicalWork;
-    rdfs:range xsd:string;
-    rdfs:isDefinedBy <> .
 
