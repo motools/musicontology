@@ -1401,7 +1401,7 @@ mo:signal
     rdfs:range mo:Signal;
     rdfs:isDefinedBy <> .
 
-mo:released_record
+mo:record
     a owl:ObjectProperty;
     rdfs:label "released record";
     vs:term_status "testing";

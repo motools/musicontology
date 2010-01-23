@@ -13,7 +13,7 @@ Version 2.0 (Feb 2010)
  * ADDED: mo:primary_instrument
  * ADDED: mo:produced_signal_group
  * ADDED: mo:signal
- * ADDED: mo:released_record
+ * ADDED: mo:record
  * ADDED: mo:release
  * ADDED: mo:record_count
  * ADDED: mo:label
