@@ -233,6 +233,7 @@ mo:Sound
     rdfs:isDefinedBy <> .
 
 mo:SignalGroup
+    a owl:Class;
     vs:term_status "testing";
     mo:level "1";
     rdfs:label "signal group";
@@ -454,15 +455,6 @@ mo:Arranger
         owl:someValuesFrom mo:Arrangement
     ];
     rdfs:subClassOf foaf:Agent .
-
-mo:ListenEvent
-    a owl:Class;
-    vs:term_status "testing";
-    rdfs:label "listen event";
-    mo:level "2";
-    rdfs:comment "An event corresponding to someone listening to something.";
-    rdfs:subClassOf event:Event;
-    rdfs:isDefinedBy <> .
 
 mo:RecordingSession
     a owl:Class;
