@@ -1536,7 +1536,7 @@ mo:encoding
     rdfs:label "encoding";
     vs:term_status "unstable";
     mo:level "1";
-    rdfs:comment "Method used to convert analog electronic signals into digital format such as \"MP3 CBR @ 128kbps\", \"OGG @ 160kbps\", \"FLAC\", etc.  ";
+    rdfs:comment """Method used to convert analog electronic signals into digital format such as \"MP3 CBR @ 128kbps\", \"OGG @ 160kbps\", \"FLAC\", etc.""";
     rdfs:domain mo:AudioFile;
     a owl:DatatypeProperty;
     rdfs:range rdfs:Literal;
