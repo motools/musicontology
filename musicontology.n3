@@ -28,7 +28,7 @@
     foaf:maker <http://moustaki.org/foaf.rdf#moustaki>, <http://www.talkdigger.com/foaf/fgiasson>;
     dc:date "$Date: 2007/08/07 16:34:19 $";
     owl:imports 
-            <http://xmlns.com/foaf/spec/index.rdf>, 
+            <http://xmlns.com/foaf/0.1/>, 
             <http://purl.org/NET/c4dm/event.owl>, 
             <http://purl.org/NET/c4dm/timeline.owl>, 
             <http://motools.sourceforge.net/keys/keys.owl> .
