@@ -1,3 +1,9 @@
+========================
+Version 2.1 (May 2010)
+========================
+ * ADDED: mo:headliner
+ * MODIFIED: clean-up of the ontology definition (no multiple ontology definitions; non-used definitions removed, these classes and properties should be imported)
+
 =========================
 Version 2.0 (Feb 2010)
 ========================
