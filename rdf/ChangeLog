@@ -1,0 +1,120 @@
+=========================
+Version 1.2 (july 2007)
+=========================
+
+ * ADDED: mo:availableAs subPropertyOf frbr:examplar
+ * ADDED: mo:Torrent as medium (bittorrent items)
+ * ADDED: mo:ED2K as medium (edonkey items)
+ * ADDED: mo:usesScore (Performance --> Score (particular arrangement of a
+ work))
+ * ADDED: mo:preview_download (Agent or Manifestation to Document
+ * ADDED: mo:download, super-property of mo:previewdonwload, mo:paiddownload
+ and mo:freedownload
+ * ADDED: mo:AudioFile (as a medium)
+ * ADDED: two sub-properties of mo:availableAs -- mo:item (full manifestation
+ available) and mo:preview (only a part of the manifestation is available)
+ * ADDED: wrapper for foaf:maker, foaf:made, foaf:Agent, foaf:Person,
+ foaf:Group, foaf:member
+ * ADDED: mo:isrc (international standard recording code)
+ * ADDED: mo:encodes (musical item --> signal), allowing to associate, for
+ example, an item to a lower-resolution version of the master signal (issued
+ from a Recording event)
+ * ADDED: mo:genre, subproperty of event:hasFactor
+ * ADDED: mo:level, an annotation property to specify wether a term belongs to
+ level 1, 2 or 3
+ * ADDED: mo:sampled_version, inverse of sampled_version_of
+ * ADDED: produced_score (Arrangement --> Score)
+ * MODIFIED: mo:usesSound to mo:recording_of (still a owl:sameAs statement between these two for backward compatibility sake)
+ * MODIFIED: mo:usedInRecording to mo:recorded_in (same)
+ * MODIFIED: mo:producesSignal to mo:produced_signal (same)
+ * MODIFIED: mo:producesSound to mo:produced_sound (same)
+ * MODIFIED: mo:usesWork to mo:performance_of (same)
+ * MODIFIED: mo:productOfComposition to mo:composed_in (same)
+ * MODIFIED: mo:usedInPerformance to mo:performed_in (same)
+ * MODIFIED: mo:producesWork to mo:produced_work (same)
+ * MODIFIED: mo:paiddownload to mo:paid_download (same)
+ * MODIFIED: mo:freedownload to mo:free_download (same)
+ * MODIFIED: mo:signalTime to mo:time (same)
+ * MODIFIED: mo:sampledVersionOf to mo:sampled_version_of (same)
+ * MODIFIED: mo:has_track to mo:track (same)
+ * MODIFIED: mo:trackNum to  mo:track_number (same)
+ * MODIFIED: mo:releaseType to mo:release_type (same)
+ * MODIFIED: mo:releaseStatus to mo:release_status (same)
+ * MODIFIED: mo:eventHomePage to mo:event_homepage (same)
+ * MODIFIED: mo:hasManifestation to mo:manifestation (same)
+ * MODIFIED: mo:publishedAs to mo:published_as (same)
+ * MODIFIED: mo:movementNum to mo:movement_number (same)
+ * MODIFIED: mo:publicationOf to mo:publication_of (same)
+ * MODIFIED: mo:publishingLocation to mo:publishing_location (same)
+ * MODIFIED: mo:sampleRate to mo:sample_rate (same)
+ * MODIFIED: mo:recordedAs to mo:recorded_as (same)
+ * MODIFIED: mo:availableAs to mo:available_as (same)
+ * MODIFIED: mo:image subproperty of foaf:depiction
+ * MODIFIED: changed comments and domain of freedownload and paiddownload
+ * MODIFIED: changed comments on mo:MusicalWork
+ * MODIFIED: changed comments on availableAs
+ * MODIFIED: mo:encoding has MusicalItem as a domain
+ * MODIFIED: Mentions of mo:MusicManifestation to mo:MusicalManifestation (typo) in mo:publisher, mo:published
+ * MODIFIED: Mentions of mo:isAgentIn to event:isAgentIn in mo:Composer, mo:Arranger
+ * MODIFIED: foaf:Person - added two :subClassOf properties from the foaf spec.
+ * DELETED: mo:creatorOf - use foaf:made instead
+ * DELETED: mo:pitch and mo:timbre - this should go to the audio features
+ ontology
+ * DELETED: mo:stream_url (it should be the identifier of the resource (eg.
+ rtsp://...)
+ * DELETED: sub concepts of mo:Instrument - instead, a link to Ivan Herman
+ musical instrument SKOS taxonomy
+ * DELETED: sub concepts of mo:Genre - instead a more proper documentation of
+ this concept
+
+=========================
+Version 1.11 (March 2007)
+=========================
+
+ * ADDED: Performance and Show
+ * ADDED: records (inverse of recordedAs) and publicationOf (inverse of
+ publishedAs)
+ * ADDED: mo:composer (Composition --> Agent)
+ * ADDED: mo:producesWork (Composition --> MusicalWork)
+ * ADDED: mo:usedInPerformance (Work --> Performance)
+ * ADDED: mo:productOfComposition (MusicalWork --> Composition)
+ * ADDED: mo:usesWork (Performance --> MusicalWork)
+ * ADDED: Medium subclassof MusicalItem
+ * ADDED: mo:producesSound (Perfomance --> Sound)
+ * ADDED: mo:usedInRecording (Sound --> Recording)
+ * ADDED: mo:usesSound (Recording --> Soung)
+ * ADDED: mo:producesSignal (Recording --> Signal)
+ * ADDED: shortcut mo:recordedAs (Performance --> Signal)
+ * ADDED: term status: all subproperties of hasAgent, hasProduct, has Factor
+ are stable, all the inverse are unstable
+ * ADDED: mo:musibrainz
+ (Work;Expression;Manifestation;Item;Agent;Instrument;Genre --> Document)
+ * ADDED: mo:ep a ReleaseType
+ * ADDED: mo:publicationLocation (MusicalManifestation --> SpatialThing)
+ * ADDED: mo:contains_sample_from (Signal --> Signal)
+ * ADDED: wrapper for event:place (Event --> SpatialThing)
+ * CHANGED: pitch and timber' domain: now Signal
+ * CHANGED: remixed has as a domain Signal, same for the range of remixer
+ * CHANGED: same thing for sampled/sampler
+ * CHANGED: same thing for djmixed
+ * CHANGED: same thing for remix_of
+ * CHANGED: same thing for medley_of
+ * CHANGED: same thing for djmix_of
+ * CHANGED: same thing for remaster_of
+ * CHANGED: same thing for mashup_of
+ * CHANGED: collaborated_with/other_release_of are symmetric
+ * CHANGED: added inverse properties statements on all djmix/...
+ * CHANGED: mark compilation_of as unstable. this should be done through a
+ release type and through explicit links to each Signal.
+ * CHANGED: translation_of goes from a MusicalExpression to a
+ MusicalExpression (well, a Work is independent of its wording)
+ * CHANGED: tribute_to from MusicalManifestation to Artist
+
+
+
+ NOTE: 
+ * remix_of/djmix_of should be transitive?
+ * other_release_of is *really* vague...
+ * compilation_of and tribute_to should be removed... too redundant with
+ existing stuff, and not even shortcuts
+ * musicbrainz is maybe too ambitious in its domain
