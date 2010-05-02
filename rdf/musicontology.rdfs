@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
    xmlns:bio="http://purl.org/vocab/bio/0.1/"
+   xmlns:cc="http://web.resource.org/cc/"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:dcterms="http://purl.org/dc/terms/"
    xmlns:event="http://purl.org/NET/c4dm/event.owl#"
    xmlns:foaf="http://xmlns.com/foaf/0.1/"
    xmlns:frbr="http://purl.org/vocab/frbr/core#"
+   xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
    xmlns:keys="http://purl.org/NET/c4dm/keys.owl#"
    xmlns:mo="http://purl.org/ontology/mo/"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -15,8 +17,7 @@
    xmlns:timeline="http://purl.org/NET/c4dm/timeline.owl#"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:wot="http://xmlns.com/wot/0.1/"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-   xml:base="http://purl.org/ontology/mo/">
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
   <owl:Ontology rdf:about="http://purl.org/ontology/mo/">
     <dc:date>$Date: 2010/05/02 17:21:19 $</dc:date>
     <dc:description>
@@ -27,7 +28,11 @@
 	</dc:description>
     <dc:title>The Music Ontology</dc:title>
     <owl:imports rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+    <owl:imports rdf:resource="http://purl.org/NET/c4dm/keys.owl"/>
     <owl:imports rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+    <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <owl:imports rdf:resource="http://purl.org/vocab/bio/0.1/"/>
+    <owl:imports rdf:resource="http://purl.org/vocab/frbr/core"/>
     <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
     <owl:versionInfo>Revision: 2.1</owl:versionInfo>
     <foaf:maker rdf:resource="http://foaf.me/zazi#me"/>
@@ -773,9 +778,9 @@ work #1 J. S. Bach's The art of the fugue
     <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
     <vs:term_status>stable</vs:term_status>
   </owl:ObjectProperty>
-  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/mo/bitsPerSample">
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/mo/bitsPerSample">
     <mo:level>1</mo:level>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment>
 		Associates a digital signal to the number a bits used to encode one sample. Range is xsd:int.
 	</rdfs:comment>
@@ -783,7 +788,7 @@ work #1 J. S. Bach's The art of the fugue
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <vs:term_status>stable</vs:term_status>
-  </owl:DatatypeProperty>
+  </owl:FunctionalProperty>
   <mo:ReleaseStatus rdf:about="http://purl.org/ontology/mo/bootleg">
     <dc:description>An unofficial/underground musical work or the expression of a musical work that was not sanctioned by the artist and/or the corporate body. </dc:description>
     <dc:title>bootleg</dc:title>
@@ -826,9 +831,9 @@ work #1 J. S. Bach's The art of the fugue
     <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/uuid"/>
     <vs:term_status>testing</vs:term_status>
   </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/mo/channels">
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/mo/channels">
     <mo:level>1</mo:level>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment>
 		Associates a signal to the number of channels it holds (mono --&gt; 1, stereo --&gt; 2). Range is xsd:int.
 	</rdfs:comment>
@@ -836,17 +841,17 @@ work #1 J. S. Bach's The art of the fugue
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <vs:term_status>stable</vs:term_status>
-  </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/collaborated_with">
+  </owl:FunctionalProperty>
+  <owl:SymmetricProperty rdf:about="http://purl.org/ontology/mo/collaborated_with">
     <mo:level>1</mo:level>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment>Used to relate two collaborating people on a work.</rdfs:comment>
     <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>collaborated_with</rdfs:label>
     <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <vs:term_status>unstable</vs:term_status>
-  </owl:ObjectProperty>
+  </owl:SymmetricProperty>
   <mo:ReleaseType rdf:about="http://purl.org/ontology/mo/compilation">
     <dc:description>
 		Collection of previously released manifestations of a musical expression by one or more artists.
@@ -1956,16 +1961,16 @@ This means that the orignial musical expression were rearranged to create a new 
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     <vs:term_status>stable</vs:term_status>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/other_release_of">
+  <owl:SymmetricProperty rdf:about="http://purl.org/ontology/mo/other_release_of">
     <mo:level>1</mo:level>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment>Indicates that two musical manifestations are essentially the same.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>other_release_of</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
     <vs:term_status>unstable</vs:term_status>
-  </owl:ObjectProperty>
+  </owl:SymmetricProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/paid_download">
     <mo:level>1</mo:level>
     <rdfs:comment>
@@ -2555,9 +2560,9 @@ The review does not have to be open content, as long as it is accessible to the 
     <owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/sample_rate"/>
     <vs:term_status>deprecated</vs:term_status>
   </owl:DatatypeProperty>
-  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/mo/sample_rate">
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/mo/sample_rate">
     <mo:level>1</mo:level>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment>
 		Associates a digital signal to its sample rate. It might be easier to express it this way instead of
 		defining a timeline map:-) Range is xsd:float.
@@ -2566,7 +2571,7 @@ The review does not have to be open content, as long as it is accessible to the 
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     <vs:term_status>stable</vs:term_status>
-  </owl:DatatypeProperty>
+  </owl:FunctionalProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/sampled">
     <mo:level>1</mo:level>
     <rdfs:comment>Used to relate an artist who sampled a Signal.</rdfs:comment>
@@ -2800,9 +2805,9 @@ The review does not have to be open content, as long as it is accessible to the 
     <rdfs:label>text</rdfs:label>
     <vs:term_status>testing</vs:term_status>
   </owl:DatatypeProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/time">
+  <owl:FunctionalProperty rdf:about="http://purl.org/ontology/mo/time">
     <mo:level>1</mo:level>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:comment>
 		Associates a Signal to a time object - its actual domain
 	</rdfs:comment>
@@ -2811,7 +2816,7 @@ The review does not have to be open content, as long as it is accessible to the 
     <rdfs:label>time</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
     <vs:term_status>stable</vs:term_status>
-  </owl:ObjectProperty>
+  </owl:FunctionalProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/track">
     <mo:level>1</mo:level>
     <rdfs:comment>Indicates a part of a musical manifestation - in this particular case, a track.</rdfs:comment>
