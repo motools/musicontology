@@ -1,36 +1,31 @@
-# Saved by TopBraid on Sun May 02 19:42:14 CEST 2010
+# Saved by TopBraid on Mon May 10 18:35:59 CEST 2010
 # baseURI: http://purl.org/ontology/mo/
 # imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/NET/c4dm/keys.owl
 # imports: http://purl.org/vocab/bio/0.1/
-# imports: http://purl.org/NET/c4dm/timeline.owl
 # imports: http://xmlns.com/foaf/0.1/
 # imports: http://purl.org/dc/terms/
 # imports: http://purl.org/vocab/frbr/core
 
-@base <http://purl.org/ontology/mo/> .
-
 @prefix bio:     <http://purl.org/vocab/bio/0.1/> .
-@prefix cc:		<http://web.resource.org/cc/> .
+@prefix cc:      <http://web.resource.org/cc/> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms:  <http://purl.org/dc/terms/> .
 @prefix event:   <http://purl.org/NET/c4dm/event.owl#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 @prefix frbr:    <http://purl.org/vocab/frbr/core#> .
-@prefix geo:	<http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geo:     <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix keys:    <http://purl.org/NET/c4dm/keys.owl#> .
 @prefix mo:      <http://purl.org/ontology/mo/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time:    <http://www.w3.org/2006/time#> .
-@prefix timeline:  <http://purl.org/NET/c4dm/timeline.owl#> .
 @prefix vs:      <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix wot:     <http://xmlns.com/wot/0.1/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
-<http://purl.org/ontology/mo/>
-      a owl:Ontology ;
+mo:   rdf:type owl:Ontology ;
       dc:date "$Date: 2010/05/02 17:21:19 $" ;
       dc:description """
 		The Music Ontology Specification provides main concepts and 
@@ -39,17 +34,9 @@
 		of the Music Ontology.
 	""" ;
       dc:title "The Music Ontology" ;
-      owl:imports bio: ,
-      			 <http://purl.org/NET/c4dm/event.owl> , 
-      			 foaf: , 
-      			 dcterms: , 
-      			 <http://purl.org/NET/c4dm/keys.owl> , 
-      			 <http://purl.org/NET/c4dm/timeline.owl> , 
-      			 <http://purl.org/vocab/frbr/core> ;
+      owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> ;
       owl:versionInfo "Revision: 2.1" ;
-      foaf:maker <http://www.talkdigger.com/foaf/fgiasson> ,  
-      			 <http://moustaki.org/foaf.rdf#moustaki> ,
-      			 <http://foaf.me/zazi#me>.
+      foaf:maker <http://www.talkdigger.com/foaf/fgiasson> , <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> .
 
 mo:AnalogSignal
       rdf:type owl:Class ;
@@ -1321,7 +1308,7 @@ mo:image
               ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "image" ;
-      rdfs:range foaf:Document ;
+      rdfs:range foaf:Image ;
       rdfs:subPropertyOf foaf:depiction ;
       mo:level "1" ;
       vs:term_status "stable" .
@@ -2665,50 +2652,5 @@ mo:wikipedia
       rdfs:label "wikipedia" ;
       rdfs:range foaf:Document ;
       rdfs:subPropertyOf foaf:isPrimaryTopicOf ;
-      mo:level "1" ;
-      vs:term_status "stable" .
-
-foaf:made
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment """
-		Relates an agent to a manifestation he contributed to create.
-	""" ;
-      rdfs:domain foaf:Agent ;
-      rdfs:isDefinedBy foaf: ;
-      rdfs:range
-              [ rdf:type owl:Class ;
-                owl:unionOf (mo:MusicalManifestation mo:Record mo:Track)
-              ] ;
-      mo:level "1" ;
-      owl:inverseOf foaf:maker ;
-      vs:term_status "stable" .
-
-foaf:maker
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment """
-		Relates a manifestation to an agent who contributed to create it.
-		This property might be used for weak assertion of such a relationship. In case we want
-		to attach a more concrete role (this agent performed, or was the composer, etc.), we must 
-		use mo:Performer, mo:MusicalWork/mo:Composition, etc. This indeed allows to specify where a 
-		particular agent took part in the actual workflow.
-	""" ;
-      rdfs:domain
-              [ rdf:type owl:Class ;
-                owl:unionOf (mo:MusicalManifestation mo:Record mo:Track)
-              ] ;
-      rdfs:isDefinedBy foaf: ;
-      rdfs:range foaf:Agent ;
-      mo:level "1" ;
-      owl:inverseOf foaf:made ;
-      vs:term_status "stable" .
-
-foaf:member
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment """
-		Indicates a member of a Group
-	""" ;
-      rdfs:domain foaf:Group ;
-      rdfs:isDefinedBy foaf: ;
-      rdfs:range foaf:Agent ;
       mo:level "1" ;
       vs:term_status "stable" .
