@@ -6,6 +6,7 @@
 # imports: http://xmlns.com/foaf/0.1/
 # imports: http://purl.org/dc/terms/
 # imports: http://purl.org/vocab/frbr/core
+# imports: http://www.w3.org/2006/time
 
 @prefix bio:     <http://purl.org/vocab/bio/0.1/> .
 @prefix cc:      <http://web.resource.org/cc/> .
@@ -34,7 +35,7 @@ mo:   rdf:type owl:Ontology ;
 		of the Music Ontology.
 	""" ;
       dc:title "The Music Ontology" ;
-      owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> ;
+      owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> , <http://www.w3.org/2006/time> ;
       owl:versionInfo "Revision: 2.1" ;
       foaf:maker <http://www.talkdigger.com/foaf/fgiasson> , <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> .
 

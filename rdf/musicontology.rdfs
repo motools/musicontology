@@ -32,6 +32,7 @@
     <owl:imports rdf:resource="http://purl.org/vocab/bio/0.1/"/>
     <owl:imports rdf:resource="http://purl.org/vocab/frbr/core"/>
     <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
     <owl:versionInfo>Revision: 2.1</owl:versionInfo>
     <foaf:maker rdf:resource="http://foaf.me/zazi#me"/>
     <foaf:maker rdf:resource="http://moustaki.org/foaf.rdf#moustaki"/>
