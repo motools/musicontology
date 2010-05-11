@@ -1,0 +1,2961 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dc 'http://purl.org/dc/elements/1.1/'>
+    <!ENTITY mo 'http://purl.org/ontology/mo/'>
+    <!ENTITY ns1 'http://www.w3.org/2003/06/sw-vocab-status/ns#'>
+    <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+    <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+    <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+]>
+
+<rdf:RDF
+    xmlns:dc="&dc;"
+    xmlns:mo="&mo;"
+    xmlns:ns1="&ns1;"
+    xmlns:owl="&owl;"
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:xsd="&xsd;"
+>
+<owl:Class rdf:about="&mo;AnalogSignal"
+    mo:level="2"
+    rdfs:comment="		An analog signal.
+	"
+    rdfs:label="analogue signal"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Signal"/>
+  <owl:disjointWith rdf:resource="&mo;DigitalSignal"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Arrangement"
+    mo:level="2"
+    rdfs:label="arrangement"
+    ns1:term_status="stable">
+  <rdfs:comment>		An arrangement event.
+		Takes as agent the arranger, and produces a score (informational object, not the actually published score).
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;AudioFile"
+    mo:level="1"
+    rdfs:label="audio file"
+    ns1:term_status="unstable">
+  <rdfs:comment>An audio file, which may be available on a local file system or through http, ftp, etc.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;CD"
+    mo:level="1"
+    rdfs:label="CD"
+    ns1:term_status="unstable">
+  <rdfs:comment>Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Composition"
+    mo:level="2"
+    rdfs:label="composition"
+    ns1:term_status="stable">
+  <rdfs:comment>		A composition event.
+		Takes as agent the composer himself.
+		It produces a MusicalWork, or a MusicalExpression (when the initial "product" is a score, for example), or both...
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;CorporateBody"
+    mo:level="1"
+    rdfs:label="corporate body"
+    ns1:term_status="stable">
+  <rdfs:comment>Organization or group of individuals and/or other organizations involved in the music market.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;DAT"
+    mo:level="1"
+    rdfs:label="DAT"
+    ns1:term_status="unstable">
+  <rdfs:comment>Data Audio Tape used as medium to record a musical manifestation.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;DCC"
+    mo:level="1"
+    rdfs:label="DCC"
+    ns1:term_status="unstable">
+  <rdfs:comment>Digital Compact Cassette used as medium to record a musical manifestation.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;DVDA"
+    mo:level="1"
+    rdfs:comment="DVD-Audio used as medium to record a musical manifestation."
+    rdfs:label="DVDA"
+    ns1:term_status="unstable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;DigitalSignal"
+    mo:level="2"
+    rdfs:comment="		A digital signal
+	"
+    rdfs:label="digital signal"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Signal"/>
+  <owl:disjointWith rdf:resource="&mo;AnalogSignal"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;ED2K"
+    mo:level="1"
+    rdfs:label="ED2K"
+    ns1:term_status="unstable">
+  <rdfs:comment>Something available on the E-Donkey peer-2-peer filesharing network</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Festival"
+    mo:level="2"
+    rdfs:label="Festival"
+    ns1:term_status="stable">
+  <rdfs:comment>		A festival - musical/artistic event lasting several days, like Glastonbury, Rock Am Ring...
+		We migth decompose this event (which is in fact just a classification of the space/time region related to 
+		a particular festival) using hasSubEvent in several performances at different space/time.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Genre"
+    mo:level="2"
+    rdfs:label="Genre"
+    ns1:term_status="stable">
+  <rdfs:comment>		An expressive style of music.
+		
+		Any taxonomy can be plug-in here. You can either define a genre by yourself, like this:
+
+		:mygenre a mo:Genre; dc:title "electro rock".
+
+		Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web
+		clients to access easily really detailed structured information about the genre you are refering to.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Instrument"
+    mo:level="2"
+    rdfs:label="Instrument"
+    ns1:term_status="stable">
+  <rdfs:comment>		Any of various devices or contrivances that can be used to produce musical tones or sound.
+		
+		Any taxonomy can be used to subsume this concept. The default one is one extracted by Ivan Herman
+		from the Musicbrainz instrument taxonomy, conforming to SKOS. This concept holds a seeAlso link 
+		towards this taxonomy.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:seeAlso rdf:resource="&mo;mit#"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Instrumentation"
+    mo:level="2"
+    rdfs:label="instrumentation"
+    ns1:term_status="stable">
+  <rdfs:comment>		Instrumentation deals with the techniques of writing music for a specific instrument, 
+		including the limitations of the instrument, playing techniques and idiomatic handling of the instrument.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Arrangement"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Label"
+    mo:level="1"
+    rdfs:label="label"
+    ns1:term_status="stable">
+  <rdfs:comment>Trade name of a company that produces musical works or expression of musical works.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;CorporateBody"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Libretto"
+    mo:level="2"
+    rdfs:comment="                Libretto
+        "
+    rdfs:label="libretto"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Lyrics"
+    mo:level="2"
+    rdfs:comment="		Lyrics
+	"
+    rdfs:label="lyrics"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MD"
+    mo:level="1"
+    rdfs:comment="Mini Disc used as medium to record a musical manifestation."
+    rdfs:label="MD"
+    ns1:term_status="unstable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MagneticTape"
+    mo:level="1"
+    rdfs:label="MagneticTape"
+    ns1:term_status="unstable">
+  <rdfs:comment>Magnetic analogue tape used as medium to record a musical manifestation.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Medium"
+    mo:level="1"
+    rdfs:label="Medium"
+    ns1:term_status="unstable">
+  <rdfs:comment>A means or instrumentality for storing or communicating musical manifestation.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalItem"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Membership"
+    mo:level="1"
+    rdfs:label="membership"
+    ns1:term_status="testing">
+  <rdfs:comment>A membership event, where one or several people belongs to a group during a particular time period.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Movement"
+    mo:level="2"
+    rdfs:label="movement"
+    ns1:term_status="unstable">
+  <rdfs:comment>A movement is a self-contained part of a musical work. While individual or selected movements from a composition are sometimes performed separately, a performance of the complete work requires all the movements to be performed in succession.
+
+Often a composer attempts to interrelate the movements thematically, or sometimes in more subtle ways, in order that the individual
+movements exert a cumulative effect. In some forms, composers sometimes link the movements, or ask for them to be played without a
+pause between them.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalWork"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MusicArtist"
+    mo:level="1"
+    rdfs:label="music artist"
+    ns1:term_status="stable">
+  <rdfs:comment>		A person or a group of people (or a computer :-) ), whose musical 
+		creative work shows sensitivity and imagination 
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MusicGroup"
+    mo:level="1"
+    rdfs:label="music group"
+    ns1:term_status="stable">
+  <rdfs:subClassOf rdf:resource="&mo;MusicArtist"/>
+  <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+  <rdfs:comment>Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. </rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MusicalExpression"
+    mo:level="1"
+    rdfs:label="musical expression"
+    ns1:term_status="unstable">
+  <rdfs:comment>The intellectual or artistic realization of a work in the form of alpha-numeric, musical, or choreographic notation, sound, etc., or any combination of such forms.    
+
+
+For example:
+
+Work #1 Franz Schubert's Trout quintet
+
+    * Expression #1 the composer's score
+    * Expression #2 sound issued from the performance by the Amadeus Quartet and Hephzibah Menuhin on piano
+    * Expression #3 sound issued from the performance by the Cleveland Quartet and Yo-Yo Ma on the cello
+    * . . . . 
+
+The Music Ontology defines the following sub-concepts of a MusicalExpression, which should be used instead of MusicalExpression itself: Score (the
+result of an arrangement), Sound (produced during a performance), Signal. However, it is possible to stick to FRBR and bypass the worflow
+mechanism this ontology defines by using the core FRBR properties on such objects. But it is often better to use events to interconnect such 
+expressions (allowing to go deeply into the production process - `this performer was playing this particular instrument at that
+particular time').
+	
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MusicalItem"
+    mo:level="1"
+    rdfs:label="MusicalItem"
+    ns1:term_status="unstable">
+  <rdfs:comment>A single exemplar of a musical expression.
+    
+For example, it could be a single exemplar of a CD. This is normally an single object (a CD) possessed by somebody.
+
+From the FRBR final report: The entity defined as item is a concrete entity. It is in many instances a single physical object (e.g., a copy of a one-volume monograph, a single audio cassette, etc.). There are instances, however, where the entity defined as item comprises more than one physical object (e.g., a monograph issued as two separately bound volumes, a recording issued on three separate compact discs, etc.).
+
+In terms of intellectual content and physical form, an item exemplifying a manifestation is normally the same as the manifestation itself. However, variations may occur from one item to another, even when the items exemplify the same manifestation, where those variations are the result of actions external to the intent of the producer of the manifestation (e.g., damage occurring after the item was produced, binding performed by a library, etc.). 
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MusicalManifestation"
+    mo:level="1"
+    rdfs:label="musical manifestation"
+    ns1:term_status="stable">
+  <rdfs:comment>
+This entity is related to the edition/production/publication of a musical expression (musical manifestation are closely related with the music industry (their terms, concepts, definitions, methods (production, publication, etc.), etc.)
+    
+From the FRBR final report: The entity defined as manifestation encompasses a wide range of materials, including manuscripts, books, periodicals, maps, posters, sound recordings, films, video recordings, CD-ROMs, multimedia kits, etc. As an entity, manifestation represents all the physical objects that bear the same characteristics, in respect to both intellectual content and physical form.
+
+
+Work #1 J. S. Bach's Six suites for unaccompanied cello
+
+    * Expression #1 sound issued during the performance by Janos Starker recorded in 1963 and 1965
+          o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1965 by Mercury
+          o Manifestation #2 recordings re-released on compact disc in 1991 by Mercury 
+    * Expression #2 sound issued during the performances by Yo-Yo Ma recorded in 1983
+          o Manifestation #1 recordings released on 33 1/3 rpm sound discs in 1983 by CBS Records
+          o Manifestation #2 recordings re-released on compact disc in 1992 by CBS Records 
+
+          
+Changes that occur deliberately or even inadvertently in the production process that affect the copies result, strictly speaking, in a new manifestation. A manifestation resulting from such a change may be identified as a particular "state" or "issue" of the publication.
+
+Changes that occur to an individual copy after the production process is complete (e.g., the loss of a page, rebinding, etc.) are not considered to result in a new manifestation. That copy is simply considered to be an exemplar (or item) of the manifestation that deviates from the copy as produced.
+
+With the entity defined as manifestation we can describe the physical characteristics of a set of items and the characteristics associated with the production and distribution of that set of items that may be important factors in enabling users to choose a manifestation appropriate to their physical needs and constraints, and to identify and acquire a copy of that manifestation.
+
+Defining manifestation as an entity also enables us to draw relationships between specific manifestations of a work. We can use the relationships between manifestations to identify, for example, the specific publication that was used to create a microreproduction.          
+</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;MusicalWork"
+    mo:level="2"
+    rdfs:label="musical work"
+    ns1:term_status="stable">
+  <rdfs:comment>	Distinct intellectual or artistic musical creation.
+    
+From the FRBR final report: A work is an abstract entity; there is no single material object one can point to as the work. We recognize the work through individual realizations or expressions of the work, but the work itself exists only in the commonality of
+content between and among the various expressions of the work. When we speak of Homer's Iliad as a work, our point of reference is not a particular recitation or text of the work, but the intellectual creation that lies behind all the various expressions of the work.     
+
+For example:
+
+work #1 J. S. Bach's The art of the fugue
+
+    
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Orchestration"
+    mo:level="2"
+    rdfs:label="orchestration"
+    ns1:term_status="stable">
+  <rdfs:comment>        	Orchestration includes, in addition to instrumentation, the handling of groups of instruments and their balance and interaction.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Arrangement"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Performance"
+    mo:level="2"
+    rdfs:label="performance"
+    ns1:term_status="stable">
+  <rdfs:comment>		A performance event. 
+		It might include as agents performers, engineers, conductors, or even listeners.
+		It might include as factors a score, a MusicalWork, musical instruments. 
+		It might produce a sound:-)
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;PublishedLibretto"
+    mo:level="2"
+    rdfs:comment="A published libretto"
+    rdfs:label="published libretto"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalManifestation"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;PublishedLyrics"
+    mo:level="2"
+    rdfs:comment="Published lyrics, as a book or as a text file, for example"
+    rdfs:label="published lyrics"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalManifestation"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;PublishedScore"
+    mo:level="2"
+    rdfs:comment="A published score (subclass of MusicalManifestation)"
+    rdfs:label="published score"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalManifestation"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Record"
+    mo:level="1"
+    rdfs:label="record"
+    ns1:term_status="stable">
+  <rdfs:comment>A published record (manifestation which first aim is to render the product of a recording)</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalManifestation"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Recording"
+    mo:level="2"
+    rdfs:label="recording"
+    ns1:term_status="stable">
+  <rdfs:comment>		A recording event.
+		Takes a sound as a factor to produce a signal (analog or digital).
+		The location of such events (if any) is the actual location of the corresponding
+		microphone or the "recording device".
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;RecordingSession"
+    mo:level="2"
+    rdfs:label="recording session"
+    ns1:term_status="testing">
+  <rdfs:comment>A set of performances/recordings/mastering events. This event can be decomposed in its constituent events using event:sub_event</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Release"
+    mo:level="1"
+    rdfs:label="release"
+    ns1:term_status="testing">
+  <rdfs:comment>A specific release, with barcode, box, liner notes, cover art, and a number of records</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalManifestation"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;ReleaseEvent"
+    mo:level="1"
+    rdfs:label="release event"
+    ns1:term_status="testing">
+  <rdfs:comment>A release event, in a particular place (e.g. a country) at a particular time. Other factors of this event might include cover art, liner notes, box, etc. or a release grouping all these.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;ReleaseStatus"
+    mo:level="1"
+    rdfs:comment="Musical manifestation release status."
+    rdfs:label="release status"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;ReleaseType"
+    mo:level="1"
+    rdfs:label="Release type"
+    ns1:term_status="stable">
+  <rdfs:comment>		Release type of a particular manifestation, such as "album" or "interview"...
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;SACD"
+    mo:level="1"
+    rdfs:label="SACD"
+    ns1:term_status="unstable">
+  <rdfs:comment>Super Audio Compact Disc used as medium to record a musical manifestation.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Score"
+    mo:level="2"
+    rdfs:label="score"
+    ns1:term_status="stable">
+  <rdfs:comment>		Here, we are dealing with the informational object (the MusicalExpression), not the actually "published" score.
+		This may be, for example, the product of an arrangement process.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Show"
+    mo:level="2"
+    rdfs:label="Show"
+    ns1:term_status="stable">
+  <rdfs:comment>		A show - a musical event lasting several days, in a particular venue. Examples can be
+		"The Magic Flute" at the Opera Bastille, August 2005, or a musical in the west end...
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Signal"
+    mo:level="1"
+    rdfs:label="signal"
+    ns1:term_status="stable">
+  <rdfs:comment>		A subclass of MusicalExpression, representing a signal, for example a master signal produced by a performance and a recording.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;SignalGroup"
+    mo:level="1"
+    rdfs:label="signal group"
+    ns1:term_status="testing">
+  <rdfs:comment>        A musical expression representing a group of signals, for example a set of masters resulting from a whole recording/mastering session.
+    </rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;SoloMusicArtist"
+    mo:level="1"
+    rdfs:label="solo music artist"
+    ns1:term_status="stable">
+  <rdfs:subClassOf rdf:resource="&mo;MusicArtist"/>
+  <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  <rdfs:comment>Single person whose musical creative work shows sensitivity and imagination.</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Sound"
+    mo:level="2"
+    rdfs:label="sound"
+    ns1:term_status="stable">
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
+  <rdfs:comment>		A subclass of MusicalExpression, representing a sound. Realisation of a MusicalWork during a musical Performance.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Stream"
+    mo:level="1"
+    rdfs:label="Stream"
+    ns1:term_status="unstable">
+  <rdfs:comment>Transmission over a network  used as medium to broadcast a musical manifestation</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Torrent"
+    mo:level="1"
+    rdfs:label="Torrent"
+    ns1:term_status="unstable">
+  <rdfs:comment>Something available on the Bittorrent peer-2-peer filesharing network</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Track"
+    mo:level="1"
+    rdfs:comment="A track on a particular record"
+    rdfs:label="rack"
+    ns1:term_status="stable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;MusicalManifestation"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Transcription"
+    mo:level="2"
+    rdfs:comment="Transcription event"
+    rdfs:label="transcription"
+    ns1:term_status="testing">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="&mo;Vinyl"
+    mo:level="1"
+    rdfs:comment="Vinyl used as medium to record a musical manifestation"
+    rdfs:label="Vinyl"
+    ns1:term_status="unstable">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="&mo;Medium"/>
+</owl:Class>
+
+<mo:ReleaseType rdf:about="&mo;album"
+    dc:title="album"
+    mo:level="1">
+  <dc:description>		One or more track issued together.
+    		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:ObjectProperty rdf:about="&mo;amazon_asin"
+    mo:level="1"
+    rdfs:label="amazon_asin"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link a work or the expression of a work to its corresponding Amazon ASINs page.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+                      <rdf:rest rdf:resource="&rdf;nil"/>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;arranged_in"
+    mo:level="2"
+    rdfs:label="arranged in"
+    ns1:term_status="unstable">
+  <rdfs:comment>		Associates a work to an arrangement event where it was arranged
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalWork"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Arrangement"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isFactorOf"/>
+  <owl:inverseOf rdf:resource="&mo;arrangement_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;arrangement_of"
+    mo:level="2"
+    rdfs:label="arrangement of"
+    ns1:term_status="unstable">
+  <rdfs:comment>                Associates an arrangement event to a work
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Arrangement"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalWork"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+  <owl:inverseOf rdf:resource="&mo;arranged_in"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseType rdf:about="&mo;audiobook"
+    dc:title="audio book"
+    mo:level="1">
+  <dc:description>		Book read by a narrator without music.
+		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:ObjectProperty rdf:about="&mo;available_as"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdfs:comment>		Relates a musical manifestation to a musical item (this album, and my particular cd). By using
+		this property, there is no assumption on wether the full content is available on the linked item.
+		To be explicit about this, you can use a sub-property, such as mo:item (the full manifestation
+		is available on that item) or mo:preview (only a part of the manifestation is available on
+		that item).
+
+		This is a subproperty of frbr:examplar.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalItem"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#exemplar"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;biography"
+    mo:level="1"
+    rdfs:comment="Used to link an artist to their online biography."
+    rdfs:label="biography"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;bitsPerSample"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdfs:comment>		Associates a digital signal to the number a bits used to encode one sample. Range is xsd:int.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;DigitalSignal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;int"/>
+</owl:DatatypeProperty>
+
+<mo:ReleaseStatus rdf:about="&mo;bootleg"
+    dc:title="bootleg"
+    mo:level="1">
+  <dc:description>An unofficial/underground musical work or the expression of a musical work that was not sanctioned by the artist and/or the corporate body. </dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseStatus>
+
+<owl:DatatypeProperty rdf:about="&mo;bpm"
+    mo:level="2"
+    rdfs:label="bpm"
+    ns1:term_status="stable">
+  <rdfs:comment>		Indicates the BPM of a MusicalWork or a particular Performance 
+		Beats per minute: the pace of music measured by the number of beats occurring in 60 seconds.
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Performance"/>
+              <rdf:rest rdf:resource="&rdf;nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;float"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;catalogue_number"
+    mo:level="1"
+    rdfs:comment="Links a release with the corresponding catalogue number"
+    rdfs:label="catalogue number"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;channels"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdfs:comment>		Associates a signal to the number of channels it holds (mono --&gt; 1, stereo --&gt; 2). Range is xsd:int.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;int"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;collaborated_with"
+    mo:level="1"
+    rdfs:comment="Used to relate two collaborating people on a work."
+    rdfs:label="collaborated_with"
+    ns1:term_status="unstable">
+  <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseType rdf:about="&mo;compilation"
+    dc:title="compilation"
+    mo:level="1">
+  <dc:description>		Collection of previously released manifestations of a musical expression by one or more artists.
+		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:ObjectProperty rdf:about="&mo;compilation_of"
+    mo:level="1"
+    rdfs:label="compilation_of"
+    ns1:term_status="unstable">
+  <rdfs:comment>Indicates that a musical manifestation is a compilation of several Signals.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;compiled"
+    mo:level="1"
+    rdfs:label="compiled"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate an person or a group of person who compiled the manifestation of a musical work.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalManifestation"/>
+  <owl:inverseOf rdf:resource="&mo;compiler"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;compiler"
+    mo:level="1"
+    rdfs:label="compiler"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate the manifestation of a musical work to a person or a group of person who compiled it.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicArtist"/>
+  <owl:inverseOf rdf:resource="&mo;compiled"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;composed_in"
+    mo:level="2"
+    rdfs:label="composed in"
+    ns1:term_status="unstable">
+  <rdfs:comment>		Associates a MusicalWork to the Composition event pertaining
+		to its creation. For example, I might use this property to associate
+		the Magic Flute to its composition event, occuring during 1782 and having as
+		a mo:composer Mozart.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalWork"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Composition"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#producedIn"/>
+  <owl:inverseOf rdf:resource="&mo;produced_work"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;composer"
+    mo:level="2"
+    rdfs:label="composer"
+    ns1:term_status="stable">
+  <rdfs:comment>		Associates a composition event to the actual composer. For example,
+		this property could link the event corresponding to the composition of the
+		Magic Flute in 1782 to Mozart himself (who obviously has a FOAF profile:-) ).
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Composition"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;conducted"
+    mo:level="2"
+    rdfs:comment="Relates agents to the performances they were conducting"
+    rdfs:label="conducted"
+    ns1:term_status="unstable">
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Performance"/>
+  <owl:inverseOf rdf:resource="&mo;conductor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;conductor"
+    mo:level="2"
+    rdfs:comment="Relates a performance to the conductor involved"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
+  <owl:inverseOf rdf:resource="&mo;conducted"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;contains_sample_from"
+    mo:level="1"
+    rdfs:label="contains_sample_from"
+    ns1:term_status="unstable">
+  <rdfs:comment>		Relates a signal to another signal, which has been sampled.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;discography"
+    mo:level="1"
+    rdfs:label="discography"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to links an artist to an online discography of their musical works. The discography should provide a summary of each released musical work of the artist.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;discogs"
+    mo:level="1"
+    rdfs:label="discogs"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link a musical work or the expression of a musical work, an artist or a corporate body to to its corresponding Discogs page.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalExpression"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;MusicArtist"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;CorporateBody"/>
+                          <rdf:rest rdf:resource="&rdf;nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;djmix_of"
+    mo:level="1"
+    rdfs:label="djmix_of"
+    ns1:term_status="unstable">
+  <rdfs:comment>Indicates that all (or most of) the tracks of a musical work or the expression of a musical work were mixed together from all (or most of) the tracks from another musical work or the expression of a musical work to form a so called DJ-Mix. 
+    
+The tracks might have been altered by pitching (so that the tempo of one track matches the tempo of the following track) and fading (so that one track blends in smoothly with the other). If the tracks have been more substantially altered, the "mo:remix" relationship type is more appropriate. </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;djmixed"
+    mo:level="1"
+    rdfs:label="djmixed"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate an artist who djmixed a musical work or the expression of a musical work. 
+    
+The artist usually selected the tracks, chose their sequence, and slightly changed them by fading (so that one track blends in smoothly with the other) or pitching (so that the tempo of one track matches the tempo of the following track). This applies to a 'Mixtape' in which all tracks were DJ-mixed together into one single long track. </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+  <owl:inverseOf rdf:resource="&mo;djmixed_by"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;djmixed_by"
+    mo:level="1"
+    rdfs:label="djmixed_by"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate a work or the expression of a work to an artist who djmixed it. 
+    
+The artist usually selected the tracks, chose their sequence, and slightly changed them by fading (so that one track blends in smoothly with the other) or pitching (so that the tempo of one track matches the tempo of the following track). This applies to a 'Mixtape' in which all tracks were DJ-mixed together into one single long track. </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicArtist"/>
+  <owl:inverseOf rdf:resource="&mo;djmixed"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;download"
+    mo:level="1"
+    rdfs:label="download"
+    ns1:term_status="stable">
+  <rdfs:comment>                This property can be used to link from a person to the website where they make their works available, or from
+                a manifestation (a track or an album, for example) to a web page where it is available for
+                download.
+		
+		It is better to use one of the three sub-properties instead of this one in order to specify wether the
+		content can be accessed for free (mo:freedownload), if it is just free preview material (mo:previewdownload), or
+		if it can be accessed for some money (mo:paiddownload) (this includes links to the Amazon store, for example).
+
+                This property MUST be used only if the content is just available through a web page (holding, for example
+                a Flash application) - it is better to link to actual content directly through the use of mo:available_as and
+                mo:Stream, mo:Torrent or mo:ED2K, etc. Therefore, Semantic Web user agents that don't know how to read HTML and even
+                less to rip streams from Flash applications can still access the audio content.
+        </rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;CorporateBody"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;ean"
+    mo:level="1"
+    rdfs:label="ean"
+    ns1:term_status="testing">
+  <rdfs:comment>The European Article Number (EAN) is a universal identifier for products, commonly printed in form of barcodes on them. The numbers represented by those codes can either be 8 or 13 digits long, with the 13-digit-version being most common. EANs form a superset of the North American Universal Product Code (UPC) as every UPC can be made an EAN by adding a leading zero to it. Additionally every EAN is also a Japanese Article Number (JAN). The identifiers were formerly assigned by EAN International which merged with Uniform Code Council (UCC, the guys behind the UPCs) and Electronic Commerce Council of Canada (ECCC) to become GS1. </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;gtin"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;encodes"
+    mo:level="1"
+    rdfs:label="encodes"
+    ns1:term_status="unstable">
+  <rdfs:comment>		Relates a MusicalItem (a track on a particular CD, an audio file, a stream somewhere) to the signal it encodes.
+
+		This is usually a lower-resolution version of the master signal (issued from a Recording event).
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalItem"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;encoding"
+    mo:level="1"
+    rdfs:label="encoding"
+    ns1:term_status="unstable">
+  <rdfs:comment>Method used to convert analog electronic signals into digital format such as "MP3 CBR @ 128kbps", "OGG @ 160kbps", "FLAC", etc.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;AudioFile"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&rdfs;Literal"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;engineer"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdfs:comment>Relates a performance or a recording to the engineer involved</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;Performance"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Recording"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;RecordingSession"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
+  <owl:inverseOf rdf:resource="&mo;engineered"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;engineered"
+    mo:level="2"
+    rdfs:label="engineered"
+    ns1:term_status="unstable">
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
+  <rdfs:comment>Relates agents to the performances/recordings they were engineering in</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;Performance"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Recording"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;RecordingSession"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+  <owl:inverseOf rdf:resource="&mo;engineer"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseType rdf:about="&mo;ep"
+    dc:description="        	An EP
+	"
+    dc:title="ep"
+    mo:level="1">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:ObjectProperty rdf:about="&mo;event_homepage"
+    mo:level="2"
+    rdfs:comment="Links a particular event to a web page"
+    rdfs:label="event homepage"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;exchange_item"
+    mo:level="1"
+    rdfs:label="exchange_item"
+    ns1:term_status="stable">
+  <rdfs:comment>A person, a group of person or an organization exchanging an exemplar of a single manifestation.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;fanpage"
+    mo:level="1"
+    rdfs:label="fanpage"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link an artist to a fan-created webpage devoted to that artist.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;free_download"
+    mo:level="1"
+    rdfs:label="free download"
+    ns1:term_status="stable">
+  <rdfs:subPropertyOf rdf:resource="&mo;download"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+  <rdfs:comment>		This property can be used to link from a person to the website where they make their works available, or from
+		a manifestation (a track or an album, for example) to a web page where it is available for free 
+		download.
+
+		This property MUST be used only if the content is just available through a web page (holding, for example
+		a Flash application) - it is better to link to actual content directly through the use of mo:available_as and 
+		mo:Stream, mo:Torrent or mo:ED2K, etc. Therefore, Semantic Web user agents that don't know how to read HTML and even
+		less to rip streams from Flash applications can still access the audio content.
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;CorporateBody"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;freedownload"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;free_download"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;genre"
+    mo:level="2"
+    rdfs:label="genre"
+    ns1:term_status="stable">
+  <rdfs:comment>		Associates an event (like a performance or a recording) to a particular musical genre.
+		Further version of this property may also include works and scores in the domain.
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Performance"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;Arrangement"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;Composition"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;Recording"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="&mo;RecordingSession"/>
+                              <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Genre"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;grid"
+    mo:level="1"
+    rdfs:label="GRid"
+    ns1:term_status="testing">
+  <rdfs:comment>The Global Release Identifier (GRid) is a system for uniquely identifying Releases of music over electronic networks (that is, online stores where you can buy music as digital files). As that it can be seen as the equivalent of the BarCode (or more correctly the GTIN) as found on physical releases of music. Like the ISRC (a code for identifying single recordings as found on releases) it was developed by the IFPI but it does not appear to be a standard of the ISO.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;group"
+    mo:level="1"
+    rdfs:comment="Relates a membership event with the corresponding group"
+    rdfs:label="group"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;Membership"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;gtin"
+    mo:level="1"
+    rdfs:label="gtin"
+    ns1:term_status="testing">
+  <rdfs:comment>GTIN is a grouping term for EANs and UPCs. In common speech those are called barcodes although the barcodes are just a representation of those identifying numbers.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;has_track"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;track"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;homepage"
+    mo:level="1"
+    rdfs:comment="Links an artist, a record, etc. to a corresponding web page"
+    rdfs:label="homepage"
+    ns1:term_status="stable">
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicArtist"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;MusicalExpression"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;MusicalItem"/>
+                          <rdf:rest rdf:resource="&rdf;nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;image"
+    mo:level="1"
+    rdfs:label="image"
+    ns1:term_status="stable">
+  <rdfs:comment>Indicates a pictorial image (JPEG, GIF, PNG, Etc.) of a musical work, the expression of a musical work, the manifestation of a work or the examplar of a manifestation.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicArtist"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;MusicalExpression"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;MusicalItem"/>
+                          <rdf:rest rdf:resource="&rdf;nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/depiction"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;imdb"
+    mo:level="1"
+    rdfs:label="imdb"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link an artist, a musical work or the expression of a musical work to their equivalent page on IMDb, the InternetMovieDatabase.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalExpression"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;MusicArtist"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;CorporateBody"/>
+                          <rdf:rest rdf:resource="&rdf;nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;instrument"
+    mo:level="2"
+    rdfs:comment="Relates a performance to a musical instrument involved"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Instrument"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseType rdf:about="&mo;interview"
+    dc:title="interview"
+    mo:level="1">
+  <dc:description>		Recording of the questioning of a person.
+		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:DatatypeProperty rdf:about="&mo;ipi"
+    mo:level="1"
+    rdfs:label="ipi"
+    ns1:term_status="testing">
+  <rdfs:comment>The Interested Parties Information Code (IPI) is an ISO standard similar to ISBNs for identifying the people or groups with some involvement with a particular musical work / compositions.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;ismn"
+    mo:level="1"
+    rdfs:label="ismn"
+    ns1:term_status="testing">
+  <rdfs:comment>The International Standard Music Number (ISMN) is an ISO standard similar to ISBNs for identifying printed music publications</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;PublishedLyrics"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;PublishedLibretto"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;PublishedScore"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;isrc"
+    mo:level="1"
+    rdfs:label="isrc"
+    ns1:term_status="stable">
+  <rdfs:comment>	The ISRC (International Standard Recording Code) is the international identification system for sound recordings and music videorecordings. 
+	Each ISRC is a unique and permanent identifier for a specific recording which can be permanently encoded into a product as its digital fingerprint. 
+	Encoded ISRC provide the means to automatically identify recordings for royalty payments.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;iswc"
+    mo:level="1"
+    rdfs:comment="Links a musical work to the corresponding ISWC number"
+    rdfs:label="iswc"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;MusicalWork"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;item"
+    mo:level="1"
+    ns1:term_status="testing">
+  <rdfs:comment>                Relates a musical manifestation to a musical item (this album, and my particular cd) holding the
+		entire manifestation, and not just a part of it.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalItem"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;available_as"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;key"
+    mo:level="2"
+    rdfs:label="key"
+    ns1:term_status="stable">
+  <rdfs:comment>		Indicated the key used by the musicians during a performance, or the key of a MusicalWork.
+		Any of 24 major or minor diatonic scales that provide the tonal framework for a piece of music.
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Performance"/>
+              <rdf:rest rdf:resource="&rdf;nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/keys.owl#Key"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;label"
+    mo:level="1"
+    rdfs:label="label"
+    ns1:term_status="testing">
+  <rdfs:comment>Associates a release event with the label releasing the record</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;ReleaseEvent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Label"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;lc"
+    mo:level="1"
+    rdfs:label="lc"
+    ns1:term_status="testing">
+  <rdfs:comment>The Label Code (LC) was introduced in 1977 by the IFPI (International Federation of Phonogram and Videogram Industries) in order to unmistakably identify the different record labels (see Introduction, Record labels) for rights purposes. The Label Code consists historically of 4 figures, presently being extended to 5 figures, preceded by LC and a dash (e.g. LC-0193 = Electrola; LC-0233 = His Master's Voice). Note that the number of countries using the LC is limited, and that the code given on the item is not always accurate.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Label"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:AnnotationProperty rdf:about="&mo;level"
+    rdfs:label="level">
+  <rdfs:comment>		This annotation property associates to a particular Music Ontology term the corresponding
+		expressiveness level. These levels can be:
+
+			- 1: Only editorial/Musicbrainz type information
+			- 2: Workflow information
+			- 3: Even decomposition
+		
+		This property is mainly used for specification generation.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:AnnotationProperty>
+
+<owl:ObjectProperty rdf:about="&mo;licence"
+    mo:level="1"
+    rdfs:label="licence"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link a work or the expression of a work to the license under which they can be manipulated (downloaded, modified, etc). 
+    
+This is usually used to link to a Creative Commons licence.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://web.resource.org/cc/License"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;listened"
+    mo:level="2"
+    rdfs:comment="Relates agents to the performances they were listening in"
+    rdfs:label="listened"
+    ns1:term_status="unstable">
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Performance"/>
+  <owl:inverseOf rdf:resource="&mo;listener"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;listener"
+    mo:level="2"
+    rdfs:comment="Relates a performance to the listener involved"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
+  <owl:inverseOf rdf:resource="&mo;listened"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseType rdf:about="&mo;live"
+    dc:title="live"
+    mo:level="1">
+  <dc:description>		A musical manifestation that was recorded live.
+		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:ObjectProperty rdf:about="&mo;mailorder"
+    mo:level="1"
+    rdfs:label="mailorder"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link a musical work or the expression of a musical work to a website where people can buy a copy of the musical manifestation.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicArtist"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;CorporateBody"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;mashup_of"
+    mo:level="1"
+    rdfs:label="mashup_of"
+    ns1:term_status="unstable">
+  <rdfs:comment>Indicates that musical works or the expressions of a musical work were mashed up on this album or track. 
+    
+This means that two musical works or the expressions of a musical work by different artists are mixed together, over each other, or otherwise combined into a single musical work (usually by a third artist, the remixer).</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;medley_of"
+    mo:level="1"
+    rdfs:label="medley_of"
+    ns1:term_status="unstable">
+  <rdfs:comment>Indicates that a musical expression is a medley of several other musical expressions. 
+    
+This means that the orignial musical expression were rearranged to create a new musical expression in the form of a medley. </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;member"
+    mo:level="1"
+    rdfs:comment="		Indicates a member of a musical group
+	"
+    rdfs:label="member"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="&mo;MusicGroup"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;member_of"
+    mo:level="1"
+    rdfs:comment="Inverse of the foaf:member property"
+    rdfs:label="member_of"
+    ns1:term_status="unstable">
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+  <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/member"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;membership"
+    mo:level="1"
+    rdfs:comment="Relates an agent with related membership events"
+    rdfs:label="membership"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Membership"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;meter"
+    mo:level="2"
+    rdfs:comment="Associates a musical work or a score with its meter"
+    rdfs:label="meter"
+    ns1:term_status="testing">
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Score"/>
+              <rdf:rest rdf:resource="&rdf;nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;movement"
+    mo:level="2"
+    rdfs:comment="Indicates that a musical work has movements"
+    rdfs:label="has_movement"
+    ns1:term_status="unstable">
+  <rdfs:domain rdf:resource="&mo;MusicalWork"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Movement"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;movement_number"
+    mo:level="2"
+    rdfs:comment="Indicates the position of a movement in a musical work."
+    rdfs:label="movement number"
+    ns1:term_status="unstable">
+  <rdfs:domain rdf:resource="&mo;Movement"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;int"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;musicbrainz"
+    mo:level="1"
+    rdfs:label="musicbrainz"
+    ns1:term_status="stable">
+  <rdfs:comment>		Linking an agent, a track or a record to its corresponding Musicbrainz page.
+        </rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;Signal"/>
+                      <rdf:rest rdf:resource="&rdf;nil"/>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;musicbrainz_guid"
+    mo:level="1"
+    rdfs:comment="Links an object to the corresponding Musicbrainz identifier"
+    rdfs:label="Musicbrainz GUID"
+    ns1:term_status="testing">
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicArtist"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Track"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;Record"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;SignalGroup"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;Signal"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="&mo;ReleaseEvent"/>
+                              <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;uuid"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;musicmoz"
+    mo:level="1"
+    rdfs:label="musicmoz"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link an artist, a musical work or the expression of a musical work to its corresponding MusicMoz page.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicArtist"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalWork"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;MusicalExpression"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                      <rdf:rest rdf:resource="&rdf;nil"/>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;myspace"
+    mo:level="1"
+    rdfs:comment="Used to link a person to its corresponding MySpace page."
+    rdfs:label="myspace"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseStatus rdf:about="&mo;official"
+    dc:title="official"
+    mo:level="1">
+  <dc:description>Any musical work or the expression of a musical work officially sanctioned by the artist and/or their corporate body.</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseStatus>
+
+<owl:ObjectProperty rdf:about="&mo;olga"
+    mo:level="1"
+    rdfs:label="olga"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link a track to a tabulature file for track in the On-Line Guitar Archive.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Track"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;onlinecommunity"
+    mo:level="1"
+    rdfs:label="onlinecommunity"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link a person with an online community web page like a blog, a wiki, a forum, a livejournal page, Etc.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;opus"
+    mo:level="2"
+    rdfs:label="opus"
+    ns1:term_status="stable">
+  <rdfs:comment>		Used to define a creative work, especially a musical composition numbered to designate the order of a composer's works.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalWork"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&rdfs;Literal"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;other_release_of"
+    mo:level="1"
+    rdfs:label="other_release_of"
+    ns1:term_status="unstable">
+  <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+  <rdfs:comment>Indicates that two musical manifestations are essentially the same.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalManifestation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;paid_download"
+    mo:level="1"
+    rdfs:label="paid download"
+    ns1:term_status="stable">
+  <rdfs:subPropertyOf rdf:resource="&mo;download"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+  <rdfs:comment>                Provide a link from an artist to a web page where all of that artist's musical work is available for some money,
+                or a link from a manifestation (record/track, for example) to a web page providing a paid access to this manifestation.
+        </rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicArtist"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;CorporateBody"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;paiddownload"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;paid_download"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;performance_of"
+    mo:level="2"
+    rdfs:label="performance of"
+    ns1:term_status="unstable">
+  <rdfs:comment>		Associates a Performance to a musical work or an arrangement that is being used as a factor in it.
+		For example, I might use this property to attach the Magic Flute musical work to 
+		a particular Performance.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;Score"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalWork"/>
+              <rdf:rest rdf:resource="&rdf;nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+  <owl:inverseOf rdf:resource="&mo;performed_in"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;performed"
+    mo:level="2"
+    rdfs:comment="Relates agents to the performances they were performing in"
+    rdfs:label="performed"
+    ns1:term_status="unstable">
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/bio/0.1/event"/>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Performance"/>
+  <owl:inverseOf rdf:resource="&mo;performer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;performed_in"
+    mo:level="2"
+    rdfs:label="performed in"
+    ns1:term_status="unstable">
+  <rdfs:comment>		Associates a Musical Work or an Score to Performances in which they were
+		a factor. For example, I might use this property in order to 
+		associate the Magic Flute to a particular performance at the Opera
+		Bastille last year.
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;Score"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalWork"/>
+              <rdf:rest rdf:resource="&rdf;nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Performance"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isFactorOf"/>
+  <owl:inverseOf rdf:resource="&mo;performance_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;performer"
+    mo:level="2"
+    rdfs:comment="Relates a performance to the performers involved"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
+  <owl:inverseOf rdf:resource="&mo;performed"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;possess_item"
+    mo:level="1"
+    rdfs:label="possess_item"
+    ns1:term_status="stable">
+  <rdfs:comment>A person, a group of person or an organization possessing an exemplar of a single manifestation.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;preview"
+    mo:level="1"
+    ns1:term_status="testing">
+  <rdfs:comment>                Relates a musical manifestation to a musical item (this album, and my particular cd), which holds
+		a preview of the manifestation (eg. one track for an album, or a snippet for a track)
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalItem"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;available_as"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;preview_download"
+    mo:level="1"
+    rdfs:label="preview download"
+    ns1:term_status="stable">
+  <rdfs:subPropertyOf rdf:resource="&mo;download"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+  <rdfs:comment>                This property can be used to link from a person to the website where they make previews of their works available, or from
+                a manifestation (a track or an album, for example) to a web page where a preview download is available.
+
+                This property MUST be used only if the content is just available through a web page (holding, for example
+                a Flash application) - it is better to link to actual content directly through the use of mo:available_as and
+                mo:Stream, mo:Torrent or mo:ED2K, etc. Therefore, Semantic Web user agents that don't know how to read HTML and even
+                less to rip streams from Flash applications can still access the audio content.
+        </rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;CorporateBody"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;primary_instrument"
+    mo:level="1"
+    rdfs:label="primary instrument"
+    ns1:term_status="testing">
+  <rdfs:comment>Indicates that a member was primarily playing a particular instrument during his membership</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Membership"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Instrument"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;produced"
+    mo:level="1"
+    rdfs:label="produced"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to relate an person or a group of person who produced the manifestation of a work.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalManifestation"/>
+  <owl:inverseOf rdf:resource="&mo;producer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;produced_score"
+    mo:level="2"
+    rdfs:label="produced score"
+    ns1:term_status="unstable">
+  <rdfs:comment>		Associates an arrangement event to a score product (score here does not refer to a published score, but more
+		an abstract arrangement of a particular work).
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Arrangement"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Score"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;produced_signal"
+    mo:level="2"
+    rdfs:label="produced signal"
+    ns1:term_status="stable">
+  <rdfs:comment>                Associates a Recording to the outputted signal.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Recording"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;produced_signal_group"
+    mo:level="2"
+    rdfs:label="produced signal group"
+    ns1:term_status="testing">
+  <rdfs:comment>Associates a recording session with a group of master signals produced by it.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;RecordingSession"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;SignalGroup"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;produced_sound"
+    mo:level="2"
+    rdfs:label="produced sound"
+    ns1:term_status="stable">
+  <rdfs:comment>                Associates a Performance to a physical Sound that is being produced by it.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Sound"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;produced_work"
+    mo:level="2"
+    rdfs:label="produced work"
+    ns1:term_status="stable">
+  <rdfs:comment>                Associates a composition event to the produced MusicalWork. For example,
+                this property could link the event corresponding to the composition of the
+                Magic Flute in 1782 to the Magic Flute musical work itself. This musical work
+		can then be used in particular performances.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Composition"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalWork"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
+  <owl:inverseOf rdf:resource="&mo;composed_in"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;producer"
+    mo:level="1"
+    rdfs:label="producer"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to relate the manifestation of a work to a person or a group of person who produced it.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <owl:inverseOf rdf:resource="&mo;produced"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;producesSignal"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;produced_signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;producesSound"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;produced_sound"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;productOfComposition"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;composed_in"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseStatus rdf:about="&mo;promotion"
+    dc:title="promotion"
+    mo:level="1">
+  <dc:description>A giveaway musical work or the expression of a musical work intended to promote an upcoming official musical work or the expression of a musical work.</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseStatus>
+
+<owl:ObjectProperty rdf:about="&mo;publication_of"
+    mo:level="1"
+    rdfs:label="publication of"
+    ns1:term_status="unstable">
+  <rdfs:comment>Link a particular manifestation to the related signal, score, libretto, or lyrics</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalExpression"/>
+  <owl:inverseOf rdf:resource="&mo;published_as"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;published"
+    mo:level="1"
+    rdfs:label="published"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate an person or a group of person who published the manifestation of a work.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalManifestation"/>
+  <owl:inverseOf rdf:resource="&mo;publisher"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;published_as"
+    mo:level="1"
+    rdfs:label="published as"
+    ns1:term_status="stable">
+  <rdfs:comment>		Links a musical expression (e.g. a signal or a score) to one of its manifestations (e.g. a track on a particular record or a published score).
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalExpression"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/vocab/frbr/core#embodiment"/>
+  <owl:inverseOf rdf:resource="&mo;publication_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;publisher"
+    mo:level="1"
+    rdfs:label="publisher"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate a musical manifestation to a person or a group of person who published it.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <owl:inverseOf rdf:resource="&mo;published"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;publishing_location"
+    mo:level="1"
+    rdfs:label="publishingLocation"
+    ns1:term_status="stable">
+  <rdfs:comment>		Relates a musical manifestation to its publication location.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;puid"
+    mo:level="1"
+    rdfs:label="puid"
+    ns1:term_status="stable">
+  <rdfs:comment>		Link a signal to the PUIDs associated with it, that is, PUID computed from MusicalItems (mo:AudioFile) 
+		derived from this signal.
+
+		PUIDs (Portable Unique IDentifier) are the IDs used in the 
+		proprietary MusicDNS AudioFingerprinting system which is operated by MusicIP.
+
+		Using PUIDs, one (with some luck) can identify the Signal object associated with a particular audio file, therefore allowing
+		to access further information (on which release this track is featured? etc.). Using some more metadata one can identify
+		the particular Track corresponding to the audio file (a track on a particular release).
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;record"
+    mo:level="1"
+    rdfs:label="released record"
+    ns1:term_status="testing">
+  <rdfs:comment>Associates a release with the records it contains. A single release can be associated with multiple records, for example for a multi-disc release.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Record"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;record_count"
+    mo:level="1"
+    rdfs:label="record count"
+    ns1:term_status="testing">
+  <rdfs:comment>Associates a release with the number of records it contains, e.g. the number of discs it contains in the case of a multi-disc release.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;int"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;recorded_as"
+    mo:level="2"
+    rdfs:label="recorded as"
+    ns1:term_status="stable">
+  <rdfs:comment>		This is a shortcut property, allowing to bypass all the Sound/Recording steps. This property
+		allows to directly link a Performance to the recorded Signal. This is recommended for "normal"
+		users. However, advanced users wanting to express things such as the location of the microphone will
+		have to create this shortcut as well as the whole workflow, in order to let the "normal" users access
+		simply the, well, simple information:-) .
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+  <owl:inverseOf rdf:resource="&mo;records"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;recorded_in"
+    mo:level="2"
+    rdfs:label="recorded in"
+    ns1:term_status="unstable">
+  <rdfs:comment>        	Associates a physical Sound to a Recording event where it is being used 
+		in order to produce a signal. For example, I might use this property to 
+		associate the sound produced by a particular performance of the magic flute
+		to a given recording, done using my cell-phone.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Sound"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Recording"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isFactorOf"/>
+  <owl:inverseOf rdf:resource="&mo;recording_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;recording_of"
+    mo:level="2"
+    rdfs:label="recorded sound"
+    ns1:term_status="stable">
+  <rdfs:comment>        	Associates a Recording event to a physical Sound being recorded.
+                For example, I might use this property to
+                associate a given recording, done using my cell phone, to the 
+		sound produced by a particular performance of the magic flute.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Recording"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Sound"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+  <owl:inverseOf rdf:resource="&mo;recorded_in"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;records"
+    mo:level="2"
+    rdfs:label="records"
+    ns1:term_status="unstable">
+  <rdfs:comment>		This is the inverse of the shortcut property recordedAs, allowing to relate directly a performance
+		to a signal.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Performance"/>
+  <owl:inverseOf rdf:resource="&mo;recordedAs"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;release_event"
+    mo:level="1"
+    rdfs:comment="Associates a release with the corresponding release event"
+    rdfs:label="release"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;ReleaseEvent"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;release_status"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdfs:comment>                Relates a musical manifestation to its release status (bootleg, ...)
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;ReleaseStatus"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;release_type"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdfs:comment>		Relates a musical manifestation to its release type (interview, spoken word, album, ...)
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;ReleaseType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;remaster_of"
+    mo:level="1"
+    rdfs:label="remaster_of"
+    ns1:term_status="unstable">
+  <rdfs:comment>This relates two musical work or the expression of a musical work, where one is a remaster of the other. 
+    
+A remaster is a new version made for release from source recordings that were earlier released separately. This is usually done to improve the audio quality or adjust for more modern playback equipment. The process generally doesn't involve changing the music in any artistically important way. It may, however, result in tracks that are a few seconds longer or shorter.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseType rdf:about="&mo;remix"
+    dc:title="remix"
+    mo:level="1">
+  <dc:description>		Musical manifestation that primarily contains remixed material. 
+		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:ObjectProperty rdf:about="&mo;remix_of"
+    mo:level="1"
+    rdfs:label="remix_of"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate the remix of a musical work in a substantially altered version produced by mixing together individual tracks or segments of an original musical source work.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;remixed"
+    mo:level="1"
+    rdfs:label="remixed"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate an artist who remixed a musical work or the expression of a musical work. 
+    
+This involves taking just one other musical work and using audio editing to make it sound like a significantly different, but usually still recognisable, song. It can be used to link an artist to a single song that they remixed, or, if they remixed an entire musical work.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+  <owl:inverseOf rdf:resource="&mo;remixer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;remixer"
+    mo:level="1"
+    rdfs:label="remixer"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate a musical work or the expression of a musical work to an artist who remixed it. 
+    
+This involves taking just one other musical work and using audio editing to make it sound like a significantly different, but usually still recognisable, song. It can be used to link an artist to a single song that they remixed, or, if they remixed an entire musical work.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicArtist"/>
+  <owl:inverseOf rdf:resource="&mo;remixed"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;review"
+    mo:level="1"
+    rdfs:label="review"
+    ns1:term_status="stable">
+  <rdfs:comment>Used to link a work or the expression of a work to a review. 
+    
+The review does not have to be open content, as long as it is accessible to the general internet population.</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;sample_rate"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdfs:comment>		Associates a digital signal to its sample rate. It might be easier to express it this way instead of
+		defining a timeline map:-) Range is xsd:float.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;DigitalSignal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;float"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;sampled"
+    mo:level="1"
+    rdfs:comment="Used to relate an artist who sampled a Signal."
+    rdfs:label="sampled"
+    ns1:term_status="unstable">
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+  <owl:inverseOf rdf:resource="&mo;sampler"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;sampledVersionOf"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;sampled_version_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;sampled_version"
+    mo:level="2"
+    rdfs:label="sampled version"
+    ns1:term_status="stable">
+  <rdfs:comment>		Associates an analog signal with a sampled version of it
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;AnalogSignal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;DigitalSignal"/>
+  <owl:inverseOf rdf:resource="&mo;sampled_version_of"/>
+</owl:ObjectProperty>
+
+<owl:FunctionalProperty rdf:about="&mo;sampled_version_of"
+    mo:level="2"
+    rdfs:label="sampled version of"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Associates a digital signal with the analog version of it
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;DigitalSignal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;AnalogSignal"/>
+  <owl:inverseOf rdf:resource="&mo;sampled_version"/>
+</owl:FunctionalProperty>
+
+<owl:ObjectProperty rdf:about="&mo;sampler"
+    mo:level="1"
+    rdfs:label="sampler"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate the manifestation of a musical work to an artist who sampled it.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicArtist"/>
+  <owl:inverseOf rdf:resource="&mo;sampled"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;sell_item"
+    mo:level="1"
+    rdfs:label="sell_item"
+    ns1:term_status="stable">
+  <rdfs:comment>A person, a group of person or an organization selling an exemplar of a single manifestation.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;signal"
+    mo:level="1"
+    rdfs:label="signal"
+    ns1:term_status="testing">
+  <rdfs:comment>Associates a group of signals with one of the signals it contains</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;SignalGroup"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Signal"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;signalTime"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;time"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;similar_to"
+    mo:level="1"
+    rdfs:label="similar_to"
+    ns1:term_status="unstable">
+  <rdfs:comment>    		A similarity relationships between two objects (so far, either an agent, a signal or a genre, but
+		this could grow).
+		This relationship is pretty general and doesn't make any assumptions on how the similarity claim
+		was derived.
+		Such similarity statements can come from a range of different sources (Musicbrainz similarities between
+		artists, or coming from some automatic content analysis).
+		However, the origin of such statements should be kept using a named graph approach - and ultimately, the 
+		documents providing such statements should attach some metadata to themselves (confidence of the claim, etc.).
+        </rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalWork"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;MusicalExpression"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;MusicalItem"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="&mo;Genre"/>
+                              <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;MusicalWork"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;MusicalExpression"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="&mo;MusicalItem"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="&mo;Genre"/>
+                              <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;singer"
+    mo:level="2"
+    rdfs:comment="Relates a performance to an involved singer"
+    ns1:term_status="stable">
+  <rdfs:domain rdf:resource="&mo;Performance"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;performer"/>
+</owl:ObjectProperty>
+
+<mo:ReleaseType rdf:about="&mo;soundtrack"
+    dc:title="soundtrack"
+    mo:level="1">
+  <dc:description>		Sound recording on a narrow strip of a motion picture film.
+		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<mo:ReleaseType rdf:about="&mo;spokenword"
+    dc:title="spoken word"
+    mo:level="1">
+  <dc:description>		Spoken word is a form of music or artistic performance in which lyrics, poetry, or stories are spoken rather than sung. 
+		Spoken-word is often done with a musical background, but emphasis is kept on the speaker.
+		This is a type of MusicalManifestation defined by the musical industry.
+	</dc:description>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</mo:ReleaseType>
+
+<owl:ObjectProperty rdf:about="&mo;supporting_musician"
+    mo:level="1"
+    rdfs:label="supporting_musician"
+    ns1:term_status="unstable">
+  <rdfs:comment>Used to relate an artist doing long-time instrumental or vocal support for another artist.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicArtist"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;tempo"
+    mo:level="2"
+    rdfs:label="tempo"
+    ns1:term_status="stable">
+  <rdfs:comment>		Rate of speed or pace of music. Tempo markings are traditionally given in Italian; 
+		common markings include: grave (solemn; very, very slow); largo (broad; very slow); 
+		adagio (quite slow); andante (a walking pace); moderato (moderate); allegro (fast; cheerful); 
+		vivace (lively); presto (very fast); accelerando (getting faster); ritardando (getting slower); 
+		and a tempo (in time; returning to the original pace).
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="&mo;MusicalWork"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="&mo;Performance"/>
+              <rdf:rest rdf:resource="&rdf;nil"/>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;text"
+    mo:level="2"
+    rdfs:comment="Associates lyrics with their text."
+    rdfs:label="text"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;Lyrics"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+</owl:DatatypeProperty>
+
+<owl:FunctionalProperty rdf:about="&mo;time"
+    mo:level="1"
+    rdfs:label="time"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Associates a Signal to a time object - its actual domain
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+</owl:FunctionalProperty>
+
+<owl:ObjectProperty rdf:about="&mo;track"
+    mo:level="1"
+    rdfs:label="track"
+    ns1:term_status="stable">
+  <rdfs:comment>Indicates a part of a musical manifestation - in this particular case, a track.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Record"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Track"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;trackNum"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;track_number"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;track_count"
+    mo:level="1"
+    rdfs:comment="The track count of a record"
+    rdfs:label="track count"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;Record"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;int"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;track_number"
+    mo:level="1"
+    rdfs:label="track number"
+    ns1:term_status="stable">
+  <rdfs:comment>Indicates the position of a track on a record medium (a CD, etc.).</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Track"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;int"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;translation_of"
+    mo:level="1"
+    rdfs:label="translation_of"
+    ns1:term_status="unstable">
+  <rdfs:comment>Indicates that a work or the expression of a work has translated or transliterated into another expression of a work.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;tribute_to"
+    mo:level="1"
+    rdfs:label="tribute_to"
+    ns1:term_status="unstable">
+  <rdfs:comment>Indicates a musical work or the expression of a musical work that is a tribute to an artist - normally consisting of music being composed by the artist but performed by other artists. </rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;MusicArtist"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;trmid"
+    mo:level="1"
+    rdfs:label="trmid"
+    ns1:term_status="stable">
+  <rdfs:comment>		Indicates the TRMID of a track.
+		TRM IDs are MusicBrainz' old AudioFingerprinting system. 
+		TRM (TRM Recognizes Music) IDs are (somewhat) unique ids that represent 
+		the audio signature of a musical piece (see AudioFingerprint).
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Signal"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="&mo;upc"
+    mo:level="1"
+    rdfs:label="upc"
+    ns1:term_status="testing">
+  <rdfs:comment>UPC stands for "Universal Product Code", which was the original barcode used in the United States and Canada. The UPC (now officially EAN.UCC-12 is a numerical method of identifying products without redundancy worldwide for all types of products in the retail sector. The EAN is a superset of the original UPC increasing the digits to 13 with the prefix 0 reserved for UPC. As of 2005, manufacturers are only allowed to use the new 13-digit codes on their items, rather than having two separate numbers.</rdfs:comment>
+  <rdfs:domain rdf:resource="&mo;Release"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&xsd;string"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;gtin"/>
+</owl:DatatypeProperty>
+
+<owl:ObjectProperty rdf:about="&mo;usedInPerformance"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;performed_in"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;usedInRecording"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;recorded_in"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;usesSound"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;recording_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;usesWork"
+    ns1:term_status="deprecated">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <owl:equivalentProperty rdf:resource="&mo;performance_of"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;want_item"
+    mo:level="1"
+    rdfs:label="want_item"
+    ns1:term_status="stable">
+  <rdfs:comment>A person, a group of person or an organization wanting an exemplar of a single manifestation.</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;wikipedia"
+    mo:level="1"
+    rdfs:label="wikipedia"
+    ns1:term_status="stable">
+  <rdfs:comment>		Used to link an work, an expression of a work, a manifestation of a work, 
+		a person, an instrument or a musical genre to its corresponding WikiPedia page. 
+		The full URL should be used, not just the WikiName.
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf>
+        <rdf:Description>
+          <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Manifestation"/>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first rdf:resource="http://purl.org/vocab/frbr/core#Item"/>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+                          <rdf:rest>
+                            <rdf:Description>
+                              <rdf:first rdf:resource="&mo;Instrument"/>
+                              <rdf:rest>
+                                <rdf:Description>
+                                  <rdf:first rdf:resource="&mo;Genre"/>
+                                  <rdf:rest rdf:resource="&rdf;nil"/>
+                                </rdf:Description>
+                              </rdf:rest>
+                            </rdf:Description>
+                          </rdf:rest>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
+  <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+</rdf:RDF>

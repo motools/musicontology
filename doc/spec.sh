@@ -1,0 +1,1 @@
+../ontospec/spec.sh

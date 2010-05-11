@@ -1,0 +1,87 @@
+
+
+
+
+
+<h3><a name="sec-standards" class="mozTocH3" id="sec-standards"></a>The Music Ontology  and Standards</h3>
+
+<p>It is important to understand that the <em>Music Ontology</em> as specified in this document is not a standard 
+
+in the sense of <a href="http://www.iso.ch/iso/en/ISOOnline.openerpage">ISO Standardisation</a>, 
+
+or that associated with <a href="http://www.w3.org/Consortium/Process/">W3C Process</a>.
+
+
+
+</p>
+
+<p>The Music Ontology  depends heavily on W3C's standards work, specifically on XML, XML Namespaces, RDF, and OWL. 
+
+All the <em>Music Ontology documents</em> must be well-formed RDF/XML documents.</p>
+
+<p>This specification contributes an ontology, the "Music Ontology ", to the Semantic
+
+Web, specifying it using W3C's <a href="http://www.w3.org/RDF/">Resource
+
+Description Framework</a> (RDF). As such, the Music Ontology adopts by reference both
+
+a syntax (using XML), a data model (RDF graphs) and a mathematically
+
+grounded definition for the rules that underpin the RDF design.</p>
+
+
+<h3><a name="sec-sioc-rdf" class="mozTocH2" id="sec-sioc-rdf"></a>The Music Ontology and RDF</h3>
+
+<p>Why does the Music Ontology use <a href="http://www.w3.org/RDF/">RDF</a>?</p>
+
+<p>The Music Ontology is an application of the Resource Description Framework (RDF) because the subject area we're describing – music: artists, albums and tracks -- has so many competing requirements that a standalone format would not capture them or would lead to trying to describe these requirements in a number of incompatible formats. By using RDF, the Music Ontology gains a powerful extensibility mechanism, allowing Music-Ontology-based descriptions to be mixed with claims made in any other RDF vocabulary.</p>
+
+<p>This is for that reason that the RDF document examples at the beginning of this document suggested to use the <a href="http://xmlns.com/foaf/0.1/">FOAF</a> ontology to describe the Person, and its relations with other Person (artist or non-artist), and to use the Music Ontology to specify that that Person is also an Artist. That way, we can re-use other ontologies such as the <a href="http://vocab.org/relationship/">Relationship ontology</a>, in conjunction with the FOAF ontology, to describe different relationship between Artists.</p>
+
+<p>The Music Ontology as an ontology cannot incorporate everything we might want to talk about that is related to music: artists (people), albums and tracks. Instead of covering all topics within the Music Ontology itself, we describe the basic topics and build into a larger framework - RDF - that allows us to take advantage of work elsewhere on more specific description vocabularies.</p>
+
+<p>RDF provides the Music Ontology with a way to mix together different descriptive vocabularies in a consistent way. Vocabularies can be created by different communities and groups as appropriate and mixed together as required, without needing any centralized agreement on how terms from different vocabularies can be written down in XML or N3.</p>
+
+<p>Check the <a href="#sec-external">Ontology namespaces referenced</a> section to find some ontologies that ca be use in conjonction with the Music Ontology.</p>
+
+<p>This mixing happens in two ways: firstly, RDF provides an underlying model of (typed) objects and their attributes or relationships. mo:Album is an example of a type of object (a &quot;class&quot;), while mo:compilation_of and mo:has_track are examples of a relationship and an attribute of an mo:Album; in RDF we call these &quot;properties&quot;. Any vocabulary described in RDF shares this basic model, which is discernable in the syntax for RDF, and which removes one level of confusion in understanding a given vocabulary, making it simpler to comprehend and therefore reuse a vocabulary that you have not written yourself. This is the minimal self-documentation that RDF gives you.</p>
+
+<p>Secondly, there are mechanisms for saying which RDF properties are connected to which classes, and how different classes are related to each other, using RDF Syntax and OWL. These can be quite general (all RDF properties by default come from an rdf:Resource for example) or very specific and precise (for example by using <a
+
+ href="http://www.w3.org/2001/sw/WebOnt/">OWL</a> constructs). This is another form of self-documentation, which allows you to connect different vocabularies together as you please.</p>
+
+<p>In summary then, RDF is self-documenting in ways which enable the creation and combination of vocabularies in a devolved manner. This is particularly important for an ontology which describes communities, since online communities connect to many other domains of interest, which it would be impossible (as well as suboptimal) for a single group to describe adequately in non-geological time.</p>
+
+<p>RDF is usually written using the XML or <a href="http://www.w3.org/DesignIssues/Notation3">N3</a> syntaxes. If you want to process the data, you will need to use one of the many RDF toolkits available, such as Jena (Java) or Redland (C). </p>
+
+<p>More information about RDF can be found in the <a href="http://www.w3.org/TR/rdf-primer/" title="RDF Primer">RDF Primer</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

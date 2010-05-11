@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF 
+	xmlns:bach="http://music.org/bach#" 
+	xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:event="http://purl.org/NET/c4dm/event.owl#" 
+	xmlns:foaf="http://xmlns.com/foaf/0.1/" 
+	xmlns:instrument="http://instrument.org/" 
+	xmlns:mo="http://purl.org/ontology/mo/" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:timeline="http://purl.org/NET/c4dm/timeline.owl#" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <foaf:Person rdf:about="http://music.org/bach#bach">
+    <foaf:name>Johann Sebastian Bach</foaf:name>
+    <mo:wikipedia rdf:resource="http://en.wikipedia.org/wiki/Johann_Sebastian_Bach"/>
+  </foaf:Person>
+  <mo:Composition rdf:about="http://music.org/bach#kdfcomposition">
+    <dc:title>The composition event, when Bach composed the art of the fugue</dc:title>
+    <mo:composer rdf:resource="http://music.org/bach#bach"/>
+    <event:time rdf:resource="http://music.org/bach#compti"/>
+    <mo:produced_work rdf:resource="http://music.org/bach#kunstderfuge"/>
+    <event:product rdf:resource="http://music.org/bach#kunstderfugescore"/>
+  </mo:Composition>
+  <timeline:Interval rdf:about="http://music.org/bach#compti">
+    <timeline:during rdf:resource="http://placetime.com/interval/gregorian/1742-01-01T00:00:00Z/P7Y6M"/>
+  </timeline:Interval>
+  <mo:MusicalWork rdf:about="http://music.org/bach#kunstderfuge">
+    <dc:title>Die Kunst der Fuge</dc:title>
+  </mo:MusicalWork>
+  <mo:Score rdf:about="http://music.org/bach#kunstderfugescore">
+    <dc:title>Die Kunst der Fuge, composer's score</dc:title>
+    <mo:published_as rdf:resource="http://music.org/bach#firstpub"/>
+  </mo:Score>
+  <mo:PublishedScore rdf:about="http://music.org/bach#firstpub">
+    <dc:title>Die Kunst der Fuge, published posthumously in 1751</dc:title>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#year">1751</dc:date>
+  </mo:PublishedScore>
+  <mo:Performance rdf:about="http://music.org/bach#emersonperf">
+    <event:time rdf:resource="http://music.org/bach#emersonperfti"/>
+    <mo:performer rdf:resource="http://music.org/bach#emersonquartet"/>
+    <mo:instrument rdf:resource="http://instrument.org/violin"/>
+    <mo:instrument rdf:resource="http://instrument.org/violin"/>
+    <mo:instrument rdf:resource="http://instrument.org/viola"/>
+    <mo:instrument rdf:resource="http://instrument.org/cello"/>
+    <mo:produced_sound rdf:resource="http://music.org/bach#emersonsound"/>
+    <mo:performance_of rdf:resource="http://music.org/bach#kunstderfuge"/>
+  </mo:Performance>
+  <timeline:Interval rdf:about="http://music.org/bach#emersonperfti">
+    <timeline:during rdf:resource="http://placetime.com/interval/gregorian/2003-01-01T00:00:00Z/P1Y"/>
+  </timeline:Interval>
+  <mo:MusicalGroup rdf:about="http://music.org/bach#emersonquartet">
+    <foaf:name>The Emerson Quartet</foaf:name>
+    <foaf:member rdf:resource="http://music.org/bach#eugenedrucker"/>
+    <foaf:member rdf:resource="http://music.org/bach#philipsetzer"/>
+    <foaf:member rdf:resource="http://music.org/bach#lawrencedutton"/>
+    <foaf:member rdf:resource="http://music.org/bach#davidfinckel"/>
+  </mo:MusicalGroup>
+  <mo:Sound rdf:about="http://music.org/bach#emersonsound"/>
+  <mo:Recording rdf:about="http://music.org/bach#emersonrec">
+    <mo:recording_of rdf:resource="http://music.org/bach#emersonsound"/>
+    <mo:produced_signal>
+      <mo:Signal>
+        <mo:published_as rdf:resource="http://music.org/bach#emersonrecord"/>
+      </mo:Signal>
+    </mo:produced_signal>
+  </mo:Recording>
+  <mo:Record rdf:about="http://music.org/bach#emersonrecord">
+    <dc:title>The Art of the Fugue</dc:title>
+    <mo:release_status rdf:resource="http://purl.org/ontology/mo/official"/>
+    <foaf:maker rdf:resource="http://music.org/bach#emersonquartet"/>
+  </mo:Record>
+</rdf:RDF>

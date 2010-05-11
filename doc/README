@@ -1,0 +1,14 @@
+Music Ontology automatic specification generation script
+--------------------------------------------------------
+
+Yves Raimond, Centre for Digital Music, Queen Mary, University of London
+yves.raimond (at) elec.qmul.ac.uk
+
+You can re-generated the documentation held in this directory using the
+two tools `ontosplit' and `ontospec' - all you need to make them run
+is a working installation of SWI-Prolog and its `semweb' package.
+
+The gen_spec.sh script should do the job, with minimal tweaks (basically
+telling the split.sh and the spec.sh where your Prolog executable lies).
+
+

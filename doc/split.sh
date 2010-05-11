@@ -1,0 +1,1 @@
+../ontosplit/split.sh

@@ -1,0 +1,40 @@
+@prefix mo: <http://purl.org/ontology/mo/>.
+@prefix event: <http://purl.org/NET/c4dm/event.owl#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix : <#>.
+
+:requiem-comp-m a mo:Composition;
+	mo:composer <http://dbpedia.org/resource/Wolfgang_Amadeus_Mozart>;
+	dc:date "1791"^^xsd:gYear;
+	event:place <http://dbpedia.org/resource/Vienna>;
+	mo:produced_work :introitus, :kyrie, :sequenz, :offertorium, :agnus-dei;
+	.
+
+:requiem-comp-s a mo:Composition;
+	mo:composer <http://dbpedia.org/resource/Franz_Xaver_S%C3%BCssmayr>;
+	# date? place?
+	mo:produced_work :kyrie, :confutatis, :lacrimosa, :sanctus, :benedictus, :agnus-dei, :communion.
+
+:requiem-orch-s a mo:Orchestration;
+	event:agent <http://dbpedia.org/resource/Franz_Xaver_S%C3%BCssmayr>;
+	event:product :kyrie, :dies-irae, :sequenz, :sanctus, :benedictus, :agnus-dei, :communion.
+
+
+# Decomposing the Requiem
+:requiem a mo:MusicalWork;
+	mo:k6 "626";
+	dc:title "Requiem in D minor";
+	mo:tonality <http://purl.org/ontology/tonality/key/Dminor>;
+	mo:movement :introitus, :kyrie, :sequenz, :offertorium, :sanctus, :benedictus, :agnus-dei, :communion.
+
+:sequenz a mo:Movement;
+	mo:movement :dies-irae, :tuba-mirum, :rex-tremendae, :recordare, :confutatis, :lacrimosa.
+
+:offertorium a mo:Movement;
+	mo:movement :domine-jesu, :hostias;
+	.
+
+
+
+

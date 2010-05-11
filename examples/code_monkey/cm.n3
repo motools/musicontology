@@ -1,0 +1,115 @@
+@prefix : <http://example.org/joco_info/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix timeline: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix yago: <http://dbpedia.org/class/yago/> .
+@prefix geo: <http://www.geonames.org/ontology> .
+
+###########################  Level 1  ###########################
+:joco  
+        rdfs:type      mo:MusicArtist ;
+        rdfs:label     "Jonathan Coulton" ;
+        owl:sameAs
+   <http://zitgist.com/music/artist/d8df7087-06d5-4545-9024-831bb8558ad1>.
+
+:rit_surr_sound
+        rdfs:type      mo:MusicGroup ;
+        foaf:name      "RIT's Surround Sound" ;
+        foaf:homepage  "http://www.ritsurroundsound.org/" .
+        
+:taw3
+        rdfs:type      mo:Record ;
+        rdfs:label     "Thing a Week III" ;
+        mo:track   :c_m_album_version ;
+        owl:sameAs
+   <http://zitgist.com/music/record/ba027f50-90a8-4e36-9f95-871d66978ffa>.
+        
+:code_monkey
+        rdfs:type      mo:MusicalWork ;
+        dc:title       "Code Monkey" .
+        
+:c_m_album_track
+        rdfs:type      mo:Track ;
+        dc:title       "Code Monkey" ;
+        dc:creator     :joco ;
+        owl:sameAs
+    <http://zitgist.com/music/track/ba236f3d-1f21-406b-9870-3d33422c1509>;
+        mo:free_download  
+      <http://www.jonathancoulton.com/music/thingaweek/CodeMonkey.mp3>.
+###########################  Level 2  ###########################
+:c_m_comp
+        rdfs:type          mo:Composition ;
+        rdfs:label         "Composition of Code Monkey (Thing a Week 29)";
+        event:hasAgent     :joco ;
+        event:hasProduct   :code_monkey ;
+        event:time
+      <http://placetime.com/interval/gregorian/2006-04-10T00:00:00Z/P5D> .
+      
+### Album performance
+:c_m_album_perf 
+        rdfs:type            mo:Performance ;
+        mo:performance_of    :code_monkey ;
+        mo:performer         :joco ;
+        event:time
+      <http://placetime.com/interval/gregorian/2006-04-10T00:00:00Z/P5D> ;
+        mo:produced_sound    :c_m_album_sound .
+        
+:c_m_album_sound
+        rdfs:type            mo:Sound ;
+        mo:recorded_in       :c_m_album_recording ;
+        mo:recorded_in       :c_m_remix .
+        
+:c_m_album_recording  
+        rdfs:type            mo:Recording ;
+        mo:produced_signal    :c_m_album_signal .
+        
+:c_m_album_signal  
+        rdfs:type            mo:Signal ;
+        mo:published_as      :c_m_album_track .
+        
+### Live performance
+:c_m_live_perf 
+        rdfs:type          mo:Performance ;
+        rdfs:label         "Performance of Code Monkey (video available)";
+        event:hasAgent     :joco ;
+        event:usesWork     :code_monkey ;
+        event:place        :TempleBar ;
+        mo:available_as    <http://www.youtube.com/watch?v=j4TnhemCEmc> .
+        
+:TempleBar  
+        rdfs:type          yago:venue ;
+        foaf:name          "Temple Bar, Santa Monica, CA" ;
+        geo:locatedIn      <http://sws.geonames.org/5393212/> .
+        
+### A Cappella arrangement & live performance
+:c_m_acappella_arr 
+     rdfs:type        mo:Arrangement ;
+     rdfs:label       "A Cappella arrangement of Code Monkey" ;
+     event:hasFactor  :code_monkey ;
+     foaf:Agent       :rit_surr_sound .
+        
+:c_m_acappella_perf  
+     rdfs:type        mo:Performance ;
+     rdfs:label       "A Cappella Code Monkey Performance (video avail.)";
+     foaf:Agent       :rit_surr_sound ;
+     event:hasFactor  :c_m_acappella_arr ;
+     mo:available_as  <http://www.youtube.com/watch?v=vsKBQLz8yrI> .
+     
+### "Speed Monkey" remix
+:c_m_remix_signal  
+     rdfs:type        mo:Signal ;
+     mo:remix_of      :c_m_album_signal ;
+     mo:available_as  :c_m_remix .
+        
+:c_m_remix  
+     rdfs:type        mo:Track ;
+     dc:title         "Speed Monkey" ;
+     mo:release_type  mo:remix ;
+     foaf:homepage  <http://art.twobrotherssoftware.com/speedmonkey.html>;
+     mo:free_download
+           <http://www.art.twobrotherssoftware.com/music/speedmonkey.mp3>.

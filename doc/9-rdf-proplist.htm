@@ -1,0 +1,748 @@
+
+
+<h2><a name="sec-overview" class="mozTocH2" id="sec-overview"></a>Music Ontology Overview</h2>
+
+<p>
+
+The Music Ontology  definitions presented here are written using
+
+a computer language (RDF/OWL) that makes it easy for software to
+
+process some basic facts about the terms in the Music Ontology, and
+
+consequently about the things described in Music Ontology documents. A Music Ontology
+
+document, unlike a traditional Web page, can be combined with other
+
+Music Ontology documents to create a unified database of information</p>
+
+
+
+
+  <div class="rdf-proplist">
+
+	<h3>MO Basics</h3>
+
+<ul>
+
+
+
+	  <li><a href="#term_MusicalWork">MusicalWork</a></li>
+
+      <li><a href="#term_MusicalItem">MusicalItem</a></li>
+
+      <li><a href="#term_Composition">Composition</a></li>
+
+      <li><a href="#term_Recording">Recording</a></li>
+
+      <li><a href="#term_RecordingSession">RecordingSession</a></li>
+
+      <li><a href="#term_Arrangement">Arrangement</a></li>
+
+      <li><a href="#term_Transcription">Transcription</a></li>
+
+      <li><a href="#term_MusicArtist">MusicArtist</a></li>
+
+      <li><a href="#term_SoloMusicArtist">SoloMusicArtist</a></li>
+
+      <li><a href="#term_MusicGroup">MusicGroup</a></li>
+
+      <li><a href="#term_CorporateBody">CorporateBody</a></li>
+
+
+      <li><a href="#term_MusicalExpression">MusicalExpression</a></li>
+
+      <li><a href="#term_MusicalManifestation">MusicalManifestation</a></li>
+
+</ul>
+
+</div>
+
+
+
+   <div class="rdf-proplist">
+
+	<h3>MO Record Types </h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_ReleaseType">ReleaseType</a></li>
+
+	  <li><a href="#term_release_type">release_type</a></li>
+
+	  <li><a href="#term_album">album</a></li>
+
+	  <li><a href="#term_audiobook">audiobook</a></li>
+
+	  <li><a href="#term_compilation">compilation</a></li>
+
+	  <li><a href="#term_ep">ep</a></li>
+
+	  <li><a href="#term_interview">interview</a></li>
+
+	  <li><a href="#term_live">live</a></li>
+
+	  <li><a href="#term_soundtrack">soundtrack</a></li>
+
+	  <li><a href="#term_spokenword">spokenword</a></li>
+
+	  <li><a href="#term_remix">remix</a></li>
+
+      <li><a href="#term_encoding">encoding</a></li>
+
+     </ul>
+
+  </div>
+
+  
+
+   <div class="rdf-proplist">
+
+	<h3>MO Release</h3>
+
+	<ul>
+
+
+      <li><a href="#term_ReleaseEvent">ReleaseEvent</a></li>
+
+      <li><a href="#term_Release">Release</a></li>
+
+      <li><a href="#term_record">record</a></li>
+
+      <li><a href="#term_release_event">release_event</a></li>
+
+      <li><a href="#term_record_count">record_count</a></li>
+
+      <li><a href="#term_Label">Label</a></li>
+
+      <li><a href="#term_label">label</a></li>
+
+	  <li><a href="#term_ReleaseStatus">ReleaseStatus</a></li>
+
+	  <li><a href="#term_release_status">release_status</a><a href="#term_ReleaseStatus"></a></li>
+
+	  <li><a href="#term_bootleg">bootleg</a><a href="#term_Bootleg"></a></li>
+
+	  <li><a href="#term_official">official</a><a href="#term_Official"></a></li>
+
+	  <li><a href="#term_promotion">promotion</a><a href="#term_Promotion"></a></li>
+
+	</ul>
+
+  </div>
+
+  
+
+
+    <div style="clear: left;"><br /></div>  
+
+  
+
+
+  
+
+  
+
+   <div class="rdf-proplist">
+
+	<h3>MO Mediums </h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_Medium">Medium</a></li>
+
+	  <li><a href="#term_CD">Cd</a></li>
+
+	  <li><a href="#term_DAT">Dat</a></li>
+
+	  <li><a href="#term_DCC">Dcc</a></li>
+
+	  <li><a href="#term_DVDA">Dvda</a></li>
+
+	  <li><a href="#term_MagneticTape">Magnetictape</a></li>
+
+	  <li><a href="#term_MD">Md</a></li>
+
+	  <li><a href="#term_SACD">Sacd</a></li>
+
+	  <li><a href="#term_Stream">Stream</a></li>
+
+	  <li><a href="#term_Track">Track</a></li>
+
+	  <li><a href="#term_Vinyl">Vinyl</a></li>
+
+
+	</ul>
+
+  </div>  
+
+  
+
+     <div class="rdf-proplist">
+
+	<h3>MO Performance <br />Relationships</h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_Performance">Performance</a></li>
+
+	  <li><a href="#term_bpm">bpm</a></li>
+
+	  <li><a href="#term_conducted">conducted</a></li>
+
+	  <li><a href="#term_conductor">conductor</a></li>
+
+	  <li><a href="#term_key">key</a></li>
+
+	  <li><a href="#term_performed">performed</a></li>
+
+	  <li><a href="#term_performer">performer</a></li>
+
+	  <li><a href="#term_tempo">tempo</a></li>
+
+	  <li><a href="#term_listened">listened</a></li>
+
+	  <li><a href="#term_recorded_as">recorded_as</a></li>
+	</ul>
+
+  </div> 
+
+  
+
+  
+
+  <div class="rdf-proplist">
+
+	<h3>MO Signal <br />
+
+	  Relationships </h3>
+
+
+
+	<ul>
+
+      <li><a href="#term_SignalGroup">SignalGroup</a></li>
+
+      <li><a href="#term_produced_signal_group">produced_signal_group</a></li>
+
+      <li><a href="#term_Signal">Signal</a></li>
+
+      <li><a href="#term_signal">signal</a></li>
+
+	  <li><a href="#term_DigitalSignal">DigitalSignal</a></li>
+
+	  <li><a href="#term_AnalogSignal">AnalogSignal</a></li>
+
+	  <li><a href="#term_bitsPerSample">bitsPerSample</a></li>
+
+	  <li><a href="#term_channels">channels</a></li>
+
+	  <li><a href="#term_puid">puid</a></li>
+
+	  <li><a href="#term_sample_rate">sample_rate</a></li>
+
+	  <li><a href="#term_sampled_version_of">sampled_version_of</a></li>
+
+	  <li><a href="#term_trmid"></a><a href="#term_ime">signal time</a></li>
+
+	  <li><a href="#term_trmid">trmid</a></li>
+
+    </ul>
+
+  </div>  
+
+  
+
+  
+
+    <div style="clear: left;"><br /></div>  
+
+
+
+
+
+  <div class="rdf-proplist">
+
+	<h3>MO Musical Work <br />Relationships </h3>
+
+	<ul><li><a href="#term_opus">opus</a></li>
+
+	<li><a href="#term_movement">movement</a></li>
+
+	<li><a href="#term_Movement">Movement</a></li>
+
+	<li><a href="#term_movemen_number">movement_number</a></li>
+
+    </ul>
+
+  </div>
+
+
+
+<div class="rdf-proplist">
+
+	<h3>MO Musical Expression <br />
+
+	  Relationships</h3>
+
+	<ul><li><a href="#term_Libretto">Libretto</a></li>
+
+	  <li><a href="#term_Lyrics">Lyrics</a></li>
+
+	  <li><a href="#term_Score">Score</a></li>
+
+	  <li><a href="#term_Sound">Sound</a></li>
+
+	  <li><a href="#term_Signal">Signal</a></li>
+	</ul>
+
+</div>
+
+
+
+
+
+
+
+  
+
+     <div class="rdf-proplist">
+
+	<h3>MO Musical Item <br />Trading Relationships </h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_exchange_item">exchange_item</a></li>
+
+	  <li><a href="#term_possess_item">possess_item</a></li>
+
+	  <li><a href="#term_sell_item">sell_item</a></li>
+
+	  <li><a href="#term_want_item">want_item</a></li>
+
+	</ul>
+
+  </div>
+
+  
+
+
+
+  
+
+  <div style="clear: left; margin-top: 15px;"><br /></div>
+
+  
+
+
+<div class="rdf-proplist">
+
+	<h3>MO Record <br />
+
+	  Relationships</h3>
+
+	<ul><li><a href="#term_Record">Record</a></li>
+
+      <li><a href="#term_Track">Track</a></li>
+
+	  <li><a href="#term_track">track</a></li>
+
+      <li><a href="#term_track_count">track_count</a></li>
+
+	  <li><a href="#term_track_number">track_number</a></li>
+
+    </ul>
+
+</div>  
+
+    
+
+ <div class="rdf-proplist">
+
+	<h3>MO Arrangement <br />
+
+	  Relationships</h3>
+
+	<ul><li><a href="#term_Arrangement">Arrangement</a></li>
+
+      <li><a href="#term_Orchestration">Orchestration</a></li>
+
+	  <li><a href="#term_Instrumentation">Instrumentation</a></li>
+
+	</ul>
+
+</div>  
+
+  
+
+  <div style="clear: left; margin-top: 15px;"><br /></div>
+
+  
+
+  
+
+     <div class="rdf-proplist">
+
+	<h3>MO Musical Expression/<br />Manifestation <br />
+
+	  Relationships </h3>
+
+	<ul><li><a href="#term_has_manifestation">has_manifestation</a></li>
+
+	</ul>
+
+  </div>  
+
+  
+
+  <div class="rdf-proplist">
+
+	<h3>MO Musical Manifestation /<br /> Musical Item <br />Relationships </h3>
+
+
+
+	<ul><li><a href="#term_available_as">available_as</a></li>
+
+	</ul>
+
+  </div>  
+
+  
+
+  
+
+
+
+  
+
+  <div style="clear: left;"><br /></div>  
+
+
+
+
+
+
+
+  
+
+ 
+
+
+
+
+
+  
+
+    <div style="clear: left;"><br /></div> 
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  <div class="rdf-proplist">
+
+	<h3>MO Publication <br />Relationships </h3>
+
+
+
+	<ul><li><a href="#term_published_as">published_as</a></li>
+
+	  <li><a href="#term_PublishedLyrics">PublishedLyrics</a></li>
+
+	  <li><a href="#term_PublishedLibretto">PublishedLibretto</a></li>
+
+	  <li><a href="#term_Record">Record</a></li>
+
+	  <li><a href="#term_PublishedScore">PublishedScore</a></li>
+
+	</ul>
+
+  </div> 
+
+
+
+   <div class="rdf-proplist">
+
+	<h3>MO Other Versions <br />Relationships</h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_compilation_of">compilation_of</a></li>
+
+      <li><a href="#term_compiled">compiled</a></li>
+
+      <li><a href="#term_compiler">compiler</a></li>
+
+      <li><a href="#term_mashup_of">mashup_of</a></li>
+
+      <li><a href="#term_medley_of">medley_of</a></li>
+
+      <li><a href="#term_other_release_of">other_release_of</a></li>
+
+      <li><a href="#term_translation_of">translation_of</a></li>
+
+      <li><a href="#term_tribute_to">tribute_to</a></li>
+
+	</ul>
+
+  </div> 
+
+  
+
+  
+
+
+
+
+
+<div class="rdf-proplist">
+
+	<h3>MO workflow properties</h3>
+
+	<ul><li><a href="#term_produced_work">produced_work</a></li>
+
+      <li><a href="#term_performed_in">performed_in</a></li>
+
+      <li><a href="#term_composed_in">composed_in</a></li>
+
+	  <li><a href="#term_performance_of">performance_of</a></li>
+
+	  <li><a href="#term_produced_sound">produced_sound</a></li>
+
+	  <li><a href="#term_recorded_in">recorded_in</a></li>
+
+	  <li><a href="#term_recording_of">recording_of</a></li>
+
+	  <li><a href="#term_produced_signal">produced_signal</a></li>
+
+	  <li><a href="#term_recorded_as">recorded_as</a></li>
+
+	</ul>
+
+</div>
+
+
+
+
+
+  <div style="clear: left;"><br /></div>  
+
+
+
+
+
+
+
+
+
+   <div class="rdf-proplist">
+
+	<h3>MO Production <br />Relationships</h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_engineered">engineered</a></li>
+
+      <li><a href="#term_engineer">engineer</a></li>
+
+	  <li><a href="#term_publisher">publisher</a></li>
+
+	  <li><a href="#term_published">published</a></li>
+
+	  <li><a href="#term_publication_location">publication_location</a></li>
+
+	  <li><a href="#term_producer">producer</a></li>
+
+	  <li><a href="#term_produced">produced</a></li>
+
+	</ul>
+
+  </div>     
+
+  
+
+   <div class="rdf-proplist">
+
+	<h3>MO Musical Association <br />Relationships</h3>
+
+	<ul>
+
+      <li><a href="#term_Membership">Membership</a></li>
+
+      <li><a href="#term_membership">membership</a></li>
+
+      <li><a href="#term_group">group</a></li>
+
+      <li><a href="#term_primary_instrument">primary_instrument</a></li>
+
+      <li><a href="#term_collaborated_with">collaborated_with</a></li>
+
+	  <li><a href="#term_supporting_musician">supporting_musician</a></li>
+
+	</ul>
+
+  </div>        
+
+  
+
+  
+
+   <div class="rdf-proplist">
+
+	<h3>MO Affiliate <br />Relationships</h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_amazon_asin">amazon_asin</a></li>
+
+     </ul>
+
+  </div>         
+
+        
+
+		
+
+  <div style="clear: left;"><br /></div>  
+
+
+
+
+
+   <div class="rdf-proplist">
+
+	<h3>MO External web document links <br />Relationships</h3>
+
+	<ul>
+
+
+
+	  <li><a href="#term_image">image</a></li>
+
+      <li><a href="#term_biography">biography</a></li>
+
+      <li><a href="#term_discography">discography</a></li>
+
+      <li><a href="#term_fanpage">fanpage</a></li>
+
+      <li><a href="#term_myspace">myspace</a></li>
+
+      <li><a href="#term_review">review</a></li>
+
+	</ul>
+
+  </div>    		
+
+  
+
+  
+
+   <div class="rdf-proplist">
+
+	<h3>MO Get Music <br />Relationships</h3>
+
+	<ul><li><a href="#term_freedownload">freedownload</a></li>
+
+      <li><a href="#term_licence">licence</a></li>
+
+      <li><a href="#term_mailorder">mailorder</a></li>
+
+      <li><a href="#term_paiddownload">paiddownload</a></li>
+
+	</ul>
+
+  </div>    	  
+
+  
+
+   <div class="rdf-proplist">
+
+	<h3>MO Music Communities <br />Relationships</h3>
+
+	<ul>
+
+	  <li><a href="#term_musicbrainz">musicbrainz</a></li>
+
+	  <li><a href="#term_discogs">discogs</a></li>
+
+	  <li><a href="#term_imdb">imdb</a></li>
+
+	  <li><a href="#term_musicmoz">musicmoz</a></li>
+
+	  <li><a href="#term_olga">olga</a></li>
+
+	  <li><a href="#term_onlinecommunity">onlinecommunity</a></li>
+
+      <li><a href="#term_wikipedia">wikipedia</a></li>
+
+	</ul>
+
+  </div>      
+
+  
+
+  <div style="clear: left;">
+
+
+
+
+
+   <div class="rdf-proplist">
+
+	<h3>MO Show/Festival <br />
+
+	  Relationships</h3>
+
+	<ul>
+
+	  <li><a href="#term_Festival">Festival</a></li>
+
+	  <li><a href="#term_Show">Show</a></li>
+
+      <li><a href="#term_event_homepage">event_homepage</a></li>
+
+	</ul>
+
+  </div> 
+
+  
+
+  
+
+  <div style="clear: left;">
+
+  
+
+  
+
+  <br /><br /><br /><br /></div>    
+
+  

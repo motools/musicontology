@@ -1,0 +1,1 @@
+../ontospec/onto_spec.pl

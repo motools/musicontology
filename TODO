@@ -1,0 +1,14 @@
+
+A tool should be able to get the SVN changelog, and re-generate
+the changelog at the bottom of the specification document, as 
+well as updating a RSS 1.0 feed.
+
+
+(We may have to hardcode the mapping SVN username --> URI).
+
+A couple of related tools: 
+
+ * svn2cl stylesheet
+ * chalow Changelog to RDF/HTML/JS converter
+
+

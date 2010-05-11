@@ -1,0 +1,29 @@
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix mit: <http://purl.org/ontology/mo/mit/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <#> .
+
+:p
+    a mo:Performance ;
+    event:sub_event :clapton_on_guitar, :bruce_on_bass, :baker_on_drums ;
+    rdfs:label "A Cream performance" ;
+    mo:recorded_as :master .
+
+:clapton_on_guitar
+    a mo:Performance ;
+    mo:performer :eric_clapton ;
+    mo:instrument mit:guitar .
+:bruce_on_bass
+    a mo:Performance ;
+    mo:performer :jack_bruce ;
+    mo:instrument mit:bass .
+:baker_on_drums
+    a mo:Performance ;
+    mo:performer :ginger_baker ;
+    mo:instrument mit:drums .
+
+:master
+    a mo:Signal ;
+    mo:published_as [ a mo:Track ; rdfs:label "'I Feel Free' on 'Fresh Cream'" ; mo:track_number 1 ] ;
+    mo:published_as [ a mo:Track ; rdfs:label "'I Feel Free' on 'Best of Cream'" ; mo:track_number 10 ] .

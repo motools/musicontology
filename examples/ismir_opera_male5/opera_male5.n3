@@ -1,0 +1,64 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix event: <http://purl.org/NET/c4dm/event.owl#>.
+@prefix tl: <http://purl.org/NET/c4dm/timeline.owl#>.
+@prefix mo: <http://purl.org/ontology/mo/>.
+@prefix db: <http://ismir.net/2004/db/>. # Fix that?
+@prefix : <#>.
+
+
+# Linking our annotations to the audio file
+
+db:opera_male5 
+	a mo:AudioFile;
+	mo:encodes :sig.
+
+:sig 
+	a mo:Signal;
+	mo:time [tl:timeline :tl]. # :tl is the anchor timeline for our annotations
+
+# Defining our "classifiers"
+
+:SingEvent
+	a owl:Class;
+	rdfs:subClassOf event:Event;
+	rdfs:label "Classify regions as holding some singing voice";
+	.
+
+:FreqEvent
+	a owl:Class;
+	rdfs:subClassOf event:Event;
+	rdfs:label "Attach a frequency of the singing voice to a region";
+	.
+
+:freq 
+	rdfs:subPropertyOf event:literal_factor;
+	rdfs:label "Actual value of the frequency";
+	rdfs:domain :FreqEvent;
+	.
+
+# And annotate... We define events on the timeline :tl
+
+:e1
+	a :SingEvent;
+	event:time [tl:start "PT0.017S"; tl:end "PT3.291S"; tl:timeline :tl]
+	.
+
+:f1
+	a :FreqEvent;
+	event:time [tl:at "PT0.017S"];
+	:freq "192.662";
+	.
+
+:f2 
+	a :FreqEvent;
+	event:time [tl:at "PT0.023S"];
+	:freq "183.918";
+	.
+
+:f3
+	a :FreqEvent;
+	event:time [tl:at "PT0.029S"];
+	:freq "173.222";
+	.
+

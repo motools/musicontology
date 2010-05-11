@@ -1,0 +1,530 @@
+<h2><a name="sec-changes" class="mozTocH2" id="sec-changes"></a>Change Log</h2>
+
+
+<ul>
+
+
+</ul>
+
+
+
+
+<ul>
+<li>2010-02-14: <strong>Revision 2.0</strong> of the Music Ontology Specification
+<pre>
+ * ADDED: mo:Membership
+ * ADDED: mo:SignalGroup
+ * ADDED: mo:RecordingSession
+ * ADDED: mo:Transcription
+ * ADDED: mo:ReleaseEvent
+ * ADDED: mo:Release
+ * ADDED: mo:membership
+ * ADDED: mo:group
+ * ADDED: mo:primary_instrument
+ * ADDED: mo:produced_signal_group
+ * ADDED: mo:signal
+ * ADDED: mo:record
+ * ADDED: mo:release_event
+ * ADDED: mo:record_count
+ * ADDED: mo:label
+ * ADDED: mo:track_count
+ * ADDED: mo:uuid
+ * ADDED: mo:musicbrainz_guid
+ * ADDED: mo:catalogue_number
+ * ADDED: mo:iswc
+ * ADDED: mo:ismn
+ * ADDED: mo:ipi
+ * ADDED: mo:lc
+ * ADDED: mo:gtin
+ * ADDED: mo:ean
+ * ADDED: mo:upc
+ * ADDED: mo:grid
+ * ADDED: mo:text
+ * ADDED: mo:meter
+ * MODIFIED: domain/range of mo:similar_to
+ * MODIFIED: domain/range of mo:published_as
+ * MODIFIED: domain/range of mo:publication_of
+ * MODIFIED: domain/range of mo:engineer/mo:engineered
+ * MODIFIED: domain/range of mo:genre
+ * REMOVED: mo:manifestation/mo:hasManifestation
+</pre>
+</li>
+
+<li>2008-02-05: <strong>Revision 1.13</strong> of the Music Ontology Specification
+<ul>
+<li>FIXED: wrong bio namespace</li>
+<li>ADDED: owl:imports statements, to make the Music Ontology load fine in Protege</li>
+<li>ADDED: OWL typing for all properties</li>
+<li>ADDED: XSD types as ranges for literal properties</li>
+</ul>
+</li>
+
+<li>2007-08-10: <strong>Revision 1.12</strong> of the Music Ontology Specification
+<ul>
+
+<li>ADDED: mo:availableAs subPropertyOf frbr:examplar</li>
+<li>ADDED: mo:Torrent as medium (bittorrent items)</li>
+<li>ADDED: mo:ED2K as medium (edonkey items)</li>
+<li>ADDED: mo:usesScore (Performance --&gt; Score (particular arrangement of a work))</li>
+<li>ADDED: mo:preview_download (Agent or Manifestation to Document</li>
+<li>ADDED: mo:download, super-property of mo:previewdonwload, mo:paiddownload and mo:freedownload</li>
+<li>ADDED: mo:AudioFile (as a medium)</li>
+<li>ADDED: two sub-properties of mo:availableAs -- mo:item (full manifestation available) and mo:preview (only a part of the manifestation is available)</li>
+<li>ADDED: wrapper for foaf:maker, foaf:made, foaf:Agent, foaf:Person, foaf:Group, foaf:member</li>
+<li>ADDED: mo:isrc (international standard recording code)</li>
+<li>ADDED: mo:encodes (musical item --&gt; signal), allowing to associate, for example, an item to a lower-resolution version of the master signal (issued from a Recording event)</li>
+<li>ADDED: mo:genre, subproperty of event:hasFactor</li>
+<li>ADDED: mo:level, an annotation property to specify wether a term belongs to level 1, 2 or 3</li>
+<li>ADDED: mo:sampled_version, inverse of sampled_version_of</li>
+<li>ADDED: produced_score (Arrangement --&gt; Score)</li>
+<li>MODIFIED: mo:usesSound to mo:recording_of (still a owl:sameAs statement between these two for backward compatibility sake)</li>
+<li>MODIFIED: mo:usedInRecording to mo:recorded_in (same)</li>
+<li>MODIFIED: mo:producesSignal to mo:produced_signal (same)</li>
+<li>MODIFIED: mo:producesSound to mo:produced_sound (same)</li>
+<li>MODIFIED: mo:usesWork to mo:performance_of (same)</li>
+<li>MODIFIED: mo:productOfComposition to mo:composed_in (same)</li>
+<li>MODIFIED: mo:usedInPerformance to mo:performed_in (same)</li>
+<li>MODIFIED: mo:producesWork to mo:produced_work (same)</li>
+<li>MODIFIED: mo:paiddownload to mo:paid_download (same)</li>
+<li>MODIFIED: mo:freedownload to mo:free_download (same)</li>
+<li>MODIFIED: mo:signalTime to mo:time (same)</li>
+<li>MODIFIED: mo:sampledVersionOf to mo:sampled_version_of (same)</li>
+<li>MODIFIED: mo:has_track to mo:track (same)</li>
+<li>MODIFIED: mo:trackNum to  mo:track_number (same)</li>
+<li>MODIFIED: mo:releaseType to mo:release_type (same)</li>
+<li>MODIFIED: mo:releaseStatus to mo:release_status (same)</li>
+<li>MODIFIED: mo:eventHomePage to mo:event_homepage (same)</li>
+<li>MODIFIED: mo:hasManifestation to mo:manifestation (same)</li>
+<li>MODIFIED: mo:publishedAs to mo:published_as (same)</li>
+<li>MODIFIED: mo:movementNum to mo:movement_number (same)</li>
+<li>MODIFIED: mo:publicationOf to mo:publication_of (same)</li>
+<li>MODIFIED: mo:publishingLocation to mo:publishing_location (same)</li>
+<li>MODIFIED: mo:sampleRate to mo:sample_rate (same)</li>
+<li>MODIFIED: mo:recordedAs to mo:recorded_as (same)</li>
+<li>MODIFIED: mo:image subproperty of foaf:depiction</li>
+<li>MODIFIED: changed comments and domain of freedownload and paiddownload</li>
+<li>MODIFIED: changed comments on mo:MusicalWork</li>
+<li>MODIFIED: changed comments on availableAs</li>
+<li>MODIFIED: mo:encoding has MusicalItem as a domain</li>
+<li>DELETED: mo:creatorOf - use foaf:made instead</li>
+<li>DELETED: mo:pitch and mo:timbre - this should go to the audio features ontology</li>
+<li>DELETED: mo:stream_url (it should be the identifier of the resource (eg. rtsp://...)</li>
+<li>DELETED: sub concepts of mo:Instrument - instead, a link to Ivan Herman musical instrument SKOS taxonomy</li>
+<li>DELETED: sub concepts of mo:Genre - instead a more proper documentation of this concept</li>
+
+</ul>
+
+</li>  
+
+
+
+<li>2007-03-21: <strong>Revision 1.11</strong> of the Music Ontology Specification
+    <ul>
+
+
+
+ <li>ADDED: mo:Festival and mo:Show</li>
+
+ <li>ADDED: mo:eventHomePage </li>
+
+ <li>ADDED: records (inverse of recordedAs) and publicationOf (inverse of
+
+   publishedAs)</li>
+
+    <li> ADDED: mo:composer (Composition --&gt; Agent)      </li>
+
+    <li> ADDED: mo:producesWork (Composition --&gt; MusicalWork)      </li>
+
+    <li> ADDED: mo:usedInPerformance (Work --&gt; Performance)      </li>
+
+    <li> ADDED: mo:productOfComposition (MusicalWork --&gt; Composition)      </li>
+
+    <li> ADDED: mo:usesWork (Performance --&gt; MusicalWork)      </li>
+
+    <li> ADDED: Medium subclassof MusicalItem      </li>
+
+    <li> ADDED: mo:producesSound (Perfomance --&gt; Sound)      </li>
+
+    <li> ADDED: mo:usedInRecording (Sound --&gt; Recording)      </li>
+
+    <li> ADDED: mo:usesSound (Recording --&gt; Sound)      </li>
+
+    <li> ADDED: mo:producesSignal (Recording --&gt; Signal)      </li>
+
+    <li> ADDED: shortcut mo:recordedAs (Performance --&gt; Signal)      </li>
+
+    <li> ADDED: term status: all subproperties of hasAgent, hasProduct, has Factor
+
+      are stable, all the inverse are unstable</li>
+
+    <li> ADDED: mo:musibrainz
+
+      (Work;Expression;Manifestation;Item;Agent;Instrument;Genre --&gt; Document)      </li>
+
+    <li> ADDED: mo:ep a ReleaseType      </li>
+
+    <li> ADDED: mo:publicationLocation (MusicalManifestation --&gt; SpatialThing)      </li>
+
+    <li> ADDED: mo:contains_sample_from (Signal --&gt; Signal)      </li>
+
+    <li> ADDED: wrapper for event:place (Event --&gt; SpatialThing)      </li>
+
+    <li> CHANGED: pitch and timber' domain: now Signal      </li>
+
+    <li> CHANGED: remixed has as a domain Signal, same for the range of remixer      </li>
+
+    <li> CHANGED: same thing for sampled/sampler      </li>
+
+    <li> CHANGED: same thing for djmixed </li>
+
+    <li> CHANGED: same thing for remix_of      </li>
+
+    <li> CHANGED: same thing for medley_of      </li>
+
+    <li> CHANGED: same thing for djmix_of      </li>
+
+    <li> CHANGED: same thing for remaster_of      </li>
+
+    <li> CHANGED: same thing for mashup_of      </li>
+
+    <li> CHANGED: collaborated_with/other_release_of are symmetric      </li>
+
+    <li> CHANGED: added inverse properties statements on all djmix/...      </li>
+
+    <li> CHANGED: mark compilation_of as unstable. this should be done through a
+
+      release type and through explicit links to each Signal.      </li>
+
+    <li> CHANGED: translation_of goes from a MusicalExpression to a
+
+      MusicalExpression (well, a Work is independent of its wording)      </li>
+
+    <li> CHANGED: tribute_to from MusicalManifestation to Artist </li>
+
+    </ul>
+
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<ul>
+
+  <li>2007-02-26: <strong>Revision 1.10</strong> of the Music Ontology Specification
+
+    <ul>
+
+      <li> ADDED: Clear conceptual separation between MusicalExpression and the
+
+        process leading to it:
+	
+
+        <ul>
+
+          <li>MusicalExpression:</li>
+
+	<li>
+            <ul>
+
+              <li>Sound subClassOf MusicalExpression,Event
+
+              </li>
+
+              <li>Score subClassOf MusicalExpression
+
+              </li>
+
+              <li>Signal subClassOf MusicalExpression,Event
+
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li>DigitalSignal subClassOf Signal
+
+          </li>
+
+          <li>ContinuousSignal subClassOf Signal</li>
+
+
+                <li>Lyrics subClassOf MusicalExpression
+
+                </li>
+
+                <li>Libretto subClassOf MusicalExpression
+
+                </li>
+
+
+          </li>
+
+          <li>Events leading (eventually) to MusicalExpression</li>
+	  <li>
+
+              <ul>
+
+                <li>Performance subClassOf Event
+
+                </li>
+
+                <li>Arrangement subClassOf Event
+
+                </li>
+
+              </ul>
+
+          </li>
+
+          <li>Orchestration subClassOf Arrangement
+
+          </li>
+
+          <li>Instrumentation subClassOf Arrangement</li>
+	  <li>
+
+              <ul>
+
+                <li>Composition subClassOf Event<br />
+
+                </li>
+
+                <li>Recording subClassOf Event</li>
+
+              </ul>
+
+          </li>
+
+        </ul>
+
+      </li>
+
+      <li>ADDED: sub properties of hasAgent, related to Performance:
+
+          <ul>
+
+            <li>performer/performed
+
+            </li>
+
+            <li>conductor/conducted
+
+            </li>
+
+            <li>listener/listened </li>
+
+        </ul>
+
+      </li>
+
+      <li><em>and related to Recording AND Performance</em></li>
+
+      <ul>
+
+          <li>engineer/engineered</li>
+
+      </ul>
+
+    </ul>
+
+  </li>
+
+
+
+    <li>ADDED: PublishedScore - a published score</li>
+
+    <li>ADDED: PublishedLibretto - a published libretto</li>
+
+    <li> ADDED: PublishedLyrics - published lyrics</li>
+
+    <li> ADDED: Record, a musical manifestation which first aim is to render the
+
+      product of a recording</li>
+
+    <li> ADDED: Album/Interview/SpokenWork subClassOf MusicalManifestation</li>
+
+    <li> ADDED: rdf:type owl:Class everywhere:-)</li>
+
+    <li> ADDED: RDFS wrappers for the relevant classes of the following DL
+
+      ontologies: owl-time, event, and timeline</li>
+
+    <li> ADDED: Changed Interview/release/Live/... to individuals, instance of a
+
+        class ReleaseType, same for Bootleg/..., individuals of a class 
+
+      ReleaseStatus</li>
+
+    <li> ADDED: Properties to link MusicalManifestation to items, status, and
+
+      types</li>
+
+
+
+    <li> REMOVED: MusicalItem subClassOf MusicalManifestation, frbr:Manifestation</li>
+
+    <li> REMOVED: mo:title, use dc:title instead</li>
+
+    <li> REMOVED: mo:record, use mo:publishedAs instead (which goes from
+
+        Signal,Score,Lyrics,Libretto to
+
+      Record,PublishedScore,PublishedLyrics,PublishedLibretto)</li>
+
+    <li> REMOVED: member_of, use foaf:member, now a MusicGroup is a foaf:Group</li>
+
+    <li> REMOVED: realization_of, and inverse, use a Performance, or a Performance
+
+      and a Recording</li>
+
+    <li> REMOVED: mo:duration, use event:time instead (a Work cannot have a
+
+        duration, btw). it seems like dc:format may be used for this as well (see
+
+      http://dublincore.org/documents/format-element/)</li>
+
+    <li> REMOVED: second occurence of tempo</li>
+
+    <li> REMOVED: recordingstudio, use the place of a recording event instead</li>
+
+    <li> REMOVED: composer, use dc:creator instead</li>
+
+    <li> REMOVED: composed, use Composition</li>
+
+    <li> REMOVED: performed/performer/orchestrated/... use Performance / performer /<br />
+
+      performed/orchestrator/... (subProperties of hasAgent)</li>
+
+    <li> REMOVED: provided_instrumentation / provider_of_instrumentation, use
+
+      Arrangement</li>
+
+    <li> REMOVED: wrote_lyrics, just use dc:creator on the Lyrics instance, and
+
+      this as a factor of the performance - same thing for Libretto</li>
+
+    <li> REMOVED: arranged, use Arrangement</li>
+
+    <li> REMOVED: instrument, trying to model a 3ary predicate... use a
+
+      Performance</li>
+
+    <li> Changed: CorporateBody subClassOf foaf:Organization</li>
+
+    <li> Changed: SoloMusicArtist subClassOf foaf:Person, mo:MusicArtist</li>
+
+    <li> Changed: MusicGroup subClassOf foaf:Group, mo:MusicArtist</li>
+
+    <li> Changed: Album, Interview, SpokenWord, AudioBook, Compilation, Live,
+
+      Remix, Soundtrack subClassOf MusicalManifestation</li>
+
+    <li> Changed: Release status is just linked to the Manifestation, neither the
+
+      Work or the Expression</li>
+
+    <li> Changed: bpm/tempo/key has as a domain both MusicalWork (unchanged) and Performance
+
+      (this is a factor of the performance, not of the &quot;sound&quot;)</li>
+
+    <li> Changed: has_movement was pointing towards a bad URI</li>
+
+    <li> Changed: pitch/domain has as a domain Sound (pitch for MusicalWork?)</li>
+
+    <li> Changed: djmixed has as a range MusicalManifestation (DJs work with
+
+      actual vynils/tracks...)</li>
+
+    <li> Changed: second occurence of djmixed to djmixed_by</li>
+
+    <li> Changed: remix_of goes from MusicalManifestation to MusicalManifestation
+
+      (this track is a remix of this other track?)</li>
+
+    <li> Changed: same thing for medley_of (this track is a medley of this track,
+
+      this track, this track)</li>
+
+
+</ul>
+
+<ul><li>2007-02-12: <strong>Revision 1.03</strong> of the Music Ontology Specification
+
+
+    <ul>
+
+      <li>Changed the range of mo:key from a rdfs:Literal to a http://purl.org/NET/c4dm/music.owl#Key</li>
+
+    <li>Added  property mo:opus</li>
+
+    <li>Added mo:MusicalWork in the domain of:  mo:bpm, mo:duration, mo:key, mo:pitch</li>
+
+    <li>Added class mo:Movement</li>
+
+    <li>Added property mo:has_movement</li>
+
+    <li>Added property mo:movementNum</li>
+
+    <li>Added property mo:tempo     </li>
+
+    <li>Added mo:Instrument in the range of mo:title</li>
+
+    <li>Remove mo:MusicalWork and mo:MusicalManifestation and added mo:MusicalManifestation to the property's domain mo:publisher, mo:producer, mo:engineer, mo:conductor, mo:arranger, mo:sampler, mo:compiler </li>
+
+    <li>Remove mo:MusicalWork and mo:MusicalManifestation and added mo:MusicalManifestation to the property's range mo:published, mo:produced, mo:engineering, mo:conducted, mo:arranged, mo:sampled, mo:compiled </li>
+
+    </ul>
+
+  </li>
+
+  <li>2007-01-30: <strong>Revision 1.02</strong> of the Music Ontology Specification</li>
+
+  <li>2007-01-06: <strong>Revision 1.01</strong> of the Music Ontology Specification</li>
+
+  <li>2006-12-21: <strong>Initial version</strong> of the Music Ontology Specification</li>
+
+</ul>
+
+
+
+<br /><br /><br /><br />
+
+
+
+
+
+
+<!-- Start of StatCounter Code -->
+
+<script type="text/javascript">
+
+var sc_project=2134432; 
+
+var sc_invisible=1; 
+
+var sc_partition=19; 
+
+var sc_security="4e07de0f"; 
+
+</script>
+
+
+
+<script type="text/javascript" src="http://www.statcounter.com/counter/counter_xhtml.js"></script><noscript><div class="statcounter"><a class="statcounter" href="http://www.statcounter.com/"><img class="statcounter" src="http://c20.statcounter.com/counter.php?sc_project=2134432&java=0&security=4e07de0f&invisible=1" alt="web tracker" /></a></div></noscript>
+
+<!-- End of StatCounter Code -->
+
+
+
+
+</div>
+</body>
+
+</html>

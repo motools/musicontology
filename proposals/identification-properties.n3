@@ -1,0 +1,145 @@
+﻿@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# One could also define some datatypes to capture the exact formats allowed for some of the identifiers.
+# The datatype definitions would then be pointed to via rdfs:range.
+
+mo:gtin a owl:DatatypeProperty .
+mo:gtin rdfs:subPropertyOf dcterms:identifier .
+mo:gtin rdfs:label "GTIN"@en .
+mo:gtin rdfs:comment "GTIN is a grouping term for EANs and UPCs. In common speech those are called barcodes although the barcodes are just a representation of those identifying numbers."@en .
+mo:gtin rdfs:seeAlso <http://wiki.musicbrainz.org/GTIN> .
+
+mo:ean a owl:DatatypeProperty .
+mo:ean rdfs:subPropertyOf mo:gtin .
+mo:ean rdfs:label "EAN"@en .
+mo:ean rdfs:seeAlso <http://wiki.musicbrainz.org/EAN> .
+
+mo:upc a owl:DatatypeProperty .
+mo:upc rdfs:subPropertyOf mo:gtin .
+mo:upc rdfs:label "UPC"@en .
+mo:upc rdfs:seeAlso <http://wiki.musicbrainz.org/UPC> .
+
+mo:uuid a owl:DatatypeProperty .
+# Note: this could also be just a datatype.
+# The only semantics the property includes are that the object identifies the subject
+# (but it doesn't restrict the subject to any characteristics like the other identifiers listed here do)
+# and that it does so universally, i.e. with a very high certainty two generated UUIDs never identify the same thing.
+# The semantic "object identifies subject" is already covered by dcterms:identifier so the only semantic left is the universality.
+# I'd say though that the universality is not imposed to it but rather inherent through the process of generating the UUIDs.
+# So yes, maybe this really should just be a datatype.
+mo:uuid rdfs:subPropertyOf dcterms:identifier .
+mo:uuid rdfs:label "UUID"@en .
+mo:uuid rdfs:seeAlso <http://en.wikipedia.org/wiki/Universally_Unique_Identifier> .
+
+mo:mb_artist_id a owl:DatatypeProperty .
+mo:mb_artist_id rdfs:subPropertyOf mo:uuid .
+mo:mb_artist_id rdfs:domain mo:MusicArtist . # Although in MB this is used for all kinds of people, e.g. photographers for CD booklets
+mo:mb_artist_id rdfs:label "MusicBrainz Artist Identifier"@en .
+mo:mb_artist_id rdfs:seeAlso <http://wiki.musicbrainz.org/ArtistID> .
+
+mo:mb_release_id a owl:DatatypeProperty .
+mo:mb_release_id rdfs:subPropertyOf mo:uuid .
+mo:mb_release_id rdfs:domain mo:Record . # Hmmm...
+mo:mb_release_id rdfs:label "MusicBrainz Release Identifier"@en .
+mo:mb_release_id rdfs:seeAlso <http://wiki.musicbrainz.org/ReleaseID> .
+
+mo:mb_track_id a owl:DatatypeProperty .
+mo:mb_track_id rdfs:subPropertyOf mo:uuid .
+mo:mb_track_id rdfs:domain mo:Track .
+mo:mb_track_id rdfs:label "MusicBrainz Track Identifier"@en .
+mo:mb_track_id rdfs:seeAlso <http://wiki.musicbrainz.org/TrackID> .
+
+mo:mb_label_id a owl:DatatypeProperty .
+mo:mb_label_id rdfs:subPropertyOf mo:uuid .
+mo:mb_label_id rdfs:domain mo:Label .
+mo:mb_label_id rdfs:label "MusicBrainz Label Identifier"@en .
+mo:mb_label_id rdfs:seeAlso <http://wiki.musicbrainz.org/LabelID> .
+
+mo:mb_disc_id a owl:DatatypeProperty .
+mo:mb_disc_id rdfs:subPropertyOf dcterms:identifier .
+mo:mb_disc_id rdfs:domain mo:Cd .
+mo:mb_disc_id rdfs:label "MusicBrainz Disc ID"@en .
+mo:mb_disc_id rdfs:seeAlso <http://wiki.musicbrainz.org/DiscID> .
+
+mo:audio_fingerprint a owl:DatatypeProperty .
+mo:audio_fingerprint rdfs:subPropertyOf dcterms:identifier .
+mo:audio_fingerprint rdfs:domain mo:Signal .
+mo:audio_fingerprint rdfs:label "audio fingerprint"@en .
+mo:audio_fingerprint rdfs:seeAlso <http://wiki.musicbrainz.org/AudioFingerprint> .
+
+mo:trmid a owl:DatatypeProperty .
+mo:trmid rdfs:subPropertyOf mo:audio_fingerprint .
+mo:trmid rdfs:label "TRM ID"@en .
+mo:trmid rdfs:seeAlso <http://wiki.musicbrainz.org/TRM> .
+
+mo:puid a owl:DatatypeProperty .
+mo:puid rdfs:subPropertyOf mo:audio_fingerprint .
+mo:puid rdfs:label "PUID"@en .
+mo:puid rdfs:seealso <http://wiki.musicbrainz.org/PUID> .
+
+mo:isrc a owl:DatatypeProperty .
+mo:isrc rdfs:subPropertyOf dcterms:identifier .
+mo:isrc rdfs:domain mo:Track . # Hmmm...
+mo:isrc rdfs:label "ISRC"@en .
+mo:isrc rdfs:seeAlso <http://wiki.musicbrainz.org/ISRC> .
+
+mo:iswc a owl:DatatypeProperty .
+mo:iswc rdfs:subPropertyOf dcterms:identifier .
+mo:iswc rdfs:domain mo:MusicalWork . # Although it's only about the composition kind of work. An album could be a work as well.
+mo:iswc rdfs:label "ISWC"@en .
+mo:iswc rdfs:seeAlso <http://wiki.musicbrainz.org/ISWC> .
+
+mo:ismn a owl:DatatypeProperty .
+mo:ismn rdfs:subPropertyOf dcterms:identifier .
+mo:ismn rdfs:domain [a owl:Class ; owl:unionOf (mo:PublishedLyrics mo:PublishedLibretto mo:PublishedScore)] .
+mo:ismn rdfs:label "ISMN"@en .
+mo:ismn rdfs:seeAlso <http://wiki.musicbrainz.org/ISMN> .
+
+mo:ipi a owl:DatatypeProperty .
+mo:ipi rdfs:subPropertyOf dcterms:identifier .
+mo:ipi rdfs:domain mo:CorporateBody .
+mo:ipi rdfs:label "IPI"@en .
+mo:ipi rdfs:seeAlso <http://wiki.musicbrainz.org/IPI> .
+
+mo:grid a owl:DatatypeProperty .
+mo:grid rdfs:subPropertyOf dcterms:identifier .
+mo:grid rdfs:domain mo:Record .
+mo:grid rdfs:label "GRid"@en .
+mo:grid rdfs:seeAlso <http://wiki.musicbrainz.org/GRid> .
+
+mo:lc a owl:DatatypeProperty .
+mo:lc rdfs:subPropertyOf dcterms:identifier .
+mo:lc rdfs:domain mo:Label .
+mo:lc rdfs:label "label code"@en .
+mo:lc rdfs:seeAlso <http://wiki.musicbrainz.org/LabelCode> .
+
+mo:catalog_number a owl:DatatypeProperty .
+mo:catalog_number rdfs:subPropertyOf dcterms:identifier .
+mo:catalog_number rdfs:domain mo:Record . # Hmmm...
+mo:catalog_number rdfs:label "catalog number"@en-US .
+mo:catalog_number rdfs:label "catalogue number"@en-GB .
+mo:catalog_number rdfs:seeAlso <http://wiki.musicbrainz.org/ReleaseCatalogNumber> .
+
+# Now with ASINs the situation is a bit more complicated. mo:amazon_asin currently is used to point to an Amazon page about a product.
+# The Amazon URLs though are far from being canonical when you access their site.
+# You can even hack them and put random stuff in the middle and still reach the page you want.
+# You could just use the actual ASINs for identification but there's a problem with them.
+# ASINs are *supposed* to identify products across all local Amazon sites theoretically but in practice they don't.
+# You can get ASINs on amazon.co.uk which don't exist on amazon.fr,
+# you can get ASINs on amazon.de which identify a different edition on amazon.com and so on.
+# So really you need a pair of (domain, ASIN) to uniquely and minimally identify products on Amazon. It could look like this:
+
+mo:amazon_identification a owl:ObjectProperty .
+mo:amazon_identification rdfs:range mo:AmazonIdentification .
+
+mo:AmazonIdentification a owl:Class .
+
+mo:amazon_domain a owl:DatatypeProperty .
+mo:amazon_domain rdfs:domain mo:AmazonIdentification .
+
+mo:amazon_asin a owl:DatatypeProperty .
+mo:amazon_asin rdfs:subPropertyOf dcterms:identifier .
+mo:amazon_asin rdfs:domain mo:AmazonIdentification .

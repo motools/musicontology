@@ -1,0 +1,86 @@
+
+<h2><a name="sec-intro" class="mozTocH2" id="sec-intro"></a>Introduction</h2>
+
+<p>
+
+Internet changed the music industry.  At first, sharing systems like <a href="http://www.napster.com">Napster</a> 
+allowed people to share any song they had on their computer with millions other people. 
+That new reality changed the music industry’s landscape for good, and many juridical battles followed. 
+However, a biggest change followed a couple of years later. 
+Communities like <a href="http://www.myspace.com">MySpace</a> started to appear. 
+Strong of millions of regular users, such communities helped garage bands and obscure musicians to create 
+their musical niche: the longtail of the music industry. 
+This second change is more profound than the first one: 
+now any musician has the possibility to reach their audience by sharing their work on the Web. 
+In the mean time, a free database called <a href="http://musicbrainz.org">MusicBrainz</a> archiving 
+million of between artists, albums and tracks appeared; music suggesting services like 
+<a href="http://www.pandora.com">Pandora</a> or <a href="http://last.fm/">Last.FM</a> started to appear and Apple started 
+to sell individual tracks at 1$ with <a href="http://www.itunes.com">iTunes</a>.</p>
+
+<p>At that point, the music industry of the eighties leaded by blockbusters was completely changed.</p>
+
+<p>
+
+The Music Ontology is an attempt to  provide a vocabulary for linking a wide range music-related information, 
+and to provide a democratic mechanism for doing so. 
+Anybody can publish Music Ontology data and link it with existing data, in order to help 
+create a music-related <i>web of data</i>.
+
+For example, John Doe may publish some information about a performance he saw last night (like the fact
+that he was there, and a review). Mary Doe may publish the fact that she attended the same performance, that
+she recorded it using her cell-phone, and that the corresponding item is available in her podcast.
+ 
+The Music Ontology provides a vocabulary to express information ranging from this example to:
+</p>
+<pre>
+In this performance was interpreted a particular arrangement of the Trout Quintet by Franz Schubert.
+</pre>
+<pre>
+This work was performed ten times, but only two of these performances were recorded.
+</pre>
+<pre>
+Ten takes of this particular track have been recorded, each of which with a particular microphone location.
+</pre>
+<pre>
+"Come as You Are" by Nirvana was released on a single and the "Nevermind" album.
+</pre>
+<pre>
+During this gig, the band played ten songs. During the last one (a cover of "Eight days a week"), 
+the drummer from the support band joined them to play with them.
+</pre>
+
+<p>
+The Music Ontology is divided in three levels of expressiveness - from the simplest one to the more complex one.
+Everything is clustered around the following categories:
+</p>
+
+<ul>
+<li><strong>Level 1:</strong> aims at providing a vocabulary for simple editorial information (tracks/artists/releases, etc.)</li>
+<li><strong>Level 2:</strong> aims at providing a vocabulary for expressing the <i>music creation workflow</i> (composition, arrangement,
+performance, recording, etc.)</li>
+<li><strong>Level 3:</strong> aims at providing a vocabulary for complex event decomposition, to express, for example, what happened during
+a particular performance, what is the melody line of a particular work, etc.</li>
+</ul>
+
+
+<p>&nbsp;</p>
+
+<h3><a name="sec-notation" class="mozTocH3" id="sec-notation"></a>Terminology and Notation</h3>
+
+<p>The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+
+"SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+
+document are to be interpreted as described in RFC 2119 [<a href="#ref-rfc2119">RFC 2119</a>].</p>
+
+<p>Namespace URIs of the general form "http://www.example.com/." represents some application-dependent
+
+or context-dependent URI as defined in RFC 2396 [<a href="#ref-rfc2396">RFC 2396</a>].</p>
+
+<p>The XML Namespace URI that MUST be used by implementations of this specification is:</p>
+
+<ul>
+
+  <li><a href="http://purl.org/ontology/mo/">http://purl.org/ontology/mo/</a></li>
+
+</ul>

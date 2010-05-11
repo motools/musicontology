@@ -1,0 +1,76 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix timeline: <http://purl.org/NET/c4dm/timeline.owl#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix event: <http://purl.org/NET/c4dm/event.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix bio: <http://purl.org/vocab/bio/0.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+
+<http://music.org/needles#theneedles>
+    a mo:MusicalGroup;
+    dc:title "The Needles";
+    foaf:homepage <http://theneedles.net/>;
+    mo:myspace <http://myspace.com/needlesuk> .
+
+<http://music.org/needles#gigalbany>
+    a mo:Performance;
+    dc:title "Gig at the Albany Pub, in London, of the Needles, the 14th of February";
+    mo:performer <http://music.org/needles#theneedles>;
+    mo:produced_sound <http://music.org/needles#gigalbanysnd>;
+    event:time <http://music.org/needles#gigalbanytime>;
+    event:place <http://music.org/needles#albany>;
+    mo:listener <http://ourspace.com/phil#phil>, <http://ourspace.com/mary#mary> .
+
+<http://music.org/needles#gigalbanytime>
+    a timeline:Interval;
+    timeline:during <http://placetime.com/interval/gregorian/2007-15-02T00:00:00Z/P1D>;
+    dc:title "When the gig of the needles actually occured: we just know it happened on the 14th of february 2007" .
+
+<http://ourspace.com/phil#phil>
+    a foaf:Person;
+    foaf:name "Phil" .
+
+<http://ourspace.com/phil#recording>
+    a mo:Recording;
+    dc:title "I actually recorded something there with my cell phone!";
+    mo:recording_of <http://music.org/needles#gigalbanysnd>;
+    event:factor <http://ourspace.com/phil#mycellphone>;
+    mo:produced_signal <http://ourspace.com/phil#signal> .
+
+<http://ourspace.com/phil#signal>
+    mo:published_as [
+        a mo:Record;
+        mo:available_as <http://ourspace.org/phil/needles_albany.mp3>, <http://ourmirror.org/needles_albany.mp3>
+    ] .
+
+<http://ourspace.org/phil/needles_albany.mp3>
+    a mo:Stream .
+
+<http://ourmirror.org/needles_albany.mp3>
+    a mo:Stream .
+
+<http://ourspace.com/mary#mary>
+    a foaf:Person;
+    foaf:name "Mary" .
+
+<http://ourspace.com/mary#rec>
+    a mo:Recording;
+    dc:title "Hey, I recorded this gig with my zPod, it was amazing, check it out!!";
+    mo:recording_of <http://music.org/needles#gigalbanysnd>;
+    mo:produced_signal <http://ourspace.com/mary#sig> .
+
+<http://ourspace.com/mary#sig>
+    mo:published_as [
+        a mo:Record;
+        mo:available_as <http://ourspace.org/mary/albany_zpod.mp3>
+    ] .
+
+<http://ourspace.org/mary/albany_zpod.mp3>
+    a mo:Stream .
+

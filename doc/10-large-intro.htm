@@ -1,0 +1,310 @@
+<h3><a name="sec-classes-relations" class="mozTocH2" id="sec-classes-relations"></a>Music Ontology Classes Hierarchy</h3>
+
+
+
+<p>
+
+There are the schemes of the hierarchy of the Music Ontology classes. These schemes show the interaction between the Music Ontology classes and other ontologies classes.
+
+</p>
+
+
+
+
+<div style="padding:10px; background-color:#A8D3FF; border: 1px solid #003399; text-align:center">
+
+<b><a href="http://wiki.musicontology.com/index.php/Classes_Schemas">Schemes are available on the Music Ontology Wiki</a></b><br />
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div style="clear: left;">
+
+  <br /><br /><br /><br /></div>    
+
+
+
+  
+
+  
+
+<h3><a name="sec-example" class="mozTocH2" id="sec-example"></a>RDF Document Examples</h3>
+
+
+
+<div style="padding:10px; background-color:#A8D3FF; border: 1px solid #003399; text-align:center"> <b><a href="http://wiki.musicontology.com/index.php/Examples">The list of RDF serializations (XML and N3) Examples can be found on the Music Ontology Wiki </a></b></div>
+
+<br />
+
+<br /><br /><br />
+
+
+
+<h3><a name="sec-sparqlexample" class="mozTocH2" id="sec-sparqlexample"></a>Examples of SPARQL queries against these RDF graphs</h3>
+
+<div style="padding:10px; background-color:#A8D3FF; border: 1px solid #003399; text-align:center"> <b><a href="http://wiki.musicontology.com/index.php/SPARQL_Examples">The list of SPARQL queries and their description can be found on the Music Ontology Wiki </a></b></div>
+
+<br />
+
+<br /><br />
+
+<h2><a name="sec-background" class="mozTocH2" id="sec-background"></a>Background </h2>
+
+<p>The Music Ontology is an online community effort 
+to express music-related information on the <a href="http://www.w3.org/2001/sw/">Semantic Web</a>.
+</p>
+
+<p>The Music Ontology is mainly influenced by:
+</p>
+<ul>
+<li><a href="http://www.ifla.org/VII/s13/frbr/frbr.htm">The FRBR Final Report</a></li> 
+<li><a href="http://purl.org/NET/c4dm/event.owl">The Event ontology</a></li>
+<li><a href="http://purl.org/NET/c4dm/timeline.owl">The Timeline ontology</a></li>
+<li><a href="http://www.metadata.net/harmony/ABCV2.htm">The ABC ontology from the Harmony project</a></li>
+<li><a href="http://www.foaf-project.org">The FOAF Project</a></li>
+</ul>
+
+<p>
+More detailed are available on the Wiki <a href="http://wiki.musicontology.com/index.php/Publications">publication page</a>.
+</p>
+
+<p>&nbsp;</p>
+
+<h2><a name="sec-vocab" class="mozTocH2" id="sec-vocab"></a>The Music Ontology 
+
+Description</h2>
+
+<p>This specification serves as the Music Ontology "namespace document". As such
+
+it describes the Music Ontology and the terms (<a
+
+ href="http://www.w3.org/RDF/">RDF</a> classes and properties) that
+
+constitute it, so that <a href="http://www.w3.org/2001/sw/">Semantic
+
+Web</a> applications can use those terms in a variety of RDF-compatible
+
+document formats and applications.
+
+
+
+</p>
+
+<p>This document presents the Music Ontology as a <a
+
+ href="http://www.w3.org/2001/sw/">Semantic Web</a> vocabulary or <em>Ontology</em>.
+
+The Music Ontology is straightforward, pragmatic and designed to allow
+
+simultaneous deployment and extension, and is therefore intended for
+
+widescale use. </p>
+
+<p>&nbsp;</p>
+
+<h3><a name="sec-evolution" class="mozTocH3" id="sec-evolution"></a>Evolution and
+
+Extension of the Music Ontology </h3>
+
+The Music Ontology is identified by the namespace URI
+
+'http://purl.org/ontology/mo/'.
+
+<p>Revisions and extensions of Music Ontology are conducted through edits to the namespace document, which by convention is published in the Web at the namespace
+
+URI.</p>
+
+<!-- The evolution of SIOC is best considered in terms of the stability
+
+of individual ontology terms, rather than the specification as a
+
+whole. As terms stabilise in usage and documentation, they progress
+
+through the categories '<strong>unstable</strong>', '<strong>testing</strong>'
+
+and '<strong>stable</strong>'. -->
+
+<!--STATUSINFO-->
+
+<p>The properties and types defined here provide some basic 
+
+concepts for use in Music Ontology descriptions. Other vocabularies (e.g. the
+
+<a href="http://dublincore.org/">Dublin Core</a> metadata elements for
+
+simple bibliographic description, <a href="http://xmlns.com/foaf/0.1/">FOAF</a>, etc.) can also be mixed in with the Music Ontology terms, as can local
+
+extensions. The Music Ontology is designed to be extended, and modules may be added
+
+at a later date. </p>
+
+
+
+<p>&nbsp;</p>
+
+<h3><a name="sec-modules" class="mozTocH3" id="sec-evolution"></a>Music Ontology Modules </h3>
+
+
+
+Music Ontology modules may be used to extend the ontology and avoid making the base ontology too complex.
+
+
+A list of available modules is available <a href="http://wiki.musicontology.com/index.php/Extension_Modules">on the Wiki</a>.
+
+
+
+
+
+<p>&nbsp;</p>
+
+<h3><a name="sec-time-event" class="mozTocH3" id="sec-standards"></a>Time, TimeLine and Event</h3>
+
+
+<p>
+The parts of the Music Ontology related to the production process of a particular piece of music (composition, performance, arrangement,...) as well as the parts dealing with time-related information are based on three external ontologies. The Music Ontology provides RDFS wrappers for the main classes, properties and individuals of these three ontologies.
+
+</p>
+
+<p>
+
+The first ontology is: <a href="http://www.w3.org/TR/owl-time/">OWL-Time</a>. Three terms of this ontology are used by the Music Ontology: TemporalThing, Instant and Interval. 
+
+</p>
+
+<p>
+However the kind of temporal information we may want to express goes a bit beyond OWL-Time, so we use an extension of it, developped in the <a href="http://www.elec.qmul.ac.uk/digitalmusic/">Centre for Digital Music, Queen Mary, University of London</a>: the <a href="http://purl.org/NET/c4dm/timeline.owl">TimeLine</a> ontology. Indeed, we may want to express instants and intervals on multiple "timelines" (a timeline being a coherent backbone for temporal things): the one backing a particular audio file, the one behind an audio/video stream, or the physical one, backing a musical performance. Two classes of timelines are defined: PhysicalTimeLine (an instance of it being universaltimeline, which is the one on which we may address "the 13th of october, 2006"), and RelativeTimeLine (instances of this class may back audio signals, and we may address things such as "between 2 and 3 seconds" on them).
+</p>
+
+<p>
+There is only one way of addressing temporal things per class of timeline. On a physical time line, a point is identified by a xsd:dateTime -- through the beginsAtDateTime property, and a duration by a xsd:duration -- through the durationXSD property. On a relative time line, a point P is identified by the duration of the interval [0,P], and this duration is identified by a xsd:duration -- through the beginsAtDuration property. A duration is identified by durationXSD.
+</p>
+
+<p>
+In order to express knowledge about the <a href="#sec-music-creation-workflow">production process of a piece of music</a>, we use the  <a href="http://purl.org/NET/c4dm/event.owl">Event</a> ontology, also developped at the <a href="http://www.elec.qmul.ac.uk/digitalmusic/">Centre for Digital Music</a>. Events are seen as a way to arbitrary classify a space/time region. We have the possibiliy to attach to these events: agents (active participants to the event, like a performer, a sound engineer, ...), factors (passive things having a role in the  event, like a musical instrument, a musical score, ...) and products (things produced by the event, such as a sound, a musical work, ...). A key feature of this ontology is also to allow "splitting" of events, through the <em>sub_event</em> transitive property. Using events, we may express: this musician was playing this instrument at this given time.
+</p>
+
+<p>
+In the current version of the Music Ontology, the main sub-classes of Event are: Performance, Recording, Arrangement, Composition. However, given its abstract definition, we can describe lots of other things using this class: results of feature extraction, beat tracking, segmentation of songs... 
+</p>
+
+
+
+<div style="clear: left;">
+
+  <br /><br /><br /><br /></div>    
+
+  
+
+
+
+<h3><a name="sec-music-creation-workflow" class="mozTocH2" id="sec-music-creation-workflow"></a>Music Creation Workflow</h3>
+
+
+
+<p>
+
+In order to describe music-related events, we consider describing the
+
+workflow beginning with the creation of a musical work to
+
+its release on a particular record. This is our main description<br />
+
+paradigm, and was first used in the music production ontology
+
+developed at <a href="http://www.elec.qmul.ac.uk/digitalmusic/">C4DM</a>.
+
+</p>
+
+<p>
+
+In the &quot;easy&quot; case (non-electronic music), We can describe this
+
+workflow within two boundaries: the simplest one and the most expressive one.<br />
+
+</p>
+
+<p>
+
+The simplest one consider the existence of 4 concepts within this workflow:
+
+MusicalWork (the <em>musical work</em> itself), Performance (the event
+
+corresponding to an actual <em>performance</em><br />
+
+of the work), Signal (recording the performance as a <em>signal</em>),
+
+and MusicalManifestation
+
+(the release of this signal on a particular <em>record</em>).
+
+</p>
+
+<p>
+
+The most expressive one consider the existence of 7 concepts:
+
+Composition (the event leading to the creation of a musical work),
+
+MusicalWork, Performance, Sound (the physical <em>sound</em><br />
+
+produced by the performance), Recording (the event representing the
+
+transduction from a physical sound to a signal, through
+
+the use of a microphone), Signal, and MusicalManifestation.
+
+</p>
+
+<p>
+
+Thus, we could imagine other ontologies plugged on top of MO, in order
+
+to represent the <em>cognition</em> of a sound (related to Sound),
+
+the different types of microphones that can be used (related to
+
+Recording), and so on.
+
+</p>
+
+<p>
+
+In order to switch from the simplest workflow to the most expressive
+
+one, we define a single <em>shortcut</em> property:
+
+recorded_as, directly linking a Performance to a Signal.
+
+This property MUST be present in <em>every</em> case, in order to be
+
+able to do a simple query for accessing simple information.
+
+</p>
+
+
+
+<p>
+
+  <img src="imgs/mo-workflow.jpg" alt="A Music Production Workflow in the Music Ontology"/>
+
+</p>
+
+
+
+
+
+
+
+
+
+
+

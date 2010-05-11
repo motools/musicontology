@@ -1,0 +1,514 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY dc 'http://purl.org/dc/elements/1.1/'>
+    <!ENTITY mo 'http://purl.org/ontology/mo/'>
+    <!ENTITY ns1 'http://www.w3.org/2003/06/sw-vocab-status/ns#'>
+    <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+    <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+    <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+]>
+
+<rdf:RDF
+    xmlns:dc="&dc;"
+    xmlns:mo="&mo;"
+    xmlns:ns1="&ns1;"
+    xmlns:owl="&owl;"
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:xsd="&xsd;"
+>
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/event.owl#Event"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:comment> 
+		An event: a way of arbitrary classifying a space/time region.
+		An event has agents (active entities contributing to the event -- a performer, a composer, an engineer, ...),
+		factors (passive entities contributing to the event -- flute, score, ...),
+		and products (things produced by the event -- sound, signal, score, ...). For
+		example, we may describe as Events: performances, composition events, recordings, arrangements,
+		creation of a musical group, separation of a musical group,
+		but also sounds, signals, notes (in a score)...
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#agent"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>                Associates an event to an active agent.
+		Example: an engineer, a performer, a composer...
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <owl:inverseOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isAgentIn"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#factor"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Associates an event to a passive factor of it.
+		Example: a flute, a musical score, a musical work...
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="&rdfs;Resource"/>
+  <owl:inverseOf rdf:resource="http://purl.org/NET/c4dm/event.owl#isFactorOf"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#isAgentIn"
+    mo:level="2"
+    rdfs:comment="                Associates an agent to an event.
+        "
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <owl:inverseOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#isFactorOf"
+    mo:level="2"
+    rdfs:comment="                Associates a factor to an event
+        "
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:domain rdf:resource="&rdfs;Resource"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <owl:inverseOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#place"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>                Associate an event with a place.
+
+		The associated geographic object contains the actual geographic extent of the event.
+
+		For example, linking an event to Paris, France, will specify that this event happened somewhere
+		within this geographical object.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#producedIn"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>                Associates the product of an event to the event itself
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="&rdfs;Resource"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <owl:inverseOf rdf:resource="http://purl.org/NET/c4dm/event.owl#product"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#product"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>                Associates an event to something it produces.
+		Example: a sound, a score, a musical work...
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="&rdfs;Resource"/>
+  <owl:inverseOf rdf:resource="http://purl.org/NET/c4dm/event.owl#producedIn"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#sub_event"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Allows to link an event to a sub-event. A sub-event might be an event split by time,
+		space, agents, factors... This property can be used to express things such as "during
+		this performance, this person was playing this instrument at this particular time", through 
+		the creation of a sub-event, occuring at this given time, and having as agent the person and
+		as factor the instrument
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/event.owl#time"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Associate an event with a time interval or a time instant.
+
+		The associated time object contains the actual temporal extent of the event.
+
+		For example, linking an event to the 9th of August, 2007, will specify that this event 
+		happened during this day.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+</rdf:Property>
+
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#AbstractTimeLine"
+    mo:level="3"
+    ns1:term_status="unstable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:comment>		Abstract time lines may be used as a backbone for Score, Works, ... 
+		This allows for TimeLine maps to relate works to a given performance (this note was played at this time).
+		No coordinate systems are defined for these timelines. Their structure is implicitly defined
+		by the relations between time objects defined on them (eg. this note is before this note, which is
+		before this silent, which is at the same time as this note).
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#OriginMap"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:comment>		This time line map represents the relation between the physical timeline and a
+		continuous time line where the origin is at a given point on the physical timeline
+		(eg. "the timeline backing this signal corresponds
+		to the physical timeline: point 0 on this timeline corresponds to the
+		20th of december at 5pm").
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#PhysicalTimeLine"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:comment>		Well, the actual physical time as we know it. I may want to address "yesterday" on instances
+		of this class, or "the year 1789"...
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#RelativeTimeLine"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:comment>		A semi-infinite continuous timeline. Instances of RelativeTimeLine can
+		back audio/video signals, sounds. Such timelines can
+		be linked to a physical time line using the OriginMap.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#TimeLine"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:comment> 
+		A time line -- a coherent "backbone" for addressing points and intervals.
+		We can consider the timeline backing an audio/video signal, the one
+		corresponding to the "physical" time, or even the one backing a score.
+		Here, we consider that the timeline is *also* its coordinate system, for
+		simplification purposes. In the DL version of the timeline ontology,
+		coordinate systems are defined through restrictions on the way to 
+		address time points/intervals on a timeline.
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:comment>		Two time lines can be related, such as the one backing a continuous signal and
+		the one backing the digitized signal. This sort of relation is expressed through an instance
+		of a TimeLine map (eg. "the timeline backing this signal corresponds
+		to the physical timeline: point 0 on this timeline corresponds to the
+		20th of december at 5pm").
+	</rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#atDateTime"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;DatatypeProperty"/>
+  <rdfs:comment>		Place a time point on the universal time line by using xsd:dateTime.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="&xsd;dateTime"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#atDuration"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;DatatypeProperty"/>
+  <rdfs:comment>		Place a time point on an abstract time line by expressing its distance to
+		the point 0, through xsd:duration (example: this instant is at 2s after 0 --&gt; T2S)
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="&xsd;duration"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#beginsAtDateTime"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;DatatypeProperty"/>
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdfs:comment>		Links an interval on a physical timeline to its actual start point,
+		expressed using xsd:dateTime
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="&xsd;dateTime"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#beginsAtDuration"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;DatatypeProperty"/>
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdfs:comment>		Links an interval on a semi-infinite continuous time line to its
+		start point, addressed using xsd:duration (duration between 0 and the
+		start point)
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="&xsd;duration"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#domainTimeLine"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		This property allows to associate a TimeLineMap with the first TimeLine it maps
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#durationXSD"
+    mo:level="2"
+    rdfs:comment="		Links an interval to its duration using xsd:duration
+	"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;DatatypeProperty"/>
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="&xsd;duration"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#onTimeLine"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Links an instant or an interval to the timeline it is defined on (eg. "1970 is defined on the
+		time line universaltimeline", or "the interval between 0 and 2 minutes is defined on the time
+		line backing this sound and this signal").
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class rdf:nodeID="file:///home/moustaki/work/workspace/motools/mo/doc/musicontology.rdfs#__Description8">
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description about="http://www.w3.org/2006/time#Interval"/>
+        <rdf:Description about="http://www.w3.org/2006/time#Instant"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#originAt"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;DatatypeProperty"/>
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdfs:comment>		This property specifies, for an OriginMap, the time point on the physical time line
+		0 on a RelativeTimeLine is equivalent to.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/timeline.owl#OriginMap"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://purl.org/NET/c4dm/timeline.owl#rangeTimeLine"
+    mo:level="3"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>                This property allows to associate a TimeLineMap with the second TimeLine it maps
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLineMap"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+  <rdfs:range rdf:resource="http://purl.org/NET/c4dm/timeline.owl#TimeLine"/>
+</rdf:Property>
+
+<rdf:Description rdf:about="http://purl.org/NET/c4dm/timeline.owl#universaltimeline"
+    dc:title="universal time line"
+    mo:level="3">
+  <dc:description>		The "canonical" physical time-line, on which points/intervals are addressed through UTC.
+		(Remember: we do here the amalgam between timelines and coordinate systems, as we 
+		choose one canonical one per timeline).
+	</dc:description>
+  <rdf:type rdf:resource="http://purl.org/NET/c4dm/timeline.owl#PhysicalTimeLine"/>
+  <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/c4dm/timeline.owl"/>
+</rdf:Description>
+
+<rdfs:Class rdf:about="http://www.w3.org/2006/time#Instant"
+    mo:level="2"
+    rdfs:comment=" A time point (eg. &quot;now&quot;:-) )"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://www.w3.org/2006/time#Interval"
+    mo:level="2"
+    rdfs:comment=" A time interval (eg. &quot;the year 1994&quot;)"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalBefore"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>                One of Allen's relations. Specifies that an interval is before an other.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalDuring"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		One of Allen's relations. Specifies that an interval occurs during an other.
+		It is really handy to express things like "it happened the 15th of august, but I do not remember exactly when".
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://www.w3.org/2006/time#intervalMeets"
+    mo:level="2"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>                One of Allen's relations. Specifies that an interval meets an other one.
+        </rdfs:comment>
+  <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Interval"/>
+  <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2006/time"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
+</rdf:Property>
+
+<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Agent"
+    mo:level="1"
+    rdfs:comment="		An agent (person, group, software, etc.).
+	"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Group"
+    mo:level="1"
+    rdfs:comment="		A group of agents.
+	"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Organization"
+    mo:level="1"
+    rdfs:comment="		An organization.
+	"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+</rdfs:Class>
+
+<rdfs:Class rdf:about="http://xmlns.com/foaf/0.1/Person"
+    rdfs:comment="		A person.
+	"
+    ns1:term_status="stable">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+  <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdf:type rdf:resource="&owl;Class"/>
+  <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+</rdfs:Class>
+
+<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/made"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Relates an agent to a manifestation he contributed to create.
+	</rdfs:comment>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  <rdfs:range>
+    <owl:Class rdf:nodeID="file:///home/moustaki/work/workspace/motools/mo/doc/musicontology.rdfs#__Description7">
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description about="&mo;MusicalManifestation"/>
+        <rdf:Description about="&mo;Record"/>
+        <rdf:Description about="&mo;Track"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+  <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/made"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/maker"
+    mo:level="1"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:comment>		Relates a manifestation to an agent who contributed to create it.
+		This property might be used for weak assertion of such a relationship. In case we want
+		to attach a more concrete role (this agent performed, or was the composer, etc.), we must 
+		use mo:Performer, mo:MusicalWork/mo:Composition, etc. This indeed allows to specify where a 
+		particular agent took part in the actual workflow.
+	</rdfs:comment>
+  <rdfs:domain>
+    <owl:Class rdf:nodeID="file:///home/moustaki/work/workspace/motools/mo/doc/musicontology.rdfs#__Description7">
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description about="&mo;MusicalManifestation"/>
+        <rdf:Description about="&mo;Record"/>
+        <rdf:Description about="&mo;Track"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  <owl:inverseOf rdf:resource="http://xmlns.com/foaf/0.1/made"/>
+</rdf:Property>
+
+<rdf:Property rdf:about="http://xmlns.com/foaf/0.1/member"
+    mo:level="1"
+    rdfs:comment="		Indicates a member of a Group
+	"
+    ns1:term_status="stable">
+  <rdf:type rdf:resource="&owl;ObjectProperty"/>
+  <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Group"/>
+  <rdfs:isDefinedBy rdf:resource="http://xmlns.com/foaf/0.1/"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+</rdf:Property>
+
+</rdf:RDF>

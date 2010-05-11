@@ -1,0 +1,43 @@
+
+div.specterm {
+	padding: 0 0 10px 20px;
+	border: 1px solid black;
+}
+
+body {
+	padding: 0 25px 50px 50px;
+	background-color: #E7F5F2;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2em;
+	padding-top: 1.5em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+p.copyright {
+	font-size: small;
+}
+
+div.page {
+	min-width: 750px;
+	width: 90%;
+	padding: 30px 20px 30px 20px;
+	margin-top: 5px;
+	float: center;
+	background-color: white;
+}
+
+div.glance {
+	padding: 5px; 
+	border: dotted; 
+	background-color: #C6D3D0;"
+	
+}

@@ -1,0 +1,98 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix instrument: <http://instrument.org/>.
+@prefix bach: <http://music.org/bach#>.
+@prefix timeline: <http://purl.org/NET/c4dm/timeline.owl#>.
+@prefix event: <http://purl.org/NET/c4dm/event.owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+# Bach, die Kunst der Fuge
+############################################
+
+# Bach' FOAF profile (who knows... Bach may have been some sort of a geek!)
+bach:bach a foaf:Person;
+	foaf:name "Johann Sebastian Bach";
+	mo:wikipedia <http://en.wikipedia.org/wiki/Johann_Sebastian_Bach>;
+	# foaf:mbox ... :-)
+	.
+
+# Composition event
+bach:kdfcomposition a mo:Composition;
+	dc:title "The composition event, when Bach composed the art of the fugue";
+	mo:composer bach:bach;
+	event:time bach:compti;
+	mo:produced_work bach:kunstderfuge;
+	event:product bach:kunstderfugescore; # there should be a dedicated property in MO
+	.
+
+# The time interval where these composition event has occured.
+# We just know it was between 1742 and June 1749
+bach:compti a timeline:Interval;
+	timeline:during <http://placetime.com/interval/gregorian/1742-01-01T00:00:00Z/P7Y6M>;
+	.
+
+# The actual MusicalWork:
+bach:kunstderfuge a mo:MusicalWork;
+	dc:title "Die Kunst der Fuge";
+	.
+
+# The related expression: the composer's score - this is an informational object, not the actual piece of paper
+bach:kunstderfugescore a mo:Score;
+        dc:title "Die Kunst der Fuge, composer's score";
+        mo:published_as bach:firstpub
+        .
+
+# First publication (1751):
+bach:firstpub a mo:PublishedScore;
+	dc:title "Die Kunst der Fuge, published posthumously in 1751";
+	dc:date "1751"^^xsd:year;
+	.
+
+#########################################
+#
+# The Emerson Quartet, 2003, string quartet
+#
+bach:emersonperf a mo:Performance;
+	event:time bach:emersonperfti;
+	mo:performer bach:emersonquartet;
+	mo:instrument instrument:violin; # plug your favorite instrument taxnonomy here...
+	mo:instrument instrument:violin;
+	mo:instrument instrument:viola;
+	mo:instrument instrument:cello;
+	mo:produced_sound bach:emersonsound; # the MusicalExpression
+	mo:performance_of bach:kunstderfuge; # the MusicalWork
+	.
+
+# During 2003:
+bach:emersonperfti a timeline:Interval;
+	timeline:during <http://placetime.com/interval/gregorian/2003-01-01T00:00:00Z/P1Y>;
+	.
+
+#Emerson Quartet:
+bach:emersonquartet a mo:MusicalGroup;
+	foaf:name "The Emerson Quartet";
+	foaf:member bach:eugenedrucker;
+	foaf:member bach:philipsetzer;
+	foaf:member bach:lawrencedutton;
+	foaf:member bach:davidfinckel;
+	.
+
+# The actual MusicalExpression(s)
+bach:emersonsound a mo:Sound.
+bach:emersonrec a mo:Recording;
+        mo:recording_of bach:emersonsound;
+        mo:produced_signal [
+                   a mo:Signal;
+                   mo:published_as bach:emersonrecord;
+        ]
+        .
+
+# The MusicalManifestation
+bach:emersonrecord a mo:Record;
+	dc:title "The Art of the Fugue";
+	mo:release_status mo:official;
+	foaf:maker bach:emersonquartet; # Redundant
+	.
+
+
