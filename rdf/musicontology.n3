@@ -38,6 +38,9 @@ mo:   rdf:type owl:Ontology ;
       owl:versionInfo "Revision: 2.1" ;
       foaf:maker <http://www.talkdigger.com/foaf/fgiasson> , <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> .
 
+vs:term_status
+    a owl:AnnotationProperty .
+
 mo:AnalogSignal
       rdf:type owl:Class ;
       rdfs:comment """

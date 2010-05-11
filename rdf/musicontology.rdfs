@@ -37,6 +37,7 @@
     <foaf:maker rdf:resource="http://moustaki.org/foaf.rdf#moustaki"/>
     <foaf:maker rdf:resource="http://www.talkdigger.com/foaf/fgiasson"/>
   </owl:Ontology>
+  <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
   <owl:Class rdf:about="http://purl.org/ontology/mo/AnalogSignal">
     <mo:level>2</mo:level>
     <rdfs:comment>
