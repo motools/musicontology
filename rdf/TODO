@@ -1,0 +1,2 @@
+- MO likes also to load http://purl.org/vocav/vann/ (needed by Bio Ontology) and SKOS (needed by FRBR Ontology)
+	-> this should be imported (owl:imports) through the original ontologies (Bio, FRBR) and not MO 
