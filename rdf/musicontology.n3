@@ -1,12 +1,12 @@
-# Saved by TopBraid on Mon May 10 18:35:59 CEST 2010
+# Saved by TopBraid on Wed Jun 16 23:55:18 CEST 2010
 # baseURI: http://purl.org/ontology/mo/
+# imports: http://www.w3.org/2006/time
 # imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/NET/c4dm/keys.owl
 # imports: http://purl.org/vocab/bio/0.1/
 # imports: http://xmlns.com/foaf/0.1/
 # imports: http://purl.org/dc/terms/
 # imports: http://purl.org/vocab/frbr/core
-# imports: http://www.w3.org/2006/time
 
 @prefix bio:     <http://purl.org/vocab/bio/0.1/> .
 @prefix cc:      <http://web.resource.org/cc/> .
@@ -27,7 +27,7 @@
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
 
 mo:   rdf:type owl:Ontology ;
-      dc:date "$Date: 2010/05/02 17:21:19 $" ;
+      dc:date "$Date: 2010/06/16 23:53:19 $"^^xsd:string ;
       dc:description """
 		The Music Ontology Specification provides main concepts and 
 		properties fo describing music (i.e. artists, albums and tracks) 
@@ -35,12 +35,9 @@ mo:   rdf:type owl:Ontology ;
 		of the Music Ontology.
 	""" ;
       dc:title "The Music Ontology" ;
-      owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> , <http://www.w3.org/2006/time> ;
-      owl:versionInfo "Revision: 2.1" ;
+      owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , <http://www.w3.org/2006/time> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> ;
+      owl:versionInfo "Revision: 2.1.1"^^xsd:string ;
       foaf:maker <http://www.talkdigger.com/foaf/fgiasson> , <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> .
-
-vs:term_status
-    a owl:AnnotationProperty .
 
 mo:AnalogSignal
       rdf:type owl:Class ;
@@ -357,7 +354,7 @@ mo:MusicGroup
       rdfs:comment "Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. " ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "music group" ;
-      rdfs:subClassOf foaf:Group , mo:MusicArtist ;
+      rdfs:subClassOf mo:MusicArtist , foaf:Group ;
       mo:level "1" ;
       vs:term_status "stable" .
 
@@ -650,7 +647,7 @@ mo:SoloMusicArtist
       rdfs:comment "Single person whose musical creative work shows sensitivity and imagination." ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "solo music artist" ;
-      rdfs:subClassOf foaf:Person , mo:MusicArtist ;
+      rdfs:subClassOf mo:MusicArtist , foaf:Person ;
       mo:level "1" ;
       vs:term_status "stable" .
 
@@ -661,7 +658,7 @@ mo:Sound
 	""" ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "sound" ;
-      rdfs:subClassOf event:Event , mo:MusicalExpression ;
+      rdfs:subClassOf mo:MusicalExpression , event:Event ;
       mo:level "2" ;
       vs:term_status "stable" .
 
@@ -820,7 +817,7 @@ mo:biography
       vs:term_status "stable" .
 
 mo:bitsPerSample
-      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
       rdfs:comment """
 		Associates a digital signal to the number a bits used to encode one sample. Range is xsd:int.
 	""" ;
@@ -865,7 +862,7 @@ mo:catalogue_number
       vs:term_status "testing" .
 
 mo:channels
-      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
       rdfs:comment """
 		Associates a signal to the number of channels it holds (mono --> 1, stereo --> 2). Range is xsd:int.
 	""" ;
@@ -876,7 +873,7 @@ mo:channels
       vs:term_status "stable" .
 
 mo:collaborated_with
-      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
+      rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
       rdfs:comment "Used to relate two collaborating people on a work." ;
       rdfs:domain foaf:Agent ;
       rdfs:isDefinedBy mo: ;
@@ -1722,7 +1719,7 @@ mo:opus
       vs:term_status "stable" .
 
 mo:other_release_of
-      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
+      rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
       rdfs:comment "Indicates that two musical manifestations are essentially the same." ;
       rdfs:domain mo:MusicalManifestation ;
       rdfs:isDefinedBy mo: ;
@@ -2100,7 +2097,6 @@ mo:record
       rdfs:isDefinedBy mo: ;
       rdfs:label "released record" ;
       rdfs:range mo:Record ;
-      rdfs:subPropertyOf event:factor ;
       mo:level "1" ;
       vs:term_status "testing" .
 
@@ -2184,6 +2180,17 @@ mo:records
       owl:inverseOf mo:recordedAs ;
       vs:term_status "unstable" .
 
+mo:release
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Associates a release with the corresponding release event" ;
+      rdfs:domain mo:ReleaseEvent ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "release" ;
+      rdfs:range mo:Release ;
+      rdfs:subPropertyOf event:product ;
+      mo:level "1" ;
+      vs:term_status "testing" .
+
 mo:releaseStatus
       rdf:type owl:ObjectProperty ;
       owl:equivalentProperty
@@ -2195,17 +2202,6 @@ mo:releaseType
       owl:equivalentProperty
               mo:release_type ;
       vs:term_status "deprecated" .
-
-mo:release_event
-      rdf:type owl:ObjectProperty ;
-      rdfs:comment "Associates a release with the corresponding release event" ;
-      rdfs:domain mo:Release ;
-      rdfs:isDefinedBy mo: ;
-      rdfs:label "release" ;
-      rdfs:range mo:ReleaseEvent ;
-      rdfs:subPropertyOf event:factor_of ;
-      mo:level "1" ;
-      vs:term_status "testing" .
 
 mo:release_status
       rdf:type owl:ObjectProperty ;
@@ -2310,7 +2306,7 @@ mo:sampleRate
       vs:term_status "deprecated" .
 
 mo:sample_rate
-      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
       rdfs:comment """
 		Associates a digital signal to its sample rate. It might be easier to express it this way instead of
 		defining a timeline map:-) Range is xsd:float.
@@ -2498,7 +2494,7 @@ mo:text
       vs:term_status "testing" .
 
 mo:time
-      rdf:type owl:FunctionalProperty , owl:ObjectProperty ;
+      rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
       rdfs:comment """
 		Associates a Signal to a time object - its actual domain
 	""" ;
@@ -2658,3 +2654,6 @@ mo:wikipedia
       rdfs:subPropertyOf foaf:isPrimaryTopicOf ;
       mo:level "1" ;
       vs:term_status "stable" .
+
+vs:term_status
+      rdf:type owl:AnnotationProperty .

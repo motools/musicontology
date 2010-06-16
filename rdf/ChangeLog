@@ -1,12 +1,18 @@
-========================
+=========================
+Version 2.1.1 (June 2010)
+=========================
+ * MODIFIED: removed rdfs:subProperty of event:factor from mo:record
+ * MODIFIED: mo:release_event to mo:release with rdfs:domain mo:ReleaseEvent and rdfs:domain mo:Release and rdf:subPropertyOf event:product
+
+=========================
 Version 2.1 (May 2010)
-========================
+=========================
  * ADDED: mo:headliner
  * MODIFIED: clean-up of the ontology definition (no multiple ontology definitions; non-used definitions removed, these classes and properties should be imported)
 
 =========================
 Version 2.0 (Feb 2010)
-========================
+==========================
  * ADDED: mo:Membership
  * ADDED: mo:SignalGroup
  * ADDED: mo:RecordingSession
