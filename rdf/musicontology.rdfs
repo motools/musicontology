@@ -2359,7 +2359,7 @@ This means that the orignial musical expression were rearranged to create a new 
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Record"/>
     <vs:term_status>testing</vs:term_status>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/record_count">
+  <owl:DatatypeProperty rdf:about="http://purl.org/ontology/mo/record_count">
     <mo:level>1</mo:level>
     <rdfs:comment>Associates a release with the number of records it contains, e.g. the number of discs it contains in the case of a multi-disc release.</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Release"/>
@@ -2367,7 +2367,7 @@ This means that the orignial musical expression were rearranged to create a new 
     <rdfs:label>record count</rdfs:label>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     <vs:term_status>testing</vs:term_status>
-  </owl:ObjectProperty>
+  </owl:DatatypeProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/recordedAs">
     <owl:equivalentProperty rdf:resource="http://purl.org/ontology/mo/recorded_as"/>
   </owl:ObjectProperty>

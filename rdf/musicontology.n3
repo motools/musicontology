@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Jun 16 23:55:18 CEST 2010
+# Saved by TopBraid on Thu Jun 17 00:45:29 CEST 2010
 # baseURI: http://purl.org/ontology/mo/
 # imports: http://www.w3.org/2006/time
 # imports: http://purl.org/NET/c4dm/event.owl
@@ -2101,7 +2101,7 @@ mo:record
       vs:term_status "testing" .
 
 mo:record_count
-      rdf:type owl:ObjectProperty ;
+      rdf:type owl:DatatypeProperty ;
       rdfs:comment "Associates a release with the number of records it contains, e.g. the number of discs it contains in the case of a multi-disc release." ;
       rdfs:domain mo:Release ;
       rdfs:isDefinedBy mo: ;
