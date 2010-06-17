@@ -1,4 +1,4 @@
-# Saved by TopBraid on Thu Jun 17 00:45:29 CEST 2010
+# Saved by TopBraid on Thu Jun 17 17:23:21 CEST 2010
 # baseURI: http://purl.org/ontology/mo/
 # imports: http://www.w3.org/2006/time
 # imports: http://purl.org/NET/c4dm/event.owl
@@ -354,7 +354,7 @@ mo:MusicGroup
       rdfs:comment "Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. " ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "music group" ;
-      rdfs:subClassOf mo:MusicArtist , foaf:Group ;
+      rdfs:subClassOf foaf:Group , mo:MusicArtist ;
       mo:level "1" ;
       vs:term_status "stable" .
 
@@ -647,7 +647,7 @@ mo:SoloMusicArtist
       rdfs:comment "Single person whose musical creative work shows sensitivity and imagination." ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "solo music artist" ;
-      rdfs:subClassOf mo:MusicArtist , foaf:Person ;
+      rdfs:subClassOf foaf:Person , mo:MusicArtist ;
       mo:level "1" ;
       vs:term_status "stable" .
 
@@ -658,7 +658,7 @@ mo:Sound
 	""" ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "sound" ;
-      rdfs:subClassOf mo:MusicalExpression , event:Event ;
+      rdfs:subClassOf event:Event , mo:MusicalExpression ;
       mo:level "2" ;
       vs:term_status "stable" .
 
@@ -817,7 +817,7 @@ mo:biography
       vs:term_status "stable" .
 
 mo:bitsPerSample
-      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
       rdfs:comment """
 		Associates a digital signal to the number a bits used to encode one sample. Range is xsd:int.
 	""" ;
@@ -862,7 +862,7 @@ mo:catalogue_number
       vs:term_status "testing" .
 
 mo:channels
-      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
       rdfs:comment """
 		Associates a signal to the number of channels it holds (mono --> 1, stereo --> 2). Range is xsd:int.
 	""" ;
@@ -873,7 +873,7 @@ mo:channels
       vs:term_status "stable" .
 
 mo:collaborated_with
-      rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
+      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
       rdfs:comment "Used to relate two collaborating people on a work." ;
       rdfs:domain foaf:Agent ;
       rdfs:isDefinedBy mo: ;
@@ -1719,7 +1719,7 @@ mo:opus
       vs:term_status "stable" .
 
 mo:other_release_of
-      rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
+      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
       rdfs:comment "Indicates that two musical manifestations are essentially the same." ;
       rdfs:domain mo:MusicalManifestation ;
       rdfs:isDefinedBy mo: ;
@@ -2306,7 +2306,7 @@ mo:sampleRate
       vs:term_status "deprecated" .
 
 mo:sample_rate
-      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
       rdfs:comment """
 		Associates a digital signal to its sample rate. It might be easier to express it this way instead of
 		defining a timeline map:-) Range is xsd:float.
@@ -2494,7 +2494,7 @@ mo:text
       vs:term_status "testing" .
 
 mo:time
-      rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:ObjectProperty ;
       rdfs:comment """
 		Associates a Signal to a time object - its actual domain
 	""" ;
