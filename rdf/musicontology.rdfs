@@ -18,7 +18,7 @@
    xmlns:wot="http://xmlns.com/wot/0.1/"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
   <owl:Ontology rdf:about="http://purl.org/ontology/mo/">
-    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$Date: 2010/06/16 23:53:19 $</dc:date>
+    <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$Date: 2010/06/18 17:08:19 $</dc:date>
     <dc:description>
 		The Music Ontology Specification provides main concepts and 
 		properties fo describing music (i.e. artists, albums and tracks) 
@@ -78,6 +78,7 @@
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>audio file</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
     <vs:term_status>unstable</vs:term_status>
   </owl:Class>
   <owl:Class rdf:about="http://purl.org/ontology/mo/CD">
@@ -1281,7 +1282,22 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
                             <rdf:rest>
                               <rdf:Description>
                                 <rdf:first rdf:resource="http://purl.org/ontology/mo/RecordingSession"/>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:rest>
+                                  <rdf:Description>
+                                    <rdf:first rdf:resource="http://purl.org/ontology/mo/MusicalWork"/>
+                                    <rdf:rest>
+                                      <rdf:Description>
+                                        <rdf:first rdf:resource="http://purl.org/ontology/mo/MusicalExpression"/>
+                                        <rdf:rest>
+                                          <rdf:Description>
+                                            <rdf:first rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                          </rdf:Description>
+                                        </rdf:rest>
+                                      </rdf:Description>
+                                    </rdf:rest>
+                                  </rdf:Description>
+                                </rdf:rest>
                               </rdf:Description>
                             </rdf:rest>
                           </rdf:Description>
@@ -1741,7 +1757,7 @@ This means that the orignial musical expression were rearranged to create a new 
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/member_of">
     <mo:level>1</mo:level>
     <rdfs:comment>Inverse of the foaf:member property</rdfs:comment>
-    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>member_of</rdfs:label>
     <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Group"/>

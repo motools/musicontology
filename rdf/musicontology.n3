@@ -1,4 +1,4 @@
-# Saved by TopBraid on Fri Jun 18 17:08:59 CEST 2010
+# Saved by TopBraid on Fri Jun 18 17:20:21 CEST 2010
 # baseURI: http://purl.org/ontology/mo/
 # imports: http://www.w3.org/2006/time
 # imports: http://purl.org/NET/c4dm/event.owl
@@ -1230,7 +1230,7 @@ mo:genre
 	""" ;
       rdfs:domain
               [ rdf:type owl:Class ;
-                owl:unionOf (foaf:Agent mo:Performance mo:Arrangement mo:Composition mo:Recording mo:RecordingSession)
+                owl:unionOf (foaf:Agent mo:Performance mo:Arrangement mo:Composition mo:Recording mo:RecordingSession mo:MusicalWork mo:MusicalExpression mo:MusicalManifestation)
               ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "genre" ;

@@ -6,6 +6,7 @@ Version 2.1.1 (June 2010)
  * MODIFIED: mo:record_count as owl:DatatypeProperty
  * MODIFIED: mo:AudioFile rdfs:subClassOf foaf:Document
  * MODIFIED: mo:member_of rdfs:domain foaf:Agent
+ * MODIFIED: mo:genre rdfs:domain + mo:MusicalWork, mo:MusicalExpression, mo:MusicalManifestation
 
 =========================
 Version 2.1 (May 2010)
