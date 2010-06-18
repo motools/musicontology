@@ -1,4 +1,4 @@
-# Saved by TopBraid on Thu Jun 17 17:23:21 CEST 2010
+# Saved by TopBraid on Fri Jun 18 17:09:00 CEST 2010
 # baseURI: null
 
 @prefix composite:  <http://www.topbraid.org/2007/05/composite.owl#> .
@@ -14,14 +14,6 @@
       rdfs:label "mo:ReleaseType Graph" ;
       visual:child
               [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/ReleaseType> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "169"^^xsd:int ;
-                visual:x "665"^^xsd:int ;
-                visual:y "69"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
                 visual:depicts <http://purl.org/ontology/mo/interview> ;
                 visual:height "19"^^xsd:int ;
                 visual:width "149"^^xsd:int ;
@@ -30,27 +22,19 @@
               ] ;
       visual:child
               [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/remix> ;
+                visual:depicts <http://purl.org/ontology/mo/live> ;
                 visual:height "19"^^xsd:int ;
-                visual:width "126"^^xsd:int ;
-                visual:x "684"^^xsd:int ;
-                visual:y "309"^^xsd:int
+                visual:width "112"^^xsd:int ;
+                visual:x "536"^^xsd:int ;
+                visual:y "175"^^xsd:int
               ] ;
       visual:child
               [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/ep> ;
+                visual:depicts <http://purl.org/ontology/mo/soundtrack> ;
                 visual:height "19"^^xsd:int ;
-                visual:width "104"^^xsd:int ;
-                visual:x "541"^^xsd:int ;
-                visual:y "271"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/audiobook> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "156"^^xsd:int ;
-                visual:x "798"^^xsd:int ;
-                visual:y "130"^^xsd:int
+                visual:width "160"^^xsd:int ;
+                visual:x "792"^^xsd:int ;
+                visual:y "225"^^xsd:int
               ] ;
       visual:child
               [ rdf:type visual:Box ;
@@ -70,19 +54,35 @@
               ] ;
       visual:child
               [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/live> ;
+                visual:depicts <http://purl.org/ontology/mo/remix> ;
                 visual:height "19"^^xsd:int ;
-                visual:width "112"^^xsd:int ;
-                visual:x "536"^^xsd:int ;
-                visual:y "175"^^xsd:int
+                visual:width "126"^^xsd:int ;
+                visual:x "684"^^xsd:int ;
+                visual:y "309"^^xsd:int
               ] ;
       visual:child
               [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/soundtrack> ;
+                visual:depicts <http://purl.org/ontology/mo/audiobook> ;
                 visual:height "19"^^xsd:int ;
-                visual:width "160"^^xsd:int ;
-                visual:x "792"^^xsd:int ;
-                visual:y "225"^^xsd:int
+                visual:width "156"^^xsd:int ;
+                visual:x "798"^^xsd:int ;
+                visual:y "130"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/ep> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "104"^^xsd:int ;
+                visual:x "541"^^xsd:int ;
+                visual:y "271"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/ReleaseType> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "169"^^xsd:int ;
+                visual:x "665"^^xsd:int ;
+                visual:y "69"^^xsd:int
               ] ;
       visual:child
               [ rdf:type visual:Box ;

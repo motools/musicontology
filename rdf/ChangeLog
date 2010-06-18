@@ -4,6 +4,8 @@ Version 2.1.1 (June 2010)
  * MODIFIED: removed rdfs:subProperty of event:factor from mo:record
  * MODIFIED: mo:release_event to mo:release with rdfs:domain mo:ReleaseEvent and rdfs:domain mo:Release and rdf:subPropertyOf event:product
  * MODIFIED: mo:record_count as owl:DatatypeProperty
+ * MODIFIED: mo:AudioFile rdfs:subClassOf foaf:Document
+ * MODIFIED: mo:member_of rdfs:domain foaf:Agent
 
 =========================
 Version 2.1 (May 2010)
