@@ -1,3 +1,24 @@
+============================
+Version 2.1.2 (October 2010)
+============================
+
+ * MODIFIED: mo:bpm - added mo:Signal to its domain
+ * MODIFIED: mo:key - removed its sub-property-of relation (event:factor)
+ * MODIFIED: mo:genre - removed its sub-property-of relation (event:factor), added mo:MusicalItem to its domain and it is now a sub property of ao:genre
+ * MODIFIED: mo:instrument - removed its sub-property-of relation (event:factor) and added mo:MusicArtist to its domain
+ * MODIFIED: mo:label - removed its sub-property-of relation (event:agent) and added mo:MusicArtist to its domain
+ * MODIFIED: mo:musicbrainz_guid - added mo:Label to its domain
+ * FIXED: mo:DAT - small typo
+ * ADDED: mo:derived_from - a related signal from which the described signal is derived
+ * MODIFIED: mo:djmix_of - now a sub property of mo:derived_from
+ * MODIFIED: mo:mashup_of - now a sub property of mo:derived_from
+ * MODIFIED: mo:medley_of - now a sub property of mo:derived_from
+ * MODIFIED: mo:remaster_of - now a sub property of mo:derived_from
+ * MODIFIED: mo:remix_of - now a sub property of mo:derived_from
+ * MODIFIED: mo:sampled_version_of - now a sub property of mo:derived_from
+ * MODIFIED: mo:contains_samples_from - now a sub property of mo:derived_from
+ * ADDED: mo:media_type - the mediatype (file format or MIME type, or physical medium) of a musical manifestation, e.g. a MP3, CD or vinyl
+
 =========================
 Version 2.1.1 (June 2010)
 =========================

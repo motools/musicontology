@@ -1,5 +1,6 @@
-# Saved by TopBraid on Fri Jun 18 17:20:21 CEST 2010
+# Saved by TopBraid on Wed Oct 27 19:58:56 CEST 2010
 # baseURI: http://purl.org/ontology/mo/
+# imports: http://purl.org/ontology/ao/core
 # imports: http://www.w3.org/2006/time
 # imports: http://purl.org/NET/c4dm/event.owl
 # imports: http://purl.org/NET/c4dm/keys.owl
@@ -8,6 +9,7 @@
 # imports: http://purl.org/dc/terms/
 # imports: http://purl.org/vocab/frbr/core
 
+@prefix ao:      <http://purl.org/ontology/ao/core#> .
 @prefix bio:     <http://purl.org/vocab/bio/0.1/> .
 @prefix cc:      <http://web.resource.org/cc/> .
 @prefix dc:      <http://purl.org/dc/elements/1.1/> .
@@ -35,7 +37,7 @@ mo:   rdf:type owl:Ontology ;
 		of the Music Ontology.
 	""" ;
       dc:title "The Music Ontology" ;
-      owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , <http://www.w3.org/2006/time> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> ;
+      owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , <http://purl.org/ontology/ao/core> , <http://www.w3.org/2006/time> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> ;
       owl:versionInfo "Revision: 2.1.1"^^xsd:string ;
       foaf:maker <http://www.talkdigger.com/foaf/fgiasson> , <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> .
 
@@ -141,7 +143,7 @@ mo:CorporateBody
 
 mo:DAT
       rdf:type owl:Class ;
-      rdfs:comment "Data Audio Tape used as medium to record a musical manifestation." ;
+      rdfs:comment "Digital Audio Tape used as medium to record a musical manifestation."^^xsd:string ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "DAT" ;
       rdfs:subClassOf mo:Medium ;
@@ -842,7 +844,7 @@ mo:bpm
 	""" ;
       rdfs:domain
               [ rdf:type owl:Class ;
-                owl:unionOf (mo:MusicalWork mo:Performance)
+                owl:unionOf (mo:MusicalWork mo:Performance mo:Signal)
               ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "bpm" ;
@@ -984,12 +986,22 @@ mo:contains_sample_from
       rdfs:comment """
 		Relates a signal to another signal, which has been sampled.
         """ ;
-      rdfs:domain mo:Signal ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "contains_sample_from" ;
-      rdfs:range mo:Signal ;
+      rdfs:subPropertyOf mo:derived_from ;
       mo:level "1" ;
       vs:term_status "unstable" .
+
+mo:derived_from
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "A related signal from which the described signal is derived."@en ;
+      rdfs:domain mo:Signal ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "derived from"@en ;
+      rdfs:range mo:Signal ;
+      rdfs:subPropertyOf dcterms:source ;
+      mo:level "1" ;
+      vs:term_status "testing"@en .
 
 mo:discography
       rdf:type owl:ObjectProperty ;
@@ -1021,10 +1033,9 @@ mo:djmix_of
       rdfs:comment """Indicates that all (or most of) the tracks of a musical work or the expression of a musical work were mixed together from all (or most of) the tracks from another musical work or the expression of a musical work to form a so called DJ-Mix. 
     
 The tracks might have been altered by pitching (so that the tempo of one track matches the tempo of the following track) and fading (so that one track blends in smoothly with the other). If the tracks have been more substantially altered, the \"mo:remix\" relationship type is more appropriate. """ ;
-      rdfs:domain mo:Signal ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "djmix_of" ;
-      rdfs:range mo:Signal ;
+      rdfs:subPropertyOf mo:derived_from ;
       mo:level "1" ;
       vs:term_status "unstable" .
 
@@ -1230,12 +1241,12 @@ mo:genre
 	""" ;
       rdfs:domain
               [ rdf:type owl:Class ;
-                owl:unionOf (foaf:Agent mo:Performance mo:Arrangement mo:Composition mo:Recording mo:RecordingSession mo:MusicalWork mo:MusicalExpression mo:MusicalManifestation)
+                owl:unionOf (foaf:Agent mo:Performance mo:Arrangement mo:Composition mo:Recording mo:RecordingSession mo:MusicalWork mo:MusicalExpression mo:MusicalManifestation mo:MusicalItem)
               ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "genre" ;
       rdfs:range mo:Genre ;
-      rdfs:subPropertyOf event:factor ;
+      rdfs:subPropertyOf ao:genre ;
       mo:level "2" ;
       vs:term_status "stable" .
 
@@ -1331,10 +1342,12 @@ mo:imdb
 mo:instrument
       rdf:type owl:ObjectProperty ;
       rdfs:comment "Relates a performance to a musical instrument involved" ;
-      rdfs:domain mo:Performance ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (mo:Performance mo:MusicArtist)
+              ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:range mo:Instrument ;
-      rdfs:subPropertyOf event:factor ;
       mo:level "2" ;
       vs:term_status "stable" .
 
@@ -1425,18 +1438,19 @@ mo:key
       rdfs:isDefinedBy mo: ;
       rdfs:label "key" ;
       rdfs:range keys:Key ;
-      rdfs:subPropertyOf event:factor ;
       mo:level "2" ;
       vs:term_status "stable" .
 
 mo:label
       rdf:type owl:ObjectProperty ;
       rdfs:comment "Associates a release event with the label releasing the record" ;
-      rdfs:domain mo:ReleaseEvent ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (mo:ReleaseEvent mo:MusicArtist)
+              ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "label" ;
       rdfs:range mo:Label ;
-      rdfs:subPropertyOf event:agent ;
       mo:level "1" ;
       vs:term_status "testing" .
 
@@ -1533,22 +1547,31 @@ mo:mashup_of
       rdfs:comment """Indicates that musical works or the expressions of a musical work were mashed up on this album or track. 
     
 This means that two musical works or the expressions of a musical work by different artists are mixed together, over each other, or otherwise combined into a single musical work (usually by a third artist, the remixer).""" ;
-      rdfs:domain mo:Signal ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "mashup_of" ;
-      rdfs:range mo:Signal ;
+      rdfs:subPropertyOf mo:derived_from ;
       mo:level "1" ;
       vs:term_status "unstable" .
+
+mo:media_type
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "The mediatype (file format or MIME type, or physical medium) of a musical manifestation, e.g. a MP3, CD or vinyl."@en ;
+      rdfs:domain mo:MusicalManifestation ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "has media type"@en ;
+      rdfs:range dcterms:MediaType ;
+      rdfs:subPropertyOf dcterms:format ;
+      mo:level "1" ;
+      vs:term_status "testing"@en .
 
 mo:medley_of
       rdf:type owl:ObjectProperty ;
       rdfs:comment """Indicates that a musical expression is a medley of several other musical expressions. 
     
 This means that the orignial musical expression were rearranged to create a new musical expression in the form of a medley. """ ;
-      rdfs:domain mo:Signal ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "medley_of" ;
-      rdfs:range mo:Signal ;
+      rdfs:subPropertyOf mo:derived_from ;
       mo:level "1" ;
       vs:term_status "unstable" .
 
@@ -1644,7 +1667,7 @@ mo:musicbrainz_guid
       rdfs:comment "Links an object to the corresponding Musicbrainz identifier" ;
       rdfs:domain
               [ rdf:type owl:Class ;
-                owl:unionOf (mo:MusicArtist mo:Track mo:Record mo:SignalGroup mo:Signal mo:ReleaseEvent)
+                owl:unionOf (mo:MusicArtist mo:Track mo:Record mo:SignalGroup mo:Signal mo:ReleaseEvent mo:Label)
               ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "Musicbrainz GUID" ;
@@ -2230,10 +2253,9 @@ mo:remaster_of
       rdfs:comment """This relates two musical work or the expression of a musical work, where one is a remaster of the other. 
     
 A remaster is a new version made for release from source recordings that were earlier released separately. This is usually done to improve the audio quality or adjust for more modern playback equipment. The process generally doesn't involve changing the music in any artistically important way. It may, however, result in tracks that are a few seconds longer or shorter.""" ;
-      rdfs:domain mo:Signal ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "remaster_of" ;
-      rdfs:range mo:Signal ;
+      rdfs:subPropertyOf mo:derived_from ;
       mo:level "1" ;
       vs:term_status "unstable" .
 
@@ -2250,10 +2272,9 @@ mo:remix
 mo:remix_of
       rdf:type owl:ObjectProperty ;
       rdfs:comment "Used to relate the remix of a musical work in a substantially altered version produced by mixing together individual tracks or segments of an original musical source work." ;
-      rdfs:domain mo:Signal ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "remix_of" ;
-      rdfs:range mo:Signal ;
+      rdfs:subPropertyOf mo:derived_from ;
       mo:level "1" ;
       vs:term_status "unstable" .
 
@@ -2357,6 +2378,7 @@ mo:sampled_version_of
       rdfs:isDefinedBy mo: ;
       rdfs:label "sampled version of" ;
       rdfs:range mo:AnalogSignal ;
+      rdfs:subPropertyOf mo:derived_from ;
       mo:level "2" ;
       owl:inverseOf mo:sampled_version ;
       vs:term_status "stable" .

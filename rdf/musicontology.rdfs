@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
+   xmlns:ao="http://purl.org/ontology/ao/core#"
    xmlns:bio="http://purl.org/vocab/bio/0.1/"
    xmlns:cc="http://web.resource.org/cc/"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -16,7 +17,8 @@
    xmlns:time="http://www.w3.org/2006/time#"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:wot="http://xmlns.com/wot/0.1/"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+   xml:base="http://purl.org/ontology/mo/">
   <owl:Ontology rdf:about="http://purl.org/ontology/mo/">
     <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">$Date: 2010/06/18 17:08:19 $</dc:date>
     <dc:description>
@@ -29,6 +31,7 @@
     <owl:imports rdf:resource="http://purl.org/NET/c4dm/event.owl"/>
     <owl:imports rdf:resource="http://purl.org/NET/c4dm/keys.owl"/>
     <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <owl:imports rdf:resource="http://purl.org/ontology/ao/core"/>
     <owl:imports rdf:resource="http://purl.org/vocab/bio/0.1/"/>
     <owl:imports rdf:resource="http://purl.org/vocab/frbr/core"/>
     <owl:imports rdf:resource="http://www.w3.org/2006/time"/>
@@ -135,7 +138,7 @@
   </owl:Class>
   <owl:Class rdf:about="http://purl.org/ontology/mo/DAT">
     <mo:level>1</mo:level>
-    <rdfs:comment>Data Audio Tape used as medium to record a musical manifestation.</rdfs:comment>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Digital Audio Tape used as medium to record a musical manifestation.</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>DAT</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://purl.org/ontology/mo/Medium"/>
@@ -809,7 +812,12 @@ work #1 J. S. Bach's The art of the fugue
             <rdf:rest>
               <rdf:Description>
                 <rdf:first rdf:resource="http://purl.org/ontology/mo/Performance"/>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/ontology/mo/Signal"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
               </rdf:Description>
             </rdf:rest>
           </rdf:Description>
@@ -947,11 +955,20 @@ work #1 J. S. Bach's The art of the fugue
     <rdfs:comment>
 		Relates a signal to another signal, which has been sampled.
         </rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>contains_sample_from</rdfs:label>
-    <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/derived_from"/>
     <vs:term_status>unstable</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/derived_from">
+    <mo:level>1</mo:level>
+    <rdfs:comment xml:lang="en">A related signal from which the described signal is derived.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+    <rdfs:label xml:lang="en">derived from</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/source"/>
+    <vs:term_status xml:lang="en">testing</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/discography">
     <mo:level>1</mo:level>
@@ -1007,10 +1024,9 @@ work #1 J. S. Bach's The art of the fugue
     <rdfs:comment>Indicates that all (or most of) the tracks of a musical work or the expression of a musical work were mixed together from all (or most of) the tracks from another musical work or the expression of a musical work to form a so called DJ-Mix. 
     
 The tracks might have been altered by pitching (so that the tempo of one track matches the tempo of the following track) and fading (so that one track blends in smoothly with the other). If the tracks have been more substantially altered, the "mo:remix" relationship type is more appropriate. </rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>djmix_of</rdfs:label>
-    <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/derived_from"/>
     <vs:term_status>unstable</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/djmixed">
@@ -1291,7 +1307,12 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
                                         <rdf:rest>
                                           <rdf:Description>
                                             <rdf:first rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
-                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            <rdf:rest>
+                                              <rdf:Description>
+                                                <rdf:first rdf:resource="http://purl.org/ontology/mo/MusicalItem"/>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                              </rdf:Description>
+                                            </rdf:rest>
                                           </rdf:Description>
                                         </rdf:rest>
                                       </rdf:Description>
@@ -1315,7 +1336,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>genre</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Genre"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ao/core#genre"/>
     <vs:term_status>stable</vs:term_status>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://purl.org/ontology/mo/grid">
@@ -1479,10 +1500,23 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/instrument">
     <mo:level>2</mo:level>
     <rdfs:comment>Relates a performance to a musical instrument involved</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Performance"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="http://purl.org/ontology/mo/Performance"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Instrument"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
     <vs:term_status>stable</vs:term_status>
   </owl:ObjectProperty>
   <mo:ReleaseType rdf:about="http://purl.org/ontology/mo/interview">
@@ -1593,17 +1627,29 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>key</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/NET/c4dm/keys.owl#Key"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
     <vs:term_status>stable</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/label">
     <mo:level>1</mo:level>
     <rdfs:comment>Associates a release event with the label releasing the record</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/ReleaseEvent"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="http://purl.org/ontology/mo/ReleaseEvent"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="http://purl.org/ontology/mo/MusicArtist"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>label</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/Label"/>
-    <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
     <vs:term_status>testing</vs:term_status>
   </owl:ObjectProperty>
   <owl:DatatypeProperty rdf:about="http://purl.org/ontology/mo/lc">
@@ -1725,21 +1771,29 @@ This is usually used to link to a Creative Commons licence.</rdfs:comment>
     <rdfs:comment>Indicates that musical works or the expressions of a musical work were mashed up on this album or track. 
     
 This means that two musical works or the expressions of a musical work by different artists are mixed together, over each other, or otherwise combined into a single musical work (usually by a third artist, the remixer).</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>mashup_of</rdfs:label>
-    <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/derived_from"/>
     <vs:term_status>unstable</vs:term_status>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/media_type">
+    <mo:level>1</mo:level>
+    <rdfs:comment xml:lang="en">The mediatype (file format or MIME type, or physical medium) of a musical manifestation, e.g. a MP3, CD or vinyl.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/MusicalManifestation"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
+    <rdfs:label xml:lang="en">has media type</rdfs:label>
+    <rdfs:range rdf:resource="http://purl.org/dc/terms/MediaType"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/format"/>
+    <vs:term_status xml:lang="en">testing</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/medley_of">
     <mo:level>1</mo:level>
     <rdfs:comment>Indicates that a musical expression is a medley of several other musical expressions. 
     
 This means that the orignial musical expression were rearranged to create a new musical expression in the form of a medley. </rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>medley_of</rdfs:label>
-    <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/derived_from"/>
     <vs:term_status>unstable</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/member">
@@ -1875,7 +1929,12 @@ This means that the orignial musical expression were rearranged to create a new 
                             <rdf:rest>
                               <rdf:Description>
                                 <rdf:first rdf:resource="http://purl.org/ontology/mo/ReleaseEvent"/>
-                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                <rdf:rest>
+                                  <rdf:Description>
+                                    <rdf:first rdf:resource="http://purl.org/ontology/mo/Label"/>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:Description>
+                                </rdf:rest>
                               </rdf:Description>
                             </rdf:rest>
                           </rdf:Description>
@@ -2491,10 +2550,9 @@ This means that the orignial musical expression were rearranged to create a new 
     <rdfs:comment>This relates two musical work or the expression of a musical work, where one is a remaster of the other. 
     
 A remaster is a new version made for release from source recordings that were earlier released separately. This is usually done to improve the audio quality or adjust for more modern playback equipment. The process generally doesn't involve changing the music in any artistically important way. It may, however, result in tracks that are a few seconds longer or shorter.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>remaster_of</rdfs:label>
-    <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/derived_from"/>
     <vs:term_status>unstable</vs:term_status>
   </owl:ObjectProperty>
   <mo:ReleaseType rdf:about="http://purl.org/ontology/mo/remix">
@@ -2509,10 +2567,9 @@ A remaster is a new version made for release from source recordings that were ea
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/remix_of">
     <mo:level>1</mo:level>
     <rdfs:comment>Used to relate the remix of a musical work in a substantially altered version produced by mixing together individual tracks or segments of an original musical source work.</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/ontology/mo/Signal"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>remix_of</rdfs:label>
-    <rdfs:range rdf:resource="http://purl.org/ontology/mo/Signal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/derived_from"/>
     <vs:term_status>unstable</vs:term_status>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/mo/remixed">
@@ -2623,6 +2680,7 @@ The review does not have to be open content, as long as it is accessible to the 
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/mo/"/>
     <rdfs:label>sampled version of</rdfs:label>
     <rdfs:range rdf:resource="http://purl.org/ontology/mo/AnalogSignal"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/mo/derived_from"/>
     <owl:inverseOf rdf:resource="http://purl.org/ontology/mo/sampled_version"/>
     <vs:term_status>stable</vs:term_status>
   </owl:FunctionalProperty>
