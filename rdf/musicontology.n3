@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Oct 27 19:58:56 CEST 2010
+# Saved by TopBraid on Mon Nov 01 12:23:42 CET 2010
 # baseURI: http://purl.org/ontology/mo/
 # imports: http://purl.org/ontology/ao/core
 # imports: http://www.w3.org/2006/time
@@ -82,7 +82,7 @@ mo:AudioFile
       rdfs:comment "An audio file, which may be available on a local file system or through http, ftp, etc." ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "audio file" ;
-      rdfs:subClassOf foaf:Document , mo:Medium ;
+      rdfs:subClassOf mo:Medium , foaf:Document ;
       mo:level "1" ;
       vs:term_status "unstable" .
 
@@ -356,7 +356,7 @@ mo:MusicGroup
       rdfs:comment "Group of musicians, or musical ensemble, usually popular or folk, playing parts of or improvising off of a musical arrangement. " ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "music group" ;
-      rdfs:subClassOf mo:MusicArtist , foaf:Group ;
+      rdfs:subClassOf foaf:Group , mo:MusicArtist ;
       mo:level "1" ;
       vs:term_status "stable" .
 
@@ -649,7 +649,7 @@ mo:SoloMusicArtist
       rdfs:comment "Single person whose musical creative work shows sensitivity and imagination." ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "solo music artist" ;
-      rdfs:subClassOf mo:MusicArtist , foaf:Person ;
+      rdfs:subClassOf foaf:Person , mo:MusicArtist ;
       mo:level "1" ;
       vs:term_status "stable" .
 
@@ -660,7 +660,7 @@ mo:Sound
 	""" ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "sound" ;
-      rdfs:subClassOf mo:MusicalExpression , event:Event ;
+      rdfs:subClassOf event:Event , mo:MusicalExpression ;
       mo:level "2" ;
       vs:term_status "stable" .
 
@@ -819,7 +819,7 @@ mo:biography
       vs:term_status "stable" .
 
 mo:bitsPerSample
-      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
       rdfs:comment """
 		Associates a digital signal to the number a bits used to encode one sample. Range is xsd:int.
 	""" ;
@@ -864,7 +864,7 @@ mo:catalogue_number
       vs:term_status "testing" .
 
 mo:channels
-      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
       rdfs:comment """
 		Associates a signal to the number of channels it holds (mono --> 1, stereo --> 2). Range is xsd:int.
 	""" ;
@@ -875,7 +875,7 @@ mo:channels
       vs:term_status "stable" .
 
 mo:collaborated_with
-      rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
+      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
       rdfs:comment "Used to relate two collaborating people on a work." ;
       rdfs:domain foaf:Agent ;
       rdfs:isDefinedBy mo: ;
@@ -1351,6 +1351,16 @@ mo:instrument
       mo:level "2" ;
       vs:term_status "stable" .
 
+mo:interpreter
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Adds an involved music artist, who interpreted, remixed, or otherwise modified an existing signal, which resulted in the signal that is here the subject of this relation."@en ;
+      rdfs:domain mo:Signal ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "has interpeter"@en ;
+      rdfs:range mo:MusicArtist ;
+      mo:level "1" ;
+      vs:term_status "testing"@en .
+
 mo:interview
       rdf:type mo:ReleaseType ;
       rdfs:isDefinedBy mo: ;
@@ -1742,7 +1752,7 @@ mo:opus
       vs:term_status "stable" .
 
 mo:other_release_of
-      rdf:type owl:ObjectProperty , owl:SymmetricProperty ;
+      rdf:type owl:SymmetricProperty , owl:ObjectProperty ;
       rdfs:comment "Indicates that two musical manifestations are essentially the same." ;
       rdfs:domain mo:MusicalManifestation ;
       rdfs:isDefinedBy mo: ;
@@ -2296,10 +2306,9 @@ mo:remixer
       rdfs:comment """Used to relate a musical work or the expression of a musical work to an artist who remixed it. 
     
 This involves taking just one other musical work and using audio editing to make it sound like a significantly different, but usually still recognisable, song. It can be used to link an artist to a single song that they remixed, or, if they remixed an entire musical work.""" ;
-      rdfs:domain mo:Signal ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "remixer" ;
-      rdfs:range mo:MusicArtist ;
+      rdfs:subPropertyOf mo:interpreter ;
       mo:level "1" ;
       owl:inverseOf mo:remixed ;
       vs:term_status "unstable" .
@@ -2327,7 +2336,7 @@ mo:sampleRate
       vs:term_status "deprecated" .
 
 mo:sample_rate
-      rdf:type owl:DatatypeProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
       rdfs:comment """
 		Associates a digital signal to its sample rate. It might be easier to express it this way instead of
 		defining a timeline map:-) Range is xsd:float.
@@ -2385,11 +2394,10 @@ mo:sampled_version_of
 
 mo:sampler
       rdf:type owl:ObjectProperty ;
-      rdfs:comment "Used to relate the manifestation of a musical work to an artist who sampled it." ;
-      rdfs:domain mo:Signal ;
+      rdfs:comment "Used to relate the signal of a musical work to an artist who sampled it."^^xsd:string ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "sampler" ;
-      rdfs:range mo:MusicArtist ;
+      rdfs:subPropertyOf mo:interpreter ;
       mo:level "1" ;
       owl:inverseOf mo:sampled ;
       vs:term_status "unstable" .
@@ -2516,7 +2524,7 @@ mo:text
       vs:term_status "testing" .
 
 mo:time
-      rdf:type owl:ObjectProperty , owl:FunctionalProperty ;
+      rdf:type owl:FunctionalProperty , owl:ObjectProperty ;
       rdfs:comment """
 		Associates a Signal to a time object - its actual domain
 	""" ;

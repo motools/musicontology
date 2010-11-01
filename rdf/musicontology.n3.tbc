@@ -1,4 +1,4 @@
-# Saved by TopBraid on Wed Oct 27 19:58:56 CEST 2010
+# Saved by TopBraid on Mon Nov 01 12:23:42 CET 2010
 # baseURI: null
 
 @prefix composite:  <http://www.topbraid.org/2007/05/composite.owl#> .
@@ -14,67 +14,11 @@
       rdfs:label "mo:ReleaseType Graph" ;
       visual:child
               [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/audiobook> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "156"^^xsd:int ;
-                visual:x "798"^^xsd:int ;
-                visual:y "130"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/compilation> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "165"^^xsd:int ;
-                visual:x "787"^^xsd:int ;
-                visual:y "268"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/live> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "112"^^xsd:int ;
-                visual:x "536"^^xsd:int ;
-                visual:y "175"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/album> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "129"^^xsd:int ;
-                visual:x "824"^^xsd:int ;
-                visual:y "177"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
                 visual:depicts <http://purl.org/ontology/mo/spokenword> ;
                 visual:height "19"^^xsd:int ;
                 visual:width "167"^^xsd:int ;
                 visual:x "538"^^xsd:int ;
                 visual:y "224"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/interview> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "149"^^xsd:int ;
-                visual:x "536"^^xsd:int ;
-                visual:y "130"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/ReleaseType> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "169"^^xsd:int ;
-                visual:x "665"^^xsd:int ;
-                visual:y "69"^^xsd:int
-              ] ;
-      visual:child
-              [ rdf:type visual:Box ;
-                visual:depicts <http://purl.org/ontology/mo/remix> ;
-                visual:height "19"^^xsd:int ;
-                visual:width "126"^^xsd:int ;
-                visual:x "684"^^xsd:int ;
-                visual:y "309"^^xsd:int
               ] ;
       visual:child
               [ rdf:type visual:Box ;
@@ -86,10 +30,66 @@
               ] ;
       visual:child
               [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/compilation> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "165"^^xsd:int ;
+                visual:x "787"^^xsd:int ;
+                visual:y "268"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/remix> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "126"^^xsd:int ;
+                visual:x "684"^^xsd:int ;
+                visual:y "309"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/audiobook> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "156"^^xsd:int ;
+                visual:x "798"^^xsd:int ;
+                visual:y "130"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
                 visual:depicts <http://purl.org/ontology/mo/soundtrack> ;
                 visual:height "19"^^xsd:int ;
                 visual:width "160"^^xsd:int ;
                 visual:x "792"^^xsd:int ;
                 visual:y "225"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/album> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "129"^^xsd:int ;
+                visual:x "824"^^xsd:int ;
+                visual:y "177"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/live> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "112"^^xsd:int ;
+                visual:x "536"^^xsd:int ;
+                visual:y "175"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/ReleaseType> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "169"^^xsd:int ;
+                visual:x "665"^^xsd:int ;
+                visual:y "69"^^xsd:int
+              ] ;
+      visual:child
+              [ rdf:type visual:Box ;
+                visual:depicts <http://purl.org/ontology/mo/interview> ;
+                visual:height "19"^^xsd:int ;
+                visual:width "149"^^xsd:int ;
+                visual:x "536"^^xsd:int ;
+                visual:y "130"^^xsd:int
               ] ;
       visual:depicts <http://purl.org/ontology/mo/ReleaseType> .

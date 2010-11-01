@@ -1,7 +1,12 @@
 ============================
+Version 2.1.3 (October 2010)
+============================
+ * Added: mo:interpreter - adds an involved music artist, who interpreted, remixed, or otherwise modified an existing signal, which resulted in the signal that is 
+          here the subject of this relation; it is also a super property of mo:remixer and mo:sampler
+
+============================
 Version 2.1.2 (October 2010)
 ============================
-
  * MODIFIED: mo:bpm - added mo:Signal to its domain
  * MODIFIED: mo:key - removed its sub-property-of relation (event:factor)
  * MODIFIED: mo:genre - removed its sub-property-of relation (event:factor), added mo:MusicalItem to its domain and it is now a sub property of ao:genre
