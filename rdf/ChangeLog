@@ -6,6 +6,7 @@ Version 2.1.3 (October 2010)
  * ADDED: mo:record_number - indicates the position of a record in a release (e.g. a 2xLP, etc.)
  * MODIFIED: mo:track_number - changed the range to xsd:nonNegativeInteger
  * ADDED: mo:record_side - associates the side on a vinyl record, where a track is located, e.g. A, B, C, etc.
+ * ADDED: mo:single - a single or record single is a type of release, typically a recording of two tracks
 
 ============================
 Version 2.1.2 (October 2010)
