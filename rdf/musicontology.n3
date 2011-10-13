@@ -30,6 +30,17 @@ mo:   rdf:type owl:Ontology ;
       owl:versionInfo "Revision: 2.1.5" ;
       foaf:maker <http://www.talkdigger.com/foaf/fgiasson> , <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> .
 
+mo:Activity
+      rdf:type owl:Class ;
+      rdfs:comment """
+        An activity period, defining when an artist was musically active.
+    """ ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "activity" ;
+      rdfs:subClassOf event:Event ;
+      mo:level "1" ;
+      vs:term_status "testing" .
+
 mo:AnalogSignal
       rdf:type owl:Class ;
       rdfs:comment """
@@ -710,6 +721,36 @@ mo:Vinyl
       mo:level "1" ;
       vs:term_status "unstable" .
 
+mo:activity
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates an artist to an activity period" ;
+      rdfs:domain mo:MusicArtist ;
+      rdfs:range mo:Activity ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "activity";
+      mo:level "1" ;
+      vs:term_status "testing" .
+
+mo:activity_end
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Relates an artist to a date at which its activity ended" ;
+      rdfs:domain mo:MusicArtist ;
+      rdfs:range xsd:date ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "activity end";
+      mo:level "1" ;
+      vs:term_status "testing" .
+
+mo:activity_start
+      rdf:type owl:DatatypeProperty ;
+      rdfs:comment "Relates an artist to a date at which its activity started" ;
+      rdfs:domain mo:MusicArtist ;
+      rdfs:range xsd:date ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "activity start";
+      mo:level "1" ;
+      vs:term_status "testing" .
+
 mo:album
       rdf:type mo:ReleaseType ;
       rdfs:isDefinedBy mo: ;
@@ -761,6 +802,16 @@ mo:arrangement_of
       mo:level "2" ;
       owl:inverseOf mo:arranged_in ;
       vs:term_status "unstable" .
+
+mo:artist
+      rdf:type owl:ObjectProperty ;
+      rdfs:comment "Relates a membership event with the corresponding artist" ;
+      rdfs:domain mo:Membership ;
+      rdfs:isDefinedBy mo: ;
+      rdfs:label "artist" ;
+      rdfs:range foaf:Agent ;
+      mo:level "1" ;
+      vs:term_status "testing" .
 
 mo:audiobook
       rdf:type mo:ReleaseType ;
@@ -1266,26 +1317,6 @@ mo:group
       rdfs:isDefinedBy mo: ;
       rdfs:label "group" ;
       rdfs:range foaf:Group ;
-      mo:level "1" ;
-      vs:term_status "testing" .
-
-mo:activity_start
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "Relates an artist to a date at which its activity started" ;
-      rdfs:domain mo:MusicArtist ;
-      rdfs:range xsd:date ;
-      rdfs:isDefinedBy mo: ;
-      rdfs:label "activity start";
-      mo:level "1" ;
-      vs:term_status "testing" .
-
-mo:activity_end
-      rdf:type owl:DatatypeProperty ;
-      rdfs:comment "Relates an artist to a date at which its activity ended" ;
-      rdfs:domain mo:MusicArtist ;
-      rdfs:range xsd:date ;
-      rdfs:isDefinedBy mo: ;
-      rdfs:label "activity end";
       mo:level "1" ;
       vs:term_status "testing" .
 
