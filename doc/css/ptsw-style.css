@@ -1,0 +1,107 @@
+div.rdf-proplist {
+	background-color: #ddf;
+	border: 1px solid black;
+	float: left;
+	width: 26%%;
+	margin: 0.3em 1%%; 
+	margin-left: 20px;
+}
+img { border: 0 } 
+/* .glance {
+	border: 1px dotted black;
+} */
+
+ .example {
+	border: 1px dotted black;
+        background-color: #D9E3E9;
+        padding: 5px;
+}
+
+code {
+/*	border: 1px dotted black;
+        background-color: #D9E3E9;
+        padding: 5px; */
+}
+
+ .editorial {
+	border: 2px solid green;
+	padding: 5px;
+}
+
+div.rdf-classlist {
+	background-color: #eef;
+	border: 1px solid black;
+	float: left;
+	margin: 0.3em 1%%;
+	width: 26%%;
+}
+
+div.rdf-proplist ul {
+	margin: 0.3em 0.3em 1em; 
+}
+
+div.rdf-proplist h3 {
+	background-color: #bbf;
+	font-size: 100%%;
+	margin: 0;
+	padding: 2px;
+}
+
+div.rdf-classlist h3 {
+	background-color: #ccf;
+	font-size: 100%%;
+	margin: 0;
+	padding: 2px;
+}
+
+specterm.h3 {
+/*	foreground-color: #000; */
+	background-color: #bbf;
+	font-size: 100%%;
+	margin: 0;
+	padding: 2px;
+}
+
+.rel-table {
+	border: 1px;
+}
+
+div.specterm {
+/*	background-color: #ccc;  */
+	padding: 10px;
+	border: 1px solid black;
+}
+
+.http\:\/\/www\.w3\.org\/1999\/02\/22-rdf-syntax-ns\# { color: black }
+.http\:\/\/www\.w3\.org\/2000\/01\/rdf-schema\# { color: blue }
+.http\:\/\/www\.w3\.org\/2002\/07\/owl\# { color: purple }
+.http\:\/\/xmlns\.com\/foaf\/0.1\/ {color: red }
+.http\:\/\/xmlns\.com\/wot\/0.1\/ {color: yellow }
+.http\:\/\/purl\.org\/dc\/elements\/1\.1\/ {color: grey }
+.http\:\/\/purl\.org\/rss\/1\.0\/modules\/syndication\/ { color: red }
+.http\:\/\/www\.w3\.org\/2003\/06\/sw-vocab-status\/ns\# { color: orange }
+
+
+.edit {
+  background-color:#fdf;
+  border: thin solid black;
+  color:black;
+}
+
+.stable {
+  background-color:#66FF66;
+  border: 1px solid black;
+  color:black;
+  padding:3px;
+  font-size:14px;
+}
+
+.unstable {
+  background-color:#FFFF66;
+  border: 1px solid black;
+  color:black;
+  padding:3px;
+  font-size:14px;  
+}
+
+

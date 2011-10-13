@@ -1,0 +1,144 @@
+/* Stylesheet adapted from http://xmlns.com/xmlns-style.css */
+
+/* from leigh's foaf2doc thing */
+
+                dt {
+                    font-weight: bold;
+                }
+
+                .class-table {
+                    margin: 1px;
+                    padding: 3px;
+                }
+
+                .tableheading     { background: #CCCCFF; font-weight:  bold; font-size: 120%;} /*$
+
+                .float-right {
+                  float:right;
+                }
+
+.code {
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+    background-color: #FFFFEE;
+    white-space: pre;
+    border-style: solid;
+    border-width: 1pt;
+    border-color: #999999;
+    color:#111111;
+    padding-left: 0.4%;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    width: 99.6%;
+}
+
+textarea {
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+    background-color: #FFFFEE;
+    white-space: pre;
+    border-style: dotted;
+    border-width: 1pt;
+    border-color: #999999;
+    color:#111111;
+    padding-left: 0.4%;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    width: 99.6%;
+}
+
+/* OK I'm going to create a derrivative work from this. I guess I leave 
+   in the W3C copyright and state the differences here. 
+   This started out as the CSS for a W3C Note, I'm changing it hopefully 
+   enough so it is clear we are not pretending that xmlns.com docs are 
+   W3Cish. The style is so nice though!
+   Dan Brickley <danbri@w3.org>, <danbri@rdfweb.org>
+*/
+
+/*
+   (This document was based on one which was...)
+
+   Copyright 1997-2003 W3C (MIT, ERCIM, Keio). All Rights Reserved.
+   The following software licensing rules apply:
+   http://www.w3.org/Consortium/Legal/copyright-software 
+ 
+   originally: base.css,v 1.24 2003/04/17 13:56:40 bbos Exp  */
+
+body {
+  padding: 2em 1em 2em 70px;
+  margin: 0;
+  font-family: sans-serif;
+  color: black;
+  background: white;
+  background-position: top left;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+:link { color: #00C; background: transparent }
+:visited { color: #609; background: transparent }
+a:active { color: #C00; background: transparent }
+
+a:link img, a:visited img { border-style: none } /* no border on img links */
+
+a img { color: white; }        /* trick to hide the border in Netscape 4 */
+@media all {                   /* hide the next rule from Netscape 4 */
+  a img { color: inherit; }    /* undo the color change above */
+}
+
+th, td { /* ns 4 */
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 { text-align: left }
+/* background should be transparent, but WebTV has a bug */
+h1, h2, h3, h4, h5 { color: #000000; background: white }
+h1 { font: 170% sans-serif }
+h2 { font: 140% sans-serif }
+h3 { font: 120% sans-serif }
+h4 { font: bold 100% sans-serif }
+h5 { font: italic 100% sans-serif }
+h6 { font: small-caps 100% sans-serif }
+
+.hide { display: none }
+
+div.head { margin-bottom: 1em }
+div.head h1 { margin-top: 2em; clear: both }
+div.head table { margin-left: 2em; margin-top: 2em }
+
+p.copyright { font-size: small }
+p.copyright small { font-size: small }
+
+@media screen {  /* hide from IE3 */
+a[href]:hover { background: #ffa }
+}
+
+pre { margin-left: 2em }
+/*
+p {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+*/
+dt, dd { margin-top: 0; margin-bottom: 0 } /* opera 3.50 */
+dt { font-weight: bold }
+
+pre, code { font-family: monospace } /* navigator 4 requires this */
+
+ul.toc {
+  list-style: disc;		/* Mac NS has problem with 'none' */
+  list-style: none;
+}
+
+@media aural {  
+  h1, h2, h3 { stress: 20; richness: 90 }
+  .hide { speak: none }
+  p.copyright { volume: x-soft; speech-rate: x-fast }
+  dt { pause-before: 20% }
+  pre { speak-punctuation: code } 
+}
+
+
+
+ .vocablogo {
+  background-image: url(http://xmlns.com/images/foafvocab-logo.jpg);
+}
