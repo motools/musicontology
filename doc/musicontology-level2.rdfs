@@ -18,8 +18,8 @@
 >
 <owl:Class rdf:about="&mo;AnalogSignal"
     mo:level="2"
-    rdfs:comment="		An analog signal.
-	"
+    rdfs:comment="        An analog signal.
+    "
     rdfs:label="analogue signal"
     ns1:term_status="stable">
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
@@ -31,9 +31,9 @@
     mo:level="2"
     rdfs:label="arrangement"
     ns1:term_status="stable">
-  <rdfs:comment>		An arrangement event.
-		Takes as agent the arranger, and produces a score (informational object, not the actually published score).
-	</rdfs:comment>
+  <rdfs:comment>        An arrangement event.
+        Takes as agent the arranger, and produces a score (informational object, not the actually published score).
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 </owl:Class>
@@ -68,10 +68,10 @@
     mo:level="2"
     rdfs:label="composition"
     ns1:term_status="stable">
-  <rdfs:comment>		A composition event.
-		Takes as agent the composer himself.
-		It produces a MusicalWork, or a MusicalExpression (when the initial "product" is a score, for example), or both...
-	</rdfs:comment>
+  <rdfs:comment>        A composition event.
+        Takes as agent the composer himself.
+        It produces a MusicalWork, or a MusicalExpression (when the initial "product" is a score, for example), or both...
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 </owl:Class>
@@ -91,8 +91,8 @@
 
 <owl:Class rdf:about="&mo;DigitalSignal"
     mo:level="2"
-    rdfs:comment="		A digital signal
-	"
+    rdfs:comment="        A digital signal
+    "
     rdfs:label="digital signal"
     ns1:term_status="stable">
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
@@ -104,10 +104,10 @@
     mo:level="2"
     rdfs:label="Festival"
     ns1:term_status="stable">
-  <rdfs:comment>		A festival - musical/artistic event lasting several days, like Glastonbury, Rock Am Ring...
-		We migth decompose this event (which is in fact just a classification of the space/time region related to 
-		a particular festival) using hasSubEvent in several performances at different space/time.
-	</rdfs:comment>
+  <rdfs:comment>        A festival - musical/artistic event lasting several days, like Glastonbury, Rock Am Ring...
+        We migth decompose this event (which is in fact just a classification of the space/time region related to 
+        a particular festival) using hasSubEvent in several performances at different space/time.
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 </owl:Class>
@@ -116,15 +116,15 @@
     mo:level="2"
     rdfs:label="Genre"
     ns1:term_status="stable">
-  <rdfs:comment>		An expressive style of music.
-		
-		Any taxonomy can be plug-in here. You can either define a genre by yourself, like this:
+  <rdfs:comment>        An expressive style of music.
+        
+        Any taxonomy can be plug-in here. You can either define a genre by yourself, like this:
 
-		:mygenre a mo:Genre; dc:title "electro rock".
+        :mygenre a mo:Genre; dc:title "electro rock".
 
-		Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web
-		clients to access easily really detailed structured information about the genre you are refering to.
-	</rdfs:comment>
+        Or you can refer to a DBPedia genre (such as http://dbpedia.org/resource/Baroque_music), allowing semantic web
+        clients to access easily really detailed structured information about the genre you are refering to.
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
 </owl:Class>
 
@@ -132,12 +132,12 @@
     mo:level="2"
     rdfs:label="Instrument"
     ns1:term_status="stable">
-  <rdfs:comment>		Any of various devices or contrivances that can be used to produce musical tones or sound.
-		
-		Any taxonomy can be used to subsume this concept. The default one is one extracted by Ivan Herman
-		from the Musicbrainz instrument taxonomy, conforming to SKOS. This concept holds a seeAlso link 
-		towards this taxonomy.
-	</rdfs:comment>
+  <rdfs:comment>        Any of various devices or contrivances that can be used to produce musical tones or sound.
+        
+        Any taxonomy can be used to subsume this concept. The default one is one extracted by Ivan Herman
+        from the Musicbrainz instrument taxonomy, conforming to SKOS. This concept holds a seeAlso link 
+        towards this taxonomy.
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:seeAlso rdf:resource="&mo;mit#"/>
 </owl:Class>
@@ -146,9 +146,9 @@
     mo:level="2"
     rdfs:label="instrumentation"
     ns1:term_status="stable">
-  <rdfs:comment>		Instrumentation deals with the techniques of writing music for a specific instrument, 
-		including the limitations of the instrument, playing techniques and idiomatic handling of the instrument.
-	</rdfs:comment>
+  <rdfs:comment>        Instrumentation deals with the techniques of writing music for a specific instrument, 
+        including the limitations of the instrument, playing techniques and idiomatic handling of the instrument.
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="&mo;Arrangement"/>
 </owl:Class>
@@ -178,8 +178,8 @@
 
 <owl:Class rdf:about="&mo;Lyrics"
     mo:level="2"
-    rdfs:comment="		Lyrics
-	"
+    rdfs:comment="        Lyrics
+    "
     rdfs:label="lyrics"
     ns1:term_status="stable">
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
@@ -195,7 +195,7 @@
 Often a composer attempts to interrelate the movements thematically, or sometimes in more subtle ways, in order that the individual
 movements exert a cumulative effect. In some forms, composers sometimes link the movements, or ask for them to be played without a
 pause between them.
-	</rdfs:comment>
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="&mo;MusicalWork"/>
 </owl:Class>
@@ -204,7 +204,7 @@ pause between them.
     mo:level="2"
     rdfs:label="musical work"
     ns1:term_status="stable">
-  <rdfs:comment>	Distinct intellectual or artistic musical creation.
+  <rdfs:comment>    Distinct intellectual or artistic musical creation.
     
 From the FRBR final report: A work is an abstract entity; there is no single material object one can point to as the work. We recognize the work through individual realizations or expressions of the work, but the work itself exists only in the commonality of
 content between and among the various expressions of the work. When we speak of Homer's Iliad as a work, our point of reference is not a particular recitation or text of the work, but the intellectual creation that lies behind all the various expressions of the work.     
@@ -214,7 +214,7 @@ For example:
 work #1 J. S. Bach's The art of the fugue
 
     
-	</rdfs:comment>
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="http://purl.org/vocab/frbr/core#Work"/>
 </owl:Class>
@@ -223,8 +223,8 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="orchestration"
     ns1:term_status="stable">
-  <rdfs:comment>        	Orchestration includes, in addition to instrumentation, the handling of groups of instruments and their balance and interaction.
-	</rdfs:comment>
+  <rdfs:comment>            Orchestration includes, in addition to instrumentation, the handling of groups of instruments and their balance and interaction.
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="&mo;Arrangement"/>
 </owl:Class>
@@ -233,11 +233,11 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="performance"
     ns1:term_status="stable">
-  <rdfs:comment>		A performance event. 
-		It might include as agents performers, engineers, conductors, or even listeners.
-		It might include as factors a score, a MusicalWork, musical instruments. 
-		It might produce a sound:-)
-	</rdfs:comment>
+  <rdfs:comment>        A performance event. 
+        It might include as agents performers, engineers, conductors, or even listeners.
+        It might include as factors a score, a MusicalWork, musical instruments. 
+        It might produce a sound:-)
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 </owl:Class>
@@ -286,11 +286,11 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="recording"
     ns1:term_status="stable">
-  <rdfs:comment>		A recording event.
-		Takes a sound as a factor to produce a signal (analog or digital).
-		The location of such events (if any) is the actual location of the corresponding
-		microphone or the "recording device".
-	</rdfs:comment>
+  <rdfs:comment>        A recording event.
+        Takes a sound as a factor to produce a signal (analog or digital).
+        The location of such events (if any) is the actual location of the corresponding
+        microphone or the "recording device".
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 </owl:Class>
@@ -308,9 +308,9 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="score"
     ns1:term_status="stable">
-  <rdfs:comment>		Here, we are dealing with the informational object (the MusicalExpression), not the actually "published" score.
-		This may be, for example, the product of an arrangement process.
-	</rdfs:comment>
+  <rdfs:comment>        Here, we are dealing with the informational object (the MusicalExpression), not the actually "published" score.
+        This may be, for example, the product of an arrangement process.
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
 </owl:Class>
@@ -319,9 +319,9 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="Show"
     ns1:term_status="stable">
-  <rdfs:comment>		A show - a musical event lasting several days, in a particular venue. Examples can be
-		"The Magic Flute" at the Opera Bastille, August 2005, or a musical in the west end...
-	</rdfs:comment>
+  <rdfs:comment>        A show - a musical event lasting several days, in a particular venue. Examples can be
+        "The Magic Flute" at the Opera Bastille, August 2005, or a musical in the west end...
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
 </owl:Class>
@@ -332,8 +332,8 @@ work #1 J. S. Bach's The art of the fugue
     ns1:term_status="stable">
   <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
   <rdfs:subClassOf rdf:resource="&mo;MusicalExpression"/>
-  <rdfs:comment>		A subclass of MusicalExpression, representing a sound. Realisation of a MusicalWork during a musical Performance.
-	</rdfs:comment>
+  <rdfs:comment>        A subclass of MusicalExpression, representing a sound. Realisation of a MusicalWork during a musical Performance.
+    </rdfs:comment>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
 </owl:Class>
 
@@ -363,8 +363,8 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="arranged in"
     ns1:term_status="unstable">
-  <rdfs:comment>		Associates a work to an arrangement event where it was arranged
-	</rdfs:comment>
+  <rdfs:comment>        Associates a work to an arrangement event where it was arranged
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;MusicalWork"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Arrangement"/>
@@ -389,9 +389,9 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="bpm"
     ns1:term_status="stable">
-  <rdfs:comment>		Indicates the BPM of a MusicalWork or a particular Performance 
-		Beats per minute: the pace of music measured by the number of beats occurring in 60 seconds.
-	</rdfs:comment>
+  <rdfs:comment>        Indicates the BPM of a MusicalWork or a particular Performance 
+        Beats per minute: the pace of music measured by the number of beats occurring in 60 seconds.
+    </rdfs:comment>
   <rdfs:domain>
     <owl:Class>
       <owl:unionOf>
@@ -400,7 +400,12 @@ work #1 J. S. Bach's The art of the fugue
           <rdf:rest>
             <rdf:Description>
               <rdf:first rdf:resource="&mo;Performance"/>
-              <rdf:rest rdf:resource="&rdf;nil"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;Signal"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
             </rdf:Description>
           </rdf:rest>
         </rdf:Description>
@@ -415,11 +420,11 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="composed in"
     ns1:term_status="unstable">
-  <rdfs:comment>		Associates a MusicalWork to the Composition event pertaining
-		to its creation. For example, I might use this property to associate
-		the Magic Flute to its composition event, occuring during 1782 and having as
-		a mo:composer Mozart.
-	</rdfs:comment>
+  <rdfs:comment>        Associates a MusicalWork to the Composition event pertaining
+        to its creation. For example, I might use this property to associate
+        the Magic Flute to its composition event, occuring during 1782 and having as
+        a mo:composer Mozart.
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;MusicalWork"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Composition"/>
@@ -431,10 +436,10 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="composer"
     ns1:term_status="stable">
-  <rdfs:comment>		Associates a composition event to the actual composer. For example,
-		this property could link the event corresponding to the composition of the
-		Magic Flute in 1782 to Mozart himself (who obviously has a FOAF profile:-) ).
-	</rdfs:comment>
+  <rdfs:comment>        Associates a composition event to the actual composer. For example,
+        this property could link the event corresponding to the composition of the
+        Magic Flute in 1782 to Mozart himself (who obviously has a FOAF profile:-) ).
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Composition"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
@@ -542,9 +547,9 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="genre"
     ns1:term_status="stable">
-  <rdfs:comment>		Associates an event (like a performance or a recording) to a particular musical genre.
-		Further version of this property may also include works and scores in the domain.
-	</rdfs:comment>
+  <rdfs:comment>        Associates an event (like a performance or a recording) to a particular musical genre.
+        Further version of this property may also include works and scores in the domain.
+    </rdfs:comment>
   <rdfs:domain>
     <owl:Class>
       <owl:unionOf>
@@ -565,7 +570,27 @@ work #1 J. S. Bach's The art of the fugue
                           <rdf:rest>
                             <rdf:Description>
                               <rdf:first rdf:resource="&mo;RecordingSession"/>
-                              <rdf:rest rdf:resource="&rdf;nil"/>
+                              <rdf:rest>
+                                <rdf:Description>
+                                  <rdf:first rdf:resource="&mo;MusicalWork"/>
+                                  <rdf:rest>
+                                    <rdf:Description>
+                                      <rdf:first rdf:resource="&mo;MusicalExpression"/>
+                                      <rdf:rest>
+                                        <rdf:Description>
+                                          <rdf:first rdf:resource="&mo;MusicalManifestation"/>
+                                          <rdf:rest>
+                                            <rdf:Description>
+                                              <rdf:first rdf:resource="&mo;MusicalItem"/>
+                                              <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                          </rdf:rest>
+                                        </rdf:Description>
+                                      </rdf:rest>
+                                    </rdf:Description>
+                                  </rdf:rest>
+                                </rdf:Description>
+                              </rdf:rest>
                             </rdf:Description>
                           </rdf:rest>
                         </rdf:Description>
@@ -582,7 +607,16 @@ work #1 J. S. Bach's The art of the fugue
   </rdfs:domain>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Genre"/>
-  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
+  <rdfs:subPropertyOf rdf:resource="http://purl.org/ontology/ao/core#genre"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;headliner"
+    mo:level="2"
+    rdfs:comment="Relates a performance to the headliner(s) involved"
+    rdfs:label="headliner"
+    ns1:term_status="testing">
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;performer"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="&mo;instrument"
@@ -599,9 +633,8 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="key"
     ns1:term_status="stable">
-  <rdfs:comment>		Indicated the key used by the musicians during a performance, or the key of a MusicalWork.
-		Any of 24 major or minor diatonic scales that provide the tonal framework for a piece of music.
-	</rdfs:comment>
+  <rdfs:comment>        Indicated the key used by the musicians during a performance, or the key of a MusicalWork.
+        Any of 24 major or minor diatonic scales that provide the tonal framework for a piece of music.</rdfs:comment>
   <rdfs:domain>
     <owl:Class>
       <owl:unionOf>
@@ -610,7 +643,12 @@ work #1 J. S. Bach's The art of the fugue
           <rdf:rest>
             <rdf:Description>
               <rdf:first rdf:resource="&mo;Performance"/>
-              <rdf:rest rdf:resource="&rdf;nil"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;Signal"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
             </rdf:Description>
           </rdf:rest>
         </rdf:Description>
@@ -619,7 +657,6 @@ work #1 J. S. Bach's The art of the fugue
   </rdfs:domain>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="http://purl.org/NET/c4dm/keys.owl#Key"/>
-  <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#factor"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="&mo;listened"
@@ -644,6 +681,16 @@ work #1 J. S. Bach's The art of the fugue
   <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
   <rdfs:subPropertyOf rdf:resource="http://purl.org/NET/c4dm/event.owl#agent"/>
   <owl:inverseOf rdf:resource="&mo;listened"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;lyrics"
+    mo:level="2"
+    rdfs:comment="Associates lyrics with a musical work"
+    rdfs:label="lyrics"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;MusicalWork"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Lyrics"/>
 </owl:ObjectProperty>
 
 <owl:DatatypeProperty rdf:about="&mo;meter"
@@ -693,8 +740,8 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="opus"
     ns1:term_status="stable">
-  <rdfs:comment>		Used to define a creative work, especially a musical composition numbered to designate the order of a composer's works.
-	</rdfs:comment>
+  <rdfs:comment>        Used to define a creative work, especially a musical composition numbered to designate the order of a composer's works.
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;MusicalWork"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&rdfs;Literal"/>
@@ -704,10 +751,10 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="performance of"
     ns1:term_status="unstable">
-  <rdfs:comment>		Associates a Performance to a musical work or an arrangement that is being used as a factor in it.
-		For example, I might use this property to attach the Magic Flute musical work to 
-		a particular Performance.
-	</rdfs:comment>
+  <rdfs:comment>        Associates a Performance to a musical work or an arrangement that is being used as a factor in it.
+        For example, I might use this property to attach the Magic Flute musical work to 
+        a particular Performance.
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Performance"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range>
@@ -746,11 +793,10 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="performed in"
     ns1:term_status="unstable">
-  <rdfs:comment>		Associates a Musical Work or an Score to Performances in which they were
-		a factor. For example, I might use this property in order to 
-		associate the Magic Flute to a particular performance at the Opera
-		Bastille last year.
-	</rdfs:comment>
+  <rdfs:comment>        Associates a Musical Work or an Score to Performances in which they were
+        a factor. For example, I might use this property in order to 
+        associate the Magic Flute to a particular performance at the Opera
+        Bastille last year.</rdfs:comment>
   <rdfs:domain>
     <owl:Class>
       <owl:unionOf>
@@ -787,9 +833,9 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="produced score"
     ns1:term_status="unstable">
-  <rdfs:comment>		Associates an arrangement event to a score product (score here does not refer to a published score, but more
-		an abstract arrangement of a particular work).
-	</rdfs:comment>
+  <rdfs:comment>        Associates an arrangement event to a score product (score here does not refer to a published score, but more
+        an abstract arrangement of a particular work).
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Arrangement"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Score"/>
@@ -838,7 +884,7 @@ work #1 J. S. Bach's The art of the fugue
   <rdfs:comment>                Associates a composition event to the produced MusicalWork. For example,
                 this property could link the event corresponding to the composition of the
                 Magic Flute in 1782 to the Magic Flute musical work itself. This musical work
-		can then be used in particular performances.
+                can then be used in particular performances.
         </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Composition"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
@@ -851,12 +897,12 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="recorded as"
     ns1:term_status="stable">
-  <rdfs:comment>		This is a shortcut property, allowing to bypass all the Sound/Recording steps. This property
-		allows to directly link a Performance to the recorded Signal. This is recommended for "normal"
-		users. However, advanced users wanting to express things such as the location of the microphone will
-		have to create this shortcut as well as the whole workflow, in order to let the "normal" users access
-		simply the, well, simple information:-) .
-	</rdfs:comment>
+  <rdfs:comment>        This is a shortcut property, allowing to bypass all the Sound/Recording steps. This property
+        allows to directly link a Performance to the recorded Signal. This is recommended for "normal"
+        users. However, advanced users wanting to express things such as the location of the microphone will
+        have to create this shortcut as well as the whole workflow, in order to let the "normal" users access
+        simply the, well, simple information:-) .
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Performance"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Signal"/>
@@ -867,11 +913,11 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="recorded in"
     ns1:term_status="unstable">
-  <rdfs:comment>        	Associates a physical Sound to a Recording event where it is being used 
-		in order to produce a signal. For example, I might use this property to 
-		associate the sound produced by a particular performance of the magic flute
-		to a given recording, done using my cell-phone.
-	</rdfs:comment>
+  <rdfs:comment>            Associates a physical Sound to a Recording event where it is being used 
+        in order to produce a signal. For example, I might use this property to 
+        associate the sound produced by a particular performance of the magic flute
+        to a given recording, done using my cell-phone.
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Sound"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Recording"/>
@@ -883,11 +929,11 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="recorded sound"
     ns1:term_status="stable">
-  <rdfs:comment>        	Associates a Recording event to a physical Sound being recorded.
+  <rdfs:comment>            Associates a Recording event to a physical Sound being recorded.
                 For example, I might use this property to
                 associate a given recording, done using my cell phone, to the 
-		sound produced by a particular performance of the magic flute.
-	</rdfs:comment>
+        sound produced by a particular performance of the magic flute.
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Recording"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Sound"/>
@@ -899,9 +945,9 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="records"
     ns1:term_status="unstable">
-  <rdfs:comment>		This is the inverse of the shortcut property recordedAs, allowing to relate directly a performance
-		to a signal.
-	</rdfs:comment>
+  <rdfs:comment>        This is the inverse of the shortcut property recordedAs, allowing to relate directly a performance
+        to a signal.
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;Signal"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Performance"/>
@@ -912,8 +958,8 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="sampled version"
     ns1:term_status="stable">
-  <rdfs:comment>		Associates an analog signal with a sampled version of it
-	</rdfs:comment>
+  <rdfs:comment>        Associates an analog signal with a sampled version of it
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;AnalogSignal"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;DigitalSignal"/>
@@ -925,11 +971,12 @@ work #1 J. S. Bach's The art of the fugue
     rdfs:label="sampled version of"
     ns1:term_status="stable">
   <rdf:type rdf:resource="&owl;ObjectProperty"/>
-  <rdfs:comment>		Associates a digital signal with the analog version of it
-	</rdfs:comment>
+  <rdfs:comment>        Associates a digital signal with the analog version of it
+    </rdfs:comment>
   <rdfs:domain rdf:resource="&mo;DigitalSignal"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;AnalogSignal"/>
+  <rdfs:subPropertyOf rdf:resource="&mo;derived_from"/>
   <owl:inverseOf rdf:resource="&mo;sampled_version"/>
 </owl:FunctionalProperty>
 
@@ -947,12 +994,12 @@ work #1 J. S. Bach's The art of the fugue
     mo:level="2"
     rdfs:label="tempo"
     ns1:term_status="stable">
-  <rdfs:comment>		Rate of speed or pace of music. Tempo markings are traditionally given in Italian; 
-		common markings include: grave (solemn; very, very slow); largo (broad; very slow); 
-		adagio (quite slow); andante (a walking pace); moderato (moderate); allegro (fast; cheerful); 
-		vivace (lively); presto (very fast); accelerando (getting faster); ritardando (getting slower); 
-		and a tempo (in time; returning to the original pace).
-	</rdfs:comment>
+  <rdfs:comment>        Rate of speed or pace of music. Tempo markings are traditionally given in Italian; 
+        common markings include: grave (solemn; very, very slow); largo (broad; very slow); 
+        adagio (quite slow); andante (a walking pace); moderato (moderate); allegro (fast; cheerful); 
+        vivace (lively); presto (very fast); accelerando (getting faster); ritardando (getting slower); 
+        and a tempo (in time; returning to the original pace).
+    </rdfs:comment>
   <rdfs:domain>
     <owl:Class>
       <owl:unionOf>
@@ -961,7 +1008,12 @@ work #1 J. S. Bach's The art of the fugue
           <rdf:rest>
             <rdf:Description>
               <rdf:first rdf:resource="&mo;Performance"/>
-              <rdf:rest rdf:resource="&rdf;nil"/>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first rdf:resource="&mo;Signal"/>
+                  <rdf:rest rdf:resource="&rdf;nil"/>
+                </rdf:Description>
+              </rdf:rest>
             </rdf:Description>
           </rdf:rest>
         </rdf:Description>
