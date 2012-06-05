@@ -33,7 +33,7 @@
 
 <h1>Music Ontology Specification</h1>
 
-<h2>Specification Document - 28 November 2010</h2>
+<h2>Specification Document - 25 July 2011</h2>
 
 <table width="100%" border="0">
   <tr>
@@ -70,22 +70,22 @@
         <dd>George Fazekas - <a href="http://www.elec.qmul.ac.uk/digitalmusic/" title="Centre for Digital Music, Queen Mary, University of London">Centre for Digital Music, Queen Mary, University of London</a></dd>
         <dd>Thomas G&auml;ngler - <a href="http://www.inf.tu-dresden.de/portal.php?node_id=1&amp;ln=en&amp;group=13">Faculty of Computer Science, University of Technology Dresden, Germany</a></dd>
         <dd><a href="http://simon-reinhardt.de/">Simon Reinhardt</a></dd>
-
+        <dd><a href="http://apassant.net/">Alexandre Passant</a> - <a href="http://seevl.net">Seevl</a></dd>
       </dl>
 
-    <p class="copyright"> Copyright &copy; 2006-2010 the authors above</p></td>
+    <p class="copyright"> Copyright &copy; 2006-2011 the authors above</p></td>
 
     <td>
 	<table style="border:2px dashed #FFCC00; font-size:small; padding:10px;" width="400" border="0" align="center">
 
                   <tr>
                         <td rowspan="2">
-                        <img src="http://wfnm.sourceforge.net/images/sourceforge_logo.jpg" width="150" alt="Sourceforge"/>
+                        <img src="https://assets.github.com/images/modules/about_page/github_logo.png" width="120" alt="Github"/>
                         </td>
-                        <td align="center"><b>Music Ontology Sourceforge project</b></td>
+                        <td align="center"><b>Music Ontology Github project</b></td>
 		</tr>
 		<tr><td align="center">
-			<a href="http://sourceforge.net/projects/motools/">Source code, Tools</a></td>
+			<a href="https://github.com/motools">Source code, Tools</a></td>
                 </tr>
                   <tr>
 
@@ -382,12 +382,14 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 
 
 <div class="glance" id="glance">
-<p>Classes: | <a href="#term_AnalogSignal">AnalogSignal</a> | <a href="#term_Arrangement">Arrangement</a> | <a href="#term_AudioFile">AudioFile</a> | <a href="#term_CD">CD</a> | <a href="#term_Composition">Composition</a> | <a href="#term_CorporateBody">CorporateBody</a> | <a href="#term_DAT">DAT</a> | <a href="#term_DCC">DCC</a> | <a href="#term_DVDA">DVDA</a> | <a href="#term_DigitalSignal">DigitalSignal</a> | <a href="#term_ED2K">ED2K</a> | <a href="#term_Festival">Festival</a> | <a href="#term_Genre">Genre</a> | <a href="#term_Instrument">Instrument</a> | <a href="#term_Instrumentation">Instrumentation</a> | <a href="#term_Label">Label</a> | <a href="#term_Libretto">Libretto</a> | <a href="#term_Lyrics">Lyrics</a> | <a href="#term_MD">MD</a> | <a href="#term_MagneticTape">MagneticTape</a> | <a href="#term_Medium">Medium</a> | <a href="#term_Membership">Membership</a> | <a href="#term_Movement">Movement</a> | <a href="#term_MusicArtist">MusicArtist</a> | <a href="#term_MusicGroup">MusicGroup</a> | <a href="#term_MusicalExpression">MusicalExpression</a> | <a href="#term_MusicalItem">MusicalItem</a> | <a href="#term_MusicalManifestation">MusicalManifestation</a> | <a href="#term_MusicalWork">MusicalWork</a> | <a href="#term_Orchestration">Orchestration</a> | <a href="#term_Performance">Performance</a> | <a href="#term_PublishedLibretto">PublishedLibretto</a> | <a href="#term_PublishedLyrics">PublishedLyrics</a> | <a href="#term_PublishedScore">PublishedScore</a> | <a href="#term_Record">Record</a> | <a href="#term_Recording">Recording</a> | <a href="#term_RecordingSession">RecordingSession</a> | <a href="#term_Release">Release</a> | <a href="#term_ReleaseEvent">ReleaseEvent</a> | <a href="#term_ReleaseStatus">ReleaseStatus</a> | <a href="#term_ReleaseType">ReleaseType</a> | <a href="#term_SACD">SACD</a> | <a href="#term_Score">Score</a> | <a href="#term_Show">Show</a> | <a href="#term_Signal">Signal</a> | <a href="#term_SignalGroup">SignalGroup</a> | <a href="#term_SoloMusicArtist">SoloMusicArtist</a> | <a href="#term_Sound">Sound</a> | <a href="#term_Stream">Stream</a> | <a href="#term_Torrent">Torrent</a> | <a href="#term_Track">Track</a> | <a href="#term_Transcription">Transcription</a> | <a href="#term_Vinyl">Vinyl</a> |  </p>
-<p>Properties: | <a href="#term_activity_end">activity_end</a> | 
+<p>Classes: | <a href="#term_Activity">Activity</a> | <a href="#term_AnalogSignal">AnalogSignal</a> | <a href="#term_Arrangement">Arrangement</a> | <a href="#term_AudioFile">AudioFile</a> | <a href="#term_CD">CD</a> | <a href="#term_Composition">Composition</a> | <a href="#term_CorporateBody">CorporateBody</a> | <a href="#term_DAT">DAT</a> | <a href="#term_DCC">DCC</a> | <a href="#term_DVDA">DVDA</a> | <a href="#term_DigitalSignal">DigitalSignal</a> | <a href="#term_ED2K">ED2K</a> | <a href="#term_Festival">Festival</a> | <a href="#term_Genre">Genre</a> | <a href="#term_Instrument">Instrument</a> | <a href="#term_Instrumentation">Instrumentation</a> | <a href="#term_Label">Label</a> | <a href="#term_Libretto">Libretto</a> | <a href="#term_Lyrics">Lyrics</a> | <a href="#term_MD">MD</a> | <a href="#term_MagneticTape">MagneticTape</a> | <a href="#term_Medium">Medium</a> | <a href="#term_Membership">Membership</a> | <a href="#term_Movement">Movement</a> | <a href="#term_MusicArtist">MusicArtist</a> | <a href="#term_MusicGroup">MusicGroup</a> | <a href="#term_MusicalExpression">MusicalExpression</a> | <a href="#term_MusicalItem">MusicalItem</a> | <a href="#term_MusicalManifestation">MusicalManifestation</a> | <a href="#term_MusicalWork">MusicalWork</a> | <a href="#term_Orchestration">Orchestration</a> | <a href="#term_Performance">Performance</a> | <a href="#term_PublishedLibretto">PublishedLibretto</a> | <a href="#term_PublishedLyrics">PublishedLyrics</a> | <a href="#term_PublishedScore">PublishedScore</a> | <a href="#term_Record">Record</a> | <a href="#term_Recording">Recording</a> | <a href="#term_RecordingSession">RecordingSession</a> | <a href="#term_Release">Release</a> | <a href="#term_ReleaseEvent">ReleaseEvent</a> | <a href="#term_ReleaseStatus">ReleaseStatus</a> | <a href="#term_ReleaseType">ReleaseType</a> | <a href="#term_SACD">SACD</a> | <a href="#term_Score">Score</a> | <a href="#term_Show">Show</a> | <a href="#term_Signal">Signal</a> | <a href="#term_SignalGroup">SignalGroup</a> | <a href="#term_SoloMusicArtist">SoloMusicArtist</a> | <a href="#term_Sound">Sound</a> | <a href="#term_Stream">Stream</a> | <a href="#term_Torrent">Torrent</a> | <a href="#term_Track">Track</a> | <a href="#term_Transcription">Transcription</a> | <a href="#term_Vinyl">Vinyl</a> |  </p>
+<p>Properties: | <a href="#term_activity">activity</a> | 
+<a href="#term_activity_end">activity_end</a> | 
 <a href="#term_activity_start">activity_start</a> | 
 <a href="#term_amazon_asin">amazon_asin</a> | 
 <a href="#term_arranged_in">arranged_in</a> | 
 <a href="#term_arrangement_of">arrangement_of</a> | 
+<a href="#term_artist">artist</a> | 
 <a href="#term_available_as">available_as</a> | 
 <a href="#term_biography">biography</a> | 
 <a href="#term_bitsPerSample">bitsPerSample</a> | 
@@ -1690,7 +1692,22 @@ namespace document in RDF/XML</a> for more detail.</p>
 <h3>Classes, Properties and Individuals (full detail)</h3>
 
 <br/>
-<div class="specterm" id="term_AnalogSignal"><h3>Class: mo:AnalogSignal   -   stable   -   level 2</h3>
+<div class="specterm" id="term_Activity"><h3>Class: mo:Activity   -   testing   -   level 1</h3>
+<em>Activity</em>
+ -         An activity period, defining when an artist was musically active.<br/>
+     
+<br/>
+<p style="float: right; font-size: small;">[<a href="#glance">back to top</a>]</p>
+<br/>
+<table style="th { float: top; }"><tr><th>in-range-of:</th><td><a href="#term_activity">activity</a></td>
+</tr>
+
+
+<tr><th>sub-class-of:</th><td><a href="http://purl.org/NET/c4dm/event.owl#Event">event:Event</a></td>
+</tr>
+</table>
+
+</div><div class="specterm" id="term_AnalogSignal"><h3>Class: mo:AnalogSignal   -   stable   -   level 2</h3>
 <em>AnalogSignal</em>
  -         An analog signal.<br/>
      
@@ -2029,6 +2046,7 @@ namespace document in RDF/XML</a> for more detail.</p>
 
 <tr><th>in-domain-of:</th><td><a href="#term_primary_instrument">primary_instrument</a></td>
 <td><a href="#term_group">group</a></td>
+<td><a href="#term_artist">artist</a></td>
 </tr>
 
 <tr><th>sub-class-of:</th><td><a href="http://purl.org/NET/c4dm/event.owl#Event">event:Event</a></td>
@@ -2092,6 +2110,7 @@ pause between them.<br/>
 <td><a href="#term_biography">biography</a></td>
 <td><a href="#term_activity_start">activity_start</a></td>
 <td><a href="#term_activity_end">activity_end</a></td>
+<td><a href="#term_activity">activity</a></td>
 </tr>
 
 <tr><th>sub-class-of:</th><td><a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a></td>
@@ -2714,7 +2733,21 @@ work #1 J. S. Bach's The art of the fugue<br/>
 </tr>
 </table>
 
-</div><div class="specterm" id="term_activity_end">
+</div><div class="specterm" id="term_activity">
+<h3>Property: mo:activity   -   testing   -   level 1</h3>
+<em>activity</em> - Relates an artist to an activity period 
+<br/><table style="th { float: top; }">
+<tr><th>Domain:</th>
+<td><a href="#term_MusicArtist">MusicArtist</a></td>
+
+</tr>
+<tr><th>Range:</th>
+<td><a href="#term_Activity">Activity</a></td>
+</tr>
+
+
+</table>
+<br/></div><div class="specterm" id="term_activity_end">
 <h3>Property: mo:activity_end   -   testing   -   level 1</h3>
 <em>activity_end</em> - Relates an artist to a date at which its activity ended 
 <br/><table style="th { float: top; }">
@@ -2793,6 +2826,20 @@ work #1 J. S. Bach's The art of the fugue<br/>
 </tr>
 <tr><th>Sub-property-of: </th><td><a href="http://purl.org/NET/c4dm/event.owl#factor">event:factor</a></td>
 </tr>
+</table>
+<br/></div><div class="specterm" id="term_artist">
+<h3>Property: mo:artist   -   testing   -   level 1</h3>
+<em>artist</em> - Relates a membership event with the corresponding artist 
+<br/><table style="th { float: top; }">
+<tr><th>Domain:</th>
+<td><a href="#term_Membership">Membership</a></td>
+
+</tr>
+<tr><th>Range:</th>
+<td><a href="http://xmlns.com/foaf/0.1/Agent">foaf:Agent</a></td>
+</tr>
+
+
 </table>
 <br/></div><div class="specterm" id="term_available_as">
 <h3>Property: mo:available_as   -   stable   -   level 1</h3>

@@ -1,4 +1,4 @@
-#!/usr/local/bin/pl -s
+#!/usr/bin/swipl -s
 
 :- use_module(onto_spec).
 :- use_module(library('semweb/rdf_db')).

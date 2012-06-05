@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE rdf:RDF [
     <!ENTITY dc 'http://purl.org/dc/elements/1.1/'>
+    <!ENTITY dcterms 'http://purl.org/dc/terms/'>
     <!ENTITY mo 'http://purl.org/ontology/mo/'>
     <!ENTITY ns1 'http://www.w3.org/2003/06/sw-vocab-status/ns#'>
     <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
@@ -11,6 +12,7 @@
 
 <rdf:RDF
     xmlns:dc="&dc;"
+    xmlns:dcterms="&dcterms;"
     xmlns:mo="&mo;"
     xmlns:ns1="&ns1;"
     xmlns:owl="&owl;"
@@ -18,6 +20,16 @@
     xmlns:rdfs="&rdfs;"
     xmlns:xsd="&xsd;"
 >
+<owl:Class rdf:about="&mo;Activity"
+    mo:level="1"
+    rdfs:label="activity"
+    ns1:term_status="testing">
+  <rdfs:comment>        An activity period, defining when an artist was musically active.
+    </rdfs:comment>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:subClassOf rdf:resource="http://purl.org/NET/c4dm/event.owl#Event"/>
+</owl:Class>
+
 <owl:Class rdf:about="&mo;AudioFile"
     mo:level="1"
     rdfs:label="audio file"
@@ -341,6 +353,16 @@ Defining manifestation as an entity also enables us to draw relationships betwee
   <rdfs:subClassOf rdf:resource="&mo;Medium"/>
 </owl:Class>
 
+<owl:ObjectProperty rdf:about="&mo;activity"
+    mo:level="1"
+    rdfs:comment="Relates an artist to an activity period"
+    rdfs:label="activity"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;MusicArtist"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="&mo;Activity"/>
+</owl:ObjectProperty>
+
 <owl:DatatypeProperty rdf:about="&mo;activity_end"
     mo:level="1"
     rdfs:comment="Relates an artist to a date at which its activity ended"
@@ -403,6 +425,16 @@ Defining manifestation as an entity also enables us to draw relationships betwee
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Document"/>
   <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="&mo;artist"
+    mo:level="1"
+    rdfs:comment="Relates a membership event with the corresponding artist"
+    rdfs:label="artist"
+    ns1:term_status="testing">
+  <rdfs:domain rdf:resource="&mo;Membership"/>
+  <rdfs:isDefinedBy rdf:resource="&mo;"/>
+  <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
 </owl:ObjectProperty>
 
 <mo:ReleaseType rdf:about="&mo;audiobook"
@@ -552,7 +584,7 @@ Defining manifestation as an entity also enables us to draw relationships betwee
   <rdfs:domain rdf:resource="&mo;Signal"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&mo;Signal"/>
-  <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/source"/>
+  <rdfs:subPropertyOf rdf:resource="&dcterms;source"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="&mo;discography"
@@ -1181,8 +1213,8 @@ This means that two musical works or the expressions of a musical work by differ
   <rdfs:comment>The mediatype (file format or MIME type, or physical medium) of a musical manifestation, e.g. a MP3, CD or vinyl.</rdfs:comment>
   <rdfs:domain rdf:resource="&mo;MusicalManifestation"/>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
-  <rdfs:range rdf:resource="http://purl.org/dc/terms/MediaType"/>
-  <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/format"/>
+  <rdfs:range rdf:resource="&dcterms;MediaType"/>
+  <rdfs:subPropertyOf rdf:resource="&dcterms;format"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="&mo;medley_of"
@@ -2057,7 +2089,7 @@ The review does not have to be open content, as long as it is accessible to the 
   <rdfs:comment>            Links an object to an universally unique identifier for it.
     </rdfs:comment>
   <rdfs:domain rdf:resource="&owl;Thing"/>
-  <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
+  <rdfs:subPropertyOf rdf:resource="&dcterms;identifier"/>
 </owl:DatatypeProperty>
 
 <owl:ObjectProperty rdf:about="&mo;want_item"
