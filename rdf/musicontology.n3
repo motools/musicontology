@@ -1168,7 +1168,7 @@ mo:encoding
       vs:term_status "unstable" .
 
 mo:duration
-    rdfs:type owl:DatatypeProperty ;
+    rdf:type owl:DatatypeProperty ;
     rdfs:comment "The duration of a track or a signal in ms";
     rdfs:domain [ rdf:type owl:Class ; owl:unionOf (mo:Track mo:Signal) ] ;
     rdfs:isDefinedBy mo: ;
