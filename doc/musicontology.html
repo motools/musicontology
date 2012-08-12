@@ -43,7 +43,7 @@
 
         <dt>Latest version:</dt>
 
-        <dd> <a href="http://purl.org/ontology/mo/">http://purl.org/ontology/mo/</a> (<a href="http://motools.sourceforge.net/doc/musicontology.rdfs">RDF/XML</a>, <a href="http://motools.sourceforge.net/doc/musicontology.n3">Turtle</a>)
+        <dd> <a href="http://purl.org/ontology/mo/">http://purl.org/ontology/mo/</a> (<a href="http://musicontology.com/musicontology.rdfs">RDF/XML</a>, <a href="http://musicontology.com/musicontology.n3">Turtle</a>)
 
             <!--<em class="edit">@@ <a href="http://groups.google.com/group/music-ontology-specification-group/browse_thread/thread/f464a68d6d394051">under reconsideration</a> (using "<b>http://xmlns.com/mo/</b>" instead)</em> -->
 
@@ -412,6 +412,7 @@ property and by individuals. All the terms are hyperlinked to their detailed des
 <a href="#term_djmixed">djmixed</a> | 
 <a href="#term_djmixed_by">djmixed_by</a> | 
 <a href="#term_download">download</a> | 
+<a href="#term_duration">duration</a> | 
 <a href="#term_ean">ean</a> | 
 <a href="#term_encodes">encodes</a> | 
 <a href="#term_encoding">encoding</a> | 
@@ -3209,6 +3210,21 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
 
 <tr><th>Sub-property-of: </th><td><a href="http://xmlns.com/foaf/0.1/isPrimaryTopicOf">foaf:isPrimaryTopicOf</a></td>
 </tr>
+</table>
+<br/></div><div class="specterm" id="term_duration">
+<h3>Property: mo:duration   -   testing   -   level 1</h3>
+<em>duration</em> - The duration of a track or a signal in ms 
+<br/><table style="th { float: top; }">
+<tr><th>Domain:</th>
+<td><a href="#term_Signal">Signal</a></td>
+<td><a href="#term_Track">Track</a></td>
+
+</tr>
+<tr><th>Range:</th>
+<td><a href="http://www.w3.org/2001/XMLSchema#float">xsd:float</a></td>
+</tr>
+
+
 </table>
 <br/></div><div class="specterm" id="term_ean">
 <h3>Property: mo:ean   -   testing   -   level 1</h3>

@@ -717,7 +717,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
   <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
 </owl:ObjectProperty>
 
-<rdf:Description rdf:about="&mo;duration"
+<owl:DatatypeProperty rdf:about="&mo;duration"
     mo:level="1"
     rdfs:comment="The duration of a track or a signal in ms"
     ns1:term_status="testing">
@@ -738,8 +738,7 @@ The artist usually selected the tracks, chose their sequence, and slightly chang
   </rdfs:domain>
   <rdfs:isDefinedBy rdf:resource="&mo;"/>
   <rdfs:range rdf:resource="&xsd;float"/>
-  <rdfs:type rdf:resource="&owl;DatatypeProperty"/>
-</rdf:Description>
+</owl:DatatypeProperty>
 
 <owl:DatatypeProperty rdf:about="&mo;ean"
     mo:level="1"
