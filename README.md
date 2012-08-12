@@ -6,6 +6,8 @@ About
 
 The [Music Ontology](http://purl.org/ontology/mo/) provides main concepts and properties fo describing music (i.e. artists, albums, tracks, but also performances, arrangements, etc.) on the Semantic Web.
 
+All pushes to master are now automatically deployed.
+
 PS
 --
 
