@@ -698,7 +698,7 @@ mo:Track
       rdf:type owl:Class ;
       rdfs:comment "A track on a particular record" ;
       rdfs:isDefinedBy mo: ;
-      rdfs:label "rack" ;
+      rdfs:label "track" ;
       rdfs:subClassOf mo:MusicalManifestation ;
       mo:level "1" ;
       vs:term_status "stable" .

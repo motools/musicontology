@@ -661,7 +661,7 @@ work #1 J. S. Bach's The art of the fugue
     <mo:level>1</mo:level>
     <rdfs:comment>A track on a particular record</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource=""/>
-    <rdfs:label>rack</rdfs:label>
+    <rdfs:label>track</rdfs:label>
     <rdfs:subClassOf rdf:resource="MusicalManifestation"/>
     <vs:term_status>stable</vs:term_status>
   </owl:Class>
