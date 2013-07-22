@@ -28,7 +28,19 @@ mo:   rdf:type owl:Ontology ;
       dc:title "The Music Ontology" ;
       owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , <http://purl.org/ontology/ao/core> , <http://www.w3.org/2006/time> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> ;
       owl:versionInfo "Revision: 2.1.5" ;
-      foaf:maker <http://www.talkdigger.com/foaf/fgiasson> , <http://foaf.me/zazi#me> , <http://moustaki.org/foaf.rdf#moustaki> .
+      foaf:maker 
+        <http://raimond.me.uk/foaf.rdf#moustaki>,
+        <http://foaf.me/zazi#me>,
+        <http://www.talkdigger.com/foaf/fgiasson>,
+        <http://kurtisrandom.com/foaf.rdf#kurtjx>,
+        [ foaf:name "George Fazekas" ],
+        [ foaf:name "Simon Reinhardt"; foaf:homepage <http://simon-reinhardt.de/> ],
+        [ foaf:name "Alexandre Passant"; foaf:homepage <http://apassant.net/> ].
+
+<http://raimond.me.uk/foaf.rdf#moustaki> foaf:name "Yves Raimond" ; foaf:homepage <http://raimond.me.uk/> .
+<http://foaf.me/zazi#me> foaf:name "Thomas Gängler"; foaf:homepage <http://smiy.wordpress.com/> .
+<http://www.talkdigger.com/foaf/fgiasson> foaf:name "Frédérick Giasson"; foaf:homepage <http://fgiasson.com/> .
+<http://kurtisrandom.com/foaf.rdf#kurtjx> foaf:name "Kurt Jacobson"; foaf:homepage <http://kurtisrandom.com/> .
 
 mo:Activity
       rdf:type owl:Class ;

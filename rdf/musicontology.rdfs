@@ -18,6 +18,14 @@
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:wot="http://xmlns.com/wot/0.1/"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xml:base="http://purl.org/ontology/mo/">
+  <rdf:Description rdf:about="http://foaf.me/zazi#me">
+    <foaf:homepage rdf:resource="http://smiy.wordpress.com/"/>
+    <foaf:name>Thomas Gängler</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://kurtisrandom.com/foaf.rdf#kurtjx">
+    <foaf:homepage rdf:resource="http://kurtisrandom.com/"/>
+    <foaf:name>Kurt Jacobson</foaf:name>
+  </rdf:Description>
   <owl:Ontology rdf:about="">
     <dc:date>$Date: 2010/11/28 17:08:19 $</dc:date>
     <dc:description>
@@ -37,8 +45,26 @@
     <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
     <owl:versionInfo>Revision: 2.1.5</owl:versionInfo>
     <foaf:maker rdf:resource="http://foaf.me/zazi#me"/>
-    <foaf:maker rdf:resource="http://moustaki.org/foaf.rdf#moustaki"/>
+    <foaf:maker rdf:resource="http://kurtisrandom.com/foaf.rdf#kurtjx"/>
+    <foaf:maker rdf:resource="http://raimond.me.uk/foaf.rdf#moustaki"/>
     <foaf:maker rdf:resource="http://www.talkdigger.com/foaf/fgiasson"/>
+    <foaf:maker>
+      <rdf:Description>
+        <foaf:name>George Fazekas</foaf:name>
+      </rdf:Description>
+    </foaf:maker>
+    <foaf:maker>
+      <rdf:Description>
+        <foaf:homepage rdf:resource="http://simon-reinhardt.de/"/>
+        <foaf:name>Simon Reinhardt</foaf:name>
+      </rdf:Description>
+    </foaf:maker>
+    <foaf:maker>
+      <rdf:Description>
+        <foaf:homepage rdf:resource="http://apassant.net/"/>
+        <foaf:name>Alexandre Passant</foaf:name>
+      </rdf:Description>
+    </foaf:maker>
   </owl:Ontology>
   <owl:Class rdf:about="Activity">
     <mo:level>1</mo:level>
@@ -3177,5 +3203,13 @@ The review does not have to be open content, as long as it is accessible to the 
     <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/isPrimaryTopicOf"/>
     <vs:term_status>stable</vs:term_status>
   </owl:ObjectProperty>
+  <rdf:Description rdf:about="http://raimond.me.uk/foaf.rdf#moustaki">
+    <foaf:homepage rdf:resource="http://raimond.me.uk/"/>
+    <foaf:name>Yves Raimond</foaf:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.talkdigger.com/foaf/fgiasson">
+    <foaf:homepage rdf:resource="http://fgiasson.com/"/>
+    <foaf:name>Frédérick Giasson</foaf:name>
+  </rdf:Description>
   <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/06/sw-vocab-status/ns#term_status"/>
 </rdf:RDF>
