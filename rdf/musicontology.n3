@@ -1983,10 +1983,10 @@ mo:produced
 mo:produced_score
       rdf:type owl:ObjectProperty ;
       rdfs:comment """
-        Associates an arrangement event to a score product (score here does not refer to a published score, but more
+        Associates an arrangement or a composition event to a score product (score here does not refer to a published score, but more
         an abstract arrangement of a particular work).
     """ ;
-      rdfs:domain mo:Arrangement ;
+      rdfs:domain [ rdf:type owl:Class ; owl:unionOf (mo:Composition mo:Arrangement) ] ;
       rdfs:isDefinedBy mo: ;
       rdfs:label "produced score" ;
       rdfs:range mo:Score ;

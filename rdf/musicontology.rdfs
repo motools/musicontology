@@ -2369,10 +2369,24 @@ This means that the orignial musical expression were rearranged to create a new 
   <owl:ObjectProperty rdf:about="produced_score">
     <mo:level>2</mo:level>
     <rdfs:comment>
-        Associates an arrangement event to a score product (score here does not refer to a published score, but more
+        Associates an arrangement or a composition event to a score product (score here does not refer to a published score, but more
         an abstract arrangement of a particular work).
     </rdfs:comment>
-    <rdfs:domain rdf:resource="Arrangement"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf>
+          <rdf:Description>
+            <rdf:first rdf:resource="Composition"/>
+            <rdf:rest>
+              <rdf:Description>
+                <rdf:first rdf:resource="Arrangement"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </rdf:rest>
+          </rdf:Description>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
     <rdfs:isDefinedBy rdf:resource=""/>
     <rdfs:label>produced score</rdfs:label>
     <rdfs:range rdf:resource="Score"/>
