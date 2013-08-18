@@ -23,8 +23,7 @@ mo:   rdf:type owl:Ontology ;
       dc:description """
         The Music Ontology Specification provides main concepts and 
         properties fo describing music (i.e. artists, albums and tracks) 
-        on the Semantic Web. This document contains a description 
-        of all the terms defined by the Music Ontology.
+        on the Semantic Web. 
     """ ;
       dc:title "The Music Ontology" ;
       owl:imports bio: , <http://purl.org/NET/c4dm/event.owl> , <http://purl.org/ontology/ao/core> , <http://www.w3.org/2006/time> , foaf: , dcterms: , <http://purl.org/NET/c4dm/keys.owl> , <http://purl.org/vocab/frbr/core> ;

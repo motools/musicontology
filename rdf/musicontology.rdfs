@@ -32,8 +32,7 @@
     <dc:description>
         The Music Ontology Specification provides main concepts and 
         properties fo describing music (i.e. artists, albums and tracks) 
-        on the Semantic Web. This document contains a description 
-        of all the terms defined by the Music Ontology.
+        on the Semantic Web. 
     </dc:description>
     <dc:title>The Music Ontology</dc:title>
     <owl:imports rdf:resource="../../NET/c4dm/event.owl"/>
