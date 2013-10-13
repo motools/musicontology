@@ -15,6 +15,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:time="http://www.w3.org/2006/time#"
+   xmlns:vann="http://purl.org/vocab/vann/"
    xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:wot="http://xmlns.com/wot/0.1/"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xml:base="http://purl.org/ontology/mo/">
@@ -35,6 +36,8 @@
         on the Semantic Web. 
     </dc:description>
     <dc:title>The Music Ontology</dc:title>
+    <vann:preferredNamespacePrefix>mo</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>http://purl.org/ontology/mo/</vann:preferredNamespaceUri>
     <owl:imports rdf:resource="../../NET/c4dm/event.owl"/>
     <owl:imports rdf:resource="../../NET/c4dm/keys.owl"/>
     <owl:imports rdf:resource="../../dc/terms/"/>
